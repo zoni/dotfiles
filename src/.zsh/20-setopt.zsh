@@ -24,7 +24,7 @@ setopt pushd_silent
 setopt glob_complete
 
 # Do not require a leading `.' in a filename to be matched explicitly.
-setopt glob_dots
+unsetopt glob_dots
 
 # If set, regular expression matching with the =~  operator  will  use  Perl-Compatible
 # Regular Expressions from the PCRE library, if available.  If not set, regular expres‐
