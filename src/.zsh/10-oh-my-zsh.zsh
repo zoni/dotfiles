@@ -1,17 +1,11 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="mine"
-
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="false"
 
 # Comment this out to disable bi-weekly auto-update checks
-DISABLE_AUTO_UPDATE="false"
+DISABLE_AUTO_UPDATE="true"
 
 # Don't ask for confirmation to perform auto-update
 DISABLE_UPDATE_PROMPT="true"
