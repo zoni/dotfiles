@@ -1,0 +1,50 @@
+[user]
+	name = Nick Groenen
+	email = nick@groenen.me
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[clean]
+	requireForce = false
+[merge]
+	tool = vimdiff
+	keepbackup = false
+	defaultToUpstream = true
+[diff]
+	tool = vimdiff
+[push]
+	default = upstream
+[rebase]
+	autosquash = true
+[rerere]
+	enabled = true
+	autoupdate = true
+[alias]
+	# Compact log, with lots of pretty colors
+	compactlog = log --graph --pretty=format:'%C(yellow)%h%Creset %C(yellow)%d%Creset %s %C(bold blue)(%an, %cr)%Creset' --abbrev-commit --date=relative
+	# Show commits in upstream that aren't yet merged in your local branch
+	behind = log --graph --pretty=format:'%C(yellow)%h%Creset %C(yellow)%d%Creset %s %C(bold blue)(%an, %cr)%Creset' --abbrev-commit --date=relative ..@{u}
+	# And the opposite, commits in local branch that aren't yet push upstream
+	ahead = log --graph --pretty=format:'%C(yellow)%h%Creset %C(yellow)%d%Creset %s %C(bold blue)(%an, %cr)%Creset' --abbrev-commit --date=relative @{u}..
+	# Nuke branches (local and remote)
+	nuke = !git-nuke
+	# See what new commits have been created by the last command. Mainly useful
+	# to see commits pulled in by a git pull.
+	new = "!sh -c 'git log --graph --pretty=format:\"%C(yellow)%h%Creset %C(yellow)%d%Creset %s %C(bold blue)(%an, %cr)%Creset\" --abbrev-commit --date=relative $1@{1}..$1@{0} \"$@\"'"
+	# Show authors matching the supplied substring
+	whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+	# Print the tracking branch that is configured for the current branch, or an
+	# empty line if no tracking branch is set.
+	tracking = "!sh -c 'git for-each-ref --format=\"%(upstream:short)\" $(git symbolic-ref -q HEAD)'"
