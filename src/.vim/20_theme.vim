@@ -11,3 +11,6 @@ if has("gui_running")
     set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
   endif
 endif
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme = "papercolor"

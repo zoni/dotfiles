@@ -13,8 +13,9 @@ Plug 'fholgado/minibufexpl.vim'
 Plug 'fs111/pydoc.vim'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'fatih/vim-go'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-source ~/.vim/05_powerline.vim
 source ~/.vim/10_general.vim
 source ~/.vim/11_yankring.vim
 source ~/.vim/20_theme.vim
