@@ -1,0 +1,297 @@
+#!/usr/bin/env python3
+
+"""
+This script automates the workflow of merging a feature branch back
+into mainline (or any other target branch if you so wish) in such a
+way that the history of changes is made linear (by first rebasing
+against the target branch) while still creating a merge commit
+instead of simply fast-forwarding.
+
+The advantage of this is that you get a better looking history while
+still providing merge context, visually linking a set of commits
+together and easing a potential revert of the entire merge.
+"""
+
+__version__ = "1.0.0"
+__author__ = "Nick Groenen <nick@groenen.me>"
+__license__ = "GPL-v3"
+
+import argparse
+import os
+import shlex
+import subprocess
+import sys
+from locale import getpreferredencoding
+try:
+    import colorama
+    colorama.init()
+except ImportError:
+    colorama = None
+
+LOCALE = getpreferredencoding()
+WORK_BRANCH = "WORK_BRANCH"
+
+
+def colorize(color, message):
+    """
+    Return a colorized message.
+
+    Color may be one of BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE.
+    """
+    if colorama is not None:
+        message = "{color}{message}{reset}".format(
+                    color=getattr(colorama.Fore, color.upper()),
+                    message=message,
+                    reset=colorama.Fore.RESET
+                  )
+    return message
+
+
+def run(command, print_output=True, print_input=True, handle_exceptions=True):
+    """
+    Run the given command and return it's output.
+
+    If command returns a non-zero exit status, print
+    output and exit.
+
+    When print_output=True, also print output to stdout.
+
+    If you pass handle_exceptions=False, exceptions will not be caught but
+    instead get passed up the stack.
+    """
+    if print_input:
+        print("Running: " + command)
+
+    try:
+        output = subprocess.check_output(
+            shlex.split(command),
+            stderr=subprocess.STDOUT
+        ).decode(LOCALE)
+    except subprocess.CalledProcessError as e:
+        if not handle_exceptions:
+            raise
+
+        exit(
+            "{} returned non-zero exit status {}. Output was:\n\n{}".format(
+                command,
+                e.returncode,
+                e.output,
+            )
+        )
+
+    if print_output:
+        print(output.strip())
+
+    return output
+
+
+def run_with_rescue_shell(command, print_output=True, print_input=True):
+    """
+    Run command, but drop back into a rescue shell if it fails.
+
+    Arguments are the same as those to run(). After the shell
+    exits, program will resume normally.
+    """
+    try:
+        run(
+            command,
+            print_output=print_output,
+            print_input=print_input,
+            handle_exceptions=False
+        )
+    except subprocess.CalledProcessError as e:
+        print(colorize(
+            "red",
+            "{} returned non-zero exit status {}. Output was: \n\n".format(
+                command,
+                e.returncode,
+            )
+        ))
+        print(e.output)
+        print(colorize(
+            "yellow",
+            "Dropping you into a rescue shell. Normal execution will resume once "
+            "this shell session exits."
+        ))
+        subprocess.call([os.environ.get("SHELL", "/bin/sh")])
+
+
+def exit(message, code=1):
+    """Print an error message and exit"""
+    if not message.endswith("\n"):
+        message += "\n"
+    sys.stderr.write(colorize("red", message))
+    sys.exit(code)
+
+
+def current_branch():
+    """
+    Return the current branch
+
+    Will return None if not in a git repository or not on any branch.
+    """
+    try:
+        return run("git symbolic-ref --short -q HEAD", print_output=False, print_input=False, handle_exceptions=False).strip()
+    except subprocess.CalledProcessError as e:
+        return None
+
+
+def update(branch):
+    """Update target branch with tracking branch, then switch back to source branch"""
+    print(colorize("yellow",
+        "Updating local branch {} with remote tracking branch".format(branch)
+    ))
+    original_branch = current_branch()
+    if original_branch != branch:
+        run("git checkout {}".format(branch))
+    run("git pull --rebase --recurse-submodules")
+    run("git checkout {}".format(original_branch))
+    print(colorize("green",
+        "Local branch {} updated with remote tracking branch".format(branch)
+    ))
+
+
+def rebase(source, target, preserve_merges=False):
+    """Rebase source branch against target branch"""
+    print(colorize("yellow",
+        "Rebasing {source} against {target}".format(source=source, target=target)
+    ))
+    if current_branch() != source:
+        run("git checkout {}".format(source))
+        if preserve_merges:
+            cmd = "git rebase --preserve-merges {target}"
+        else:
+            cmd = "git rebase {target}"
+        run_with_rescue_shell(cmd.format(target=target))
+
+
+def merge(source, destination, message=None):
+    """Merge source branch into destination branch"""
+    if message is None:
+        message = "Merge branch '{}'".format(source)
+
+    print(colorize("yellow",
+        "Merging {source} into {dest}".format(source=source, dest=destination)
+    ))
+
+    if current_branch() != destination:
+        run("git checkout {}".format(destination))
+
+    commit_count = len(run(
+        "git log {dest}..{source} --pretty=oneline".format(
+            source=source,
+            dest=destination
+        ),
+        print_output=False,
+        print_input=False,
+    ).split("\n"))
+
+    commit_count = int(run(
+        "git rev-list --count --left-right {dest}..{source}".format(
+            dest=destination,
+            source=source
+        ),
+        print_input=False,
+        print_output=False,
+    ).strip().split()[1])
+
+    if commit_count == 1:
+        run("git merge --ff {}".format(source))
+    else:
+        run("git merge -m '{message}' --no-ff {branch}".format(
+            message=message,
+            branch=source)
+        )
+
+
+def copy_branch(source, destination):
+    """Copy source branch to destination branch"""
+    original_branch = current_branch()
+    print(colorize("yellow",
+        "Copying {source} to {dest}".format(source=source, dest=destination)
+    ))
+
+    if current_branch() != source:
+        run("git checkout {}".format(source))
+    run("git checkout -b {}".format(destination))
+    run("git checkout {}".format(original_branch))
+
+
+def delete_branch(branch, force=False):
+    if force:
+        cmd = "git branch -D {}"
+    else:
+        cmd = "git branch --delete {}"
+    run(cmd.format(branch))
+
+
+def rebase_and_merge(source_branch, target_branch, update_target=False,
+                     preserve_merges=False):
+    """
+    Rebase and merge source_branch against and into target_branch.
+
+    If update_target=True, will `git pull --rebase` the target branch
+    prior to running the rebase and merge operation.
+    """
+    original_branch = current_branch()
+    if original_branch is None:
+        exit("Please check-out a branch first")
+    if WORK_BRANCH in run("git branch", print_output=False, print_input=False):
+        exit("Found work branch from previous run, refusing to work in order"
+             "to prevent data loss.\n"
+             "Remove the branch {} manually and try again.".format(WORK_BRANCH))
+
+    if update_target:
+        update(target_branch)
+
+    copy_branch(source_branch, WORK_BRANCH)
+    rebase(WORK_BRANCH, target_branch, preserve_merges=preserve_merges)
+    merge(WORK_BRANCH, target_branch, message="Merge branch '{}'".format(source_branch))
+
+    run("git branch --delete {}".format(WORK_BRANCH))
+    print(colorize("green",
+        "All done. {source} has been successfully merged into {target}".format(
+            source=source_branch,
+            target=target_branch
+        )
+    ))
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Merge <source> into <dest> using rebase and merge"
+    )
+    parser.add_argument(
+        "-u", "--update",
+        action='store_true',
+        help="update destination branch before rebasing"
+    )
+    parser.add_argument(
+        "-s", "--source",
+        help="the source branch to merge from",
+        default=current_branch()
+    )
+    parser.add_argument(
+        "-p", "--preserve-merges",
+        help="instead of ignoring merges, try to recreate them",
+        action='store_true'
+    )
+    parser.add_argument(
+        "-d", "--delete",
+        help="remove local branch after merging",
+        action='store_true'
+    )
+    parser.add_argument(
+        "dest",
+        help="the destination branch to merge into"
+    )
+
+    args = parser.parse_args()
+    rebase_and_merge(
+        source_branch=args.source,
+        target_branch=args.dest,
+        update_target=args.update,
+        preserve_merges=args.preserve_merges
+    )
+    if args.delete:
+        delete_branch(args.source)

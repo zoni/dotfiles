@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# This script wraps sshfs, sending a desktop notification with
+# the result of the connection attempt. It can be used as such:
+#
+# sshfs-helper user@host:/path /local/mount/point
+
+if [ ! -e "${2}" ]; then
+	mkdir -p "${2}"
+fi
+
+if [ -e "/usr/bin/autossh" ]; then
+	OUTPUT=$(sshfs -o ssh_command='autossh -M 0' ${1} ${2} 2>&1)
+else
+	OUTPUT=$(sshfs ${1} ${2} 2>&1)
+fi
+
+if [ $? = 0 ]; then
+	notify-send ${1} 'Connection established'
+else
+	notify-send ${1} "Failed to establish connection:
+${OUTPUT}"
+fi
+

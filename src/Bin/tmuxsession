@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# tmuxsession: Create a new named tmux session, or attach to it if already running
+# Usage: tmuxsession [sessionname]
+#
+# This allows you to create a named tmux session, detach and reattach to it easily
+# later on, and/or attach multiple terminals to the same session without having
+# the screens synced (so you can view different windows in different terminals).
+
+TMUX="tmux -2"
+
+if [ $# -gt 1 ]; then
+	echo 'Usage: tmuxsession [sessionname]'
+	exit 1
+fi
+
+# No arguments? Start a new, unnamed tmux session
+if [ $# -eq 0 ]; then
+	exec $TMUX
+fi
+
+# Otherwise, start a new, named session or attach to it if already there
+if tmux has-session -t $1 >/dev/null 2>&1; then
+	exec $TMUX new-session -t $1 \; set-option destroy-unattached
+else
+	tmux -2 new-session -d -s $1
+	exec $TMUX new-session -t $1 \; set-option destroy-unattached
+fi
