@@ -11,3 +11,6 @@ fi
 export PATH="/usr/local/go/bin/:$HOME/Bin:$PATH:/usr/share/virtualenvwrapper:$HOME/Workspace/go/bin"
 export GOROOT="/usr/local/go/"
 export GOPATH="$HOME/Workspace/go"
+
+# Extra completions
+fpath=(~/.zsh/completions $fpath)
