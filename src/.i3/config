@@ -194,6 +194,9 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Keyboard layout controls
+bindsym $mod+Insert exec --no-startup-id toggle-dead-keys
+
 # }}}
 
 # {{{ Workspaces

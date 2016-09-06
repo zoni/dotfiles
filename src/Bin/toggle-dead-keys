@@ -1,0 +1,5 @@
+#!/bin/sh
+
+setxkbmap us -variant intl
+sleep 5
+setxkbmap us
