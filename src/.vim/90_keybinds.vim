@@ -43,8 +43,8 @@ nmap <silent> <leader>t :TagbarToggle<CR>
 nmap <silent> <leader>yr :YRShow<CR>
 
 " Set and clear Python breakpoints (requires python.vim)
-nmap <leader>cbp :py RemoveBreakpoints()<CR>
-nmap <leader>bp :py SetBreakpoint()<CR>
+nmap <leader>cbp :py3 RemoveBreakpoints()<CR>
+nmap <leader>bp :py3 SetBreakpoint()<CR>
 
 " Open URL under cursor.
 " Sleep + extra CR's ensures we don't (in most cases) see command output
