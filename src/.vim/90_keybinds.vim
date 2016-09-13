@@ -1,3 +1,6 @@
+" Map jj to Escape in insert mode. :)
+inoremap jj <Esc>
+
 " Make movement on wrapped lines go down/up to next row, rather than the
 " next line in file.
 nnoremap j gj
