@@ -15,6 +15,7 @@ Plug 'fatih/vim-go'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'jmcantrell/vim-virtualenv'
 
 source ~/.vim/10_general.vim
 source ~/.vim/11_yankring.vim
