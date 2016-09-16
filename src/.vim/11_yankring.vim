@@ -1,5 +1,5 @@
 let g:yankring_max_history = 250        " Number of elements to store in the history
-let g:yankring_min_element_length = 2   " Prevent single-character yanks/deletes from being registered
+let g:yankring_min_element_length = 1
 let g:yankring_max_display = 74         " Limit items in YankRing menu to this many characters
 let g:yankring_persist = 1              " Persist across sessions
 let g:yankring_share_between_instances = 1 " Share across multiple instances
