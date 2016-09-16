@@ -16,6 +16,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'jmcantrell/vim-virtualenv'
+Plug 'kshenoy/vim-signature'
 
 source ~/.vim/10_general.vim
 source ~/.vim/11_yankring.vim
