@@ -37,9 +37,9 @@ SPACESHIP_VENV_SHOW="${SPACESHIP_VENV_SHOW:-true}"
 # If user is root, then pain it in red. Otherwise, just print in yellow.
 spaceship_user() {
   if [[ $USER == 'root' ]]; then
-    echo -n "%{$fg_bold[red]%}"
+    echo -n "%{$fg[red]%}"
   else
-    echo -n "%{$fg_bold[blue]%}"
+    echo -n "%{$fg[green]%}"
   fi
   echo -n "%n"
   echo -n "%{$reset_color%}"
@@ -51,12 +51,12 @@ spaceship_user() {
 spaceship_host() {
   if [[ -n $SSH_CONNECTION ]]; then
     echo -n "$(spaceship_user)"
-    echo -n " %Bat%b "
-    echo -n "%{$fg_bold[blue]%}%m%{$reset_color%}"
-    echo -n " %Bin%b "
+    echo -n " at "
+    echo -n "%{$fg[yellow]%}%m%{$reset_color%}"
+    echo -n " in "
   else
     echo -n "$(spaceship_user)"
-    echo -n " %Bin%b "
+    echo -n " in "
     echo -n "%{$reset_color%}"
   fi
 }
@@ -64,7 +64,7 @@ spaceship_host() {
 # Current directory.
 # Return only three last items of path
 spaceship_current_dir() {
-  echo -n "%{$fg_bold[blue]%}"
+  echo -n "%{$fg[blue]%}"
   echo -n "%${SPACESHIP_PROMPT_TRUNC}~";
   echo -n "%{$reset_color%}"
 }
@@ -144,13 +144,12 @@ spaceship_git_status() {
     #indicators+="$(spaceship_git_stashed)"
     indicators+="$(spaceship_git_unpushed_unpulled)"
 
-    [ -n "${indicators}" ] && indicators=" [%{$fg_bold[blue]%}${indicators}%{$reset_color%}]";
+    [ -n "${indicators}" ] && indicators=" [%{$fg[magenta]%}${indicators}%{$reset_color%}]";
 
-    echo -n " %Bon%b "
-    echo -n "%{$fg_bold[blue]%}"
+    echo -n " on "
+    echo -n "%{$fg[magenta]%}"
     echo -n "$(git_current_branch)"
     echo -n "%{$reset_color%}"
-    #echo -n "%{$fg[blue]%}"
     echo -n "$indicators"
     echo -n "%{$reset_color%}"
   fi
@@ -163,8 +162,8 @@ spaceship_venv_status() {
 
   # Check if the current directory running via Virtualenv
   [ -n "$VIRTUAL_ENV" ] && $(type deactivate >/dev/null 2>&1) || return
-  echo -n " %Bvia%b "
-  echo -n "%{$fg_bold[blue]%}"
+  echo -n " via "
+  echo -n "%{$fg[yellow]%}"
   echo -n "$(basename $VIRTUAL_ENV)"
   echo -n "%{$reset_color%}"
 }
@@ -180,8 +179,8 @@ spaceship_nvm_status() {
   [[ "${nvm_status}" == "system" ]] && return
   nvm_status=${nvm_status}
 
-  echo -n " %Bvia%b "
-  echo -n "%{$fg_bold[green]%}"
+  echo -n " via "
+  echo -n "%{$fg[green]%}"
   echo -n "${SPACESHIP_NVM_SYMBOL} ${nvm_status}"
   echo -n "%{$reset_color%}"
 }
@@ -203,19 +202,16 @@ spaceship_ruby_version() {
     return
   fi
 
-  echo -n " %Bvia%b "
-  echo -n "%{$fg_bold[red]%}"
+  echo -n " via "
+  echo -n "%{$fg[red]%}"
   echo -n "${SPACESHIP_RUBY_SYMBOL}  ${ruby_version}"
   echo -n "%{$reset_color%}"
 }
 
 # Command prompt.
 spaceship_show_prompt() {
-  #echo -n "%(?.%{$fg[green]%}.%{$fg[red]%})"
-  #echo -n "%B${SPACESHIP_PROMPT_SYMBOL} %b"
-  #echo    "%{$reset_color%}"
   if [[ $USER == 'root' ]]; then
-    echo -n "%{$fg_bold[red]%}"
+    echo -n "%{$fg[red]%}"
   else
     echo -n "%(?.%{$reset_color%}.%{$fg[red]%})"
   fi
@@ -246,6 +242,6 @@ PROMPT="$PROMPT"'$(spaceship_build_prompt) '
 PROMPT="$PROMPT"'$(spaceship_show_prompt) '
 
 # Set PS2 - continuation interactive prompt
-PS2="%{$fg_bold[yellow]%}"
+PS2="%{$fg[yellow]%}"
 PS2+="%{$SPACESHIP_PROMPT_SYMBOL%} "
 PS2+="%{$reset_color%}"
