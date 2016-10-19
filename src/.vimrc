@@ -18,6 +18,7 @@ Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'kshenoy/vim-signature'
 Plug 'vim-scripts/SearchComplete'
+Plug 'sjl/gundo.vim'
 
 source ~/.vim/10_general.vim
 source ~/.vim/11_yankring.vim
@@ -28,6 +29,7 @@ source ~/.vim/50_gui.vim
 source ~/.vim/60_syntax.vim
 source ~/.vim/70_ctrlspace.vim
 source ~/.vim/70_searchreplace.vim
+source ~/.vim/70_gundo.vim
 source ~/.vim/80_python.vim
 source ~/.vim/80_golang.vim
 source ~/.vim/85_functions.vim
