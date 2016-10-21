@@ -1,0 +1,8 @@
+.git/
+.svn/
+.hg/
+*.sw[op]
+*.pyc
+*.so
+*~
+*.bak

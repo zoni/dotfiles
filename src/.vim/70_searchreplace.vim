@@ -7,7 +7,7 @@ set scs
 set incsearch
 
 if executable('ag')
-	set grepprg=ag\ --nogroup\ --nocolor
+	set grepprg=ag\ --hidden\ --nogroup\ --nocolor
 	command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 endif
 
