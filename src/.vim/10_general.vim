@@ -39,8 +39,8 @@ set wildignore=.pyc,.swp,.swo
 set wildmode=longest,list
 
 " Automatically saves views on exit, load on open
-au BufWinLeave ?* mkview
-au BufWinEnter ?* silent loadview
+au BufWinLeave ?+ mkview
+au BufWinEnter ?+ silent loadview
 
 " Quit vim when only a NERDTree window remains open
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
