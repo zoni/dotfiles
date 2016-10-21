@@ -19,6 +19,7 @@ Plug 'jmcantrell/vim-virtualenv'
 Plug 'kshenoy/vim-signature'
 Plug 'vim-scripts/SearchComplete'
 Plug 'sjl/gundo.vim'
+Plug 'ciaranm/securemodelines'
 
 source ~/.vim/10_general.vim
 source ~/.vim/11_yankring.vim

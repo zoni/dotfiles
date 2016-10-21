@@ -8,7 +8,6 @@ set relativenumber      " Number lines relative to the current line
 set number              " Display line numbers (on the left-hand side) by default
 set numberwidth=4       " Use at least this many columns for the line numbers
 set viminfo='20,\"500   " Keep a .viminfo file.
-set nomodeline          " Ignore modelines in files
 set foldmethod=marker   " Use manual fold markers as default fold method
 set laststatus=2        " Always show the statusline
 "set autochdir          " Auto cwd to the current file's dir. Not compatible with all plugins
@@ -57,3 +56,18 @@ set formatoptions=c,q,r,t " This is a sequence of letters which describes how
                           "           after hitting <Enter> in Insert mode.
                           " t         Auto-wrap text using textwidth (does not apply
                           "           to comments)
+
+" Disable potentially unsafe modelines, use ciaranm/securemodelines
+set nomodeline
+let g:secure_modelines_allowed_items = [
+    \ "textwidth",   "tw",
+    \ "softtabstop", "sts",
+    \ "tabstop",     "ts",
+    \ "shiftwidth",  "sw",
+    \ "expandtab",   "et",   "noexpandtab", "noet",
+    \ "filetype",    "ft",
+    \ "foldmethod",  "fdm",
+    \ "readonly",    "ro",   "noreadonly", "noro",
+    \ "rightleft",   "rl",   "norightleft", "norl"
+    \ ]
+let g:secure_modelines_verbose = 1
