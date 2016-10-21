@@ -1,3 +1,4 @@
+let g:ctrlp_map = '<leader>p'
 let g:ctrlp_clear_cache_on_exit = 0
 
 if executable('ag')
