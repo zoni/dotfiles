@@ -10,24 +10,6 @@ nnoremap k gk
 vnoremap < <gv
 vnoremap > >gv 
 
-" Try to write file using sudo when using double !
-cmap w!! w !sudo tee % >/dev/null
-
-" Un-highlight search matches on Ctrl+h
-nmap <silent> <C-h> <Esc>:noh<CR>
-
-" Toggle paste/nopaste
-set pastetoggle=<F12>
-
-"" Open new tab on Ctrl+t
-"nmap <silent> <C-t> <Esc>:tabnew<CR>
-"" close tab on Ctrl+w
-"nmap <silent> <C-w> <Esc>:tabclose<CR>
-"" next tab on Ctrl+n
-"nmap <silent> <C-n> <Esc>:tabnext<CR>
-"" previous tab on Ctrl+p
-"nmap <silent> <C-p> <Esc>:tabprevious<CR>
-
 " YankRing overrides a few keymaps if we try to set them the usual way
 function! YRRunAfterMaps()
 	" Open next buffer
@@ -49,6 +31,21 @@ nmap <silent> <leader>yr :YRShow<CR>
 nmap <leader>cbp :py3 RemoveBreakpoints()<CR>
 nmap <leader>bp :py3 SetBreakpoint()<CR>
 
+nnoremap <leader>fm :set foldmethod=marker<CR>
+nnoremap <leader>fM :set foldmethod=manual<CR>
+nnoremap <leader>fi :set foldmethod=indent<CR>
+nnoremap <leader>fe :set foldmethod=expr<CR>
+nnoremap <leader>fs :set foldmethod=syntax<CR>
+nnoremap <leader>fd :set foldmethod=diff<CR>
+
+" Try to write file using sudo when using double !
+cmap w!! w !sudo tee % >/dev/null
+
+" Un-highlight search matches on Ctrl+h
+nmap <silent> <C-h> <Esc>:noh<CR>
+
+" Toggle paste/nopaste
+set pastetoggle=<F12>
 " Open URL under cursor.
 " Sleep + extra CR's ensures we don't (in most cases) see command output
 " drawing over the screen as the browser is spawned.
