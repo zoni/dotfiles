@@ -16,6 +16,8 @@
 	added = yellow
 	changed = green
 	untracked = cyan
+[commit]
+	verbose = true
 [clean]
 	requireForce = false
 [merge]
