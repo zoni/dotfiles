@@ -180,9 +180,9 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Mod1+r exec i3-input -P "Rename workspace to: " -F 'rename workspace to "%s"'
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 5
+bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 5
+bindsym XF86AudioMute exec pulseaudio-ctl mute
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
