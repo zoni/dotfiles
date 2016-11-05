@@ -3,22 +3,22 @@ set nocompatible
 call plug#begin('~/.vim-plugs')
 
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree',  { 'on':  'NERDTreeToggle' }
 Plug 'Lokaltog/vim-easymotion'
 Plug 'scrooloose/nerdcommenter'
-Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'  " note: lazy-loading this doesn't work with vim-airline
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'fs111/pydoc.vim'
+Plug 'fs111/pydoc.vim', { 'for': 'python' }
 Plug 'vim-scripts/YankRing.vim'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go'  " note: lazy-loading caused issues with definition highlights
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'jmcantrell/vim-virtualenv'
+Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
+Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
 Plug 'kshenoy/vim-signature'
 Plug 'vim-scripts/SearchComplete'
-Plug 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'ciaranm/securemodelines'
 
 source ~/.vim/10_general.vim

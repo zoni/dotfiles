@@ -1,6 +1,8 @@
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_clear_cache_on_exit = 0
 
+nnoremap <silent> <leader>p :CtrlP<CR>
+
 if executable('ag')
 	let g:ctrlp_user_command = 'ag %s --hidden --files-with-matches --nocolor -g ""'
 	let g:ctrlp_use_caching = 0
