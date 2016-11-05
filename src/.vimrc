@@ -23,6 +23,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'vim-scripts/SearchComplete'
 Plug 'vim-scripts/YankRing.vim'
+Plug 'vim-syntastic/syntastic'
 
 source ~/.vim/10_general.vim
 source ~/.vim/11_yankring.vim
@@ -34,6 +35,7 @@ source ~/.vim/60_syntax.vim
 source ~/.vim/70_ctrlp.vim
 source ~/.vim/70_searchreplace.vim
 source ~/.vim/70_gundo.vim
+source ~/.vim/70_syntastic.vim
 source ~/.vim/80_python.vim
 source ~/.vim/80_golang.vim
 source ~/.vim/85_functions.vim
