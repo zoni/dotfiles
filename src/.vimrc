@@ -5,6 +5,7 @@ call plug#begin('~/.vim-plugs')
 Plug 'ciaranm/securemodelines'
 Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'  " note: lazy-loading caused issues with definition highlights
 Plug 'fs111/pydoc.vim', { 'for': 'python' }
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
