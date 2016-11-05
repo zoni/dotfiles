@@ -1,12 +1,23 @@
-" Python-specific configuration/functions/macros/whathaveyou.
-" Some of these are from https://dev.launchpad.net/UltimateVimPythonSetup
-
 let g:pymode_python = 'python3'
 
-" Use :make to see syntax errors. (:cn and :cp to move around, :dist to see
-" all errors)
-set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
-set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+let g:jedi#popup_on_dot = 1
+let g:jedi#show_call_signatures = "1"
+let g:jedi#goto_command = "<leader>pg"
+let g:jedi#goto_assignments_command = "<leader>pa"
+let g:jedi#goto_definitions_command = "gd"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>pu"
+let g:jedi#completions_command = ""
+let g:jedi#rename_command = "<leader>pr"
+
+let g:SimpylFold_docstring_preview = 0
+let g:SimpylFold_fold_docstring = 1
+let g:SimpylFold_fold_import = 1
+
+autocmd FileType python setlocal completeopt-=preview
+autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
+
 
 " Execute a selection of code
 " Use VISUAL to select a range and then hit ctrl-e to execute it.
