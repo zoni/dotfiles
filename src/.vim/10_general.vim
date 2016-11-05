@@ -9,6 +9,7 @@ set number              " Display line numbers (on the left-hand side) by defaul
 set numberwidth=4       " Use at least this many columns for the line numbers
 set viminfo='20,\"500   " Keep a .viminfo file.
 set foldmethod=marker   " Use manual fold markers as default fold method
+set foldlevelstart=99   " Don't fold anything by default
 set laststatus=2        " Always show the statusline
 "set autochdir          " Auto cwd to the current file's dir. Not compatible with all plugins
 "set virtualedit=onemore " Allow for cursor to go beyond last character by 1
