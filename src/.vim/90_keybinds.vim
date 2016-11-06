@@ -27,10 +27,6 @@ nmap <silent> <leader>t :TagbarToggle<CR>
 " Show the YankRing
 nmap <silent> <leader>yr :YRShow<CR>
 
-" Set and clear Python breakpoints (requires python.vim)
-nmap <leader>cbp :py3 RemoveBreakpoints()<CR>
-nmap <leader>bp :py3 SetBreakpoint()<CR>
-
 nnoremap <leader>fm :set foldmethod=marker<CR>
 nnoremap <leader>fM :set foldmethod=manual<CR>
 nnoremap <leader>fi :set foldmethod=indent<CR>
