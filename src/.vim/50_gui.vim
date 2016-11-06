@@ -2,7 +2,9 @@
 set title
 
 " have the mouse enabled all the time:
-set ttymouse=xterm2
+if !has('nvim')
+	set ttymouse=xterm2
+endif
 set mouse=a
 
 " Enable horizontal scrollbar
