@@ -83,7 +83,7 @@ nmap <leader>cbp :py3 RemoveBreakpoints()<CR>
 nmap <leader>bp :py3 SetBreakpoint()<CR>
 " }}}
 " {{{ Custom functions (python 2)
-elseif has('python2')
+elseif has('python')
 
 " Execute a selection of code
 " Use VISUAL to select a range and then hit ctrl-e to execute it.
