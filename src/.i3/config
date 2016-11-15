@@ -218,20 +218,16 @@ set $tag0 "0"
 
 # {{{ Window rules
 
-assign [class="HipChat"] $tag1
-assign [class="Skype"] $tag1
-assign [class="Telegram"] $tag1
-assign [class="Thunderbird"] $tag2
-
 for_window [class="Guake"] floating enable
 
 # }}}
 
 # {{{ Startup apps
 
+exec --no-startup-id bash -c "exec $HOME/.i3/load-workspaces.sh"
 exec --no-startup-id bash -c "eval $(cat $HOME/.fehbg)"
 
 # https://github.com/jceb/dex
-exec --no-startup-id bash -c "sleep 3 && dex --autostart --search-paths $HOME/.config/autostart"
+exec --no-startup-id bash -c "sleep 3 && exec dex --autostart --search-paths $HOME/.config/autostart"
 
 # }}}
