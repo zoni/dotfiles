@@ -219,6 +219,7 @@ set $tag0 "0"
 # {{{ Window rules
 
 for_window [class="Guake"] floating enable
+assign [class="Thunderbird"] $tag2
 
 # }}}
 
