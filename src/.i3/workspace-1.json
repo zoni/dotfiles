@@ -1,0 +1,68 @@
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.38,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1033,
+               "width": 956,
+               "x": 2,
+               "y": 45
+            },
+            "name": "Telegram",
+            "percent": 0.5,
+            "swallows": [
+               {
+                  "class": "^Telegram"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 100,
+               "width": 240,
+               "x": 960,
+               "y": 45
+            },
+            "name": "nick.groenen - Skype™",
+            "percent": 0.5,
+            "swallows": [
+               {
+                  "class": "^Skype$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1033,
+       "width": 1186,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Vimperator",
+    "percent": 0.62,
+    "swallows": [
+       {
+          "class": "^Firefox$"
+       }
+    ],
+    "type": "con"
+}
+
