@@ -1,0 +1,20 @@
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1876,
+       "width": 1076,
+       "x": 1922,
+       "y": 42
+    },
+    "name": "Work (12) - Remember The Milk",
+    "percent": 1,
+    "swallows": [
+       {
+          "class": "^Remember\\ The\\ Milk$"
+       }
+    ],
+    "type": "con"
+}
+

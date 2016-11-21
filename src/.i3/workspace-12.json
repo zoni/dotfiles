@@ -1,0 +1,20 @@
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1036,
+       "width": 1916,
+       "x": 0,
+       "y": 42
+    },
+    "name": "HexChat: zoni @ Gitter (via ZNC) / #errbotio/errbot ()",
+    "percent": 1,
+    "swallows": [
+       {
+          "class": "^Hexchat$"
+       }
+    ],
+    "type": "con"
+}
+
