@@ -16,7 +16,7 @@ alias p="pushd"
 alias P="popd"
 alias d='dirs -v | head -10'
 
-alias gpg="gpg --keyid-format long"
+alias gpg="gpg2 --keyid-format long"
 alias xclip="xclip -selection clipboard"
 alias tmux="tmux -2"
 alias ts="tmuxsession"
