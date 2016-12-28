@@ -25,6 +25,7 @@ Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'vim-scripts/SearchComplete'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'vim-syntastic/syntastic'
+Plug 'jamessan/vim-gnupg'
 
 source ~/.vim/10_general.vim
 source ~/.vim/11_yankring.vim
