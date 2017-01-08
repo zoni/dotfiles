@@ -22,6 +22,7 @@ fi
 
 if [ "$DESKTOP_SESSION" = "i3" ]; then
     export $(gnome-keyring-daemon --start --components=ssh,gpg,pkc11,secrets)
+    xset s 270 300
     xautolock -time 5 -locker 'gnome-screensaver-command --lock' &
 fi
 
