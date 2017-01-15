@@ -9,11 +9,19 @@
        "y": 45
     },
     "name": "Telegram",
-    "percent": 0.5,
+    "percent": 0.3,
     "swallows": [
        {
           "class": "^Telegram"
        }
     ],
     "type": "con"
+}
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "stacked",
+    "percent": 0.7,
+    "type": "con",
+    "nodes": []
 }
