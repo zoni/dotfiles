@@ -8,9 +8,7 @@ if [ -d "$HOME/.local/bin" ]; then
 	export PATH="$PATH:$HOME/.local/bin"
 fi
 
-export PATH="/usr/local/go/bin/:$HOME/Bin:$PATH:/usr/share/virtualenvwrapper:$HOME/Workspace/go/bin"
-export GOROOT="/usr/local/go/"
-export GOPATH="$HOME/Workspace/go"
+export PATH="$HOME/Bin:/usr/local/bin:$PATH"
 
 # Extra completions
 fpath=(~/.zsh/completions $fpath)
