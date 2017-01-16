@@ -27,6 +27,7 @@ nmap <silent> <leader>t :TagbarToggle<CR>
 " Show the YankRing
 nmap <silent> <leader>yr :YRShow<CR>
 
+" Folding
 nnoremap <leader>fm :set foldmethod=marker<CR>
 nnoremap <leader>fM :set foldmethod=manual<CR>
 nnoremap <leader>fi :set foldmethod=indent<CR>
@@ -42,7 +43,12 @@ nmap <silent> <C-h> <Esc>:noh<CR>
 
 " Toggle paste/nopaste
 set pastetoggle=<F12>
+
 " Open URL under cursor.
 " Sleep + extra CR's ensures we don't (in most cases) see command output
 " drawing over the screen as the browser is spawned.
 map <Leader>w :call OpenURL()<CR>
+
+" vim-easymotion bindings
+map s <Plug>(easymotion-prefix)
+map ss <Plug>(easymotion-bd-w)
