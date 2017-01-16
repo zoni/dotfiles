@@ -1,3 +1,4 @@
+# vim: et
 # ~/.profile: executed by the command interpreter for login shells.
 # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
 # exists.
@@ -12,7 +13,7 @@
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+    . "$HOME/.bashrc"
     fi
 fi
 
@@ -23,6 +24,7 @@ fi
 if [ "$DESKTOP_SESSION" = "i3" ]; then
     export $(gnome-keyring-daemon --start --components=ssh,gpg,pkc11,secrets)
     xset s 270 300
+    xset r rate 250 25
     xautolock -time 5 -locker 'gnome-screensaver-command --lock' &
 fi
 
