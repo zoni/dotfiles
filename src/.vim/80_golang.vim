@@ -13,3 +13,7 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
+
+" https://github.com/fatih/vim-go/issues/502 and
+" https://github.com/fatih/vim-go/pull/691
+let g:go_fmt_experimental = 1
