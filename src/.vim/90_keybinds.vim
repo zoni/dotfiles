@@ -13,12 +13,13 @@ vnoremap > >gv
 " YankRing overrides a few keymaps if we try to set them the usual way
 function! YRRunAfterMaps()
 	" Open next buffer
-	nmap <silent> <C-n> <Esc>:bnext<CR>
+	nnoremap <silent> <C-n> <Esc>:bnext<CR>
 	" Previous buffer
-	nmap <silent> <C-p> <Esc>:bprevious<CR>
+	nnoremap <silent> <C-p> <Esc>:bprevious<CR>
 endfunction
 " Close buffer
-nmap <silent> <C-c> <Esc>:bwipeout<CR>
+"nmap <silent> <C-c> <Esc>:bdelete<CR>
+nnoremap <silent> <C-c> <Esc>:bprevious\|bdelete #<CR>
 
 " Toggle NERDTree
 nmap <silent> <leader>n :NERDTreeToggle<CR>
