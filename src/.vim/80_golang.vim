@@ -6,7 +6,8 @@ autocmd FileType go nmap <Leader>gr :GoRename<CR>
 
 let g:go_auto_type_info = 0
 let g:go_auto_sameids = 1
-let g:go_fmt_command = "goimports"
+let g:go_fmt_command = "guru"
+let g:go_fmt_experimental = 1
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
