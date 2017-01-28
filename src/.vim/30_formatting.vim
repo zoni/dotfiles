@@ -16,5 +16,8 @@ set noexpandtab
 " On softwrap, display wrapped lines at consistent indent
 set breakindent
 
+" Set text formatting options - see `:help fo-table` for valid options
+set formatoptions=cqrtj
+
 " Enable plugin-provided indent settings
 filetype plugin indent on
