@@ -13,5 +13,8 @@ set shiftwidth=4
 " Don't replace tabs by spaces
 set noexpandtab
 
+" On softwrap, display wrapped lines at consistent indent
+set breakindent
+
 " Enable plugin-provided indent settings
 filetype plugin indent on
