@@ -8,12 +8,16 @@ Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'  " note: lazy-loading caused issues with definition highlights
 Plug 'fs111/pydoc.vim', { 'for': 'python' }
+Plug 'godlygeek/tabular'
 Plug 'jamessan/vim-gnupg'
+Plug 'JamshedVesuna/vim-markdown-preview', { 'for': 'markdown' }
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
 Plug 'kshenoy/vim-signature'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'  " note: lazy-loading this doesn't work with vim-airline
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'reedes/vim-pencil'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree',  { 'on':  'NERDTreeToggle' }
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
