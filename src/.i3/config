@@ -40,7 +40,7 @@ bindsym $mod+q kill
 
 # Application launcher and window switcher.
 # See also: https://github.com/DaveDavenport/rofi
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="rofi -dmenu"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="rofi -dmenu -i"
 bindsym $mod+w exec --no-startup-id rofi -show window
 
 bindsym $mod+BackSpace exec gnome-screensaver-command --lock
@@ -229,6 +229,6 @@ exec --no-startup-id bash -c "exec $HOME/.i3/load-workspaces.sh"
 exec --no-startup-id bash -c "eval $(cat $HOME/.fehbg)"
 
 # https://github.com/jceb/dex
-exec --no-startup-id bash -c "sleep 3 && exec dex --autostart --search-paths $HOME/.config/autostart"
+exec --no-startup-id bash -c "sleep 3 && exec dex $HOME/.config/autostart/*.desktop"
 
 # }}}
