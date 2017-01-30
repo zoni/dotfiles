@@ -64,3 +64,7 @@ let g:secure_modelines_allowed_items = [
     \ "rightleft",   "rl",   "norightleft", "norl"
     \ ]
 let g:secure_modelines_verbose = 1
+
+" Let SuperTab try to determine best completion type automatically based on
+" text preceding the cursor.
+let g:SuperTabDefaultCompletionType = "context"
