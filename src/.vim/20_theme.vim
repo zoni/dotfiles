@@ -7,9 +7,7 @@ set t_Co=256
 color mustang
 
 if has("gui_running")
-  if has("gui_gtk2")
     set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
-  endif
 endif
 
 let g:airline_powerline_fonts = 1
