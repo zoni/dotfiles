@@ -9,7 +9,7 @@
        "y": 45
     },
     "name": "Telegram",
-    "percent": 0.3,
+    "percent": 0.375,
     "swallows": [
        {
           "class": "^Telegram"
@@ -17,11 +17,33 @@
     ],
     "type": "con"
 }
+
 {
     "border": "normal",
     "floating": "auto_off",
     "layout": "stacked",
-    "percent": 0.7,
+    "percent": 0.625,
     "type": "con",
-    "nodes": []
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1033,
+               "width": 956,
+               "x": 962,
+               "y": 45
+            },
+            "name": "Town Square - Mattermost",
+            "percent": 0.5,
+            "swallows": [
+               {
+                  "class": "^Mattermost"
+               }
+            ],
+            "type": "con"
+        }
+    ]
 }
+
