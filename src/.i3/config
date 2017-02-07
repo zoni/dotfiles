@@ -227,18 +227,23 @@ mode "window" {
     bindsym k focus up
     bindsym l focus right
 
-    bindsym q kill; mode "default"
+    bindsym Shift+h move left
+    bindsym Shift+j move down
+    bindsym Shift+k move up
+    bindsym Shift+l move right
+
+    bindsym q kill
     bindsym slash exec --no-startup-id rofi -show window; mode "default"
 
-    bindsym f floating toggle; mode "default"
-    bindsym Shift+t sticky toggle; mode "default"
-    bindsym z fullscreen; mode "default"
-    bindsym backslash split h; mode "default"
-    bindsym minus split v; mode "default"
-    bindsym s layout stacking; mode "default"
-    bindsym t layout tabbed; mode "default"
-    bindsym a layout toggle split; mode "default"
-    bindsym Shift+s scratchpad show; mode "default"
+    bindsym f floating toggle
+    bindsym Shift+t sticky toggle
+    bindsym z fullscreen
+    bindsym backslash split h
+    bindsym minus split v
+    bindsym s layout stacking
+    bindsym t layout tabbed
+    bindsym a layout toggle split
+    bindsym Shift+s scratchpad show
 
     bindsym m mode "move-window"
     bindsym w mode "workspace"
