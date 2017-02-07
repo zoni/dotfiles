@@ -23,6 +23,7 @@ nnoremap <silent> <C-c> <Esc>:bprevious\|bdelete #<CR>
 
 " Toggle NERDTree
 nmap <silent> <leader>n :NERDTreeToggle<CR>
+nmap <silent> <leader>N :NERDTreeFind<CR>
 " Toggle taglist
 nmap <silent> <leader>t :TagbarToggle<CR>
 " Show the YankRing

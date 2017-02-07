@@ -19,7 +19,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'reedes/vim-pencil'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree',  { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree',  { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
 Plug 'tpope/vim-fugitive'
