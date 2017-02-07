@@ -5,4 +5,5 @@ set -x
 
 mkdir -p \
 	$HOME/.i3 \
-	$HOME/.vimperator
+	$HOME/.vimperator \
+	$HOME/.local/share/applications
