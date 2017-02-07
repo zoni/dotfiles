@@ -1,5 +1,6 @@
 let options = {
   "prevent_autofocus": true,
+  "hints.chars": "fjdkslaghrueiwonc qpmv",
   "prev_patterns": "prev  previous  ‹  «  ◀  ←  <<  <  back  newer  vorige",
   "next_patterns": "next  ›  »  ▶  →  >>  >  more  older  vorige",
   "mode.normal.history_back": "<c-o>",
