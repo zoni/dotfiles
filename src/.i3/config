@@ -32,19 +32,21 @@ floating_modifier $mod
 focus_follows_mouse no
 mouse_warping none
 
-# start a terminal
+mode "rofi" {
+    bindsym a exec --no-startup-id rofi -i -show DRun; mode "default"
+    bindsym p exec --no-startup-id rofi-pass; mode "default"
+    bindsym slash exec --no-startup-id rofi -show window; mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+space mode "rofi"
+
+bindsym $mod+q kill
+bindsym $mod+BackSpace exec gnome-screensaver-command --lock
+bindsym $mod+slash exec --no-startup-id rofi -show window
 bindsym $mod+Return exec i3-sensible-terminal
 
-# kill focused window
-bindsym $mod+q kill
-
-# Application launcher and window switcher.
-# See also: https://github.com/DaveDavenport/rofi
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="rofi -dmenu -i"
-bindsym $mod+p exec --no-startup-id rofi-pass
-bindsym $mod+slash exec --no-startup-id rofi -show window
-
-bindsym $mod+BackSpace exec gnome-screensaver-command --lock
 
 # change focus
 bindsym $mod+h focus left
