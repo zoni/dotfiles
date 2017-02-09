@@ -36,7 +36,7 @@ help_color="#9FDCF7"
 
 # Clipboard settings
 # Possible options: primary, clipboard, both
-clip=primary
+clip=clipboard
 
 # Options for generating new password entries
 default_user=zoni
