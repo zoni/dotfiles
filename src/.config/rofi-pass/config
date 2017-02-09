@@ -32,7 +32,7 @@ notify='true'
 
 # color of the help messages
 # leave empty for autodetection
-help_color="#4872FF"
+help_color="#9FDCF7"
 
 # Clipboard settings
 # Possible options: primary, clipboard, both

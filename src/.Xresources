@@ -4,27 +4,11 @@ rofi.width:                          50
 rofi.lines:                          15
 rofi.columns:                        1
 rofi.font:                           Mono 12
-rofi.bg:                             #273133
-rofi.fg:                             #FDF6E3
-rofi.color-enabled:                  false
-rofi.color-normal:                   #fdf6e3,#002b36,#eee8d5,#586e75,#eee8d5
-rofi.color-urgent:                   #fdf6e3,#dc322f,#eee8d5,#dc322f,#fdf6e3
-rofi.color-active:                   #fdf6e3,#268bd2,#eee8d5,#268bd2,#fdf6e3
-rofi.color-window:                   #fdf6e3,#002b36
-rofi.bg-active:                      #343434
-rofi.bg-urgent:                      #DC322F
-rofi.hlbg-active:                    #FDF6E3
-rofi.hlbg-urgent:                    #FDF6E3
-rofi.fg-active:                      #FDF6E3
-rofi.fg-urgent:                      #FDF6E3
-rofi.hlfg-active:                    #343434
-rofi.hlfg-urgent:                    #DC322F
-rofi.fgalt:                          #FDF6E3
-// Selection:
-rofi.hlbg:                           #EEE8D5
-// Selection:
-rofi.hlfg:                           #586E75
-rofi.bc:                             #FDF6E3
+rofi.color-enabled:                  true
+rofi.color-window:                   #3a4a54, #000000, #c3c6c8
+rofi.color-normal:                   #4f6068, #fafbfc, #4f6068, #1573a7, #fafbfc
+rofi.color-active:                   #4f6068, #06a6f1, #4f6068, #009688, #fdf6e3
+rofi.color-urgent:                   #4f6068, #ff5252, #4f6068, #ff5252, #fdf6e3
 rofi.bw:                             1
 rofi.location:                       0
 rofi.padding:                        5
