@@ -17,9 +17,8 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-if [ -d "$HOME/Bin" ] ; then
-    PATH="$HOME/Bin:$PATH"
-fi
+. $HOME/.zsh/05-path.zsh
+. $HOME/.zsh/50-env.zsh
 
 if [ "$DESKTOP_SESSION" = "i3" ]; then
     export $(gnome-keyring-daemon --start --components=ssh,gpg,pkc11,secrets)

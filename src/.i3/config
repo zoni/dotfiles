@@ -41,6 +41,7 @@ bindsym $mod+q kill
 # Application launcher and window switcher.
 # See also: https://github.com/DaveDavenport/rofi
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="rofi -dmenu -i"
+bindsym $mod+p exec --no-startup-id rofi-pass
 bindsym $mod+slash exec --no-startup-id rofi -show window
 
 bindsym $mod+BackSpace exec gnome-screensaver-command --lock
@@ -90,10 +91,10 @@ bindsym $mod+f floating toggle
 #bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+p focus parent
+#bindsym $mod+p focus parent
 
 # focus the child container
-bindsym $mod+c focus child
+#bindsym $mod+c focus child
 
 # switch to workspace
 bindsym $mod+1 workspace $tag1
