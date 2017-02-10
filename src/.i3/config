@@ -295,7 +295,7 @@ mode "move-window" {
     bindsym Shift+l move output right; focus output right
 
     bindsym s move scratchpad; mode "default"
-    bindsym n exec --no-startup-id i3-msg "move container to workspace $(i3-next-available-workspace)"
+    bindsym n exec --no-startup-id i3-move-container-to-new-workspace-and-focus
 
     bindsym Return mode "default"
     bindsym Escape mode "default"

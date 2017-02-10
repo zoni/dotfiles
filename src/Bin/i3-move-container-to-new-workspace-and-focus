@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+NEW_WORKSPACE="$(i3-next-available-workspace)"
+i3-msg "move container to workspace ${NEW_WORKSPACE}"
+i3-msg "workspace ${NEW_WORKSPACE}"
