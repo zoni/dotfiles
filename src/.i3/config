@@ -186,7 +186,7 @@ mode "workspace" {
     bindsym j focus output down
     bindsym k focus output up
     bindsym l focus output right
-    bindsym n exec --no-startup-id i3-next-available-workspace
+    bindsym n exec --no-startup-id i3-msg workspace $(i3-next-available-workspace)
 
     bindsym Shift+h move workspace to output left
     bindsym Shift+j move workspace to output down
@@ -295,6 +295,7 @@ mode "move-window" {
     bindsym Shift+l move output right; focus output right
 
     bindsym s move scratchpad; mode "default"
+    bindsym n exec --no-startup-id i3-msg "move container to workspace $(i3-next-available-workspace)"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
