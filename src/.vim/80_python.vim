@@ -4,7 +4,7 @@ if has('python3')
 	let g:pymode_python = 'python3'
 endif
 
-let g:jedi#popup_on_dot = 1
+let g:jedi#popup_on_dot = 0
 let g:jedi#show_call_signatures = "1"
 let g:jedi#goto_command = "<leader>pg"
 let g:jedi#goto_assignments_command = "<leader>pa"
