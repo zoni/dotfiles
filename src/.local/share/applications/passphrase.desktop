@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Generate passphrase
+Exec=passphrase --interactive --clipboard
+Terminal=false
+Type=Application
