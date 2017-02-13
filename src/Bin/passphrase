@@ -48,7 +48,7 @@ help() {
 
 
 ask_word_count() {
-	echo -n "4\n5\n6\n7\n8" | rofi -dmenu -selected-row 2 -p "Passphrase word count: "
+	echo -n "4\n5\n6\n7\n8" | rofi -dmenu -selected-row 1 -p "Passphrase word count: "
 }
 
 OPTS=$(getopt -n $PROGRAM_NAME --options cw:d:lih --longoptions clipboard,wordcount:,delimiter:,count:,wordfile:,lowercase,interactive,help -- "$@")
