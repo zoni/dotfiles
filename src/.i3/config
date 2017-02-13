@@ -35,6 +35,7 @@ mouse_warping none
 mode "rofi" {
     bindsym a exec --no-startup-id rofi -i -show DRun; mode "default"
     bindsym p exec --no-startup-id rofi-pass; mode "default"
+    bindsym d exec --no-startup-id toggle-external-display; mode "default"
     bindsym slash exec --no-startup-id rofi -show window; mode "default"
 
     bindsym Return mode "default"
