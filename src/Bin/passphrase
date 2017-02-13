@@ -28,6 +28,7 @@ PROGRAM_NAME="passphrase"
 CLIPBOARD=0
 WORDCOUNT=0
 PASSPHRASE_COUNT=0
+LOWERCASE=0
 INTERACTIVE=0
 DELIMITER="-"
 WORDFILE="$HOME/.config/passphrase/wordlist"
@@ -39,6 +40,7 @@ help() {
 	echo "-c|--clipboard        Copy generated passphrase to clipboard"
 	echo "-d|--delimiter        Delimiter to use between words"
 	echo "-w|--wordcount        Number of words to use"
+	echo "-l|--lowercase        Convert passphrase to all lowercase characters"
 	echo "-i|--interactive      Run interactively using rofi"
 	echo "--wordfile            Wordfile to use"
 	echo "--count               Number of passphrases to generate"
@@ -49,7 +51,7 @@ ask_word_count() {
 	echo -n "4\n5\n6\n7\n8" | rofi -dmenu -selected-row 2 -p "Passphrase word count: "
 }
 
-OPTS=$(getopt -n $PROGRAM_NAME --options cw:d:ih --longoptions clipboard,wordcount:,delimiter:,count:,wordfile:,interactive,help -- "$@")
+OPTS=$(getopt -n $PROGRAM_NAME --options cw:d:lih --longoptions clipboard,wordcount:,delimiter:,count:,wordfile:,lowercase,interactive,help -- "$@")
 [ $? = 0 ] || { echo "Error parsing arguments. Try $PROGRAM_NAME --help" ; exit 1; }
 
 eval set -- "$OPTS"
@@ -74,6 +76,10 @@ while true; do
 	--wordfile)
 		WORDFILE="$2"
 		shift 2; continue
+		;;
+	-l|--lowercase)
+		LOWERCASE=1
+		shift; continue
 		;;
 	-i|--interactive)
 		INTERACTIVE=1
@@ -110,7 +116,11 @@ if [ $PASSPHRASE_COUNT -eq 0 ]; then
 	fi
 fi
 
-PASSPHRASES=$(xkcdpass --numwords "$WORDCOUNT" --count "$PASSPHRASE_COUNT" --wordfile "$WORDFILE" --delimiter "$DELIMITER")
+PASSPHRASES=$(xkcdpass --numwords "$WORDCOUNT" --count "$PASSPHRASE_COUNT" --wordfile "$WORDFILE" --delimiter "$DELIMITER" --valid-chars '[A-Za-z0-9]' --min 1 --max 15)
+
+if [ $LOWERCASE -eq 1 ]; then
+	PASSPHRASES=$(echo "$PASSPHRASES" | tr '[:upper:]' '[:lower:]')
+fi
 
 if [ $INTERACTIVE -eq 1 -a $PASSPHRASE_COUNT -ne 1 ]; then
 	PASSPHRASES=$(echo "$PASSPHRASES" | rofi -dmenu -no-custom -p "Select passphrase: ")
