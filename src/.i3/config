@@ -32,16 +32,17 @@ floating_modifier $mod
 focus_follows_mouse no
 mouse_warping none
 
-mode "rofi" {
+mode "run" {
     bindsym a exec --no-startup-id rofi -i -show DRun; mode "default"
     bindsym p exec --no-startup-id rofi-pass; mode "default"
     bindsym d exec --no-startup-id toggle-external-display; mode "default"
+    bindsym w exec --no-startup-id dex ~/.local/share/applications/vimwiki.desktop; mode "default"
     bindsym slash exec --no-startup-id rofi -show window; mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+space mode "rofi"
+bindsym $mod+space mode "run"
 
 bindsym $mod+q kill
 bindsym $mod+BackSpace exec gnome-screensaver-command --lock
