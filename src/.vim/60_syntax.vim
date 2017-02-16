@@ -15,3 +15,7 @@ augroup filetypedetect
 	" over the Debian/Ubuntu provided yaml.vim on these distributions.
 	au BufNewFile,BufRead *.yaml,*.yml     source ~/.vim/extra/yaml.vim
 augroup END
+
+augroup filetypesyntaxopts
+	au BufNewFile,BufRead *.yaml,*.yml     setlocal shiftwidth=2
+augroup END
