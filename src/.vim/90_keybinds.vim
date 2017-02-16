@@ -54,3 +54,6 @@ map <Leader>w :call OpenURL()<CR>
 " vim-easymotion bindings
 map s <Plug>(easymotion-prefix)
 map ss <Plug>(easymotion-bd-w)
+
+" Markdown preview
+let vim_markdown_preview_hotkey='<leader>mp'
