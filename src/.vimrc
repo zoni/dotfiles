@@ -27,6 +27,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vimwiki/vimwiki'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'vim-scripts/SearchComplete'
@@ -44,6 +45,7 @@ source ~/.vim/70_ctrlp.vim
 source ~/.vim/70_searchreplace.vim
 source ~/.vim/70_gundo.vim
 source ~/.vim/70_syntastic.vim
+source ~/.vim/70_wiki.vim
 source ~/.vim/80_python.vim
 source ~/.vim/80_golang.vim
 source ~/.vim/85_functions.vim
