@@ -20,6 +20,9 @@ set numberwidth=4       " Use at least this many columns for the line numbers
 set list
 set listchars=tab:>.,trail:.,extends:\#,nbsp:.
 
+" Highlight current line
+set cursorline
+
 let g:airline_powerline_fonts = 1
 let g:airline_theme = "papercolor"
 let g:airline#extensions#tabline#enabled = 1
