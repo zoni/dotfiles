@@ -3,10 +3,6 @@ set nospell             " Spell breaks many color schemes
 set backspace=eol,start,indent " Allow backspacing over beginning of line, indent, etc.
 set ai                  " Always set auto-indenting on
 set history=50          " keep 50 lines of command history
-set ruler               " Show the cursor position all the time
-set relativenumber      " Number lines relative to the current line
-set number              " Display line numbers (on the left-hand side) by default
-set numberwidth=4       " Use at least this many columns for the line numbers
 set viminfo='20,\"500   " Keep a .viminfo file.
 set foldmethod=marker   " Use manual fold markers as default fold method
 set foldlevelstart=99   " Don't fold anything by default
@@ -22,10 +18,6 @@ set hidden              " Allow switching buffers without saving
 set backupdir=$HOME/.vimbackup/
 set directory=$HOME/.vimswap/
 set viewdir=$HOME/.vimviews/
-
-" Highlight problematic whitespace
-set list
-set listchars=tab:>.,trail:.,extends:\#,nbsp:.
 
 " Don't use Ex mode, use Q for formatting
 map Q gq

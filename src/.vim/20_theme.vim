@@ -10,6 +10,16 @@ if has("gui_running")
     set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
 endif
 
+" Display line numbers
+set ruler               " Show the cursor position all the time
+set relativenumber      " Number lines relative to the current line
+set number              " Display line numbers (on the left-hand side) by default
+set numberwidth=4       " Use at least this many columns for the line numbers
+
+" Highlight problematic whitespace
+set list
+set listchars=tab:>.,trail:.,extends:\#,nbsp:.
+
 let g:airline_powerline_fonts = 1
 let g:airline_theme = "papercolor"
 let g:airline#extensions#tabline#enabled = 1
