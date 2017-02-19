@@ -7,6 +7,7 @@ endif
 " Syntax highlighting overrides - These take precedence over autodetection
 " (setf)
 augroup filetypedetect
+	au!
 	au BufNewFile,BufRead *.lsl            set filetype=lsl
 	au BufNewFile,BufRead Vagrantfile      set filetype=ruby
 
@@ -17,5 +18,6 @@ augroup filetypedetect
 augroup END
 
 augroup filetypesyntaxopts
-	au BufNewFile,BufRead *.yaml,*.yml     setlocal shiftwidth=2
+	au!
+	au FileType yaml     setlocal shiftwidth=2
 augroup END

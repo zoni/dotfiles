@@ -30,17 +30,19 @@ set wildignore=.pyc,.swp,.swo
 " remaining possibilities in a list
 set wildmode=longest,list
 
-" Automatically saves views on exit, load on open
-au BufWinLeave ?+ mkview
-au BufWinEnter ?+ silent loadview
 
-" Quit vim when only a NERDTree window remains open
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+augroup views
+	au!
+	" Automatically saves views on exit, load on open
+	au BufWinLeave ?+ mkview
+	au BufWinEnter ?+ silent loadview
 
-" Jump to last cursor position when opening new files
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
+	" Quit vim when only a NERDTree window remains open
+	"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+	" Jump to last cursor position when opening new files
+	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+augroup END
 
 " Disable potentially unsafe modelines, use ciaranm/securemodelines
 set nomodeline

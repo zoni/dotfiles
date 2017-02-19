@@ -18,10 +18,12 @@ let g:SimpylFold_docstring_preview = 0
 let g:SimpylFold_fold_docstring = 1
 let g:SimpylFold_fold_import = 1
 
-autocmd FileType python setlocal completeopt-=preview
-autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
-autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
-
+augroup pythonau
+	au!
+	au FileType python setlocal completeopt-=preview
+	au BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+	au BufWinLeave *.py setlocal foldexpr< foldmethod<
+augroup END
 
 " {{{ Custom functions (python 3)
 if has('python3')

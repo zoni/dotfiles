@@ -1,8 +1,11 @@
-autocmd FileType go nmap <leader>gt <Plug>(go-test)
-autocmd FileType go nmap <leader>gb <Plug>(go-build)
-autocmd FileType go nmap <Leader>gc <Plug>(go-coverage-toggle)
-autocmd FileType go nmap <Leader>gi <Plug>(go-info)
-autocmd FileType go nmap <Leader>gr :GoRename<CR>
+augroup golang
+	au!
+	au FileType go nmap <leader>gt <Plug>(go-test)
+	au FileType go nmap <leader>gb <Plug>(go-build)
+	au FileType go nmap <Leader>gc <Plug>(go-coverage-toggle)
+	au FileType go nmap <Leader>gi <Plug>(go-info)
+	au FileType go nmap <Leader>gr :GoRename<CR>
+augroup END
 
 let g:go_auto_type_info = 0
 let g:go_auto_sameids = 1
