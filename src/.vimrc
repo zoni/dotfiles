@@ -18,6 +18,7 @@ Plug 'majutsushi/tagbar'  " note: lazy-loading this doesn't work with vim-airlin
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'reedes/vim-pencil'
+Plug 'rodjek/vim-puppet'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree',  { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
@@ -27,12 +28,12 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vimwiki/vimwiki'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'vim-scripts/SearchComplete'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'vim-syntastic/syntastic'
+Plug 'vimwiki/vimwiki'
 
 source ~/.vim/10_general.vim
 source ~/.vim/11_yankring.vim
