@@ -357,6 +357,7 @@ set $tag0 "0"
 # {{{ Window rules
 
 for_window [class="Guake"] floating enable
+for_window [class="Zeegaree.py"] floating enable
 assign [class="Thunderbird"] $tag2
 
 # }}}
