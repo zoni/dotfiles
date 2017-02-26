@@ -4,7 +4,7 @@
   },
   "default_minute": 0,
   "encrypt": false,
-  "linewrap": 79,
+  "linewrap": 100,
   "editor": "vim",
   "timeformat": "%a %b %d %Y, %I:%M %p:",
   "default_hour": 9,
