@@ -14,4 +14,7 @@ let g:vimwiki_folding = 'expr'
 augroup wiki
 	au!
 	au BufNewFile,BufRead */.vimwiki/* setlocal shiftwidth=2 et tw=74 spell spelllang=en_us
+	au BufWinEnter */.vimwiki/diary/diary.md VimwikiDiaryGenerateLinks
+	au BufWinEnter */.vimwiki/diary/diary.md write
+	au BufNewFile */.vimwiki/diary/*.md put! =strftime('# %A %B %d %Y')
 augroup END
