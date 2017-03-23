@@ -26,3 +26,4 @@ alias unison="unison -ui text"
 alias notify-on-complete='notify-send --urgency=normal --icon ${${?/0/terminal}//<->*/error} "Command finished${${?/0/}//<->*/ with error}" ${history[$HISTCMD]%[;&|]*}'
 alias ssh-nomaster="ssh -S none"
 alias dotfiles.sh="dotfiles.sh --dotfiles-dir ~/.dotfiles"
+alias stream2chromecast="stream2chromecast -port 32872"
