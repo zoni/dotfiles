@@ -37,6 +37,7 @@ mode "run" {
     bindsym p exec --no-startup-id rofi-pass; mode "default"
     bindsym d exec --no-startup-id toggle-external-display; mode "default"
     bindsym w exec --no-startup-id dex ~/.local/share/applications/vimwiki.desktop; mode "default"
+    bindsym z exec --no-startup-id zeegaree; mode "default"
     bindsym slash exec --no-startup-id rofi -show window; mode "default"
 
     bindsym Return mode "default"
