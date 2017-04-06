@@ -2,6 +2,7 @@ set nocompatible
 
 call plug#begin('~/.vim-plugs')
 
+Plug 'airblade/vim-gitgutter'
 Plug 'ciaranm/securemodelines'
 Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
