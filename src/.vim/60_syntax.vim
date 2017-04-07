@@ -19,5 +19,7 @@ augroup END
 
 augroup filetypesyntaxopts
 	au!
-	au FileType yaml     setlocal shiftwidth=2
+	au FileType yaml       setlocal shiftwidth=2
+	au FileType markdown   setlocal et tw=74 spell
+	au FileType rst        setlocal et tw=74 spell
 augroup END
