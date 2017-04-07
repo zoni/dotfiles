@@ -7,6 +7,9 @@ let g:vimwiki_list = [{
 	\ 'auto_tags': 1,
 	\ }]
 
+" https://github.com/vimwiki/vimwiki/issues/95
+let g:vimwiki_global_ext = 0
+
 let g:vimwiki_hl_headers = 1
 let g:vimwiki_hl_cb_checked = 2
 let g:vimwiki_folding = 'expr'
