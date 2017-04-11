@@ -6,6 +6,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ciaranm/securemodelines'
 Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'dhruvasagar/vim-table-mode'
 Plug 'dkarter/bullets.vim'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'  " note: lazy-loading caused issues with definition highlights
