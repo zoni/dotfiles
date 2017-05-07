@@ -1,3 +1,4 @@
+let mapleader = "\<Space>"
 set nocompatible        " Use Vim defaults (much better!)
 set nospell             " Spell breaks many color schemes
 set backspace=eol,start,indent " Allow backspacing over beginning of line, indent, etc.
