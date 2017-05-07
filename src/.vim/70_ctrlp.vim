@@ -1,6 +1,9 @@
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_clear_cache_on_exit = 0
 
+" Include current file in listing
+let g:ctrlp_match_current_file = 1
+
 nnoremap <silent> <leader>p :CtrlP<CR>
 
 if executable('ag')
