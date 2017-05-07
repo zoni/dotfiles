@@ -14,6 +14,9 @@ set whichwrap=b,s,h,l,<,>,[,] " Backspace and cursor keys also wrap to next/prev
 set scrolljump=1        " Scroll this many lines when cursor leaves screen
 set scrolloff=5         " Leave this many lines visible above/below cursor
 set hidden              " Allow switching buffers without saving
+set showcmd             " Show (partial) command in the last line of the screen
+set splitbelow
+set splitright
 
 " Locations of backups/views/etc
 set backupdir=$HOME/.vimbackup/
