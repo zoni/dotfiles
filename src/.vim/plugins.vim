@@ -131,4 +131,5 @@ augroup END
 
 " {{{ Bufexplorer
 let g:bufExplorerDefaultHelp=0
+let g:bufExplorerDisableDefaultKeyMapping=1
 " }}}

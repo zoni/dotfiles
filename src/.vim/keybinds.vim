@@ -1,4 +1,4 @@
-" vim: fm=marker
+" vim: foldmethod=marker
 
 " {{{ General
 " Map jj to Escape in insert mode. :)
@@ -54,6 +54,17 @@ endfunction
 " Close buffer
 "nmap <silent> <C-c> <Esc>:bdelete<CR>
 nnoremap <silent> <C-c> <Esc>:bprevious\|bdelete #<CR>
+
+nnoremap <leader>bc :bprevious\|bdelete #<CR>
+nnoremap <leader>bC :bprevious\|bdelete! #<CR>
+nnoremap <leader>be :Explore<CR>
+nnoremap <leader>bE :edit .<CR>
+nnoremap <leader>bb :BufExplorer<CR>
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprevious<CR>
+nnoremap <leader>bs :split<CR>:BufExplorer<CR>
+nnoremap <leader>bv :vsplit<CR>:BufExplorer<CR>
+nnoremap <leader>bw :w<CR>
 " }}}
 
 " {{{ Plugin toggles
