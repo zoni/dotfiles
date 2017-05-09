@@ -142,3 +142,9 @@ augroup netrwau
 	au FileType netrw setlocal cursorline nolist
 augroup END
 " }}}
+
+" {{{ Supertab
+" Let SuperTab try to determine best completion type automatically based on
+" text preceding the cursor.
+let g:SuperTabDefaultCompletionType = "context"
+" }}}

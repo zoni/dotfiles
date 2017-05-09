@@ -24,9 +24,6 @@ set backupdir=$HOME/.vimbackup/
 set directory=$HOME/.vimswap/
 set viewdir=$HOME/.vimviews/
 
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
 " When doing tab completion, give the following files lower priority
 set suffixes+=.info,.aux,.log,.dvi,.bbl,.out,.o,.lo
 " And ignore these entirely
@@ -35,15 +32,11 @@ set wildignore=.pyc,.swp,.swo
 " remaining possibilities in a list
 set wildmode=longest,list
 
-
 augroup views
 	au!
 	" Automatically saves views on exit, load on open
 	au BufWinLeave ?+ mkview
 	au BufWinEnter ?+ silent loadview
-
-	" Quit vim when only a NERDTree window remains open
-	"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 	" Jump to last cursor position when opening new files
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -63,7 +56,3 @@ let g:secure_modelines_allowed_items = [
     \ "rightleft",   "rl",   "norightleft", "norl"
     \ ]
 let g:secure_modelines_verbose = 1
-
-" Let SuperTab try to determine best completion type automatically based on
-" text preceding the cursor.
-let g:SuperTabDefaultCompletionType = "context"

@@ -13,6 +13,9 @@ nnoremap k gk
 vnoremap < <gv
 vnoremap > >gv 
 
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
 xmap . <Plug>(expand_region_expand)
 xmap , <Plug>(expand_region_shrink)
 " }}}
@@ -58,11 +61,13 @@ endfunction
 "nmap <silent> <C-c> <Esc>:bdelete<CR>
 nnoremap <silent> <C-c> <Esc>:bprevious\|bdelete #<CR>
 
+nnoremap <leader>bb :BufExplorer<CR>
 nnoremap <leader>bc :bprevious\|bdelete #<CR>
 nnoremap <leader>bC :bprevious\|bdelete! #<CR>
-nnoremap <leader>be :Explore<CR>
 nnoremap <leader>bE :edit .<CR>
-nnoremap <leader>bb :BufExplorer<CR>
+nnoremap <leader>be :Explore<CR>
+nnoremap <leader>bla :set norelativenumber<CR>
+nnoremap <leader>blr :set relativenumber<CR>
 nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bp :bprevious<CR>
 nnoremap <leader>bs :split<CR>:BufExplorer<CR>
