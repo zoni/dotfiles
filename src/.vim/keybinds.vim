@@ -12,6 +12,9 @@ nnoremap k gk
 " visual shifting (does not exit Visual mode)
 vnoremap < <gv
 vnoremap > >gv 
+
+xmap . <Plug>(expand_region_expand)
+xmap , <Plug>(expand_region_shrink)
 " }}}
 
 " {{{ Windows
