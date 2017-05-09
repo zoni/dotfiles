@@ -133,3 +133,12 @@ augroup END
 let g:bufExplorerDefaultHelp=0
 let g:bufExplorerDisableDefaultKeyMapping=1
 " }}}
+
+" {{{ Netrw
+let g:netrw_liststyle = 1
+
+augroup netrwau
+	au!
+	au FileType netrw setlocal cursorline nolist
+augroup END
+" }}}
