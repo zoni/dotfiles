@@ -14,6 +14,7 @@ Plug 'fs111/pydoc.vim', { 'for': 'python' }
 Plug 'godlygeek/tabular'
 Plug 'jamessan/vim-gnupg'
 Plug 'jamshedvesuna/vim-markdown-preview', { 'for': 'markdown' }
+Plug 'jlanzarotta/bufexplorer'
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
 Plug 'kshenoy/vim-signature'
 Plug 'lokaltog/vim-easymotion'
@@ -40,21 +41,16 @@ Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'vim-syntastic/syntastic'
 Plug 'vimwiki/vimwiki'
 
-source ~/.vim/10_general.vim
-source ~/.vim/11_yankring.vim
-source ~/.vim/20_theme.vim
-source ~/.vim/30_formatting.vim
-source ~/.vim/40_quirks.vim
-source ~/.vim/50_gui.vim
-source ~/.vim/60_syntax.vim
-source ~/.vim/70_ctrlp.vim
-source ~/.vim/70_searchreplace.vim
-source ~/.vim/70_gundo.vim
-source ~/.vim/70_syntastic.vim
-source ~/.vim/70_wiki.vim
-source ~/.vim/80_python.vim
-source ~/.vim/80_golang.vim
-source ~/.vim/85_functions.vim
-source ~/.vim/90_keybinds.vim
+source ~/.vim/general.vim
+source ~/.vim/yankring.vim
+source ~/.vim/functions.vim
+source ~/.vim/theme.vim
+source ~/.vim/formatting.vim
+source ~/.vim/quirks.vim
+source ~/.vim/gui.vim
+source ~/.vim/syntax.vim
+source ~/.vim/plugins.vim
+source ~/.vim/searchreplace.vim
+source ~/.vim/keybinds.vim
 
 call plug#end()

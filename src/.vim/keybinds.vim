@@ -1,3 +1,6 @@
+" vim: fm=marker
+
+" {{{ General
 " Map jj to Escape in insert mode. :)
 inoremap jj <Esc>
 
@@ -9,7 +12,38 @@ nnoremap k gk
 " visual shifting (does not exit Visual mode)
 vnoremap < <gv
 vnoremap > >gv 
+" }}}
 
+" {{{ Windows
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
+nnoremap <leader>wH <C-w>H
+nnoremap <leader>wJ <C-w>J
+nnoremap <leader>wK <C-w>K
+nnoremap <leader>wL <C-w>L
+nnoremap <leader>ws <C-w>s
+nnoremap <leader>wv <C-w>v
+nnoremap <leader>wn <C-w>n
+nnoremap <leader>wc <C-w>c
+nnoremap <leader>wq <C-w>q
+nnoremap <leader>wo <C-w>o
+nnoremap <leader>wp <C-w>p
+nnoremap <leader>wP <C-w>P
+nnoremap <leader>wr <C-w>r
+nnoremap <leader>wR <C-w>R
+nnoremap <leader>wx <C-w>x
+nnoremap <leader>w= <C-w>=
+nnoremap <leader>w- <C-w>-
+nnoremap <leader>w+ <C-w>+
+nnoremap <leader>w< <C-w><
+nnoremap <leader>w> <C-w>>
+"nnoremap <leader>w_ <C-w>_
+"nnoremap <leader>w| <C-w>|
+" }}}
+
+" {{{ Buffers
 " YankRing overrides a few keymaps if we try to set them the usual way
 function! YRRunAfterMaps()
 	" Open next buffer
@@ -20,20 +54,25 @@ endfunction
 " Close buffer
 "nmap <silent> <C-c> <Esc>:bdelete<CR>
 nnoremap <silent> <C-c> <Esc>:bprevious\|bdelete #<CR>
+" }}}
 
+" {{{ Plugin toggles
 " Toggle taglist
 nmap <silent> <leader>t :TagbarToggle<CR>
 " Show the YankRing
 nmap <silent> <leader>yr :YRShow<CR>
+" }}}
 
-" Folding
+" {{{ Folding
 nnoremap <leader>fm :set foldmethod=marker<CR>
 nnoremap <leader>fM :set foldmethod=manual<CR>
 nnoremap <leader>fi :set foldmethod=indent<CR>
 nnoremap <leader>fe :set foldmethod=expr<CR>
 nnoremap <leader>fs :set foldmethod=syntax<CR>
 nnoremap <leader>fd :set foldmethod=diff<CR>
+" }}}
 
+" {{{ Misc
 " Try to write file using sudo when using double !
 cmap w!! w !sudo tee % >/dev/null
 
@@ -58,3 +97,4 @@ let vim_markdown_preview_hotkey='<leader>mp'
 " Fix arrow keys while searching if having SearchComplete plugin installed
 cnoremap <silent> <Esc>[A <Esc>[A
 cnoremap <silent> <Esc>[B <Esc>[B
+" }}}

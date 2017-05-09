@@ -13,6 +13,7 @@ let g:vimwiki_global_ext = 0
 let g:vimwiki_hl_headers = 1
 let g:vimwiki_hl_cb_checked = 2
 let g:vimwiki_folding = 'expr'
+let g:vimwiki_map_prefix = '<Leader>m'
 
 augroup wiki
 	au!

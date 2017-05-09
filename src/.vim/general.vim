@@ -17,6 +17,7 @@ set hidden              " Allow switching buffers without saving
 set showcmd             " Show (partial) command in the last line of the screen
 set splitbelow
 set splitright
+set timeoutlen=2500     " Timeout for key sequences. Default is 1000ms.
 
 " Locations of backups/views/etc
 set backupdir=$HOME/.vimbackup/
