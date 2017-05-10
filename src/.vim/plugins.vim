@@ -61,7 +61,7 @@ let g:vimwiki_map_prefix = '<Leader>m'
 
 augroup wiki
 	au!
-	au BufNewFile,BufRead */.vimwiki/* setlocal shiftwidth=2 et tw=74 spell spelllang=en_us
+	au BufNewFile,BufRead */.vimwiki/* setlocal shiftwidth=2 et tw=74 spell spelllang=en_us nowrap
 	au BufWinEnter */.vimwiki/diary/diary.md VimwikiDiaryGenerateLinks
 	au BufWinEnter */.vimwiki/diary/diary.md write
 	au BufNewFile */.vimwiki/diary/*.md put! =strftime('# %A %B %d %Y')
