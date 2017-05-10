@@ -1,7 +1,7 @@
 " vim: foldmethod=marker
 
 " {{{ Open URL
-command -bar -nargs=1 OpenURL :!xdg-open <args>
+command! -bar -nargs=1 OpenURL :!xdg-open <args>
 function! OpenURL()
 let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
 echo s:uri

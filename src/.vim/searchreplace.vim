@@ -8,7 +8,7 @@ set incsearch
 
 if executable('ag')
 	set grepprg=ag\ --hidden\ --nogroup\ --nocolor
-	command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+	command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 endif
 
 " Search for word under cursor
