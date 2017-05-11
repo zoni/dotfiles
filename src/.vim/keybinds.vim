@@ -91,6 +91,19 @@ nnoremap <leader>fs :set foldmethod=syntax<CR>
 nnoremap <leader>fd :set foldmethod=diff<CR>
 " }}}
 
+" {{{ Git
+nnoremap <leader>rc :Gcommit<Space>
+nnoremap <leader>rd :Gdiff<CR>
+nnoremap <leader>rb :Gblame<CR>
+nnoremap <expr> <leader>rg ":Ggrep! " . input("Git grep: ") . "<CR>:copen<CR>"
+nnoremap <leader>rr :Git<Space>
+nnoremap <leader>rp :Gpull<Space>
+nnoremap <leader>rP :Gpush<Space>
+nnoremap <leader>rf :Gfetch<CR>
+nnoremap <leader>rl :Glog! --<CR>:copen<CR>
+nnoremap <leader>rs :Gstatus<CR>
+" }}}
+
 " {{{ Misc
 " Try to write file using sudo when using double !
 cmap w!! w !sudo tee % >/dev/null
