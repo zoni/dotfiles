@@ -36,6 +36,7 @@ nnoremap <leader>wc <C-w>c
 nnoremap <leader>wq <C-w>q
 nnoremap <leader>wo <C-w>o
 nnoremap <leader>wp <C-w>p
+nnoremap <leader><tab> <C-w>p
 nnoremap <leader>wP <C-w>P
 nnoremap <leader>wr <C-w>r
 nnoremap <leader>wR <C-w>R
