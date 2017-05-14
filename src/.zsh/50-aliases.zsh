@@ -5,7 +5,14 @@ function treeless() {
 }
 alias tl="treeless"
 
-alias ls="ls --color=auto"
+case $(uname -s) in
+	Linux)
+		alias ls="ls --color=auto"
+		;;
+	FreeBSD)
+		alias ls="ls -G"
+		;;
+esac
 alias l="ls -h"
 alias la="ls -hA"
 alias ll="ls -hl"
