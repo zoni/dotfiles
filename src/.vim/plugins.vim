@@ -116,7 +116,7 @@ let g:SimpylFold_fold_import = 1
 if has('python3')
 	nmap <leader>mrb :py3 RemoveBreakpoints()<CR>
 	nmap <leader>msb :py3 SetBreakpoint()<CR>
-elseif
+elseif has('python')
 	nmap <leader>mrb :python RemoveBreakpoints()<CR>
 	nmap <leader>msb :python SetBreakpoint()<CR>
 endif
