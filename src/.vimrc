@@ -27,8 +27,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'terryma/vim-expand-region'
 Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
