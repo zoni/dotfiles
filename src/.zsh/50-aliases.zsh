@@ -10,7 +10,7 @@ case $(uname -s) in
 		alias ls="ls --color=auto"
 		;;
 	FreeBSD)
-		alias ls="ls -G"
+		alias ls="ls -G -I"
 		;;
 esac
 alias l="ls -h"
