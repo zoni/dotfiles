@@ -106,6 +106,7 @@ nnoremap <leader>rp :Gpull<Space>
 nnoremap <leader>rr :Git<Space>
 nnoremap <leader>rs :silent !tig status<CR>:redraw!<CR>
 nnoremap <leader>rt :silent !tig<CR>:redraw!<CR>
+nnoremap <leader>rw :Gwrite<CR>
 " }}}
 
 " {{{ Misc
