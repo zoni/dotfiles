@@ -1,0 +1,5 @@
+source ~/.mutt/common
+source ~/.mutt/keybindings
+source ~/.mutt/crypto
+source ~/.mutt/colors
+source ~/.mutt/account

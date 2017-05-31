@@ -1,0 +1,32 @@
+#	Account config
+#
+# Reply with same from name and from email as the one
+# specified in the email that's being replied to
+set reverse_name=yes
+set reverse_realname=yes
+set from="nick@groenen.me"
+set realname="Nick Groenen"
+# When replying use same From: for new message as To: 
+# in original message if To is in alternates
+alternates "nick@groenen.me"
+# Set default account on all folders
+folder-hook     .               'set record="^"'
+folder-hook     .               'set realname="Nick Groenen"'
+folder-hook     .               'set from="nick@groenen.me"'
+folder-hook     .               'set signature="~/.signature"'
+folder-hook     .               'set pgp_autosign'
+
+
+
+#	Mailbox config
+#
+set folder="imaps://zoni:__PASSWORD__@mail.groenen.me"
+set mask="!^\\.[^.]"
+mailboxes !
+set record="+Sent"
+set postponed="+Drafts"
+set spoolfile="+INBOX"
+set smtp_url = "smtp://zoni:__PASSWORD__@mail.groenen.me:587"
+
+set imap_list_subscribed
+set imap_check_subscribed

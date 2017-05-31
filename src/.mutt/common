@@ -1,0 +1,130 @@
+# Reset everything to defaults so configuration is
+# not influenced by system wide settings in any way
+reset all
+unhook *
+
+set quit=ask-yes
+#	Message display options
+#
+# Sort by message threads in index
+set sort=threads 
+#set sort_browser=reverse-date # showing mbox list default to newest first
+# Show threads with youngest message last
+set sort_aux=last-date-sent
+#set index_format="%4C %Z %d %n  %s"
+set index_format="%4C %Z %d %-23.23n %s"
+unset hidden_host	# when set, skip the host name part of hostname
+unset hide_limited	# don't hide presence of missing messages in thread
+unset hide_missing	# don'thide messages hidden by limit in thread
+unset hide_top_limited	# don't hide hide missing messages at top of thread
+unset hide_top_missing	# hide messages hidden by limit at top of thread
+#set markers=no                          #no + on wrapped lines
+# Default list of header fields to weed out when displaying mail
+# Ignore them all and then unignore what you want to see
+ignore *
+unignore  Date To From Cc Subject X-Mailer Organization User-Agent X-Spam-Status Return-Path
+hdr_order Date From Organization Cc To Subject X-Spam-Status X-Mailer User-Agent Return-Path
+
+set folder_format="%C %t%N %F %-8.8u %-8.8g %8s %d %f"
+# %C current number	%d last modified	%f filename
+# # %F permissions	%g group		%l number of hard links
+# # %N "N" if new mail	%s size in bytes	%t "*" if tagged
+# # %u owner name		%>X right justify the rest and pad with "X"
+# # %|X pad to the end of the line with character "X"
+set date_format="%Y-%m-%d %H:%M:%S"
+
+# Use external program for text/html emails
+auto_view text/html
+# Prefer plaintext over html
+alternative_order text/plain text/html
+# Make message-thread trees narrow
+#set narrow_tree
+# Don't jump to the next message when reaching bottom of current
+# one in pager
+set pager_stop
+# Add Mail-Followup-To header
+set followup_to
+# Don't hide message subject in threads
+unset hide_thread_subject
+# Display messages as scrollable list instead of separate pages
+set menu_scroll
+
+# activate TLS if available on the server
+set ssl_starttls=yes
+# always use TLS when connecting to a server
+set ssl_force_tls=yes
+
+#	Compose options
+#
+# Don't (ask to) abort on empty subject & unmodified message
+unset abort_nosubject
+unset abort_unmodified
+# Allow editing headers during composition
+set edit_headers = yes
+# Quote message when replying
+set include=yes
+# Compose reply without prompting
+set fast_reply=yes
+# When forwarding, Subject is Fwd: oldsubject
+set forward_format="Fwd: %s"
+
+
+#	Sidebar options
+#
+# set up the sidebar, default visible
+set sidebar_width=25
+set sidebar_visible=no
+set sidebar_divider_char = '|'
+# color of folders with new mail 
+#color sidebar_new yellow default
+set sidebar_short_path = yes
+set sidebar_delim_chars = '/.'
+set sidebar_folder_indent = yes
+set sidebar_indent_string = '  '
+set sidebar_next_new_wrap = yes
+set sidebar_sort_method = 'unsorted'
+
+# Open last email on entering folder
+folder-hook . 'exec last-entry'
+
+#	Search options
+#
+# Wrap searches from top/bottom
+set wrap_search
+
+#	Remaining options
+#
+# Make folder switching faster
+set sleep_time = 0
+# Action with messages marked for deletion
+set delete=ask-no
+# Don't ask to recall messages by default
+set recall=no
+# Beep on error
+set beep=yes
+# Beep on new mail
+set beep_new=yes
+# Never move messages off the server
+set move=no
+set mail_check=30
+# Execute mail_check after this many seconds of keyboard inactivity
+set timeout=30
+# Check for new mail in open mailbox (mbox/maildir only)
+set check_new
+# Don't mark messages as old
+unset mark_old
+# No signature dashes
+set sig_dashes="no"
+# Cache locations
+set header_cache=$HOME/.muttcache/
+set message_cachedir=$HOME/.muttcache/
+#set alias_file=~/.muttalias
+#source ~/.muttalias
+set query_command = "abook --mutt-query '%s'"
+# Don't save outgoing attachments
+unset fcc_attach
+unset confirmappend
+
+# Aggressive keepalives to prevent imap connection being closed
+# by crappy NAT routers
+set imap_keepalive=60

@@ -34,8 +34,9 @@ mouse_warping none
 
 mode "run" {
     bindsym a exec --no-startup-id rofi -i -show DRun; mode "default"
-    bindsym p exec --no-startup-id rofi-pass; mode "default"
     bindsym d exec --no-startup-id toggle-external-display; mode "default"
+    bindsym m exec --no-startup-id i3-sensible-terminal -x mutt -n; mode "default"
+    bindsym p exec --no-startup-id rofi-pass; mode "default"
     bindsym w exec --no-startup-id dex ~/.local/share/applications/vimwiki.desktop; mode "default"
     bindsym z exec --no-startup-id zeegaree; mode "default"
     bindsym slash exec --no-startup-id rofi -show window; mode "default"
