@@ -1,37 +1,34 @@
-# ctrl-j/ctrl-k to select next/prev sidebar folder
-# ctrl-o to open selected folder
+macro index b '<enter-command>toggle sidebar_visible<enter>'
+macro pager b '<enter-command>toggle sidebar_visible<enter>'
+bind index B bounce-message
+
 bind index \CK sidebar-prev
 bind index \CJ sidebar-next
 bind index \CO sidebar-open
+
 bind pager \CK sidebar-prev
 bind pager \CJ sidebar-next
 bind pager \CO sidebar-open
-bind pager h display-toggle-weed        #toggle headers with h key
-# j/k for next/previous line
+
+bind pager h display-toggle-weed
 bind pager k previous-line
 bind pager j next-line
+
 bind index j next-entry
 bind index k previous-entry
-# h/l for prev/next message
-#bind pager h previous-entry
-#bind pager l next-entry
-# Show the incoming mailboxes list (just like "mutt -y") and back when pressing "y"
-macro index,pager y "<change-folder>?<toggle-mailboxes>" "show incoming mailboxes list"
+
+macro index,pager y "<change-folder>?<toggle-mailboxes>" "display mailboxes"
 bind browser y exit
-# Jump to next unread mail(box)
+
 bind index,pager u next-unread
 bind index,pager U next-unread-mailbox
-# Query on tab
+
 bind editor \t complete-query
-# Add sender to abook on A
+
 macro index,pager A "<pipe-message>abook --add-email<return>" "add the sender address to abook"
+
 macro index,pager d "s=Trash/\n" "move message to trash"
-macro index,pager a "s=Archive/\n" "move message to archive"
-macro index,pager C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
-macro index,pager M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+macro index,pager a "s=Archives/`date +%Y`\n" "move message to archive"
+macro index,pager C "<copy-message>?<toggle-mailboxes>" "copy message"
+macro index,pager M "<save-message>?<toggle-mailboxes>" "move message"
 macro index,pager S "s=Spam/ToReport/\n" "move message to spam"
-# b toggles sidebar visibility
-macro index b '<enter-command>toggle sidebar_visible<enter>'
-macro pager b '<enter-command>toggle sidebar_visible<enter>'
-# Remap bounce-message function to "B"
-bind index B bounce-message

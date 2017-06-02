@@ -1,76 +1,72 @@
-# color terminals:
-# (default, white, black, green, magenta, blue, cyan, yellow, red)
-# (bright...)
-# (color1,color2,...,colorN-1)
-#
-#     object	 foreground	background
-#
-#color normal	 default	default	# normal text
-#color indicator	 brightyellow	red	# actual message
-#color tree	 brightmagenta	default	# thread arrows
-#color status	 brightgreen	blue	# status line
-#color error	 brightred	default	# errors
-#color message	 red		default	# info messages
-#color signature	 red		default	# signature
-#color attachment brightyellow	red	# MIME attachments
-#color search	 brightyellow	red	# search matches
-#color tilde	 brightmagenta	default	# ~ at bottom of msg
-#color markers	 red		default	# + at beginning of wrapped lines
-#color hdrdefault blue		default	# default header lines
-#color bold	 red		default	# hiliting bold patterns in body
-#color underline	 green		default	# hiliting underlined patterns in body
-#color quoted	 blue		default	# quoted text
-#color quoted1	 magenta	default
-#color quoted2	 red		default
-#color quoted3	 green		default
-#color quoted4	 cyan		default
-#color quoted5	 blue		default
-#color quoted6	 magenta	default
-#color quoted7	 red		default
-#color quoted8	 green		default
-#color quoted9	 cyan		default
-#
-#     object	 foreground backg.   RegExp
-#
-#color header	 red	    default  "^(from|subject):"
-#color body	 cyan	    default  "((ftp|http|https)://|news:)[^ >)\"\t]+"
-#color body	 cyan	    default  "((ftp|http|https)://|(file|news):|www\\.)[-a-z0-9_.:]*[a-z0-9](/[^][{} \t\n\r\"<>()]*[^][{} \t\n\r\"<>().,:!])?/?"
-#color body	 cyan	    default  "[-a-z_0-9.+]+@[-a-z_0-9.]+"
-#color body	 red	    default  "(^| )\\*[-a-z0-9????*]+\\*[,.?]?[ \n]"
-#color body	 green	    default  "(^| )_[-a-z0-9????_]+_[,.?]?[ \n]"
-#color body	 red	    default  "(^| )\\*[-a-z0-9*]+\\*[,.?]?[ \n]"
-#color body	 green	    default  "(^| )_[-a-z0-9_]+_[,.?]?[ \n]"
-#color	index		red		default	"~N|~O"
+#color  normal      default        default
+#color  indicator   brightyellow   red
+#color  tree        brightmagenta  default
+#color  status      brightgreen    blue
+#color  error       brightred      default
+#color  message     red            default
+#color  signature   red            default
+#color  attachment  brightyellow   red
+#color  search      brightyellow   red
+#color  tilde       brightmagenta  default
+#color  markers     red            default
+#color  hdrdefault  blue           default
+#color  bold        red            default
+#color  underline   green          default
+#color  quoted      blue           default
+#color  quoted1     magenta        default
+#color  quoted2     red            default
+#color  quoted3     green          default
+#color  quoted4     cyan           default
+#color  quoted5     blue           default
+#color  quoted6     magenta        default
+#color  quoted7     red            default
+#color  quoted8     green          default
+#color  quoted9     cyan           default
 
-#color	normal	 	white 		default	# normal text
-color 	index  		cyan		default  "~N|~O"    # New
-color 	index		yellow		default  ~D         # Deleted
-color 	index		yellow		default  "~G~D"     # Deleted encrypted
-color 	index		yellow		default  "~g~D"     # Deleted signed
-color 	index		green		default  ~G         # Encrypted
-color 	index		cyan		default  "~G~N"     # Encrypted new
-color 	index		green		default  ~g         # Signed
-color 	index		cyan 		default  "~g~N"     # Signed new
-color	index		red		default	 ~F	    # Flagged
-color	index		brightred	default	 "~F~N"	    # Flagged new
-color	quoted		brightcyan  	default
-color	quoted1		brightyellow  	default
-color	hdrdefault 	cyan 	default
-color	header		brightyellow	default	"^(From|To):"
-color	header		brightgreen		default	"^(Subject|Date):"
-color	sidebar_new	cyan		 default
-color	error		red		default
-color	signature	magenta		default
-# Color links
-#color	body		magenta		default  "((ftp|http|https)://|news:)[^ >)\"\t]+"
-color	body		magenta		default  "<URL:[^>]+>|(finger|ftp|https?|news|telnet):[^ >)\"\t]+|www\\.([[:alnum:]][-.]?)+(:[[:digit:]]+)?(/[-_./~#[:alnum:]]*(\\?[^ >)\"\t]*)?)?"
-# Color email adresses
-color	body		magenta		default  "[-a-z_0-9.]+@[-a-z_0-9.]+"
-color	body		red		default  "BAYES_99|BAYES_95|BAYES_999"
-color	body		yellow		default  "PYZOR_CHECK"
-#color 	body      	brightgreen	default "^(gpg: )?Good signature"
-#color 	body      	brightgreen	default "^(gpg: )?encrypted"
-#color 	body      	brightred	default "^(gpg: )?Bad signature"
-#color 	body      	red		default "^(gpg: )?warning:"
-#color 	body      	red		default "^(gpg: ).*failed:"
+color   normal       color249      color235
+color   message      color231      color235
+color   status       color234      color252
+color   error        red           color235
+#color   sidebar_new  cyan          color235
+color   indicator    color234      color252
+#color   indicator    brightwhite   color235
+color   tree         color249      color235            # Threading arrows
 
+color   index        color249      color235  " "       # Message default
+color   index        brightwhite   color235  "~N|~O"   # New
+color   index        color240       color235  ~D        # Deleted
+color   index        color240       color235  "~G~D"    # Deleted encrypted
+color   index        color240       color235  "~g~D"    # Deleted signed
+#color   index        green         color235  ~G        # Encrypted
+#color   index        cyan          color235  "~G~N"    # Encrypted new
+#color   index        green         color235  ~g        # Signed
+#color   index        cyan          color235  "~g~N"    # Signed new
+color   index        red           color235  ~F        # Flagged
+color   index        brightred     color235  "~F~N"    # Flagged new
+
+color   body         color253      color235  "."
+# Note: tilde is the pager area below a message.
+color   tilde        color231      color235
+#color   markers      color235      default
+color   quoted       brightcyan    color235
+color   quoted1      brightyellow  color235
+
+color   hdrdefault   cyan          color235
+color   header       brightyellow  color235  "^(From|To):"
+color   header       brightgreen   color235  "^(Subject|Date):"
+color   signature    magenta       color235
+
+# Color links and email addresses
+color   body         color33       color235 "<URL:[^>]+>|(finger|ftp|https?|news|telnet):[^ >)\"\t]+|www\\.([[:alnum:]][-.]?)+(:[[:digit:]]+)?(/[-_./~#[:alnum:]]*(\\?[^ >)\"\t]*)?)?"
+color   body         color33       color235 "[-a-z_0-9.]+@[-a-z_0-9.]+"
+
+# Color spam markers
+color   body        red         color235 "BAYES_99|BAYES_95|BAYES_999"
+color   body        yellow      color235 "PYZOR_CHECK"
+
+# Color PGP markers
+#color  body        brightgreen default "^(gpg: )?Good signature"
+#color  body        brightgreen default "^(gpg: )?encrypted"
+#color  body        brightred   default "^(gpg: )?Bad signature"
+#color  body        red     default "^(gpg: )?warning:"
+#color  body        red     default "^(gpg: ).*failed:"
