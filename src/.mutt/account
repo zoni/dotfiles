@@ -14,7 +14,7 @@ folder-hook     .               'set pgp_autosign'
 set folder="imaps://zoni:__PASSWORD__@mail.groenen.me"
 set mask="!^\\.[^.]"
 mailboxes !
-set record="+Sent"
 set postponed="+Drafts"
 set spoolfile="+INBOX"
+set trash="+Trash"
 set smtp_url = "smtp://zoni:__PASSWORD__@mail.groenen.me:587"

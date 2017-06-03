@@ -1,34 +1,47 @@
-macro index b '<enter-command>toggle sidebar_visible<enter>'
-macro pager b '<enter-command>toggle sidebar_visible<enter>'
-bind index B bounce-message
+bind generic,alias,attach,browser,index,pager,pgp,smime,postpone ? noop
+bind generic,alias,attach,browser,index,pager,pgp,smime,postpone <f1> help
 
-bind index \CK sidebar-prev
-bind index \CJ sidebar-next
-bind index \CO sidebar-open
+bind  browser              y    exit
+bind  editor               \t   complete-query
+bind  index                G    last-entry
+bind  index                Z    collapse-all
+bind  index                \CN  toggle-new
+bind  index                gg   first-entry
+bind  index                h    noop
+bind  index                j    next-entry
+bind  index                k    previous-entry
+bind  index                z    collapse-thread
+bind  index,pager          \CJ  sidebar-next
+bind  index,pager          \CK  sidebar-prev
+bind  index,pager          \CO  sidebar-open
+bind  index,pager          d    delete-message
+bind  index,pager          gu   next-unread-mailbox
+bind  index,pager          u    next-unread
+bind  index,pager          va   view-attachments
+bind  index,pager          vu   view-attachments
+bind  index,pager,attach   ra   group-reply
+bind  index,pager,attach   rb   bounce-message
+bind  index,pager,attach   rl   list-reply
+bind  index,pager,attach   rr   reply
+bind  index,pager,browser  /    search
+bind  index,pager,browser  ?    search-reverse
+bind  index,pager,browser  N    search-opposite
+bind  index,pager,browser  n    search-next
+bind  pager                h    display-toggle-weed
+bind  pager                j    next-line
+bind  pager                k    previous-line
 
-bind pager \CK sidebar-prev
-bind pager \CJ sidebar-next
-bind pager \CO sidebar-open
-
-bind pager h display-toggle-weed
-bind pager k previous-line
-bind pager j next-line
-
-bind index j next-entry
-bind index k previous-entry
-
-macro index,pager y "<change-folder>?<toggle-mailboxes>" "display mailboxes"
-bind browser y exit
-
-bind index,pager u next-unread
-bind index,pager U next-unread-mailbox
-
-bind editor \t complete-query
-
-macro index,pager A "<pipe-message>abook --add-email<return>" "add the sender address to abook"
-
-macro index,pager d "s=Trash/\n" "move message to trash"
-macro index,pager a "s=Archives/`date +%Y`\n" "move message to archive"
-macro index,pager C "<copy-message>?<toggle-mailboxes>" "copy message"
-macro index,pager M "<save-message>?<toggle-mailboxes>" "move message"
-macro index,pager S "s=Spam/ToReport/\n" "move message to spam"
+macro  attach,compose  vu  "<pipe-entry> urlscan<Enter>" "view URLs"
+macro  index,pager     A   "<pipe-message>abook --add-email<return>" "add the sender address to abook"
+macro  index,pager     C   "<copy-message>?<toggle-mailboxes>" "copy message"
+macro  index,pager     M   "<save-message>?<toggle-mailboxes>" "move message"
+macro  index,pager     S   "s=Spam/ToReport/\n" "move message to spam"
+macro  index,pager     a   "s=Archives/`date +%Y`\n" "move message to archive"
+macro  index,pager     b   "<enter-command>toggle sidebar_visible<enter>"
+macro  index,pager     d   "s=Trash/\n" "move message to trash"
+macro  index,pager     ga  "<change-folder> +Archives/`date +%Y`\n" "goto archives"
+macro  index,pager     gd  "<change-folder> +Drafts\n" "goto drafts"
+macro  index,pager     gi  "<change-folder> !\n" "goto inbox"
+macro  index,pager     gt  "<change-folder> +Trash\n" "goto trash"
+macro  index,pager     vu  "<pipe-message> urlscan<Enter>" "view URLs"
+macro  index,pager     y   "<change-folder>?<toggle-mailboxes>" "display mailboxes"
