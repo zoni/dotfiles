@@ -41,8 +41,8 @@ color   index        color240       color235  "~g~D"    # Deleted signed
 #color   index        cyan          color235  "~G~N"    # Encrypted new
 #color   index        green         color235  ~g        # Signed
 #color   index        cyan          color235  "~g~N"    # Signed new
-color   index        red           color235  ~F        # Flagged
-color   index        brightred     color235  "~F~N"    # Flagged new
+color   index        color178      color235  ~F        # Flagged
+color   index        color178      color235  "~F~N"    # Flagged new
 
 color   body         color253      color235  "."
 # Note: tilde is the pager area below a message.
