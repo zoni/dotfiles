@@ -4,8 +4,8 @@ bind generic,alias,attach,browser,index,pager,pgp,smime,postpone <f1> help
 bind  browser              y    exit
 bind  editor               \t   complete-query
 bind  index                G    last-entry
+bind  index                N    toggle-new
 bind  index                Z    collapse-all
-bind  index                \CN  toggle-new
 bind  index                gg   first-entry
 bind  index                h    noop
 bind  index                j    next-entry
@@ -25,23 +25,27 @@ bind  index,pager,attach   rl   list-reply
 bind  index,pager,attach   rr   reply
 bind  index,pager,browser  /    search
 bind  index,pager,browser  ?    search-reverse
-bind  index,pager,browser  N    search-opposite
+bind  index,pager,browser  \CN  search-opposite
 bind  index,pager,browser  n    search-next
 bind  pager                h    display-toggle-weed
 bind  pager                j    next-line
 bind  pager                k    previous-line
 
-macro  attach,compose  vu  "<pipe-entry> urlscan<Enter>" "view URLs"
-macro  index,pager     A   "<pipe-message>abook --add-email<return>" "add the sender address to abook"
-macro  index,pager     C   "<copy-message>?<toggle-mailboxes>" "copy message"
-macro  index,pager     M   "<save-message>?<toggle-mailboxes>" "move message"
-macro  index,pager     S   "s=Spam/ToReport/\n" "move message to spam"
-macro  index,pager     a   "s=Archives/`date +%Y`\n" "move message to archive"
+macro  attach,compose  vu  "<pipe-entry> urlscan<Enter>"              "view URLs"
+macro  index,pager     A   "<pipe-message>abook --add-email<return>"  "add the sender address to abook"
+macro  index,pager     C   "<copy-message>?<toggle-mailboxes>"        "copy message"
+macro  index,pager     M   "<save-message>?<toggle-mailboxes>"        "move message"
+macro  index,pager     S   "s=Spam/ToReport/\n"                       "move message to spam"
+macro  index,pager     a   "s=Archives/`date +%Y`\n"                  "move message to archive"
 macro  index,pager     b   "<enter-command>toggle sidebar_visible<enter>"
-macro  index,pager     d   "s=Trash/\n" "move message to trash"
-macro  index,pager     ga  "<change-folder> +Archives/`date +%Y`\n" "goto archives"
-macro  index,pager     gd  "<change-folder> +Drafts\n" "goto drafts"
-macro  index,pager     gi  "<change-folder> !\n" "goto inbox"
-macro  index,pager     gt  "<change-folder> +Trash\n" "goto trash"
-macro  index,pager     vu  "<pipe-message> urlscan<Enter>" "view URLs"
-macro  index,pager     y   "<change-folder>?<toggle-mailboxes>" "display mailboxes"
+macro  index,pager     d   "s=Trash/\n"                               "move message to trash"
+macro  index,pager     ga  "<change-folder> +Archives/`date +%Y`\n"   "goto archives"
+macro  index,pager     gd  "<change-folder> +Drafts\n"                "goto drafts"
+macro  index,pager     gi  "<change-folder> !\n"                      "goto inbox"
+macro  index,pager     gt  "<change-folder> +Trash\n"                 "goto trash"
+macro  index,pager     vu  "<pipe-message> urlscan<Enter>"            "view URLs"
+macro  index,pager     y   "<change-folder>?<toggle-mailboxes>"       "display mailboxes"
+macro  index           lu  "<limit>~N|~O<enter>"                      "show only unread messages"
+macro  index           la  "<limit>all<enter>"                        "show all messages"
+macro  index           lf  "<limit>~F<enter>"                         "show flagged messages"
+macro  index           ll  "<limit>"                                  "limit messages"
