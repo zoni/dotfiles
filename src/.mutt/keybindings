@@ -31,6 +31,10 @@ bind  pager                h    display-toggle-weed
 bind  pager                j    next-line
 bind  pager                k    previous-line
 
+macro  index           la  "<limit>all<return>"                             "show all messages"
+macro  index           lf  "<limit>~F<return>"                              "show flagged messages"
+macro  index           ll  "<limit>"                                        "limit messages"
+macro  index           lu  "<limit>~N|~O<return>"                           "show only unread messages"
 macro  index,pager     A   "<pipe-message>abook --add-email<return>"        "add the sender address to abook"
 macro  index,pager     C   "<copy-message>?<toggle-mailboxes>"              "copy message"
 macro  index,pager     M   "<save-message>?<toggle-mailboxes>"              "move message"
@@ -43,10 +47,6 @@ macro  index,pager     gd  "<change-folder> +Drafts<return>"                "got
 macro  index,pager     gi  "<change-folder> !<return>"                      "goto inbox"
 macro  index,pager     gt  "<change-folder> +Trash<return>"                 "goto trash"
 macro  index,pager     y   "<change-folder>?<toggle-mailboxes>"             "display mailboxes"
-macro  index           lu  "<limit>~N|~O<return>"                           "show only unread messages"
-macro  index           la  "<limit>all<return>"                             "show all messages"
-macro  index           lf  "<limit>~F<return>"                              "show flagged messages"
-macro  index           ll  "<limit>"                                        "limit messages"
 
 macro  attach,compose  vu  "<enter-command>set pipe_decode<return><pipe-entry>urlscan<return><enter-command>unset pipe_decode<return><refresh>"    "view URLs"
 macro  index,pager     vu  "<enter-command>set pipe_decode<return><pipe-message>urlscan<return><enter-command>unset pipe_decode<return><refresh>"  "view URLs"
