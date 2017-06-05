@@ -31,21 +31,22 @@ bind  pager                h    display-toggle-weed
 bind  pager                j    next-line
 bind  pager                k    previous-line
 
-macro  attach,compose  vu  "<pipe-entry> urlscan<Enter>"              "view URLs"
 macro  index,pager     A   "<pipe-message>abook --add-email<return>"  "add the sender address to abook"
 macro  index,pager     C   "<copy-message>?<toggle-mailboxes>"        "copy message"
 macro  index,pager     M   "<save-message>?<toggle-mailboxes>"        "move message"
 macro  index,pager     S   "s=Spam/ToReport/\n"                       "move message to spam"
 macro  index,pager     a   "s=Archives/`date +%Y`\n"                  "move message to archive"
-macro  index,pager     b   "<enter-command>toggle sidebar_visible<enter>"
+macro  index,pager     b   "<enter-command>toggle sidebar_visible<return>"
 macro  index,pager     d   "s=Trash/\n"                               "move message to trash"
 macro  index,pager     ga  "<change-folder> +Archives/`date +%Y`\n"   "goto archives"
 macro  index,pager     gd  "<change-folder> +Drafts\n"                "goto drafts"
 macro  index,pager     gi  "<change-folder> !\n"                      "goto inbox"
 macro  index,pager     gt  "<change-folder> +Trash\n"                 "goto trash"
-macro  index,pager     vu  "<pipe-message> urlscan<Enter>"            "view URLs"
 macro  index,pager     y   "<change-folder>?<toggle-mailboxes>"       "display mailboxes"
-macro  index           lu  "<limit>~N|~O<enter>"                      "show only unread messages"
-macro  index           la  "<limit>all<enter>"                        "show all messages"
-macro  index           lf  "<limit>~F<enter>"                         "show flagged messages"
+macro  index           lu  "<limit>~N|~O<return>"                     "show only unread messages"
+macro  index           la  "<limit>all<return>"                       "show all messages"
+macro  index           lf  "<limit>~F<return>"                        "show flagged messages"
 macro  index           ll  "<limit>"                                  "limit messages"
+
+macro  attach,compose  vu  "<enter-command>set pipe_decode<return><pipe-entry>urlscan<return><enter-command>unset pipe_decode<return><refresh>"    "view URLs"
+macro  index,pager     vu  "<enter-command>set pipe_decode<return><pipe-message>urlscan<return><enter-command>unset pipe_decode<return><refresh>"  "view URLs"
