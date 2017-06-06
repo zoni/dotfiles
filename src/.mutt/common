@@ -29,6 +29,11 @@ set hide_missing
 unset hide_top_limited
 set hide_top_missing
 
+unset collapse_unread
+#set uncollapse_new  # Not yet supported by mutt in Ubuntu 16.10
+set uncollapse_jump
+folder-hook . 'push <collapse-all>'
+
 # Header display/sort order
 ignore *
 unignore  Date To From Cc Subject X-Mailer Organization User-Agent X-Spam-Status Return-Path
