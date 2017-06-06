@@ -54,11 +54,11 @@ color   quoted1      brightyellow  color235
 color   hdrdefault   cyan          color235
 color   header       brightyellow  color235  "^(From|To):"
 color   header       brightgreen   color235  "^(Subject|Date):"
-color   signature    magenta       color235
+color   signature    color245      color235
 
 # Color links and email addresses
-color   body         color33       color235 "<URL:[^>]+>|(finger|ftp|https?|news|telnet):[^ >)\"\t]+|www\\.([[:alnum:]][-.]?)+(:[[:digit:]]+)?(/[-_./~#[:alnum:]]*(\\?[^ >)\"\t]*)?)?"
-color   body         color33       color235 "[-a-z_0-9.]+@[-a-z_0-9.]+"
+color   body         color12       color235 "<URL:[^>]+>|(finger|ftp|https?|news|telnet):[^ >)\"\t]+|www\\.([[:alnum:]][-.]?)+(:[[:digit:]]+)?(/[-_./~#[:alnum:]]*(\\?[^ >)\"\t]*)?)?"
+color   body         color12       color235 "[-a-z_0-9.]+@[-a-z_0-9.]+"
 
 # Color spam markers
 color   body        red         color235 "BAYES_99|BAYES_95|BAYES_999"
