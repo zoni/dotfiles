@@ -3,3 +3,4 @@ source ~/.mutt/keybindings
 source ~/.mutt/crypto
 source ~/.mutt/colors
 source ~/.mutt/account
+source ~/.mutt/misc
