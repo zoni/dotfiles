@@ -97,7 +97,7 @@ set timeout=30
 # Don't mark messages as old
 
 unset mark_old
-unset sig_dashes
+set sig_dashes
 
 set header_cache=$HOME/.muttcache/
 set message_cachedir=$HOME/.muttcache/
