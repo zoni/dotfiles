@@ -34,6 +34,7 @@ bind  pager                k    previous-line
 macro  index           la  "<limit>all<return>"                             "show all messages"
 macro  index           lf  "<limit>~F<return>"                              "show flagged messages"
 macro  index           ll  "<limit>"                                        "limit messages"
+macro  index           lt  "<limit>~T<return>"                              "show all tagged messages"
 macro  index           lu  "<limit>~N|~O<return>"                           "show only unread messages"
 macro  index,pager     A   "<pipe-message>abook --add-email<return>"        "add the sender address to abook"
 macro  index,pager     C   "<copy-message>?<toggle-mailboxes>"              "copy message"
