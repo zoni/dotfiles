@@ -9,6 +9,6 @@ if [ -e "/usr/bin/lesspipe" ]; then
 	export LESSCLOSE='/usr/bin/lesspipe %s %s'
 fi
 
-if [ -n TERMINATOR_UUID ]; then
+if [ -n "$TERMINATOR_UUID" -a -z "$TMUX" ]; then
 	export TERM=xterm-256color
 fi
