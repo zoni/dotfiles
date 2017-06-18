@@ -7,6 +7,7 @@ endif
 " Syntax highlighting overrides - These take precedence over autodetection
 " (setf)
 augroup filetypedetect
+	au!
 	au BufNewFile,BufRead *.lsl            set filetype=lsl
 	au BufNewFile,BufRead Vagrantfile      set filetype=ruby
 
@@ -14,4 +15,11 @@ augroup filetypedetect
 	" what may be installed already on this system. Ensures this is picked
 	" over the Debian/Ubuntu provided yaml.vim on these distributions.
 	au BufNewFile,BufRead *.yaml,*.yml     source ~/.vim/extra/yaml.vim
+augroup END
+
+augroup filetypesyntaxopts
+	au!
+	au FileType yaml       setlocal shiftwidth=2
+	au FileType markdown   setlocal et tw=74 spell
+	au FileType rst        setlocal et tw=74 spell
 augroup END

@@ -1,0 +1,145 @@
+#!/bin/sh
+
+# Diceware-like passphrase generator powered by xkcdpass.
+#
+# Copyright 2017 Nick Groenen <nick@groenen.me>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to
+# deal in the Software without restriction, including without limitation the
+# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+# sell copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+# IN THE SOFTWARE.
+
+set -e
+
+PROGRAM_NAME="passphrase"
+CLIPBOARD=0
+WORDCOUNT=0
+PASSPHRASE_COUNT=0
+LOWERCASE=0
+INTERACTIVE=0
+DELIMITER="-"
+WORDFILE="$HOME/.config/passphrase/wordlist"
+
+help() {
+	echo "Usage: ${PROGRAM_NAME} [-c|--clipboard] [-d|--delimiter] [-w|--wordcount]"
+	echo "                  [-i|--interactive] [--wordfile] [--count]"
+	echo
+	echo "-c|--clipboard        Copy generated passphrase to clipboard"
+	echo "-d|--delimiter        Delimiter to use between words"
+	echo "-w|--wordcount        Number of words to use"
+	echo "-l|--lowercase        Convert passphrase to all lowercase characters"
+	echo "-i|--interactive      Run interactively using rofi"
+	echo "--wordfile            Wordfile to use"
+	echo "--count               Number of passphrases to generate"
+}
+
+
+ask_word_count() {
+	echo -n "4\n5\n6\n7\n8" | rofi -dmenu -selected-row 1 -p "Passphrase word count: "
+}
+
+OPTS=$(getopt -n $PROGRAM_NAME --options cw:d:lih --longoptions clipboard,wordcount:,delimiter:,count:,wordfile:,lowercase,interactive,help -- "$@")
+[ $? = 0 ] || { echo "Error parsing arguments. Try $PROGRAM_NAME --help" ; exit 1; }
+
+eval set -- "$OPTS"
+while true; do
+	case $1 in
+	-c|--clipboard)
+		CLIPBOARD=1
+		shift; continue
+		;;
+	-d|--delimiter)
+		DELIMITER="$2"
+		shift 2; continue
+		;;
+	-w|--wordcount)
+		WORDCOUNT="$2"
+		shift 2; continue
+		;;
+	--count)
+		PASSPHRASE_COUNT="$2"
+		shift 2; continue
+		;;
+	--wordfile)
+		WORDFILE="$2"
+		shift 2; continue
+		;;
+	-l|--lowercase)
+		LOWERCASE=1
+		shift; continue
+		;;
+	-i|--interactive)
+		INTERACTIVE=1
+		shift; continue
+		;;
+	-h|--help)
+		help
+		exit 0
+		;;
+	--)
+		# No more arguments to parse
+		shift; break
+		;;
+	*)
+		echo "Error: Unknown option $1"
+		exit 1
+		;;
+	esac
+done
+
+if [ $WORDCOUNT -eq 0 ]; then
+	if [ $INTERACTIVE -eq 1 ]; then
+		WORDCOUNT=$(ask_word_count)
+	else
+		WORDCOUNT=6
+	fi
+fi
+
+if [ $PASSPHRASE_COUNT -eq 0 ]; then
+	if [ $INTERACTIVE -eq 1 ]; then
+		PASSPHRASE_COUNT=15
+	else
+		PASSPHRASE_COUNT=1
+	fi
+fi
+
+PASSPHRASES=$(xkcdpass --numwords "$WORDCOUNT" --count "$PASSPHRASE_COUNT" --wordfile "$WORDFILE" --delimiter "$DELIMITER" --valid-chars '[A-Za-z0-9]' --min 1 --max 15)
+
+if [ $LOWERCASE -eq 1 ]; then
+	PASSPHRASES=$(echo "$PASSPHRASES" | tr '[:upper:]' '[:lower:]')
+fi
+
+if [ $INTERACTIVE -eq 1 -a $PASSPHRASE_COUNT -ne 1 ]; then
+	PASSPHRASES=$(echo "$PASSPHRASES" | rofi -dmenu -no-custom -p "Select passphrase: ")
+	PASSPHRASE_COUNT=1
+fi
+
+if [ $CLIPBOARD -eq 1 ]; then
+	if [ $PASSPHRASE_COUNT -eq 1 ]; then
+		# Single passphrase - omit trailing newline so only password itself is passed on
+		echo -n "$PASSPHRASES" | xclip -selection clipboard
+	else
+		echo "$PASSPHRASES" | xclip -selection clipboard
+	fi
+else
+	if [ ! -t 1 -a $PASSPHRASE_COUNT -eq 1 ]; then
+		# Piped output and single passphrase - omit trailing newline so only
+		# password itself is passed on.
+		echo -n "$PASSPHRASES"
+	else
+		echo "$PASSPHRASES"
+	fi
+fi

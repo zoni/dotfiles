@@ -20,6 +20,8 @@
 	verbose = true
 [clean]
 	requireForce = false
+[core]
+	excludesfile = ~/.gitignore
 [merge]
 	tool = vimdiff
 	keepbackup = false

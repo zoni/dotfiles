@@ -1,27 +1,17 @@
 " vim: foldmethod=marker
 
-if has('python3')
-	let g:pymode_python = 'python3'
-endif
-
-let g:jedi#popup_on_dot = 1
-let g:jedi#show_call_signatures = "1"
-let g:jedi#goto_command = "<leader>pg"
-let g:jedi#goto_assignments_command = "<leader>pa"
-let g:jedi#goto_definitions_command = "gd"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>pu"
-let g:jedi#completions_command = ""
-let g:jedi#rename_command = "<leader>pr"
-
-let g:SimpylFold_docstring_preview = 0
-let g:SimpylFold_fold_docstring = 1
-let g:SimpylFold_fold_import = 1
-
-autocmd FileType python setlocal completeopt-=preview
-autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
-autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
-
+" {{{ Open URL
+command! -bar -nargs=1 OpenURL :!xdg-open <args>
+function! OpenURL()
+let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
+echo s:uri
+if s:uri != ""
+    exec "!xdg-open \"" . s:uri . "\""
+  else
+    echo "No URI found in line."
+  endif
+endfunction
+" }}}
 
 " {{{ Custom functions (python 3)
 if has('python3')
@@ -77,13 +67,12 @@ def RemoveBreakpoints():
             nCurrentLine -= 1
 
     vim.command( "normal %dG" % nCurrentLine)
-
 EOF
-nmap <leader>cbp :py3 RemoveBreakpoints()<CR>
-nmap <leader>bp :py3 SetBreakpoint()<CR>
+endif
 " }}}
+
 " {{{ Custom functions (python 2)
-elseif has('python')
+if has('python')
 
 " Execute a selection of code
 " Use VISUAL to select a range and then hit ctrl-e to execute it.
@@ -137,9 +126,6 @@ def RemoveBreakpoints():
             nCurrentLine -= 1
 
     vim.command( "normal %dG" % nCurrentLine)
-
 EOF
-nmap <leader>cbp :python RemoveBreakpoints()<CR>
-nmap <leader>bp :python SetBreakpoint()<CR>
 endif
 " }}}

@@ -21,3 +21,5 @@ set formatoptions=cqrtj
 
 " Enable plugin-provided indent settings
 filetype plugin indent on
+
+let g:bullets_enabled_file_types = ['markdown', 'text', 'gitcommit', 'rst']
