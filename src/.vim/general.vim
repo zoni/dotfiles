@@ -53,6 +53,7 @@ let g:secure_modelines_allowed_items = [
     \ "filetype",    "ft",
     \ "foldmethod",  "fdm",
     \ "readonly",    "ro",   "noreadonly", "noro",
-    \ "rightleft",   "rl",   "norightleft", "norl"
+    \ "rightleft",   "rl",   "norightleft", "norl",
+    \ "spell", "nospell",
     \ ]
 let g:secure_modelines_verbose = 1
