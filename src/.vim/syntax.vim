@@ -22,4 +22,14 @@ augroup filetypesyntaxopts
 	au FileType yaml       setlocal shiftwidth=2
 	au FileType markdown   setlocal et tw=74 spell
 	au FileType rst        setlocal et tw=74 spell
+	au FileType rst        call SetSyntasticCheckerForSphinxProjects()
 augroup END
+
+function! SetSyntasticCheckerForSphinxProjects()
+	let buf = bufnr('')
+	let config = syntastic#util#findFileInParent('conf.py', fnamemodify(bufname(buf), ':p:h'))
+	if config ==# '' || !filereadable(config)
+		return
+	endif
+	let g:syntastic_rst_checkers = ['sphinx']
+endfunction
