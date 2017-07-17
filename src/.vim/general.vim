@@ -42,18 +42,21 @@ augroup views
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 augroup END
 
-" Disable potentially unsafe modelines, use ciaranm/securemodelines
+" Disable potentially unsafe modelines (via ciaranm/securemodelines)
 set nomodeline
 let g:secure_modelines_allowed_items = [
-    \ "textwidth",   "tw",
-    \ "softtabstop", "sts",
-    \ "tabstop",     "ts",
-    \ "shiftwidth",  "sw",
     \ "expandtab",   "et",   "noexpandtab", "noet",
     \ "filetype",    "ft",
+    \ "foldlevel", "fdl",
+    \ "foldlevelstart", "fdls",
+    \ "foldmarker", "fmr",
     \ "foldmethod",  "fdm",
     \ "readonly",    "ro",   "noreadonly", "noro",
     \ "rightleft",   "rl",   "norightleft", "norl",
+    \ "shiftwidth",  "sw",
+    \ "softtabstop", "sts",
     \ "spell", "nospell",
+    \ "tabstop",     "ts",
+    \ "textwidth",   "tw",
     \ ]
 let g:secure_modelines_verbose = 1
