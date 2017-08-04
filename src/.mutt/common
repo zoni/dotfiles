@@ -94,9 +94,13 @@ set check_new
 set mail_check=30
 # Execute mail_check after this many seconds of keyboard inactivity
 set timeout=30
-# Don't mark messages as old
 
+set mail_check_stats
+set mail_check_stats_interval = 600
+
+# Don't mark messages as old
 unset mark_old
+unset mail_check_recent
 set sig_dashes
 
 set header_cache=$HOME/.muttcache/
