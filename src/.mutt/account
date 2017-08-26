@@ -11,10 +11,10 @@ folder-hook     .               'set signature="~/.signature"'
 folder-hook     .               'set pgp_autosign'
 
 
-set folder="imaps://zoni:__PASSWORD__@mail.groenen.me"
+set folder="imaps://nick:__PASSWORD__@mail.groenen.me"
 set mask="!^\\.[^.]"
 mailboxes !
 set postponed="+Drafts"
 set spoolfile="+INBOX"
 set trash="+Trash"
-set smtp_url = "smtp://zoni:__PASSWORD__@mail.groenen.me:587"
+set smtp_url = "smtp://nick:__PASSWORD__@mail.groenen.me:587"
