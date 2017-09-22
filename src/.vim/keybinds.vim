@@ -78,9 +78,10 @@ nnoremap <leader>bw :w<CR>
 
 " {{{ Plugin toggles
 " Toggle taglist
-nmap <silent> <leader>t :TagbarToggle<CR>
+nnoremap <silent> <leader>t :TagbarToggle<CR>
 " Show the YankRing
-nmap <silent> <leader>yr :YRShow<CR>
+nnoremap <silent> <leader>yr :YRShow<CR>
+nnoremap - :Explore<CR>
 " }}}
 
 " {{{ Folding
