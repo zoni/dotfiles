@@ -12,7 +12,7 @@ rofi.color-urgent:                   #4f6068, #ff5252, #4f6068, #ff5252, #fdf6e3
 rofi.bw:                             1
 rofi.location:                       0
 rofi.padding:                        5
-rofi.yoffset:                        0
+rofi.yoffset:                        -80
 rofi.xoffset:                        0
 rofi.fixed-num-lines:                false
 rofi.terminal:                       terminator
