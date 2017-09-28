@@ -1,56 +1,23 @@
-rofi.modi:                           window,run,ssh
-rofi.opacity:                        100
-rofi.width:                          50
-rofi.lines:                          15
-rofi.columns:                        1
-rofi.font:                           Mono 12
-rofi.color-enabled:                  true
-rofi.color-window:                   #3a4a54, #000000, #c3c6c8
-rofi.color-normal:                   #4f6068, #fafbfc, #4f6068, #1573a7, #fafbfc
-rofi.color-active:                   #4f6068, #06a6f1, #4f6068, #009688, #fdf6e3
-rofi.color-urgent:                   #4f6068, #ff5252, #4f6068, #ff5252, #fdf6e3
-rofi.bw:                             1
-rofi.location:                       0
-rofi.padding:                        5
-rofi.yoffset:                        -80
-rofi.xoffset:                        0
-rofi.fixed-num-lines:                false
-rofi.terminal:                       terminator
-rofi.ssh-client:                     ssh
-rofi.ssh-command:                    {terminal} -e {ssh-client} {host}
-rofi.run-command:                    {cmd}
-rofi.run-list-command:               
-rofi.run-shell-command:              {terminal} -e {cmd}
-rofi.disable-history:                false
-rofi.levenshtein-sort:               true
-rofi.case-sensitive:                 false
-rofi.sidebar-mode:                   false
-rofi.lazy-filter-limit:              5000
-rofi.eh:                             1
 rofi.auto-select:                    false
-rofi.parse-hosts:                    false
+rofi.bw:                             1
+rofi.case-sensitive:                 false
+rofi.color-active:                   #4f6068, #06a6f1, #4f6068, #009688, #fdf6e3
+rofi.color-enabled:                  true
+rofi.color-normal:                   #4f6068, #fafbfc, #4f6068, #1573a7, #fafbfc
+rofi.color-urgent:                   #4f6068, #ff5252, #4f6068, #ff5252, #fdf6e3
+rofi.color-window:                   #3a4a54, #000000, #c3c6c8
+rofi.columns:                        1
 rofi.combi-modi:                     window,run
+rofi.disable-history:                false
+rofi.eh:                             1
+rofi.fixed-num-lines:                false
+rofi.font:                           Mono 12
 rofi.fuzzy:                          false
-rofi.kb-primary-paste:               Control+Shift+v,Shift+Insert
-rofi.kb-secondary-paste:             Control+v,Insert
-rofi.kb-clear-line:                  Control+u
-rofi.kb-move-front:                  Control+a
-rofi.kb-move-end:                    Control+e
-rofi.kb-move-word-back:              Alt+b
-rofi.kb-move-word-forward:           Alt+f
-rofi.kb-move-char-back:              Left,Control+b
-rofi.kb-move-char-forward:           Right,Control+f
-rofi.kb-remove-word-back:            Control+Alt+h
-rofi.kb-remove-word-forward:         Control+Alt+d
-rofi.kb-remove-char-forward:         Delete,Control+d
-rofi.kb-remove-char-back:            BackSpace,Control+h
-rofi.kb-accept-entry:                Control+j,Control+m,Return,KP_Enter
 rofi.kb-accept-custom:               Control+Return
 rofi.kb-accept-entry-continue:       Shift+Return
-rofi.kb-mode-next:                   Shift+Right,Control+Tab
-rofi.kb-mode-previous:               Shift+Left,Control+Shift+Tab
-rofi.kb-toggle-case-sensitivity:     grave,dead_grave
-rofi.kb-delete-entry:                Shift+Delete
+rofi.kb-accept-entry:                Control+j,Control+m,Return,KP_Enter
+rofi.kb-cancel:                      Escape
+rofi.kb-clear-line:                  Control+u
 rofi.kb-custom-1:                    Alt+1
 rofi.kb-custom-2:                    Alt+2
 rofi.kb-custom-3:                    Alt+3
@@ -60,17 +27,50 @@ rofi.kb-custom-6:                    Alt+6
 rofi.kb-custom-7:                    Alt+7
 rofi.kb-custom-8:                    Alt+8
 rofi.kb-custom-9:                    Alt+9
-rofi.kb-row-left:                    Control+Page_Up
-rofi.kb-row-right:                   Control+Page_Down
-rofi.kb-row-up:                      Up,Control+p,Shift+Tab
-rofi.kb-row-down:                    Down,Control+n
-rofi.kb-row-tab:                     Tab
-rofi.kb-page-prev:                   Page_Up
+rofi.kb-delete-entry:                Shift+Delete
+rofi.kb-mode-next:                   Shift+Right,Control+Tab
+rofi.kb-mode-previous:               Shift+Left,Control+Shift+Tab
+rofi.kb-move-char-back:              Left,Control+b
+rofi.kb-move-char-forward:           Right,Control+f
+rofi.kb-move-end:                    Control+e
+rofi.kb-move-front:                  Control+a
+rofi.kb-move-word-back:              Alt+b
+rofi.kb-move-word-forward:           Alt+f
 rofi.kb-page-next:                   Page_Down
+rofi.kb-page-prev:                   Page_Up
+rofi.kb-primary-paste:               Control+Shift+v,Shift+Insert
+rofi.kb-remove-char-back:            BackSpace,Control+h
+rofi.kb-remove-char-forward:         Delete,Control+d
+rofi.kb-remove-word-back:            Control+Alt+h
+rofi.kb-remove-word-forward:         Control+Alt+d
+rofi.kb-row-down:                    Down,Control+n
 rofi.kb-row-first:                   Home,KP_Home
 rofi.kb-row-last:                    End,KP_End
+rofi.kb-row-left:                    Control+Page_Up
+rofi.kb-row-right:                   Control+Page_Down
 rofi.kb-row-select:                  Control+space
-rofi.kb-cancel:                      Escape
-rofi.key-window:                     
+rofi.kb-row-tab:                     Tab
+rofi.kb-row-up:                      Up,Control+p,Shift+Tab
+rofi.kb-secondary-paste:             Control+v,Insert
+rofi.kb-toggle-case-sensitivity:     grave,dead_grave
 rofi.key-run:                        
 rofi.key-ssh:                        
+rofi.key-window:                     
+rofi.lazy-filter-limit:              5000
+rofi.levenshtein-sort:               true
+rofi.lines:                          15
+rofi.location:                       0
+rofi.modi:                           window,run,ssh
+rofi.opacity:                        100
+rofi.padding:                        5
+rofi.parse-hosts:                    false
+rofi.run-command:                    {cmd}
+rofi.run-list-command:               
+rofi.run-shell-command:              {terminal} -e {cmd}
+rofi.sidebar-mode:                   false
+rofi.ssh-client:                     ssh
+rofi.ssh-command:                    {terminal} -e {ssh-client} {host}
+rofi.terminal:                       terminator
+rofi.width:                          50
+rofi.xoffset:                        0
+rofi.yoffset:                        -80
