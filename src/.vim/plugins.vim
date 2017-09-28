@@ -110,6 +110,7 @@ augroup END
 " {{{ Bufexplorer
 let g:bufExplorerDefaultHelp=0
 let g:bufExplorerDisableDefaultKeyMapping=1
+let g:bufExplorerSplitOutPathName=0
 " }}}
 
 " {{{ Netrw
