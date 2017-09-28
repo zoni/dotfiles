@@ -4,7 +4,6 @@ call plug#begin('~/.vim-plugs')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'ciaranm/securemodelines'
-Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dkarter/bullets.vim'
@@ -24,6 +23,7 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'reedes/vim-pencil'
 Plug 'rodjek/vim-puppet'
 Plug 'scrooloose/nerdcommenter'
+Plug 'shougo/denite.nvim'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'terryma/vim-expand-region'
 Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
@@ -50,7 +50,8 @@ source ~/.vim/quirks.vim
 source ~/.vim/gui.vim
 source ~/.vim/syntax.vim
 source ~/.vim/plugins.vim
-source ~/.vim/searchreplace.vim
 source ~/.vim/keybinds.vim
 
 call plug#end()
+
+source ~/.vim/post-plug-end.vim

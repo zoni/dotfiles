@@ -110,6 +110,15 @@ nnoremap <leader>rt :silent !tig<CR>:redraw!<CR>
 nnoremap <leader>rw :Gwrite<CR>
 " }}}
 
+" {{{ Denite
+nnoremap <silent> <leader>dF :DeniteBufferDir file_rec<CR>
+nnoremap <silent> <leader>db :Denite buffer<CR>
+nnoremap <silent> <leader>df :Denite `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+nnoremap <silent> <leader>dr :Denite register -mode=normal<CR>
+nnoremap <silent> <leader>* :DeniteCursorWord grep -mode=normal<CR>
+nnoremap <silent> <leader># :DeniteCursorWord grep -mode=normal<CR>
+" }}}
+
 " {{{ Misc
 " Try to write file using sudo when using double !
 cmap w!! w !sudo tee % >/dev/null

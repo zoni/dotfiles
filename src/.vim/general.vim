@@ -32,6 +32,15 @@ set wildignore=.pyc,.swp,.swo
 " remaining possibilities in a list
 set wildmode=longest,list
 
+set ignorecase  " Set case-insenitive searches
+set incsearch   " With search-as-you-type
+set scs         " Case-sensitive search when there are uppercase chars in pattern
+
+if executable('ag')
+	set grepprg=ag\ --hidden\ --nogroup\ --nocolor
+	command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+endif
+
 augroup views
 	au!
 	" Automatically saves views on exit, load on open
