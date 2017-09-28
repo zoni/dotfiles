@@ -7,6 +7,7 @@ Plug 'ciaranm/securemodelines'
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dkarter/bullets.vim'
+Plug 'dyng/ctrlsf.vim'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'  " note: lazy-loading caused issues with definition highlights
 Plug 'fs111/pydoc.vim', { 'for': 'python' }

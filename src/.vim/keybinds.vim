@@ -115,8 +115,6 @@ nnoremap <silent> <leader>dF :DeniteBufferDir file_rec<CR>
 nnoremap <silent> <leader>db :Denite buffer<CR>
 nnoremap <silent> <leader>df :Denite `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
 nnoremap <silent> <leader>dr :Denite register -mode=normal<CR>
-nnoremap <silent> <leader>* :DeniteCursorWord grep -mode=normal<CR>
-nnoremap <silent> <leader># :DeniteCursorWord grep -mode=normal<CR>
 " }}}
 
 " {{{ Misc
@@ -144,4 +142,11 @@ let vim_markdown_preview_hotkey='<leader>mp'
 " Fix arrow keys while searching if having SearchComplete plugin installed
 cnoremap <silent> <Esc>[A <Esc>[A
 cnoremap <silent> <Esc>[B <Esc>[B
+" }}}
+
+" {{{ ctrlsf.vim
+nmap <leader>/ <Plug>CtrlSFPrompt
+vmap <leader>/ <Plug>CtrlSFVwordExec
+nmap <leader>* <Plug>CtrlSFCwordPath<CR>
+nmap <leader># <Plug>CtrlSFCwordPath<CR>
 " }}}
