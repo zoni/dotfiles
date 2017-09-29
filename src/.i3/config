@@ -199,7 +199,7 @@ mode "workspace" {
     bindsym Shift+l move workspace to output right
 
     bindsym Tab workspace back_and_forth
-    bindsym r exec i3-input -P "Rename workspace to: " -F 'rename workspace to "%s"'; mode "default"
+    bindsym r exec i3-rename-workspace; mode "default"
     bindsym f focus mode_toggle; mode "default"
 
     bindsym Return mode "default"

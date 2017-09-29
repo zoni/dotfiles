@@ -1,0 +1,4 @@
+#!/bin/sh
+
+CURRENT_WORKSPACE=$(i3-msg -t get_workspaces | jq '.[] | select(.focused) | .num')
+i3-input -P "Rename workspace to: " -F "rename workspace to \"${CURRENT_WORKSPACE}: %s\""
