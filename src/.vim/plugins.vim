@@ -130,6 +130,9 @@ let g:SuperTabDefaultCompletionType = "context"
 
 " {{{ Denite
 " See also ~/.vim/post-plug-end.vim
-
 hi link deniteMatchedChar Special
+" }}}
+
+" {{{ vim-swoop
+let g:swoopUseDefaultKeyMap = 0
 " }}}

@@ -144,9 +144,12 @@ cnoremap <silent> <Esc>[A <Esc>[A
 cnoremap <silent> <Esc>[B <Esc>[B
 " }}}
 
-" {{{ ctrlsf.vim
+" {{{ Searching
 nmap <leader>/ <Plug>CtrlSFPrompt
 vmap <leader>/ <Plug>CtrlSFVwordExec
 nmap <leader>* <Plug>CtrlSFCwordPath<CR>
 nmap <leader># <Plug>CtrlSFCwordPath<CR>
+
+nmap <leader>? :Swoop!
+vmap <leader>? :call SwoopMultiSelection()<CR>
 " }}}
