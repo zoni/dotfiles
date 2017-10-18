@@ -13,3 +13,7 @@ if [[ $USER == "zoni" ]]; then
 	EMAIL_PASSWORD="$(pass show Email/nick@groenen.me | head -n 1)"
 	sed -i -e "s/__PASSWORD__/${EMAIL_PASSWORD}/g" $HOME/.mutt/account
 fi
+
+if [[ $USER != "root" ]]; then
+	echo 'source ~/.vifm/vifmrc.x' >> $HOME/.vifm/vifmrc
+fi
