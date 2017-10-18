@@ -5,3 +5,4 @@ view
 
 fileviewer *.pdf pdftotext -nopgbrk %c -
 fileviewer *.deb dpkg-deb -I %c && echo "\n" && dpkg-deb -c %c
+fileviewer *.txz *.tar.* tar -taf %c
