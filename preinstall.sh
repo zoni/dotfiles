@@ -4,9 +4,10 @@ set -e
 set -x
 
 mkdir -p \
-	$HOME/Bin \
-	$HOME/.{vim,vimswap,vimbackup} \
-	$HOME/.zsh \
-	$HOME/.ssh/master \
 	$HOME/.config \
-	$HOME/.local/share
+	$HOME/.local/share \
+	$HOME/.ssh/master \
+	$HOME/.vifm \
+	$HOME/.zsh \
+	$HOME/.{vim,vimswap,vimbackup} \
+	$HOME/Bin
