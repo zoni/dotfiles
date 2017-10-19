@@ -1,7 +1,6 @@
 colorscheme zenburn_1
 setglobal incsearch
 setglobal smartcase
-view
 
 fileviewer *.pdf pdftotext -nopgbrk %c -
 fileviewer *.deb dpkg-deb -I %c && echo "\n" && dpkg-deb -c %c
