@@ -1,0 +1,8 @@
+# vim: ft=yaml
+
+settings:
+  ring_size: 100
+  preview_width: 100
+  newline_char: '¬'
+  notify: False
+  notify_timeout: 1
