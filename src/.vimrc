@@ -20,6 +20,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'  " note: lazy-loading this doesn't work with vim-airline
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'pelodelfuego/vim-swoop',
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'reedes/vim-pencil'
