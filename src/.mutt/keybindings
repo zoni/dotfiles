@@ -27,6 +27,7 @@ bind  index,pager             vu   view-attachments
 bind  index,pager,attach      ra   group-reply
 bind  index,pager,attach      rb   bounce-message
 bind  index,pager,attach      rl   list-reply
+bind  index,pager             rn   compose-to-sender
 bind  index,pager,attach      rr   reply
 bind  index,pager,browser     /    search
 bind  index,pager,browser     ?    search-reverse
