@@ -1,4 +1,13 @@
-#!/bin/sh
+#!/bin/zsh
 
 CURRENT_WORKSPACE=$(i3-msg -t get_workspaces | jq '.[] | select(.focused) | .num')
-i3-input -P "Rename workspace to: " -F "rename workspace to \"${CURRENT_WORKSPACE}: %s\""
+NEW_NAME=$(echo -n | rofi -dmenu -selected-row 1 -p "Rename workspace to: ")
+
+if ! [[ $NEW_NAME =~ ^[0-9]+: ]]; then
+	NEW_NAME="${CURRENT_WORKSPACE}: ${NEW_NAME}"
+fi
+
+RESPONSE=$(i3-msg "rename workspace to ${(qqq)NEW_NAME}" 2>&1 >/dev/null)
+if [[ "${RESPONSE}" =~ ^ERROR:.* ]]; then
+	rofi -e "${RESPONSE}"
+fi
