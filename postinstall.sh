@@ -17,3 +17,5 @@ fi
 if [[ $USER != "root" ]]; then
 	echo 'source ~/.vifm/vifmrc.x' >> $HOME/.vifm/vifmrc
 fi
+
+systemctl --user daemon-reload
