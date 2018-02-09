@@ -1,5 +1,4 @@
 alias tree="tree -C -L 2"
-alias t="tree"
 function treeless() {
 	tree $@ | less
 }
@@ -35,3 +34,7 @@ alias tmux="tmux -2"
 alias ts="tmuxsession"
 alias unison="unison -ui text"
 alias xclip="xclip -selection clipboard"
+
+if type task > /dev/null; then
+	alias t="task"
+fi
