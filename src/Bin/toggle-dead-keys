@@ -1,5 +1,7 @@
 #!/bin/sh
 
+notify-send "Dead keys enabled"
 setxkbmap us -variant intl
 sleep 5
 setxkbmap us
+notify-send "Dead keys disabled"
