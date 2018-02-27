@@ -1,3 +1,9 @@
+if [ $UID -eq 0 ]; then
+	umask 022
+else
+	umask 066
+fi
+
 export EDITOR="vim"
 export PAGER="less"
 
