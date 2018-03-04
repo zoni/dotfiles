@@ -3,6 +3,7 @@ set nocompatible
 call plug#begin('~/.vim-plugs')
 
 Plug 'airblade/vim-gitgutter'
+Plug 'aklt/plantuml-syntax'
 Plug 'ciaranm/securemodelines'
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'dhruvasagar/vim-table-mode'
