@@ -9,6 +9,7 @@ Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dkarter/bullets.vim'
 Plug 'dyng/ctrlsf.vim'
+Plug 'elixir-editors/vim-elixir'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'  " note: lazy-loading caused issues with definition highlights
 Plug 'fs111/pydoc.vim', { 'for': 'python' }
@@ -29,6 +30,7 @@ Plug 'rodjek/vim-puppet'
 Plug 'scrooloose/nerdcommenter'
 Plug 'shougo/denite.nvim'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
+Plug 'slashmili/alchemist.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
 Plug 'tpope/vim-eunuch'
