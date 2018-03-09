@@ -136,3 +136,8 @@ hi link deniteMatchedChar Special
 " {{{ vim-swoop
 let g:swoopUseDefaultKeyMap = 0
 " }}}
+
+" {{{ vim-mix-format
+let g:mix_format_on_save = 1
+let g:mix_format_options = '--check-equivalent'
+" }}}

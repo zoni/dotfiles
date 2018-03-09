@@ -21,6 +21,7 @@ Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
 Plug 'kshenoy/vim-signature'
 Plug 'lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'  " note: lazy-loading this doesn't work with vim-airline
+Plug 'mhinz/vim-mix-format',
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pelodelfuego/vim-swoop',
