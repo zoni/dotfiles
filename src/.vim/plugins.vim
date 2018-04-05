@@ -149,3 +149,7 @@ augroup elixirau
 	au BufWritePre *.ex execute "MixFormat"
 augroup END
 " }}}
+
+" {{{ ctrlsf
+let g:ctrlsf_position = 'bottom'
+" }}}
