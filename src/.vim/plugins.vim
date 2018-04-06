@@ -140,7 +140,7 @@ let g:swoopUseDefaultKeyMap = 0
 " {{{ vim-mix-format
 let g:mix_format_on_save = 0
 let g:mix_format_options = '--check-equivalent'
-let g:mix_format_silent_errors = 0
+let g:mix_format_silent_errors = 1
 
 " mix_format_on_save tends to throw errors when multiple buffers have been
 " opened via netrw, the BufWritePre autocommand works around this.
