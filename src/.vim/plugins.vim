@@ -146,7 +146,7 @@ let g:mix_format_silent_errors = 1
 " opened via netrw, the BufWritePre autocommand works around this.
 augroup elixirau
 	au!
-	au BufWritePre *.ex execute "MixFormat"
+	au BufWritePre *.ex,*.exs execute "MixFormat"
 augroup END
 " }}}
 
