@@ -1,9 +1,6 @@
 " vim: foldmethod=marker
 
 " {{{ General
-" Map jj to Escape in insert mode. :)
-inoremap jj <Esc>
-
 " Make movement on wrapped lines go down/up to next row, rather than the
 " next line in file.
 nnoremap j gj
@@ -11,7 +8,7 @@ nnoremap k gk
 
 " visual shifting (does not exit Visual mode)
 vnoremap < <gv
-vnoremap > >gv 
+vnoremap > >gv
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
