@@ -29,3 +29,4 @@ if [ "$DESKTOP_SESSION" = "i3" ]; then
 fi
 
 xrdb -merge .Xdefaults
+setxkbmap -option caps:escape
