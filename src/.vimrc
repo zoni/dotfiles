@@ -46,7 +46,6 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'vim-syntastic/syntastic'
-Plug 'vimwiki/vimwiki'
 
 source ~/.vim/general.vim
 source ~/.vim/yankring.vim
