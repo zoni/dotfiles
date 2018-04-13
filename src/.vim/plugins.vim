@@ -21,13 +21,13 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': [] }
 
 " {{{ VimWiki
 let g:vimwiki_list = [{
-	\ 'path': '~/Documents/.vimwiki',
-	\ 'path_html': '',
-	\ 'syntax': 'markdown',
-	\ 'ext': '.md',
-	\ 'auto_toc': 1,
-	\ 'auto_tags': 1,
-	\ }]
+    \ 'path': '~/Documents/.vimwiki',
+    \ 'path_html': '',
+    \ 'syntax': 'markdown',
+    \ 'ext': '.md',
+    \ 'auto_toc': 1,
+    \ 'auto_tags': 1,
+    \ }]
 
 " https://github.com/vimwiki/vimwiki/issues/95
 let g:vimwiki_global_ext = 0
@@ -38,22 +38,22 @@ let g:vimwiki_folding = 'expr'
 let g:vimwiki_map_prefix = '<Leader>m'
 
 augroup wiki
-	au!
-	au BufNewFile,BufRead */.vimwiki/* setlocal shiftwidth=2 et tw=74 spell spelllang=en_us nowrap
-	au BufWinEnter */.vimwiki/diary/diary.md VimwikiDiaryGenerateLinks
-	au BufWinEnter */.vimwiki/diary/diary.md write
-	au BufNewFile */.vimwiki/diary/*.md put! =strftime('# %A %B %d %Y')
+    au!
+    au BufNewFile,BufRead */.vimwiki/* setlocal shiftwidth=2 et tw=74 spell spelllang=en_us nowrap
+    au BufWinEnter */.vimwiki/diary/diary.md VimwikiDiaryGenerateLinks
+    au BufWinEnter */.vimwiki/diary/diary.md write
+    au BufNewFile */.vimwiki/diary/*.md put! =strftime('# %A %B %d %Y')
 augroup END
 " }}}
 
 " {{{ Golang
 augroup golang
-	au!
-	au FileType go nmap <leader>mt <Plug>(go-test)
-	au FileType go nmap <leader>mb <Plug>(go-build)
-	au FileType go nmap <Leader>mc <Plug>(go-coverage-toggle)
-	au FileType go nmap <Leader>mi <Plug>(go-info)
-	au FileType go nmap <Leader>mr :GoRename<CR>
+    au!
+    au FileType go nmap <leader>mt <Plug>(go-test)
+    au FileType go nmap <leader>mb <Plug>(go-build)
+    au FileType go nmap <Leader>mc <Plug>(go-coverage-toggle)
+    au FileType go nmap <Leader>mi <Plug>(go-info)
+    au FileType go nmap <Leader>mr :GoRename<CR>
 augroup END
 
 let g:go_auto_type_info = 0
@@ -74,7 +74,7 @@ let g:go_fmt_experimental = 1
 
 " {{{ Python
 if has('python3')
-	let g:pymode_python = 'python3'
+    let g:pymode_python = 'python3'
 endif
 
 let g:jedi#popup_on_dot = 0
@@ -92,18 +92,18 @@ let g:SimpylFold_fold_docstring = 1
 let g:SimpylFold_fold_import = 1
 
 if has('python3')
-	nmap <leader>mrb :py3 RemoveBreakpoints()<CR>
-	nmap <leader>msb :py3 SetBreakpoint()<CR>
+    nmap <leader>mrb :py3 RemoveBreakpoints()<CR>
+    nmap <leader>msb :py3 SetBreakpoint()<CR>
 elseif has('python')
-	nmap <leader>mrb :python RemoveBreakpoints()<CR>
-	nmap <leader>msb :python SetBreakpoint()<CR>
+    nmap <leader>mrb :python RemoveBreakpoints()<CR>
+    nmap <leader>msb :python SetBreakpoint()<CR>
 endif
 
 augroup pythonau
-	au!
-	au FileType python setlocal completeopt-=preview
-	au BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
-	au BufWinLeave *.py setlocal foldexpr< foldmethod<
+    au!
+    au FileType python setlocal completeopt-=preview
+    au BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+    au BufWinLeave *.py setlocal foldexpr< foldmethod<
 augroup END
 " }}}
 
@@ -117,8 +117,8 @@ let g:bufExplorerSplitOutPathName=0
 let g:netrw_liststyle = 1
 
 augroup netrwau
-	au!
-	au FileType netrw setlocal cursorline nolist
+    au!
+    au FileType netrw setlocal cursorline nolist
 augroup END
 " }}}
 
@@ -145,8 +145,8 @@ let g:mix_format_silent_errors = 1
 " mix_format_on_save tends to throw errors when multiple buffers have been
 " opened via netrw, the BufWritePre autocommand works around this.
 augroup elixirau
-	au!
-	au BufWritePre *.ex,*.exs execute "MixFormat"
+    au!
+    au BufWritePre *.ex,*.exs execute "MixFormat"
 augroup END
 " }}}
 
