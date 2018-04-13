@@ -75,7 +75,8 @@ nnoremap <leader>bw :w<CR>
 
 " {{{ Plugin toggles
 " Toggle taglist
-nnoremap <silent> <leader>t :TagbarToggle<CR>
+nnoremap <silent> <leader>to :TagbarOpen fjc<CR>
+nnoremap <silent> <leader>T :TagbarToggle<CR>
 " Show the YankRing
 nnoremap <silent> <leader>yr :YRShow<CR>
 nnoremap - :Explore<CR>
@@ -149,4 +150,8 @@ nmap <leader># <Plug>CtrlSFCwordPath<CR>
 
 nmap <leader>? :Swoop!
 vmap <leader>? :call SwoopMultiSelection()<CR>
+" }}}
+
+" {{{ Table mode
+let g:table_mode_map_prefix = '<Leader>t'
 " }}}

@@ -153,3 +153,88 @@ augroup END
 " {{{ ctrlsf
 let g:ctrlsf_position = 'bottom'
 " }}}
+
+" {{{ tagbar
+let g:tagbar_iconchars = ['▸', '▾']
+let g:tagbar_sort = 0
+let g:tagbar_compact = 0
+
+" https://github.com/majutsushi/tagbar/wiki#ansible
+let g:tagbar_type_ansible = {
+    \ 'ctagstype' : 'ansible',
+    \ 'kinds' : [
+        \ 't:tasks'
+    \ ],
+    \ 'sort' : 0
+\ }
+
+" https://github.com/majutsushi/tagbar/wiki#elixir
+let g:tagbar_type_elixir = {
+    \ 'ctagstype' : 'elixir',
+    \ 'kinds' : [
+        \ 'f:functions',
+        \ 'functions:functions',
+        \ 'c:callbacks',
+        \ 'd:delegates',
+        \ 'e:exceptions',
+        \ 'i:implementations',
+        \ 'a:macros',
+        \ 'o:operators',
+        \ 'm:modules',
+        \ 'p:protocols',
+        \ 'r:records',
+        \ 't:tests'
+    \ ]
+\ }
+
+" https://github.com/majutsushi/tagbar/wiki#markdown
+let g:tagbar_type_markdown = {
+    \ 'ctagstype': 'markdown',
+    \ 'ctagsbin' : 'markdown2ctags',
+    \ 'ctagsargs' : '-f - --sort=yes',
+    \ 'kinds' : [
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '|',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
+\ }
+
+" https://github.com/majutsushi/tagbar/wiki#makefile-targets
+let g:tagbar_type_make = {
+    \ 'kinds':[
+        \ 'm:macros',
+        \ 't:targets'
+    \ ]
+\}
+
+" https://github.com/majutsushi/tagbar/wiki#puppet
+let g:tagbar_type_puppet = {
+    \ 'ctagstype': 'puppet',
+    \ 'kinds': [
+        \'c:class',
+        \'s:site',
+        \'n:node',
+        \'d:definition'
+      \]
+\}
+
+" https://github.com/majutsushi/tagbar/wiki#restructuredtext
+let g:tagbar_type_rst = {
+    \ 'ctagstype': 'rst',
+    \ 'ctagsbin' : 'rst2ctags',
+    \ 'ctagsargs' : '-f - --sort=yes',
+    \ 'kinds' : [
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '|',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
+\ }
+" }}}
