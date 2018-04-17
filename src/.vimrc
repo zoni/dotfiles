@@ -34,6 +34,7 @@ Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'slashmili/alchemist.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
