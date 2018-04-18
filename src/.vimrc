@@ -16,6 +16,7 @@ Plug 'fs111/pydoc.vim', { 'for': 'python' }
 Plug 'godlygeek/tabular'
 Plug 'jamessan/vim-gnupg'
 Plug 'jamshedvesuna/vim-markdown-preview', { 'for': 'markdown' }
+Plug 'jiangmiao/auto-pairs'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
 Plug 'kshenoy/vim-signature'
