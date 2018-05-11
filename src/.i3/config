@@ -33,7 +33,7 @@ focus_follows_mouse no
 mouse_warping none
 
 mode "run" {
-    bindsym a exec --no-startup-id rofi -i -show DRun; mode "default"
+    bindsym a exec --no-startup-id rofi -i -show drun; mode "default"
     bindsym c exec --no-startup-id rofi -i -modi "clipboard:roficlip --show" -show clipboard; mode "default"
     bindsym d exec --no-startup-id toggle-external-display; mode "default"
     bindsym m exec --no-startup-id i3-sensible-terminal -x mutt.sh; mode "default"
