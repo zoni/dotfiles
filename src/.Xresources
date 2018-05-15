@@ -1,3 +1,5 @@
+Xcursor.size: 16
+
 rofi.auto-select:                    false
 rofi.bw:                             1
 rofi.case-sensitive:                 false
