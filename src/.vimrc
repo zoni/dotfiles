@@ -26,6 +26,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pelodelfuego/vim-swoop',
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'reedes/vim-pencil'
 Plug 'rodjek/vim-puppet'
 Plug 'scrooloose/nerdcommenter'
