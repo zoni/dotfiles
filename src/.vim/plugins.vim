@@ -211,3 +211,8 @@ let g:tagbar_type_rst = {
     \ 'sort': 0,
 \ }
 " }}}
+
+" {{{ vim-markdown
+" Use pandoc instead of default renderer
+let vim_markdown_preview_pandoc=1
+" }}}
