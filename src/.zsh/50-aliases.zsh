@@ -35,3 +35,9 @@ alias tmux="tmux -2"
 alias ts="tmuxsession"
 alias unison="unison -ui text"
 alias xclip="xclip -selection clipboard"
+
+if [[ $XDG_CURRENT_DESKTOP == "i3" ]]; then
+	# This is required for gnome-control-center to work properly under i3.
+	# Without this, no data is populated.
+	alias gnome-control-center="env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
+fi
