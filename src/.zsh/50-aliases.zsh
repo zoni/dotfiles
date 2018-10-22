@@ -6,7 +6,7 @@ function treeless() {
 alias tl="treeless"
 
 function onchange() {
-	while true; do inotifywait -qq -r . -e modify -e create -e moved_to -e delete; eval "$@"; done
+	while true; do inotifywait -qq -r . -e modify -e create -e moved_to -e delete --exclude '/\.git/'; eval "$@"; done
 }
 
 case $(uname -s) in
