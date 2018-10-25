@@ -134,6 +134,23 @@ let g:ctrlsf_auto_focus = {
 \ }
 let g:ctrlsf_default_root = 'project+ff'
 let g:ctrlsf_default_view_mode = 'compact'
+let g:ctrlsf_mapping = {
+  \ "open"    : ["<CR>", "o"],
+  \ "openb"   : {"key": ["O", "<leader>"], "suffix": "<C-w>p"},
+  \ "split"   : "<C-O>",
+  \ "vsplit"  : "",
+  \ "tab"     : "t",
+  \ "tabb"    : "T",
+  \ "popen"   : "p",
+  \ "popenf"  : "P",
+  \ "quit"    : "q",
+  \ "next"    : "<C-J>",
+  \ "prev"    : "<C-K>",
+  \ "pquit"   : "q",
+  \ "loclist" : "",
+  \ "chgmode" : ["M", "<tab>"],
+  \ "stop"    : "<C-C>",
+\ }
 let g:ctrlsf_regex_pattern = 1
 let g:ctrlsf_search_mode = 'sync'
 " }}}
