@@ -125,10 +125,15 @@ augroup END
 
 " {{{ ctrlsf
 let g:ctrlsf_position = 'bottom'
+let g:ctrlsf_auto_close = {
+    \ "normal" : 1,
+    \ "compact": 1
+\ }
 let g:ctrlsf_auto_focus = {
     \ "at" : "start"
 \ }
 let g:ctrlsf_default_root = 'project+ff'
+let g:ctrlsf_default_view_mode = 'compact'
 " }}}
 
 " {{{ tagbar
