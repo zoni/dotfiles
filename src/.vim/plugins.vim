@@ -134,6 +134,7 @@ let g:ctrlsf_auto_focus = {
 \ }
 let g:ctrlsf_default_root = 'project+ff'
 let g:ctrlsf_default_view_mode = 'compact'
+let g:ctrlsf_regex_pattern = 1
 " }}}
 
 " {{{ tagbar
