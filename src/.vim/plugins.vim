@@ -102,8 +102,8 @@ let g:SuperTabDefaultCompletionType = "context"
 " }}}
 
 " {{{ Denite
-" See also ~/.vim/post-plug-end.vim
-hi link deniteMatchedChar Special
+" Denite is configured in ~/.vim/post-plug-end.vim because of dynamic
+" configuration method.
 " }}}
 
 " {{{ vim-swoop
