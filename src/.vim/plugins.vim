@@ -125,6 +125,9 @@ augroup END
 
 " {{{ ctrlsf
 let g:ctrlsf_position = 'bottom'
+let g:ctrlsf_auto_focus = {
+    \ "at" : "start"
+\ }
 " }}}
 
 " {{{ tagbar
