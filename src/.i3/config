@@ -36,6 +36,7 @@ mode "run" {
     bindsym a exec --no-startup-id rofi -i -show drun; mode "default"
     bindsym c exec --no-startup-id rofi -i -modi "clipboard:roficlip --show" -show clipboard; mode "default"
     bindsym d exec --no-startup-id toggle-external-display; mode "default"
+    bindsym f exec --no-startup-id nautilus --new-window; mode "default"
     bindsym m exec --no-startup-id i3-sensible-terminal -x mutt.sh; mode "default"
     bindsym n exec --no-startup-id dex /usr/share/applications/networkmanager_dmenu.desktop; mode "default"
     bindsym p exec --no-startup-id rofi-pass; mode "default"
