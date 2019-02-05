@@ -5,6 +5,7 @@ set -x
 
 mkdir -p \
 	$HOME/.config \
+	$HOME/.gnupg \
 	$HOME/.local/share \
 	$HOME/.ssh/master \
 	$HOME/.vifm \
