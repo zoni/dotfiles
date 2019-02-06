@@ -26,6 +26,7 @@ if [ "$DESKTOP_SESSION" = "i3" ]; then
     xset r rate 250 25
     xautolock -time 5 -locker 'gnome-screensaver-command --lock' &
     compton -b
+    gnome-screensaver &
 fi
 
 xrdb -merge .Xdefaults
