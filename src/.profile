@@ -25,7 +25,7 @@ if [ "$DESKTOP_SESSION" = "i3" ]; then
     xset s 270 300
     xset r rate 250 25
     xautolock -time 5 -locker 'gnome-screensaver-command --lock' &
-    compton -b
+    compton --daemon --no-fading-openclose
     gnome-screensaver &
 fi
 
