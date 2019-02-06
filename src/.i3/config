@@ -331,8 +331,8 @@ bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 5
 bindsym XF86AudioMute exec pulseaudio-ctl mute
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec light -U 5
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
