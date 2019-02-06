@@ -6,7 +6,7 @@
   "encrypt": false,
   "linewrap": 100,
   "editor": "vim",
-  "timeformat": "%a %b %d %Y, %I:%M %p:",
+  "timeformat": "%a %b %d %Y, %H:%M |",
   "default_hour": 9,
   "tagsymbols": "#",
   "highlight": true
