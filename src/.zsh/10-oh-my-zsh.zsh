@@ -27,7 +27,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(bundler command-not-found gem git-extras github history-substring-search pip python rsync vagrant)
 
-if [ -d /usr/share/virtualenvwrapper/ ]; then
+if [ -d /usr/share/virtualenvwrapper/ -o -e /usr/bin/virtualenvwrapper.sh ]; then
 	plugins+=(virtualenvwrapper)
 fi
 
