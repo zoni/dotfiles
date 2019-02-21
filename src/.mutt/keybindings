@@ -54,7 +54,7 @@ macro  index,pager     ga  "<change-folder> +Archives/`date +%Y`<return>"   "got
 macro  index,pager     gd  "<change-folder> +Drafts<return>"                "goto drafts"
 macro  index,pager     gi  "<change-folder> !<return>"                      "goto inbox"
 macro  index,pager     gt  "<change-folder> +Trash<return>"                 "goto trash"
-macro  index,pager     y   "<change-folder>?<toggle-mailboxes>"             "display mailboxes"
+macro  index,pager     y   "<change-folder>?"             "display mailboxes"
 
 macro  attach,compose  vu  "<enter-command>set pipe_decode<return><pipe-entry>urlscan<return><enter-command>unset pipe_decode<return><refresh>"    "view URLs"
 macro  index,pager     vu  "<enter-command>set pipe_decode<return><pipe-message>urlscan<return><enter-command>unset pipe_decode<return><refresh>"  "view URLs"
