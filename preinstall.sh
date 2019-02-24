@@ -6,4 +6,5 @@ set -x
 mkdir -p \
 	$HOME/.i3 \
 	$HOME/.vimperator \
-	$HOME/.local/share/applications
+	$HOME/.local/share/applications \
+	$HOME/.config/systemd/user
