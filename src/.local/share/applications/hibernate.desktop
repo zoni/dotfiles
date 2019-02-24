@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Hibernate
+GenericName=Suspend to disk
+Exec=systemctl hibernate
+Terminal=false
+Type=Application
+StartupNotify=false
