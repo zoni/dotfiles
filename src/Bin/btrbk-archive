@@ -19,7 +19,7 @@ help() {
 	echo "Usage: ${PROGRAM_NAME} <destination>"
 }
 
-if [ $# -ne 1 ]; then
+if [ $# -ne 1 -o "$1" == "-h" -o "$1" == "--help" ]; then
 	help
 	exit 2
 fi
