@@ -5,7 +5,11 @@ set -e
 PRIMARY_DISPLAY=$(xrandr | awk '/ connected / { print $1 ; exit }')
 SECONDARY_DISPLAY=$(xrandr | tac | awk '/ connected / { print $1 ; exit }')
 
-CHOICE=$(printf "off\nabove\nbelow\nright-of\nleft-of\nsame-as\nonly" | rofi -dmenu -p "External display mode: ")
+if [ "$1" != "" ]; then
+	CHOICE="$1"
+else
+	CHOICE=$(printf "off\nabove\nbelow\nright-of\nleft-of\nsame-as\nonly" | rofi -dmenu -p "External display mode: ")
+fi
 
 if [ "$CHOICE" == "off" ]; then
 	xrandr --output "${PRIMARY_DISPLAY}" --auto --primary

@@ -3,6 +3,8 @@
 set -e
 set -x
 
+HOST=$(hostname)
+
 git config --global diff.tool meld
 git config --global merge.tool meld
 git config --global merge.conflictstyle diff3
@@ -20,6 +22,10 @@ fi
 
 if [[ $USER != "root" ]]; then
 	echo 'source ~/.vifm/vifmrc.x' >> $HOME/.vifm/vifmrc
+fi
+
+if [ -e $HOME/.config/udev-notify/config.$HOST.toml ]; then
+	cat $HOME/.config/udev-notify/config.$HOST.toml  >> $HOME/.config/udev-notify/config.toml
 fi
 
 systemctl --user daemon-reload

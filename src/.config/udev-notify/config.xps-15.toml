@@ -1,0 +1,17 @@
+# HDMI events don't trigger properly, so instead trigger off the specific keyboard being used.
+
+[[Rules]]
+PropName  = "ID_SERIAL"
+PropValue = "413c_Dell_KB216_Wired_Keyboard"
+Subsystem = "input"
+Action = "add"
+Command = "toggle-external-display"
+Args = ["only"]
+
+[[Rules]]
+PropName  = "ID_SERIAL"
+PropValue = "413c_Dell_KB216_Wired_Keyboard"
+Subsystem = "input"
+Action = "remove"
+Command = "toggle-external-display"
+Args = ["off"]
