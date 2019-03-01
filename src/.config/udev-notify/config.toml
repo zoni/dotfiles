@@ -1,0 +1,4 @@
+[[Rules]]
+SUBSYSTEM = "input"
+ACTION = "add"
+Command = "apply-input-device-settings"

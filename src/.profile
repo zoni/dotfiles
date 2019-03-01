@@ -27,5 +27,6 @@ if [ "$DESKTOP_SESSION" = "i3" ]; then
     gnome-screensaver &
 fi
 
+udev-notify &
 xrdb -merge .Xdefaults
 apply-input-device-settings
