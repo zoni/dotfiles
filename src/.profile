@@ -22,12 +22,10 @@ fi
 
 if [ "$DESKTOP_SESSION" = "i3" ]; then
     export $(gnome-keyring-daemon --start --components=ssh,gpg,pkc11,secrets)
-    xset s 270 300
-    xset r rate 250 25
     xautolock -time 5 -locker 'gnome-screensaver-command --lock' &
     compton &
     gnome-screensaver &
 fi
 
 xrdb -merge .Xdefaults
-setxkbmap -option caps:escape
+apply-input-device-settings

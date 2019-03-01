@@ -1,0 +1,5 @@
+#!/bin/sh
+
+xset s 270 300
+xset r rate 250 25
+setxkbmap -option caps:escape
