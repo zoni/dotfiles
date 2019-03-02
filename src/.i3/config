@@ -129,9 +129,10 @@ bindsym $mod+Shift+8 workspace number 18
 bindsym $mod+Shift+9 workspace number 19
 bindsym $mod+Shift+0 workspace number 10
 
-bindsym $mod+u workspace prev_on_output
-bindsym $mod+o workspace next_on_output
 bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+n exec --no-startup-id i3-msg workspace $(i3-next-available-workspace)
+bindsym $mod+o workspace next_on_output
+bindsym $mod+u workspace prev_on_output
 
 bindsym $mod+Mod1+o move workspace to output left
 bindsym $mod+Mod1+u move workspace to output right
