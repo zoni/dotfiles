@@ -15,3 +15,19 @@ Subsystem = "input"
 Action = "remove"
 Command = "toggle-external-display"
 Args = ["off"]
+
+[[Rules]]
+PropName  = "PRODUCT"
+PropValue = "3/46d/c31c/110"
+Subsystem = "input"
+Action = "add"
+Command = "toggle-external-display"
+Args = ["right-of"]
+
+[[Rules]]
+PropName  = "PRODUCT"
+PropValue = "3/46d/c31c/110"
+Subsystem = "input"
+Action = "remove"
+Command = "toggle-external-display"
+Args = ["off"]
