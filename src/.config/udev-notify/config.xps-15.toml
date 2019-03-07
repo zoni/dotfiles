@@ -5,29 +5,29 @@ PropName  = "ID_SERIAL"
 PropValue = "413c_Dell_KB216_Wired_Keyboard"
 Subsystem = "input"
 Action = "add"
-Command = "toggle-external-display"
-Args = ["only"]
+Command = "/bin/sh"
+Args = ["-c", "sleep 1 && flock --nonblock $HOME/.cache/.toggle-external-display /bin/sh -c 'toggle-external-display only && sleep 5'"]
 
 [[Rules]]
 PropName  = "ID_SERIAL"
 PropValue = "413c_Dell_KB216_Wired_Keyboard"
 Subsystem = "input"
 Action = "remove"
-Command = "toggle-external-display"
-Args = ["off"]
+Command = "/bin/sh"
+Args = ["-c", "sleep 1 && flock --nonblock $HOME/.cache/.toggle-external-display /bin/sh -c 'toggle-external-display off && sleep 5'"]
 
 [[Rules]]
 PropName  = "PRODUCT"
 PropValue = "3/46d/c31c/110"
 Subsystem = "input"
 Action = "add"
-Command = "toggle-external-display"
-Args = ["right-of"]
+Command = "/bin/sh"
+Args = ["-c", "sleep 1 && flock --nonblock $HOME/.cache/.toggle-external-display /bin/sh -c 'toggle-external-display right-of && sleep 5'"]
 
 [[Rules]]
 PropName  = "PRODUCT"
 PropValue = "3/46d/c31c/110"
 Subsystem = "input"
 Action = "remove"
-Command = "toggle-external-display"
-Args = ["off"]
+Command = "/bin/sh"
+Args = ["-c", "sleep 1 && flock --nonblock $HOME/.cache/.toggle-external-display /bin/sh -c 'toggle-external-display off && sleep 5'"]
