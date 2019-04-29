@@ -19,9 +19,9 @@ augroup END
 
 augroup filetypesyntaxopts
 	au!
-	au FileType markdown   setlocal et tw=74 spell
+	au FileType markdown   setlocal et spell
 	au FileType rst        call SetSyntasticCheckerForSphinxProjects()
-	au FileType rst        setlocal et tw=74 spell
+	au FileType rst        setlocal et spell
 	au FileType vue        setlocal et
 	au FileType yaml       setlocal shiftwidth=2
 augroup END
