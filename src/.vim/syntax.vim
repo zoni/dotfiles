@@ -20,6 +20,7 @@ augroup END
 augroup filetypesyntaxopts
 	au!
 	au FileType asciidoc   setlocal et spell
+	au FileType html       setlocal et
 	au FileType markdown   setlocal et spell
 	au FileType rst        call SetSyntasticCheckerForSphinxProjects()
 	au FileType rst        setlocal et spell
