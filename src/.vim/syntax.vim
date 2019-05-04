@@ -25,6 +25,7 @@ augroup filetypesyntaxopts
 	au FileType markdown   setlocal et spell
 	au FileType rst        call SetSyntasticCheckerForSphinxProjects()
 	au FileType rst        setlocal et spell
+	au FileType scss       setlocal et shiftwidth=2
 	au FileType vue        setlocal et
 	au FileType yaml       setlocal shiftwidth=2
 augroup END
