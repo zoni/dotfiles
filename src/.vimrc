@@ -31,6 +31,7 @@ Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'rbgrouleff/bclose.vim'
 Plug 'reedes/vim-pencil'
 Plug 'reedes/vim-textobj-sentence'
+Plug 'reedes/vim-wheel'
 Plug 'reedes/vim-wordy'
 Plug 'rodjek/vim-puppet'
 Plug 'scrooloose/nerdcommenter'
