@@ -57,10 +57,10 @@ function! YRRunAfterMaps()
 endfunction
 " Close buffer
 "nmap <silent> <C-c> <Esc>:bdelete<CR>
-nnoremap <silent> <C-c> <Esc>:bprevious\|bdelete #<CR>
+nnoremap <silent> <C-c> <Esc>:Bclose<CR>
 
 nnoremap <leader>bb :BufExplorer<CR>
-nnoremap <leader>bc :bprevious\|bdelete #<CR>
+nnoremap <leader>bc :Bclose<CR>
 nnoremap <leader>bC :bprevious\|bdelete! #<CR>
 nnoremap <leader>bE :edit .<CR>
 nnoremap <leader>be :Explore<CR>

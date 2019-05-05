@@ -258,3 +258,7 @@ let g:tagbar_type_rst = {
 " Use pandoc instead of default renderer
 let vim_markdown_preview_pandoc=1
 " }}}
+
+" {{{ bclose.vim
+let g:bclose_no_plugin_maps = 1
+" }}}
