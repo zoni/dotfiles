@@ -18,6 +18,7 @@ Plug 'jamessan/vim-gnupg'
 Plug 'jamshedvesuna/vim-markdown-preview', { 'for': 'markdown' }
 Plug 'jlanzarotta/bufexplorer'
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
+Plug 'kana/vim-textobj-user'
 Plug 'kshenoy/vim-signature'
 Plug 'lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'  " note: lazy-loading this doesn't work with vim-airline
@@ -29,6 +30,8 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'rbgrouleff/bclose.vim'
 Plug 'reedes/vim-pencil'
+Plug 'reedes/vim-textobj-sentence'
+Plug 'reedes/vim-wordy'
 Plug 'rodjek/vim-puppet'
 Plug 'scrooloose/nerdcommenter'
 Plug 'shougo/denite.nvim'
