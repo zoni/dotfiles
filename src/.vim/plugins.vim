@@ -262,3 +262,7 @@ let vim_markdown_preview_pandoc=1
 " {{{ bclose.vim
 let g:bclose_no_plugin_maps = 1
 " }}}
+
+" {{{ rust.vim
+let g:rustfmt_autosave = 1
+" }}}

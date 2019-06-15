@@ -34,6 +34,7 @@ Plug 'reedes/vim-textobj-sentence'
 Plug 'reedes/vim-wheel'
 Plug 'reedes/vim-wordy'
 Plug 'rodjek/vim-puppet'
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'shougo/denite.nvim'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
