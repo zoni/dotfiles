@@ -135,7 +135,7 @@ map s <Plug>(easymotion-prefix)
 map ss <Plug>(easymotion-bd-w)
 
 " Markdown preview
-let vim_markdown_preview_hotkey='<leader>mp'
+nmap <leader>mp :ComposerOpen<CR>
 
 " Fix arrow keys while searching if having SearchComplete plugin installed
 cnoremap <silent> <Esc>[A <Esc>[A

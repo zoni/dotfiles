@@ -254,9 +254,9 @@ let g:tagbar_type_rst = {
 \ }
 " }}}
 
-" {{{ vim-markdown
-" Use pandoc instead of default renderer
-let vim_markdown_preview_pandoc=1
+" {{{ vim-markdown-composer
+let g:markdown_composer_browser = "firefox"
+let g:markdown_composer_open_browser = 0
 " }}}
 
 " {{{ bclose.vim

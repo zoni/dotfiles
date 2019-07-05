@@ -1,5 +1,15 @@
 set nocompatible
 
+function! BuildVimMarkdownComposer(info)
+  if a:info.status != 'unchanged' || a:info.force
+    if has('nvim')
+      !cargo build --release
+    else
+      !cargo build --release --no-default-features --features json-rpc
+    endif
+  endif
+endfunction
+
 call plug#begin('~/.vim-plugs')
 
 Plug 'airblade/vim-gitgutter'
@@ -11,11 +21,11 @@ Plug 'dkarter/bullets.vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'ervandew/supertab'
+Plug 'euclio/vim-markdown-composer', { 'do': function('BuildVimMarkdownComposer'), 'for': 'markdown' }
 Plug 'fatih/vim-go'  " note: lazy-loading caused issues with definition highlights
 Plug 'fs111/pydoc.vim', { 'for': 'python' }
 Plug 'godlygeek/tabular'
 Plug 'jamessan/vim-gnupg'
-Plug 'jamshedvesuna/vim-markdown-preview', { 'for': 'markdown' }
 Plug 'jlanzarotta/bufexplorer'
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
 Plug 'kana/vim-textobj-user'
