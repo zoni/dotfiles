@@ -22,7 +22,7 @@ PropValue = "3/46d/c31c/110"
 Subsystem = "input"
 Action = "add"
 Command = "/bin/sh"
-Args = ["-c", "sleep 1 && flock --nonblock $HOME/.cache/.toggle-external-display /bin/sh -c 'toggle-external-display right-of && sleep 5'"]
+Args = ["-c", "sleep 1 && flock --nonblock $HOME/.cache/.toggle-external-display /bin/sh -c 'toggle-external-display right-of && sleep 5' && i3-windows-to-secondary-output"]
 
 [[Rules]]
 PropName  = "PRODUCT"

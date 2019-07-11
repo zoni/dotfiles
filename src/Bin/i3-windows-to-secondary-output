@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+for workspace in $(i3-msg -t get_workspaces | jq '.[] | select(.output == "eDP-1") | select(.name != "4: Slack") | .num'); do
+	i3-msg "workspace number $workspace"
+	i3-msg "move workspace to output right"
+done
