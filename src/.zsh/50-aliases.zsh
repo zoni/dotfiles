@@ -27,6 +27,7 @@ alias p="pushd"
 alias P="popd"
 alias d='dirs -v | head -10'
 
+alias diff="git diff --color=auto --no-ext-diff --no-index"
 alias dotfiles.sh="dotfiles.sh --dotfiles-dir ~/.dotfiles"
 alias gpg="gpg2 --keyid-format long"
 alias histgrep="history 0 | grep"
