@@ -266,3 +266,7 @@ let g:bclose_no_plugin_maps = 1
 " {{{ rust.vim
 let g:rustfmt_autosave = 1
 " }}}
+
+" {{{ vim-terraform
+let g:terraform_fmt_on_save = 1
+" }}}

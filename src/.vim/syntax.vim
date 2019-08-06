@@ -30,6 +30,12 @@ augroup filetypesyntaxopts
 	au FileType yaml       setlocal shiftwidth=2
 augroup END
 
+augroup terraformau
+    au!
+    " This doesn't seem to work when placed in filetypesyntaxopts with `au FileType terraform`.
+    au BufNewFile,Bufread *.tf setlocal et shiftwidth=2
+augroup END
+
 function! SetSyntasticCheckerForSphinxProjects()
 	let buf = bufnr('')
 	let config = syntastic#util#findFileInParent('conf.py', fnamemodify(bufname(buf), ':p:h'))

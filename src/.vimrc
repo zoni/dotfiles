@@ -25,6 +25,7 @@ Plug 'euclio/vim-markdown-composer', { 'do': function('BuildVimMarkdownComposer'
 Plug 'fatih/vim-go'  " note: lazy-loading caused issues with definition highlights
 Plug 'fs111/pydoc.vim', { 'for': 'python' }
 Plug 'godlygeek/tabular'
+Plug 'hashivim/vim-terraform'
 Plug 'jamessan/vim-gnupg'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
