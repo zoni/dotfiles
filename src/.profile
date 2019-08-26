@@ -17,6 +17,8 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+install -d /run/user/${UID}/tmp && export TMPDIR=/run/user/${UID}/tmp || true
+
 . $HOME/.zsh/05-path.zsh
 . $HOME/.zsh/50-env.zsh
 
