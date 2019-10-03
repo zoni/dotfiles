@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Hibernate
 GenericName=Suspend to disk
-Exec=systemctl hibernate
+Exec=/bin/sh -c "gnome-screensaver-command --lock; systemctl hibernate --ignore-inhibitors"
 Terminal=false
 Type=Application
 StartupNotify=false
