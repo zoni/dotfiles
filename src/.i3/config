@@ -36,6 +36,7 @@ mode "run" {
     bindsym a exec --no-startup-id rofi -i -show drun; mode "default"
     bindsym c exec --no-startup-id rofi -i -modi "clipboard:roficlip --show" -show clipboard; mode "default"
     bindsym d exec --no-startup-id toggle-external-display; mode "default"
+    bindsym e exec --no-startup-id rofimoji; mode "default"
     bindsym f exec --no-startup-id nautilus --new-window; mode "default"
     bindsym v exec --no-startup-id pavucontrol; mode "default"
     bindsym m exec --no-startup-id i3-sensible-terminal -x mutt.sh; mode "default"
