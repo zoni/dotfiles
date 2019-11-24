@@ -15,10 +15,10 @@ function mix-release-version() {
 	git --no-pager diff --staged
 	echo -n "\n\nContinue?"
 	read
-	echo git commit -m "Release v$1"
-	echo git tag v$1
-	echo git push origin HEAD
-	echo git push origin v$1
+	git commit -m "Release v$1"
+	git tag v$1
+	git push origin HEAD
+	git push origin v$1
 }
 
 case $(uname -s) in
