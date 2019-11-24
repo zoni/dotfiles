@@ -9,6 +9,18 @@ function onchange() {
 	while true; do inotifywait -qq -r . -e modify -e create -e moved_to -e delete --exclude '/\.git/'; eval "$@"; done
 }
 
+function mix-release-version() {
+	sed -i -E "s/version: \".+\"/version: \"$1\"/" mix.exs
+	git add mix.exs
+	git --no-pager diff --staged
+	echo -n "\n\nContinue?"
+	read
+	echo git commit -m "Release v$1"
+	echo git tag v$1
+	echo git push origin HEAD
+	echo git push origin v$1
+}
+
 case $(uname -s) in
 	Linux)
 		alias ls="ls --color=auto"
