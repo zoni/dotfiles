@@ -23,7 +23,9 @@
 [core]
 	excludesfile = ~/.gitignore
 [fetch]
-	recurseSubmodules = true
+	recurseSubmodules = on-demand
+	# A value of 0 will give some reasonable default. If unset, it defaults to 1.
+	parallel = 0
 [merge]
 	tool = vimdiff
 	keepbackup = false
@@ -32,6 +34,7 @@
 	tool = vimdiff
 [push]
 	default = upstream
+	recurseSubmodules = check
 [rebase]
 	autoSquash = true
 	autoStash = true
