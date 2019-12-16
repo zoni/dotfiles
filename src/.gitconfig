@@ -22,6 +22,8 @@
 	requireForce = false
 [core]
 	excludesfile = ~/.gitignore
+[fetch]
+	recurseSubmodules = true
 [merge]
 	tool = vimdiff
 	keepbackup = false
@@ -31,7 +33,8 @@
 [push]
 	default = upstream
 [rebase]
-	autosquash = true
+	autoSquash = true
+	autoStash = true
 [rerere]
 	enabled = true
 	autoupdate = true
