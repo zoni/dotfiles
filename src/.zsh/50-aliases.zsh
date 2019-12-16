@@ -38,6 +38,7 @@ alias lal="ls -hlA"
 alias p="pushd"
 alias P="popd"
 alias d='dirs -v | head -10'
+alias kb="cd $HOME/Workspace/knowledgebase/ && git status --short"
 
 alias diff="git diff --color=auto --no-ext-diff --no-index"
 alias dotfiles.sh="dotfiles.sh --dotfiles-dir ~/.dotfiles"
