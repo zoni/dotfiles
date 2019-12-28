@@ -81,6 +81,9 @@ if [[ $XDG_CURRENT_DESKTOP == "i3" ]]; then
 	alias gnome-control-center="env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
 fi
 
+if type hub > /dev/null; then
+	alias git="hub"
+fi
 alias ga="git ahead"
 alias gadd="git add"
 alias gaddp="git add --patch"
