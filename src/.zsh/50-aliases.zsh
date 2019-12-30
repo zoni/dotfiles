@@ -17,7 +17,7 @@ if type knowledgebase > /dev/null; then
 			#
 			# This trickery is needed because aliases are expanded when a
 			# function definition is read, not when the function is executed.
-			$(/bin/which knowledgebase) "$@"
+			{ cd "$HOME/Workspace/knowledgebase" && $(/bin/which knowledgebase) "$@" ; }
 		fi
 	}
 	alias kb=knowledgebase
