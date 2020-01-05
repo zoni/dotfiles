@@ -27,6 +27,9 @@ if [ "$DESKTOP_SESSION" = "i3" ]; then
     xautolock -time 5 -locker 'gnome-screensaver-command --lock' &
     compton &
     gnome-screensaver &
+    if [ -e /sys/class/power_supply/BAT0/ ]; then
+        cbatticon --update-interval 10 --low-level 10 --critical-level 3 --command-critical-level "systemctl suspend --ignore-inhibitors"
+    fi
 fi
 
 udev-notify &
