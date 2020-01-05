@@ -5,24 +5,6 @@ function treeless() {
 }
 alias tl="treeless"
 
-if type knowledgebase > /dev/null; then
-	function knowledgebase() {
-		if [ "$#" -lt 1 ]; then
-			cd "$HOME/Workspace/knowledgebase"
-			git status --short
-		else
-			# Determine the real knowledgebase binary path to avoid endless
-			# self-recursion.  Calling /bin/which avoids shell built-ins
-			# otherwise we'd still get the function alias.
-			#
-			# This trickery is needed because aliases are expanded when a
-			# function definition is read, not when the function is executed.
-			{ cd "$HOME/Workspace/knowledgebase" && $(/bin/which knowledgebase) "$@" ; }
-		fi
-	}
-	alias kb=knowledgebase
-fi
-
 function onchange() {
 	while true; do inotifywait -qq -r . -e modify -e create -e moved_to -e delete --exclude '/\.git/'; eval "$@"; done
 }
@@ -61,6 +43,7 @@ alias diff="git diff --color=auto --no-ext-diff --no-index"
 alias dotfiles.sh="dotfiles.sh --dotfiles-dir ~/.dotfiles"
 alias gpg="gpg2 --keyid-format long"
 alias histgrep="history 0 | grep"
+alias kb=knowledgebase
 alias notify-on-complete='notify-send --urgency=normal --icon ${${?/0/terminal}//<->*/error} "Command finished${${?/0/}//<->*/ with error}" ${history[$HISTCMD]%[;&|]*}'
 alias print-color-table='for i in {0..255} ; do printf "\x1b[38;5;${i}mcolor${i}\n" ; done | column'
 alias psgrep="ps aux | grep"
