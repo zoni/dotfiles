@@ -28,7 +28,7 @@ if [ "$DESKTOP_SESSION" = "i3" ]; then
     compton &
     gnome-screensaver &
     if [ -e /sys/class/power_supply/BAT0/ ]; then
-        cbatticon --update-interval 10 --low-level 15 --critical-level 5 --command-critical-level "systemctl suspend --ignore-inhibitors"
+        cbatticon --update-interval 10 --low-level 15 --critical-level 5 --command-critical-level "systemctl suspend --ignore-inhibitors" &
     fi
 fi
 
