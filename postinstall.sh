@@ -31,6 +31,8 @@ fi
 systemctl --user daemon-reload
 
 if type code >/dev/null; then
-	# Install VS Code extensions listed in vscode-extensions.list that are missing from `code --list-extensions`
-	comm -13 <(code --list-extensions|sort) <(grep -v -E '^#' $(dirname $BASH_SOURCE)/vscode-extensions.list | sort) | xargs --no-run-if-empty --max-lines=1 -- code --install-extension
+	# Install VS Code extensions listed in extensions.list that are missing from `code --list-extensions`
+	comm -13 <(code --list-extensions|sort) <(grep -v -E '^#' $(dirname $BASH_SOURCE)/src/.vscode/extensions.list | sort) | xargs --no-run-if-empty --max-lines=1 -- code --install-extension
+
+	ln --force --symbolic ../../../.vscode/settings.json "$HOME/.config/Code - OSS/User/settings.json"
 fi

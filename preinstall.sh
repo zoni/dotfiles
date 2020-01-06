@@ -8,4 +8,4 @@ mkdir -p \
 	$HOME/.vimperator \
 	$HOME/.local/share/applications \
 	$HOME/.config/systemd/user \
-	"$HOME/.config/Code - OSS/User"
+	$HOME/.vscode
