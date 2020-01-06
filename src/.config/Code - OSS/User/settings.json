@@ -1,0 +1,81 @@
+{
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "vim.easymotion": true,
+    "vim.leader": " ",
+    "keyboard.dispatch": "keyCode",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "oneDarkPro.vivid": true,
+    "workbench.colorTheme": "One Monokai",
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/bin/nvim",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "w", "h"],
+            "after": ["<C-w>", "h"]
+        },
+        {
+            "before": ["<leader>", "w", "j"],
+            "after": ["<C-w>", "j"]
+        },
+        {
+            "before": ["<leader>", "w", "k"],
+            "after": ["<C-w>", "k"]
+        },
+        {
+            "before": ["<leader>", "w", "l"],
+            "after": ["<C-w>", "l"]
+        },
+        {
+            "before": ["<leader>", "w", "s"],
+            "after": ["<C-w>", "s"]
+        },
+        {
+            "before": ["<leader>", "w", "v"],
+            "after": ["<C-w>", "v"]
+        },
+        {
+            "before": ["<leader>", "w", "="],
+            "after": ["<C-w>", "="]
+        },
+        {
+            "before": ["<leader>", "w", "q"],
+            "after": ["<C-w>", "q"]
+        },
+        {
+            "before": ["<leader>", "w", "c"],
+            "after": ["<C-w>", "c"]
+        },
+        {
+            "before": ["<leader>", "w", "o"],
+            "after": ["<C-w>", "o"]
+        },
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<C-n>"],
+            "commands": ["workbench.action.nextEditor"]
+        },
+        {
+            "before": ["<C-b>"],
+            "commands": ["workbench.action.previousEditor"]
+        },
+        {
+            "before": ["<leader>", "m", "p"],
+            "commands": ["markdown.showPreviewToSide"],
+            "when": "editorLangId == 'markdown'"
+        },
+    ],
+    "workbench.iconTheme": null,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.views.lineHistory.enabled": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "window.openFilesInNewWindow": "default",
+    "terminal.external.linuxExec": "i3-sensible-terminal",
+    "terminal.integrated.cursorBlinking": true,
+    "explorer.compactFolders": false,
+    // "vim.debug.loggingLevelForConsole": "debug"
+}
