@@ -77,5 +77,6 @@
     "terminal.external.linuxExec": "i3-sensible-terminal",
     "terminal.integrated.cursorBlinking": true,
     "explorer.compactFolders": false,
+    "git.autofetch": true,
     // "vim.debug.loggingLevelForConsole": "debug"
 }
