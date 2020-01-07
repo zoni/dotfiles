@@ -13,3 +13,9 @@ ms-python.python
 ms-vscode.Go
 redhat.vscode-yaml
 samuelcolvin.jinjahtml
+
+# Markdown plugins
+bierner.markdown-checkbox
+bierner.markdown-emoji
+bierner.markdown-footnotes
+bierner.markdown-mermaid
