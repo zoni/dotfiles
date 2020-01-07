@@ -11,6 +11,7 @@
     "vim.enableNeovim": true,
     "vim.neovimPath": "/usr/bin/nvim",
     "vim.normalModeKeyBindingsNonRecursive": [
+        // Window management
         {
             "before": ["<leader>", "w", "h"],
             "after": ["<C-w>", "h"]
@@ -53,6 +54,52 @@
         },
     ],
     "vim.normalModeKeyBindings": [
+        // Git commands
+        {
+            "before": ["<leader>", "r", "w"],
+            "commands": ["workbench.action.files.save", "git.stage"],
+        },
+        {
+            "before": ["<leader>", "r", "c"],
+            "commands": ["workbench.action.files.save", "git.commit"],
+        },
+        {
+            "before": ["<leader>", "r", "h"],
+            "commands": ["gitlens.showQuickFileHistory"],
+        },
+        {
+            "before": ["<leader>", "r", "H"],
+            "commands": ["gitlens.showQuickRepoHistory"],
+        },
+        {
+            "before": ["<leader>", "r", "s"],
+            "commands": ["gitlens.showQuickRepoStatus"],
+        },
+        {
+            "before": ["<leader>", "r", "b"],
+            "commands": ["git.checkout"],
+        },
+        {
+            "before": ["<leader>", "r", "p"],
+            "commands": ["git.pullRebase"],
+        },
+        {
+            "before": ["<leader>", "r", "P"],
+            "commands": ["git.push"],
+        },
+        {
+            "before": ["<leader>", "r", "m"],
+            "commands": ["git.merge"],
+        },
+        {
+            "before": ["<leader>", "r", "d"],
+            "commands": ["gitlens.diffWithPrevious"],
+        },
+        {
+            "before": ["<leader>", "r", "D"],
+            "commands": ["gitlens.views.openChangedFileDiffs"],
+        },
+        // Other
         {
             "before": ["<C-n>"],
             "commands": ["workbench.action.nextEditor"]
