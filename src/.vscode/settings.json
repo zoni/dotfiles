@@ -93,11 +93,7 @@
         },
         {
             "before": ["<leader>", "r", "d"],
-            "commands": ["gitlens.diffWithPrevious"],
-        },
-        {
-            "before": ["<leader>", "r", "D"],
-            "commands": ["gitlens.views.openChangedFileDiffs"],
+            "commands": ["git.openChange"],
         },
         // Other
         {
