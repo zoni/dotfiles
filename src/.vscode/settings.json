@@ -6,7 +6,6 @@
     "keyboard.dispatch": "keyCode",
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
-    "oneDarkPro.vivid": true,
     "workbench.colorTheme": "One Monokai",
     "vim.enableNeovim": true,
     "vim.neovimPath": "/usr/bin/nvim",
@@ -51,6 +50,13 @@
         {
             "before": ["<leader>", "w", "o"],
             "after": ["<C-w>", "o"]
+        },
+        // Other
+        {
+            "before": ["Z", "Z"],
+            "commands": [
+                ":wq"
+            ]
         },
     ],
     "vim.normalModeKeyBindings": [
