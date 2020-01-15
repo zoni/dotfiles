@@ -21,6 +21,10 @@ if type knowledgebase > /dev/null; then
 		fi
 	}
 	alias kb=knowledgebase
+	alias kbb="knowledgebase browse"
+	alias kbc="knowledgebase commit"
+	alias kbe="knowledgebase edit"
+	alias kbs="knowledgebase sync"
 fi
 
 function onchange() {
