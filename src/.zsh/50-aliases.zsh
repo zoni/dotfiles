@@ -26,6 +26,7 @@ if type knowledgebase > /dev/null; then
 	alias kbd="knowledgebase diff"
 	alias kbe="knowledgebase edit"
 	alias kbj="knowledgebase journal"
+	alias kbn="knowledgebase new"
 	alias kbs="knowledgebase sync"
 fi
 
