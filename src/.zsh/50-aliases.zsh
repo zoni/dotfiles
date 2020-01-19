@@ -28,7 +28,8 @@ if type knowledgebase > /dev/null; then
 	alias kbe="knowledgebase edit"
 	alias kbj="knowledgebase journal"
 	alias kbn="knowledgebase new"
-	alias kbs="knowledgebase sync"
+	alias kbs="knowledgebase status"
+	alias kbu="knowledgebase sync"
 fi
 
 function onchange() {
