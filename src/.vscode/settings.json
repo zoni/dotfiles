@@ -128,30 +128,31 @@
     "explorer.compactFolders": false,
     "git.autofetch": true,
     "githubPullRequests.queries": [
-	{
-		"label": "Waiting for my review",
-		"query": "is:open review-requested:${user}"
-	},
-	{
-		"label": "Assigned to me",
-		"query": "is:open assignee:${user}"
-	},
-	{
-		"label": "Created by me",
-		"query": "is:open author:${user}"
-	},
-	{
-		"label": "Created by me (closed)",
-		"query": "is:closed author:${user}"
-	},
-	{
-		"label": "Mentioning me",
-		"query": "is:open mentions:${user}"
-	},
-	{
-		"label": "Mentioning me (closed)",
-		"query": "is:closed mentions:${user}"
-	}
-]
+        {
+            "label": "Waiting for my review",
+            "query": "is:open review-requested:${user}"
+        },
+        {
+            "label": "Assigned to me",
+            "query": "is:open assignee:${user}"
+        },
+        {
+            "label": "Created by me",
+            "query": "is:open author:${user}"
+        },
+        {
+            "label": "Created by me (closed)",
+            "query": "is:closed author:${user}"
+        },
+        {
+            "label": "Mentioning me",
+            "query": "is:open mentions:${user}"
+        },
+        {
+            "label": "Mentioning me (closed)",
+            "query": "is:closed mentions:${user}"
+        }
+    ],
+    "editor.minimap.enabled": false
     // "vim.debug.loggingLevelForConsole": "debug"
 }
