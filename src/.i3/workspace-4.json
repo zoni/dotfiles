@@ -1,0 +1,22 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1033,
+       "width": 1916,
+       "x": 2,
+       "y": 45
+    },
+    "name": "Slack",
+    "percent": 1,
+    "swallows": [
+       {
+       "class": "^Slack$"
+       // "instance": "^slack$",
+       // "window_role": "^browser\\-window$"
+       }
+    ],
+    "type": "con"
+}
