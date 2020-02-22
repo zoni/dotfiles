@@ -5,6 +5,7 @@ azemoh.one-monokai
 GitHub.vscode-pull-request-github
 eamodio.gitlens
 vscodevim.vim
+timonwong.shellcheck
 
 # Language support
 elixir-lsp.elixir-ls
