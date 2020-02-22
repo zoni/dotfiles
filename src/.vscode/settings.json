@@ -153,6 +153,14 @@
             "query": "is:closed mentions:${user}"
         }
     ],
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.tabCompletion": "on",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+    },
+    "editor.suggestSelection": "recentlyUsed",
     // "vim.debug.loggingLevelForConsole": "debug"
 }
