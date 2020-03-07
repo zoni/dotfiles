@@ -162,5 +162,6 @@
         "strings": true
     },
     "editor.suggestSelection": "recentlyUsed",
+    "editor.formatOnSave": true,
     // "vim.debug.loggingLevelForConsole": "debug"
 }
