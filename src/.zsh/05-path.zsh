@@ -8,7 +8,7 @@ if [ -d "$HOME/.local/bin" ]; then
 	export PATH="$PATH:$HOME/.local/bin"
 fi
 
-export PATH="/usr/local/go/bin/:$HOME/Bin:$PATH:/usr/share/virtualenvwrapper:$HOME/Workspace/go/bin"
+export PATH="/usr/local/go/bin/:$HOME/Bin:$PATH:/usr/share/virtualenvwrapper:$HOME/.cargo/bin:$HOME/Workspace/go/bin"
 export GOPATH="$HOME/Workspace/go"
 
 # Extra completions
