@@ -3,8 +3,10 @@ if [ -e /usr/share/fzf/key-bindings.zsh ]; then
 
 	if type fd > /dev/null; then
 		export FZF_DEFAULT_COMMAND="fd --hidden --exclude .git"
+		export FZF_ALT_C_COMMAND="${FZF_DEFAULT_COMMAND} --type directory"
 	else
 		export FZF_DEFAULT_COMMAND="find ."
+		export FZF_ALT_C_COMMAND="${FZF_DEFAULT_COMMAND} -type d"
 	fi
 
 	export FZF_DEFAULT_OPTS='--no-height'
