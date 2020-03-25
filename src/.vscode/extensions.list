@@ -4,9 +4,10 @@ azemoh.one-monokai
 # Editor plugins
 GitHub.vscode-pull-request-github
 eamodio.gitlens
-vscodevim.vim
+samverschueren.final-newline
 testthedocs.vale
 timonwong.shellcheck
+vscodevim.vim
 
 # Language support
 elixir-lsp.elixir-ls

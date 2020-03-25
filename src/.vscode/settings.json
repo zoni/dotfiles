@@ -163,5 +163,7 @@
     },
     "editor.suggestSelection": "recentlyUsed",
     "editor.formatOnSave": true,
+    // https://marketplace.visualstudio.com/items?itemName=samverschueren.final-newline#user-content-usage
+    "files.insertFinalNewline": true,
     // "vim.debug.loggingLevelForConsole": "debug"
 }
