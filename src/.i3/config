@@ -392,6 +392,7 @@ for_window [class="Zeegaree.py"] floating enable
 assign [class="Thunderbird"] $tag2
 for_window [class="Wine"] floating enable
 for_window [class="Guake"] floating enable, resize set height 100ppt, resize set width 100ppt
+for_window [class="zoom" instance="^$"] floating enable
 
 # }}}
 
