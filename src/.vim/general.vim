@@ -51,6 +51,13 @@ augroup views
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 augroup END
 
+if has('nvim')
+	augroup nvimterm
+		autocmd TermOpen term://* startinsert
+		autocmd TermOpen term://* setlocal listchars= nonumber norelativenumber
+	augroup END
+endif
+
 " Disable potentially unsafe modelines (via ciaranm/securemodelines)
 set nomodeline
 let g:secure_modelines_allowed_items = [
