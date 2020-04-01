@@ -15,6 +15,7 @@ call plug#begin('~/.vim-plugs')
 Plug 'airblade/vim-gitgutter'
 Plug 'aklt/plantuml-syntax'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'make release' }
+Plug 'ayu-theme/ayu-vim'
 Plug 'ciaranm/securemodelines'
 Plug 'dense-analysis/ale'
 Plug 'dhruvasagar/vim-table-mode'
@@ -38,6 +39,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'pelodelfuego/vim-swoop',
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'posva/vim-vue', { 'for': 'vue' }
+Plug 'rakr/vim-one'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'reedes/vim-pencil'
 Plug 'reedes/vim-textobj-sentence'
@@ -70,7 +72,6 @@ Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 source ~/.vim/general.vim
 source ~/.vim/yankring.vim
 source ~/.vim/functions.vim
-source ~/.vim/theme.vim
 source ~/.vim/formatting.vim
 source ~/.vim/quirks.vim
 source ~/.vim/gui.vim
@@ -81,5 +82,6 @@ source ~/.vim/keybinds.vim
 call plug#end()
 
 source ~/.vim/post-plug-end.vim
+source ~/.vim/theme.vim
 
 source /usr/share/vim/vimfiles/plugin/fzf.vim
