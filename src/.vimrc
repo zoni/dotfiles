@@ -14,8 +14,8 @@ call plug#begin('~/.vim-plugs')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'aklt/plantuml-syntax'
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'make release' }
 Plug 'ciaranm/securemodelines'
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'dense-analysis/ale'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dkarter/bullets.vim'
@@ -23,8 +23,6 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'ervandew/supertab'
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildVimMarkdownComposer'), 'for': 'markdown' }
-Plug 'fatih/vim-go'  " note: lazy-loading caused issues with definition highlights
-Plug 'fs111/pydoc.vim', { 'for': 'python' }
 Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
 Plug 'jamessan/vim-gnupg'
@@ -49,6 +47,7 @@ Plug 'rodjek/vim-puppet'
 Plug 'rstacruz/vim-closer'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'sheerun/vim-polyglot'
 Plug 'shougo/denite.nvim'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'slashmili/alchemist.vim'
@@ -82,3 +81,5 @@ source ~/.vim/keybinds.vim
 call plug#end()
 
 source ~/.vim/post-plug-end.vim
+
+source /usr/share/vim/vimfiles/plugin/fzf.vim

@@ -7,58 +7,31 @@ let g:gundo_return_on_revert = 0
 nmap <silent> <leader>u :GundoToggle<CR>
 " }}}
 
-" {{{ Golang
-augroup golang
+" {{{ LanguageClient
+let g:LanguageClient_serverCommands = {
+    \ 'elixir': ['elixir-ls'],
+    \ 'go': ['gopls'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'python': ['pyls'],
+    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+    \ }
+
+let g:LanguageClient_hoverPreview = "Always"
+let g:LanguageClient_useVirtualText = "No"
+
+augroup LanguageClientAU
     au!
-    au FileType go nmap <leader>mt <Plug>(go-test)
-    au FileType go nmap <leader>mb <Plug>(go-build)
-    au FileType go nmap <Leader>mc <Plug>(go-coverage-toggle)
-    au FileType go nmap <Leader>mi <Plug>(go-info)
-    au FileType go nmap <Leader>mr :GoRename<CR>
+    au BufWritePre *.ex,*.exs,*.go,*.py,*.rs execute "silent :call LanguageClient#textDocument_formatting_sync()"
 augroup END
-
-let g:go_auto_type_info = 0
-let g:go_auto_sameids = 1
-let g:go_fmt_command = "goimports"
-let g:go_fmt_experimental = 1
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_build_constraints = 1
-
-" https://github.com/fatih/vim-go/issues/502 and
-" https://github.com/fatih/vim-go/pull/691
-let g:go_fmt_experimental = 1
-" }}}
 
 " {{{ Python
 if has('python3')
     let g:pymode_python = 'python3'
 endif
 
-let g:jedi#popup_on_dot = 0
-let g:jedi#show_call_signatures = "1"
-let g:jedi#goto_command = "<leader>mg"
-let g:jedi#goto_assignments_command = "<leader>ma"
-let g:jedi#goto_definitions_command = "md"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>mu"
-let g:jedi#completions_command = ""
-let g:jedi#rename_command = "<leader>mr"
-
 let g:SimpylFold_docstring_preview = 0
 let g:SimpylFold_fold_docstring = 1
 let g:SimpylFold_fold_import = 1
-
-if has('python3')
-    nmap <leader>mrb :py3 RemoveBreakpoints()<CR>
-    nmap <leader>msb :py3 SetBreakpoint()<CR>
-elseif has('python')
-    nmap <leader>mrb :python RemoveBreakpoints()<CR>
-    nmap <leader>msb :python SetBreakpoint()<CR>
-endif
 
 augroup pythonau
     au!
@@ -252,7 +225,7 @@ let g:bclose_no_plugin_maps = 1
 " }}}
 
 " {{{ rust.vim
-let g:rustfmt_autosave = 1
+let g:rustfmt_autosave = 0
 " }}}
 
 " {{{ vim-terraform
