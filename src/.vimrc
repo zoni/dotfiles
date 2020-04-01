@@ -16,6 +16,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'aklt/plantuml-syntax'
 Plug 'ciaranm/securemodelines'
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'dense-analysis/ale'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dkarter/bullets.vim'
 Plug 'dyng/ctrlsf.vim'
@@ -66,7 +67,6 @@ Plug 'vim-scripts/SearchComplete'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
-Plug 'vim-syntastic/syntastic'
 
 source ~/.vim/general.vim
 source ~/.vim/yankring.vim

@@ -23,7 +23,6 @@ augroup filetypesyntaxopts
     au FileType css        setlocal et shiftwidth=2
     au FileType html       setlocal et
     au FileType markdown   setlocal et spell
-    au FileType rst        call SetSyntasticCheckerForSphinxProjects()
     au FileType rst        setlocal et spell
     au FileType scss       setlocal et shiftwidth=2
     au FileType vue        setlocal et
@@ -35,12 +34,3 @@ augroup terraformau
     " This doesn't seem to work when placed in filetypesyntaxopts with `au FileType terraform`.
     au BufNewFile,Bufread *.tf setlocal et shiftwidth=2
 augroup END
-
-function! SetSyntasticCheckerForSphinxProjects()
-    let buf = bufnr('')
-    let config = syntastic#util#findFileInParent('conf.py', fnamemodify(bufname(buf), ':p:h'))
-    if config ==# '' || !filereadable(config)
-        return
-    endif
-    let g:syntastic_rst_checkers = ['sphinx']
-endfunction
