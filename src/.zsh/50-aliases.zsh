@@ -5,6 +5,11 @@ function treeless() {
 }
 alias tl="treeless"
 
+if type nvim > /dev/null; then
+	alias vim="nvim"
+	alias view="nvim -R"
+fi
+
 if type knowledgebase > /dev/null; then
 	function knowledgebase() {
 		if [ "$#" -lt 1 ]; then

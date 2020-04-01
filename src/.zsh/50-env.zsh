@@ -4,7 +4,11 @@ else
 	umask 066
 fi
 
-export EDITOR="vim"
+if type nvim > /dev/null; then
+	export EDITOR="nvim"
+else
+	export EDITOR="vim"
+fi
 export PAGER="less"
 
 export PASSWORD_STORE_DIR="$HOME/Documents/.password-store"
