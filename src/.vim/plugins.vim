@@ -14,6 +14,7 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'python': ['pyls'],
     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+    \ 'yaml': ['yaml-language-server', '--stdio'],
     \ }
 
 let g:LanguageClient_hoverPreview = "Always"
@@ -21,7 +22,7 @@ let g:LanguageClient_useVirtualText = "No"
 
 augroup LanguageClientAU
     au!
-    au BufWritePre *.ex,*.exs,*.go,*.py,*.rs execute "silent :call LanguageClient#textDocument_formatting_sync()"
+    au BufWritePre *.ex,*.exs,*.go,*.py,*.rs,*.yml,*.yaml execute "silent :call LanguageClient#textDocument_formatting_sync()"
 augroup END
 
 " {{{ Python
