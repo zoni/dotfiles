@@ -100,23 +100,22 @@ nnoremap <leader>fd :set foldmethod=diff<CR>
 
 " {{{ Git
 nnoremap <expr> <leader>rg ":Ggrep! " . input("Git grep: ") . "<CR>:copen<CR>"
-nnoremap <leader>rL :Glog! --<CR>:copen<CR>
+nnoremap <leader>rL :FzfBCommits!<CR>
 nnoremap <leader>rP :Gpush<Space>
 nnoremap <leader>rS :Gstatus<CR>
 nnoremap <leader>rb :Gblame<CR>
 nnoremap <leader>rc :Gcommit<Space>
 nnoremap <leader>rd :Gdiff<CR>
 nnoremap <leader>rf :Gfetch<CR>
+nnoremap <leader>rl :FzfCommits!<CR>
 nnoremap <leader>rp :Gpull<Space>
 nnoremap <leader>rr :Git<Space>
 nnoremap <leader>rw :Gwrite<CR>
 
 if has('nvim')
-	nnoremap <leader>rl :term tig %<CR>
 	nnoremap <leader>rs :term tig status<CR>
 	nnoremap <leader>rt :term tig<CR>
 else
-	nnoremap <leader>rl :silent !tig %<CR>:redraw!<CR>
 	nnoremap <leader>rs :silent !tig status<CR>:redraw!<CR>
 	nnoremap <leader>rt :silent !tig<CR>:redraw!<CR>
 endif
