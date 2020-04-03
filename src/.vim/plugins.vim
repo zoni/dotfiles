@@ -1,5 +1,13 @@
 " vim: foldmethod=marker
 
+" {{{ echodoc
+let g:echodoc_enable_at_startup = 1
+" }}}
+
+" {{{ Fzf
+let g:fzf_command_prefix = 'Fzf'
+" }}}
+
 " {{{ Gundo
 let g:gundo_prefer_python3 = 1
 let g:gundo_return_on_revert = 0
@@ -63,9 +71,9 @@ augroup END
 let g:SuperTabDefaultCompletionType = "context"
 " }}}
 
-" {{{ Denite
-" Denite is configured in ~/.vim/post-plug-end.vim because of dynamic
-" configuration method.
+" {{{ Deoplete
+let g:deoplete#auto_complete_delay = 500
+let g:deoplete#enable_at_startup = 1
 " }}}
 
 " {{{ vim-swoop

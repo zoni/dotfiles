@@ -12,6 +12,8 @@ endfunction
 
 call plug#begin('~/.vim-plugs')
 
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/echodoc.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'aklt/plantuml-syntax'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'make release' }
@@ -29,6 +31,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'jamessan/vim-gnupg'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
+Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'kshenoy/vim-signature'
 Plug 'lokaltog/vim-easymotion'
@@ -50,7 +53,6 @@ Plug 'rstacruz/vim-closer'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
-Plug 'shougo/denite.nvim'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'slashmili/alchemist.vim'
 Plug 'terryma/vim-expand-region'
@@ -81,7 +83,6 @@ source ~/.vim/keybinds.vim
 
 call plug#end()
 
-source ~/.vim/post-plug-end.vim
 source ~/.vim/theme.vim
 
 source /usr/share/vim/vimfiles/plugin/fzf.vim

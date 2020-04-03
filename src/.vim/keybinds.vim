@@ -18,33 +18,31 @@ xmap , <Plug>(expand_region_shrink)
 " }}}
 
 " {{{ Windows
-nnoremap <leader>wh <C-w>h
-nnoremap <leader>wj <C-w>j
-nnoremap <leader>wk <C-w>k
-nnoremap <leader>wl <C-w>l
+nnoremap <leader><tab> <C-w>p
+nnoremap <leader>w+ <C-w>+
+nnoremap <leader>w- <C-w>-
+nnoremap <leader>w< <C-w><
+nnoremap <leader>w= <C-w>=
+nnoremap <leader>w> <C-w>>
 nnoremap <leader>wH <C-w>H
 nnoremap <leader>wJ <C-w>J
 nnoremap <leader>wK <C-w>K
 nnoremap <leader>wL <C-w>L
-nnoremap <leader>ws <C-w>s
-nnoremap <leader>wv <C-w>v
-nnoremap <leader>wn <C-w>n
+nnoremap <leader>wP <C-w>P
+nnoremap <leader>wR <C-w>R
 nnoremap <leader>wc <C-w>c
-nnoremap <leader>wq <C-w>q
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
+nnoremap <leader>wn <C-w>n
 nnoremap <leader>wo <C-w>o
 nnoremap <leader>wp <C-w>p
-nnoremap <leader><tab> <C-w>p
-nnoremap <leader>wP <C-w>P
+nnoremap <leader>wq <C-w>q
 nnoremap <leader>wr <C-w>r
-nnoremap <leader>wR <C-w>R
+nnoremap <leader>ws <C-w>s
+nnoremap <leader>wv <C-w>v
 nnoremap <leader>wx <C-w>x
-nnoremap <leader>w= <C-w>=
-nnoremap <leader>w- <C-w>-
-nnoremap <leader>w+ <C-w>+
-nnoremap <leader>w< <C-w><
-nnoremap <leader>w> <C-w>>
-"nnoremap <leader>w_ <C-w>_
-"nnoremap <leader>w| <C-w>|
 " }}}
 
 " {{{ Buffers
@@ -59,11 +57,13 @@ endfunction
 "nmap <silent> <C-c> <Esc>:bdelete<CR>
 nnoremap <silent> <C-c> <Esc>:Bclose<CR>
 
-nnoremap <leader>bb :BufExplorer<CR>
-nnoremap <leader>bc :Bclose<CR>
 nnoremap <leader>bC :bprevious\|bdelete! #<CR>
 nnoremap <leader>bE :edit .<CR>
+nnoremap <leader>bb :BufExplorer<CR>
+nnoremap <leader>bc :Bclose<CR>
 nnoremap <leader>be :Explore<CR>
+nnoremap <leader>bf :FzfBuffers!<CR>
+nnoremap <leader>bh :FzfHistory!<CR>
 nnoremap <leader>bla :set norelativenumber<CR>
 nnoremap <leader>blr :set relativenumber<CR>
 nnoremap <leader>bn :bnext<CR>
@@ -82,8 +82,8 @@ nnoremap <silent> <leader>yr :YRShow<CR>
 nnoremap - :Explore<CR>
 
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-nnoremap <silent> <Leader>mr :call LanguageClient#textDocument_rename()<CR>
 nnoremap <silent> <Leader>ma :call LanguageClient#textDocument_codeAction()<CR>
+nnoremap <silent> <Leader>mr :call LanguageClient#textDocument_rename()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> gs :call LanguageClient#textDocument_documentSymbol()<CR>
@@ -122,13 +122,6 @@ else
 endif
 " }}}
 
-" {{{ Denite
-nnoremap <silent> <leader>dF :DeniteBufferDir file_rec<CR>
-nnoremap <silent> <leader>db :Denite buffer<CR>
-nnoremap <silent> <leader>df :Denite `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
-nnoremap <silent> <leader>dr :Denite register -mode=normal<CR>
-" }}}
-
 " {{{ Misc
 " Try to write file using sudo when using double !
 cmap w!! w !sudo tee % >/dev/null
@@ -162,7 +155,12 @@ vmap <leader>/ <Plug>CtrlSFVwordExec
 nmap <leader>* <Plug>CtrlSFCwordPath<CR>
 nmap <leader># <Plug>CtrlSFCwordPath<CR>
 
-nmap <leader>? :Swoop!
+nmap <leader>: :FzfHistory:!<CR>
+
+nmap <leader>? :Swoop! 
+nmap <leader>ff :FZF!<CR>
+nmap <leader>fg :FzfRg! 
+nmap <leader>fl :Lines!<CR>
 vmap <leader>? :call SwoopMultiSelection()<CR>
 " }}}
 

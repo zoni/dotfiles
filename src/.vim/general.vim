@@ -17,7 +17,9 @@ set hidden              " Allow switching buffers without saving
 set showcmd             " Show (partial) command in the last line of the screen
 set splitbelow
 set splitright
-set timeoutlen=2500     " Timeout for key sequences. Default is 1000ms.
+set timeoutlen=1500     " Timeout for key sequences. Default is 1000ms.
+set noshowmode          " needed for echodoc plugin
+set signcolumn=yes      " Always draw the signcolumn to avoid text shifting
 
 " Locations of backups/views/etc
 set backupdir=$HOME/.vimbackup/
@@ -31,6 +33,9 @@ set wildignore=.pyc,.swp,.swo
 " When completing, automatically expand as far as possible, then show
 " remaining possibilities in a list
 set wildmode=longest,list
+" For deoplete. See also:
+" https://github.com/Shougo/deoplete.nvim/issues/1013#issuecomment-600029525
+set completeopt=menu,noselect
 
 set ignorecase  " Set case-insenitive searches
 set incsearch   " With search-as-you-type
