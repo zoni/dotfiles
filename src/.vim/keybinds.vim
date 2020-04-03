@@ -110,6 +110,7 @@ nnoremap <leader>rf :Gfetch<CR>
 nnoremap <leader>rhs :GitGutterStageHunk<CR>
 nnoremap <leader>rhu :GitGutterUndoHunk<CR>
 nnoremap <leader>rl :FzfCommits!<CR>
+nnoremap <leader>rm :MagitOnly<CR>
 nnoremap <leader>rp :Gpull<Space>
 nnoremap <leader>rr :Git<Space>
 nnoremap <leader>rw :Gwrite<CR>

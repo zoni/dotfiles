@@ -32,6 +32,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'jamessan/vim-gnupg'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
+Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'kshenoy/vim-signature'
