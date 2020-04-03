@@ -70,7 +70,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/SearchComplete'
 Plug 'vim-scripts/YankRing.vim'
-Plug 'vim-scripts/argtextobj.vim'
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'wellle/targets.vim'
 
