@@ -28,10 +28,32 @@ let g:LanguageClient_serverCommands = {
 let g:LanguageClient_hoverPreview = "Always"
 let g:LanguageClient_useVirtualText = "No"
 
+function! LanguageClient_YAML_SetSchemaSettings()
+	if &ft=="yaml"
+		let yaml_schema_settings = json_decode('
+		\{
+		\    "yaml": {
+		\        "completion": true,
+		\        "hover": true,
+		\        "validate": true,
+		\        "format": {
+		\            "enable": true
+		\        }
+		\    },
+		\    "http": {
+		\        "proxyStrictSSL": true
+		\    }
+		\}')
+		LanguageClient#Notify('workspace/didChangeConfiguration', {'settings': yaml_schema_settings})
+	endif
+endfunction
+
 augroup LanguageClientAU
     au!
     au BufWritePre *.ex,*.exs,*.go,*.py,*.rs,*.yml,*.yaml execute "silent :call LanguageClient#textDocument_formatting_sync()"
+    "au User LanguageClientStarted call LanguageClient_YAML_SetSchemaSettings()
 augroup END
+" }}}
 
 " {{{ Python
 if has('python3')
