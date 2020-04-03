@@ -72,6 +72,7 @@ Plug 'vim-scripts/SearchComplete'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
+Plug 'wellle/targets.vim'
 
 source ~/.vim/general.vim
 source ~/.vim/yankring.vim
