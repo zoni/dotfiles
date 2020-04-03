@@ -99,6 +99,7 @@ fi
 if type hub > /dev/null; then
 	alias git="hub"
 fi
+
 alias ga="git ahead"
 alias gadd="git add"
 alias gaddp="git add --patch"
@@ -148,3 +149,6 @@ alias gs="git status"
 alias gss="git status --short"
 alias gt="git tracking"
 alias gu="gpr && gprune && git trim --no-update"
+
+alias tigr="tig refs"
+alias tigs="tig status"
