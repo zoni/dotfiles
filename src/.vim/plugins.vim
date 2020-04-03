@@ -8,6 +8,10 @@ let g:echodoc_enable_at_startup = 1
 let g:fzf_command_prefix = 'Fzf'
 " }}}
 
+" {{{ gitgutter
+let g:gitgutter_map_keys = 0
+" }}}
+
 " {{{ Gundo
 let g:gundo_prefer_python3 = 1
 let g:gundo_return_on_revert = 0

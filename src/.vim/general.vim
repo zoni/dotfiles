@@ -17,6 +17,7 @@ set hidden              " Allow switching buffers without saving
 set showcmd             " Show (partial) command in the last line of the screen
 set splitbelow
 set splitright
+set updatetime=250      " Write swapfile after this many milliseconds.
 set timeoutlen=1500     " Timeout for key sequences. Default is 1000ms.
 set noshowmode          " needed for echodoc plugin
 set signcolumn=yes      " Always draw the signcolumn to avoid text shifting

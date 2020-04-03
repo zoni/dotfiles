@@ -107,10 +107,14 @@ nnoremap <leader>rb :Gblame<CR>
 nnoremap <leader>rc :Gcommit<Space>
 nnoremap <leader>rd :Gdiff<CR>
 nnoremap <leader>rf :Gfetch<CR>
+nnoremap <leader>rhs :GitGutterStageHunk<CR>
+nnoremap <leader>rhu :GitGutterUndoHunk<CR>
 nnoremap <leader>rl :FzfCommits!<CR>
 nnoremap <leader>rp :Gpull<Space>
 nnoremap <leader>rr :Git<Space>
 nnoremap <leader>rw :Gwrite<CR>
+nnoremap [c :GitGutterPrevHunk<CR>
+nnoremap ]c :GitGutterNextHunk<CR>
 
 if has('nvim')
 	nnoremap <leader>rs :term tig status<CR>
