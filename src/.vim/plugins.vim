@@ -1,5 +1,11 @@
 " vim: foldmethod=marker
 
+" {{{ ALE
+let g:ale_markdown_remark_lint_executable = 'docker'
+let g:ale_markdown_remark_lint_options = 'run --rm -i -v "$(pwd):/project:ro" quay.io/zoni/remark-lint'
+let g:ale_markdown_remark_lint_use_global = 1
+" }}}
+
 " {{{ echodoc
 let g:echodoc_enable_at_startup = 1
 " }}}
