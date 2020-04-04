@@ -159,13 +159,13 @@ vmap <leader>/ <Plug>CtrlSFVwordExec
 nmap <leader>* <Plug>CtrlSFCwordPath<CR>
 nmap <leader># <Plug>CtrlSFCwordPath<CR>
 
-nmap <leader>: :FzfHistory:!<CR>
-
-nmap <leader>? :Swoop! 
-nmap <leader>ff :FZF!<CR>
-nmap <leader>fg :FzfRg! 
-nmap <leader>fl :Lines!<CR>
+nmap <leader>? :Swoop!<space>
 vmap <leader>? :call SwoopMultiSelection()<CR>
+
+nmap <leader>: :FzfHistory:!<CR>
+nmap <leader>sf :FZF!<CR>
+nmap <leader>sg :FzfRg!<space>
+nmap <leader>sl :Lines!<CR>
 " }}}
 
 " {{{ Table mode
