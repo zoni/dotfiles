@@ -134,7 +134,7 @@ let g:ctrlsf_auto_close = {
 let g:ctrlsf_auto_focus = {
     \ "at" : "start"
 \ }
-let g:ctrlsf_default_root = 'project+ff'
+let g:ctrlsf_default_root = 'project+fw'
 let g:ctrlsf_default_view_mode = 'compact'
 let g:ctrlsf_mapping = {
   \ "open"    : ["<CR>", "o"],
@@ -155,6 +155,12 @@ let g:ctrlsf_mapping = {
 \ }
 let g:ctrlsf_regex_pattern = 1
 let g:ctrlsf_search_mode = 'sync'
+
+let g:ctrlsf_ackprg = 'rg'
+let g:ctrlsf_extra_backend_args = {
+  \ 'rg': '--hidden'
+\ }
+
 " }}}
 
 " {{{ tagbar
