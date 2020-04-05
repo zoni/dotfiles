@@ -9,5 +9,6 @@ mkdir -p \
 	$HOME/.local/share/applications \
 	$HOME/.config/autostart \
 	$HOME/.config/environment.d \
+	$HOME/.config/sway \
 	$HOME/.config/systemd/user \
 	$HOME/.vscode
