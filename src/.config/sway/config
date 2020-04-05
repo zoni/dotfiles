@@ -42,7 +42,7 @@ mode "run" {
     bindsym e exec rofimoji; mode "default"
     bindsym f exec nautilus --new-window; mode "default"
     bindsym k exec knowledgebase browse; mode "default"
-    bindsym m exec terminator -x mutt.sh; mode "default"
+    bindsym m exec alacritty --command mutt.sh; mode "default"
     bindsym n exec dex /usr/share/applications/networkmanager_dmenu.desktop; mode "default"
     bindsym p exec rofi-pass; mode "default"
     bindsym t exec dex ~/.local/share/applications/todoist.desktop; mode "default"
@@ -59,7 +59,7 @@ bindsym $mod+q kill
 bindsym $mod+BackSpace exec gnome-screensaver-command --lock
 bindsym $mod+Mod1+BackSpace exec bash -c "exec dex $HOME/.local/share/applications/suspend.desktop"
 bindsym $mod+slash exec rofi -show window
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec alacritty
 bindsym $mod+grave exec guake-toggle
 
 # change focus
