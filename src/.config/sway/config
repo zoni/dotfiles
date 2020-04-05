@@ -1,23 +1,26 @@
 # vim: foldmethod=marker et
-#
-# i3 config file (v4)
-#
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# {{{ Wayland settings
+include outputs
+xwayland enable
+
+input type:keyboard {
+    xkb_options caps:escape
+    repeat_delay 250
+    repeat_rate 25
+}
+# }}}
 
 # {{{ Theming
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:Ubuntu Bold 11
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 bar {
-        position top
-        status_command i3status
-        tray_output primary
+    position top
+    status_command i3status
+    tray_output *
 }
 
 # }}}
@@ -33,19 +36,19 @@ focus_follows_mouse no
 mouse_warping none
 
 mode "run" {
-    bindsym a exec --no-startup-id rofi -i -show drun; mode "default"
-    bindsym c exec --no-startup-id rofi -i -modi "clipboard:roficlip --show" -show clipboard; mode "default"
-    bindsym d exec --no-startup-id toggle-external-display; mode "default"
-    bindsym e exec --no-startup-id rofimoji; mode "default"
-    bindsym f exec --no-startup-id nautilus --new-window; mode "default"
-    bindsym k exec --no-startup-id knowledgebase browse; mode "default"
-    bindsym m exec --no-startup-id i3-sensible-terminal -x mutt.sh; mode "default"
-    bindsym n exec --no-startup-id dex /usr/share/applications/networkmanager_dmenu.desktop; mode "default"
-    bindsym p exec --no-startup-id rofi-pass; mode "default"
-    bindsym t exec --no-startup-id dex ~/.local/share/applications/todoist.desktop; mode "default"
-    bindsym v exec --no-startup-id pavucontrol; mode "default"
-    bindsym shift+z exec --no-startup-id zeegaree; mode "default"
-    bindsym slash exec --no-startup-id rofi -show window; mode "default"
+    bindsym a exec rofi -i -show drun; mode "default"
+    bindsym c exec rofi -i -modi "clipboard:roficlip --show" -show clipboard; mode "default"
+    bindsym d exec toggle-external-display; mode "default"
+    bindsym e exec rofimoji; mode "default"
+    bindsym f exec nautilus --new-window; mode "default"
+    bindsym k exec knowledgebase browse; mode "default"
+    bindsym m exec terminator -x mutt.sh; mode "default"
+    bindsym n exec dex /usr/share/applications/networkmanager_dmenu.desktop; mode "default"
+    bindsym p exec rofi-pass; mode "default"
+    bindsym t exec dex ~/.local/share/applications/todoist.desktop; mode "default"
+    bindsym v exec pavucontrol; mode "default"
+    bindsym shift+z exec zeegaree; mode "default"
+    bindsym slash exec rofi -show window; mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -54,10 +57,10 @@ bindsym $mod+space mode "run"
 
 bindsym $mod+q kill
 bindsym $mod+BackSpace exec gnome-screensaver-command --lock
-bindsym $mod+Mod1+BackSpace exec --no-startup-id bash -c "exec dex $HOME/.local/share/applications/suspend.desktop"
-bindsym $mod+slash exec --no-startup-id rofi -show window
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+grave exec --no-startup-id guake-toggle
+bindsym $mod+Mod1+BackSpace exec bash -c "exec dex $HOME/.local/share/applications/suspend.desktop"
+bindsym $mod+slash exec rofi -show window
+bindsym $mod+Return exec terminator
+bindsym $mod+grave exec guake-toggle
 
 # change focus
 bindsym $mod+h focus left
@@ -110,7 +113,7 @@ bindsym $mod+f floating toggle
 #bindsym $mod+c focus child
 
 # switch to workspace
-bindsym $mod+1 workspace $tag1
+bindsym $mod+1 workspace "$tag1"
 bindsym $mod+2 workspace $tag2
 bindsym $mod+3 workspace $tag3
 bindsym $mod+4 workspace $tag4
@@ -132,7 +135,7 @@ bindsym $mod+Shift+9 workspace number 19
 bindsym $mod+Shift+0 workspace number 10
 
 bindsym $mod+Tab workspace back_and_forth
-bindsym $mod+n exec --no-startup-id i3-msg workspace $(i3-next-available-workspace)
+bindsym $mod+n exec swaymsg workspace $(sway-next-available-workspace)
 bindsym $mod+o workspace next_on_output
 bindsym $mod+u workspace prev_on_output
 
@@ -140,7 +143,7 @@ bindsym $mod+Mod1+o move workspace to output left
 bindsym $mod+Mod1+u move workspace to output right
 
 # move focused container to workspace
-bindsym $mod+Mod1+1 move container to workspace number $tag1
+bindsym $mod+Mod1+1 move container to workspace number "$tag1"
 bindsym $mod+Mod1+2 move container to workspace number $tag2
 bindsym $mod+Mod1+3 move container to workspace number $tag3
 bindsym $mod+Mod1+4 move container to workspace number $tag4
@@ -162,16 +165,12 @@ bindsym $mod+Shift+Mod1+9 move container to workspace number 19
 bindsym $mod+Shift+Mod1+0 move container to workspace number 10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+r reload
 bindsym $mod+Ctrl+q exit
 
 
 mode "workspace" {
-    bindsym 1 workspace $tag1
+    bindsym 1 workspace "$tag1"
     bindsym 2 workspace $tag2
     bindsym 3 workspace $tag3
     bindsym 4 workspace $tag4
@@ -198,7 +197,7 @@ mode "workspace" {
     bindsym j focus output down
     bindsym k focus output up
     bindsym l focus output right
-    bindsym n exec --no-startup-id i3-msg workspace $(i3-next-available-workspace)
+    bindsym n exec swaymsg workspace $(sway-next-available-workspace)
 
     bindsym Shift+h move workspace to output left
     bindsym Shift+j move workspace to output down
@@ -206,7 +205,7 @@ mode "workspace" {
     bindsym Shift+l move workspace to output right
 
     bindsym Tab workspace back_and_forth
-    bindsym r exec i3-rename-workspace; mode "default"
+    bindsym r exec sway-rename-workspace; mode "default"
     bindsym f focus mode_toggle; mode "default"
 
     bindsym Return mode "default"
@@ -214,7 +213,7 @@ mode "workspace" {
 }
 
 mode "window" {
-    bindsym 1 workspace $tag1
+    bindsym 1 workspace "$tag1"
     bindsym 2 workspace $tag2
     bindsym 3 workspace $tag3
     bindsym 4 workspace $tag4
@@ -249,7 +248,7 @@ mode "window" {
     bindsym Shift+l move right
 
     bindsym q kill
-    bindsym slash exec --no-startup-id rofi -show window; mode "default"
+    bindsym slash exec rofi -show window; mode "default"
 
     bindsym f floating toggle
     bindsym Shift+t sticky toggle
@@ -307,7 +306,7 @@ mode "move-window" {
     bindsym Shift+l move output right; focus output right
 
     bindsym s move scratchpad; mode "default"
-    bindsym n exec --no-startup-id i3-move-container-to-new-workspace-and-focus
+    bindsym n exec sway-move-container-to-new-workspace-and-focus
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -364,44 +363,43 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Keyboard layout controls
-bindsym $mod+Insert exec --no-startup-id toggle-dead-keys
+bindsym $mod+Insert exec toggle-dead-keys
 
 # Screenshots
-bindsym Print exec --no-startup-id flameshot gui
+bindsym Print exec flameshot gui
 
 # }}}
 
 # {{{ Workspaces
 
-set $tag1 "1: Chat"
-set $tag2 "2: Mail"
-set $tag3 "3: Web"
-set $tag4 "4: Slack"
-set $tag5 "5: Code"
-set $tag6 "6"
-set $tag7 "7"
-set $tag8 "8"
-set $tag9 "9"
-set $tag0 "0"
+set $tag1 1: Chat
+set $tag2 2: Mail
+set $tag3 3: Web
+set $tag4 4: Slack
+set $tag5 5: Code
+set $tag6 6
+set $tag7 7
+set $tag8 8
+set $tag9 9
+set $tag0 0
 
 # }}}
 
 # {{{ Window rules
 
-for_window [class="Zeegaree.py"] floating enable
+assign [app_id="telegramdesktop"] $tag1
 assign [class="Thunderbird"] $tag2
+assign [class="Slack"] $tag4
+
+for_window [class="Zeegaree.py"] floating enable
 for_window [class="Wine"] floating enable
-for_window [class="Guake"] floating enable, resize set height 100ppt, resize set width 100ppt
-for_window [class="zoom" instance="^$"] floating enable
+for_window [app_id="guake"] floating enable, resize set height 100ppt, resize set width 100ppt, fullscreen
 
 # }}}
 
 # {{{ Startup apps
 
-exec --no-startup-id bash -c "exec $HOME/.i3/load-workspaces.sh"
-exec --no-startup-id bash -c "eval $(cat $HOME/.fehbg)"
-
 # https://github.com/jceb/dex
-exec --no-startup-id bash -c "sleep 3 && exec dex $HOME/.config/autostart/*.desktop"
+exec bash -c "sleep 2 && exec dex $HOME/.config/autostart/*.desktop"
 
 # }}}
