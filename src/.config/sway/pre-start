@@ -6,3 +6,4 @@ install -d /run/user/${UID}/tmp && export TMPDIR=/run/user/${UID}/tmp || true
 . $HOME/.zsh/50-env.zsh
 
 export $(gnome-keyring-daemon --start --components=ssh,gpg,pkc11,secrets)
+export MOZ_ENABLE_WAYLAND=1
