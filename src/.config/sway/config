@@ -58,7 +58,7 @@ bindsym $mod+BackSpace exec gnome-screensaver-command --lock
 bindsym $mod+Mod1+BackSpace exec bash -c "exec dex $HOME/.local/share/applications/suspend.desktop"
 bindsym $mod+slash exec rofi -show window
 bindsym $mod+Return exec alacritty
-bindsym $mod+grave exec guake-toggle
+bindsym $mod+grave exec toggle-alacritty-dropdown
 
 # change focus
 bindsym $mod+h focus left
@@ -389,6 +389,7 @@ assign [app_id="telegramdesktop"] $tag1
 assign [class="Slack"] $tag4
 assign [class="Thunderbird"] $tag2
 
+for_window [app_id="Alacritty-dropdown"] floating enable, resize set height 100ppt, resize set width 100ppt
 for_window [app_id="guake"] floating enable, resize set height 100ppt, resize set width 100ppt, fullscreen
 for_window [class="Wine"] floating enable
 for_window [class="Zeegaree.py"] floating enable
