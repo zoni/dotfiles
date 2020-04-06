@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/nm-applet --indicator
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=NetworkManager applet
+Name=NetworkManager applet
+Comment[en_US]=
+Comment=
