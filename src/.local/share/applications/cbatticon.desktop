@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Name=Battery icon applet
+Exec=cbatticon --update-interval 10 --low-level 15 --critical-level 5 --command-critical-level "systemctl suspend --ignore-inhibitors"
+Terminal=false
+Type=Application
+Categories=
