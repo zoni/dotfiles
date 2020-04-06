@@ -45,7 +45,8 @@ schemes:
     primary:
       #background: "#282c34"
       background: "#000000"
-      foreground: "#abb2bf"
+      #foreground: "#abb2bf"
+      foreground: "#ffffff"
     normal:
       # NOTE: Use '#131613' for the `black` color if you'd like to see
       # black text on the background.
