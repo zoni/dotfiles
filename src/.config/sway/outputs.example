@@ -1,0 +1,6 @@
+# vim: filetype=conf foldmethod=marker et
+
+output eDP-1 {
+    background ~/.config/sway/current-wallpaper stretch
+    resolution 1920x1080
+}

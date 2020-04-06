@@ -1,14 +1,12 @@
 # vim: foldmethod=marker et
 
 # {{{ Wayland settings
+
+include inputs
 include outputs
+
 xwayland enable
 
-input type:keyboard {
-    xkb_options caps:escape
-    repeat_delay 250
-    repeat_rate 25
-}
 # }}}
 
 # {{{ Theming
