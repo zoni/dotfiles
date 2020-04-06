@@ -17,6 +17,9 @@ font:
   #italic:
   #family: Droid Sans Mono Slashed for Powerline
 
+key_bindings:
+  - { key: N, mods: Control|Shift, action: SpawnNewInstance }
+
 schemes:
   ayu-dark: &ayu_dark
     primary:
