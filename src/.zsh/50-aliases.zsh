@@ -148,7 +148,7 @@ alias grmf="git rm --force"
 alias gs="git status"
 alias gss="git status --short"
 alias gt="git tracking"
-alias gu="gpr && gprune && git trim --no-update"
+alias gu="gpr && gprune && git trim --no-update --delete merged-local"
 
 alias tigr="tig refs"
 alias tigs="tig status"
