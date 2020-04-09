@@ -36,7 +36,7 @@ if type code >/dev/null; then
 fi
 
 gsettings set org.gnome.desktop.interface cursor-theme "Adwaita"
-gsettings set org.gnome.desktop.interface font-name "Ubuntu Regular 11"
+gsettings set org.gnome.desktop.interface font-name "DejaVu Sans Book 11"
 gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
 gsettings set org.gnome.desktop.interface icon-theme "gnome-brave"
 
