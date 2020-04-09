@@ -54,7 +54,7 @@ mode "run" {
 bindsym $mod+space mode "run"
 
 bindsym $mod+q kill
-bindsym $mod+BackSpace exec gnome-screensaver-command --lock
+bindsym $mod+BackSpace exec swaylock --color 131613
 bindsym $mod+Mod1+BackSpace exec bash -c "exec dex $HOME/.local/share/applications/suspend.desktop"
 bindsym $mod+slash exec rofi -show window
 bindsym $mod+Return exec alacritty
