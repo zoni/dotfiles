@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 CURRENT_WORKSPACE=$(swaymsg -t get_workspaces | jq '.[] | select(.focused) | .num')
-NEW_NAME=$(swaymsg -t get_tree | jq 'recurse(.nodes[]) | .window_properties.class' | tr '[:upper:]' '[:lower:]' | grep -vE '^"?(i3bar|null)"?$' | sort | uniq | awk '{ print substr($0, 2, length($0)-2) }' | rofi -dmenu -p "Rename workspace to: ")
+NEW_NAME=$(swaymsg -t get_tree | jq 'recurse(.nodes[]?) | .window_properties.class, .app_id' | tr '[:upper:]' '[:lower:]' | grep -vE '^"?(i3bar|null)"?$' | sort | uniq | awk '{ print substr($0, 2, length($0)-2) }' | rofi -dmenu -p "Rename workspace to: ")
 if [[ $? -ne 0 ]]; then
 	exit 1
 fi
