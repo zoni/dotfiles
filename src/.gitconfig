@@ -1,3 +1,5 @@
+[advice]
+	detachedHead = false
 [user]
 	name = Nick Groenen
 	email = nick@groenen.me
