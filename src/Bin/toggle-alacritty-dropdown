@@ -1,0 +1,9 @@
+#!/bin/sh
+
+APP_ID=Alacritty-dropdown
+
+if swaymsg -t get_tree | jq '.. | objects | .app_id | select(. != null)' | rg --fixed-strings \""$APP_ID\"" >/dev/null 2>&1; then
+	pkill --full --uid $UID "alacritty --class $APP_ID"
+else
+	exec alacritty --class "$APP_ID" --command tmuxsession default
+fi

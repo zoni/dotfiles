@@ -1,0 +1,18 @@
+# vim: filetype=conf foldmethod=marker et
+
+set $laptop_display eDP-1
+set $external_display DP-3
+
+output $laptop_display {
+    background ~/.config/sway/current-wallpaper stretch
+    resolution 1920x1080
+}
+
+output $external_display {
+    background ~/.config/sway/current-wallpaper stretch
+    resolution 2560x1080
+}
+
+# https://github.com/swaywm/sway/wiki#clamshell-mode
+bindswitch --locked --reload lid:on output $laptop_display disable
+bindswitch --locked --reload lid:off output $laptop_display enable

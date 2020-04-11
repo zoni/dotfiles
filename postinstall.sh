@@ -28,11 +28,19 @@ if [ -e $HOME/.config/udev-notify/config.$HOST.toml ]; then
 	cat $HOME/.config/udev-notify/config.$HOST.toml  >> $HOME/.config/udev-notify/config.toml
 fi
 
-systemctl --user daemon-reload
-
 if type code >/dev/null; then
 	# Install VS Code extensions listed in extensions.list that are missing from `code --list-extensions`
 	comm -13 <(code --list-extensions|sort) <(grep -v -E '^#' $(dirname $BASH_SOURCE)/src/.vscode/extensions.list | sort) | xargs --no-run-if-empty --max-lines=1 -- code --install-extension
 
 	ln --force --symbolic ../../../.vscode/settings.json "$HOME/.config/Code - OSS/User/settings.json"
 fi
+
+gsettings set org.gnome.desktop.interface cursor-theme "Adwaita"
+gsettings set org.gnome.desktop.interface font-name "DejaVu Sans Book 11"
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
+gsettings set org.gnome.desktop.interface icon-theme "gnome-brave"
+
+test -e "$HOME/.config/sway/inputs" || cp "$(dirname $BASH_SOURCE)/src/.config/sway/inputs.example" "$HOME/.config/sway/inputs"
+test -e "$HOME/.config/sway/outputs" || cp "$(dirname $BASH_SOURCE)/src/.config/sway/outputs.example" "$HOME/.config/sway/outputs"
+
+systemctl --user daemon-reload

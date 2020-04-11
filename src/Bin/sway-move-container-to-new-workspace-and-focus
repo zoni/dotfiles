@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+NEW_WORKSPACE="$(sway-next-available-workspace)"
+swaymsg "move container to workspace ${NEW_WORKSPACE}"
+swaymsg "workspace ${NEW_WORKSPACE}"
