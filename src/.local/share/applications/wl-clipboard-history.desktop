@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Wayland clipboard history tracker
+Exec=wl-clipboard-history -t
+Terminal=false
+Type=Application
+Categories=
+GenericName=
+X-GNOME-Autostart-Phase=Initialization
+X-KDE-autostart-phase=1

@@ -35,7 +35,7 @@ mouse_warping none
 
 mode "run" {
     bindsym a exec rofi -i -show drun; mode "default"
-    bindsym c exec rofi -i -modi "clipboard:roficlip --show" -show clipboard; mode "default"
+    bindsym c exec /bin/bash -c "wl-clipboard-history -l 250 | cut -d ',' -f 2- | rofi -dmenu -i | head --bytes -1 | wl-copy"; mode "default"
     bindsym d exec toggle-external-display; mode "default"
     bindsym e exec rofimoji; mode "default"
     bindsym f exec nautilus --new-window; mode "default"
