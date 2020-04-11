@@ -163,7 +163,7 @@ bindsym $mod+Shift+Mod1+9 move container to workspace number 19
 bindsym $mod+Shift+Mod1+0 move container to workspace number 10
 
 # reload the configuration file
-bindsym $mod+Shift+r reload
+bindsym $mod+Ctrl+r reload
 bindsym $mod+Ctrl+q exit
 
 
