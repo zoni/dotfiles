@@ -2,7 +2,7 @@
 
 APP_ID=Alacritty-dropdown
 
-pgrep -f "Alacritty-dropdown" || exec alacritty --class "$APP_ID" --command tmuxsession default
+pgrep -u $UID -f "Alacritty-dropdown" || exec alacritty --class "$APP_ID" --command tmuxsession default
 
 if [ -e $TMPDIR/alacritty-dropdown.visible ]; then
 	swaymsg '[con_mark="dropdown-terminal"] move absolute position -10000 -10000'
