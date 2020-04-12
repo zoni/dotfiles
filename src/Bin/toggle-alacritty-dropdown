@@ -2,8 +2,12 @@
 
 APP_ID=Alacritty-dropdown
 
-if swaymsg -t get_tree | jq '.. | objects | .app_id | select(. != null)' | rg --fixed-strings \""$APP_ID\"" >/dev/null 2>&1; then
-	pkill --full --uid $UID "alacritty --class $APP_ID"
+pgrep -f "Alacritty-dropdown" || exec alacritty --class "$APP_ID" --command tmuxsession default
+
+if [ -e $TMPDIR/alacritty-dropdown.visible ]; then
+	swaymsg '[con_mark="dropdown-terminal"] move absolute position -10000 -10000'
+	rm -f $TMPDIR/alacritty-dropdown.visible
 else
-	exec alacritty --class "$APP_ID" --command tmuxsession default
+	swaymsg '[con_mark="dropdown-terminal"] focus, move position center'
+	touch $TMPDIR/alacritty-dropdown.visible
 fi
