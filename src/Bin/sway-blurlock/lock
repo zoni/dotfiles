@@ -11,7 +11,7 @@ PARAMS=""
 OUTPUT_IMAGE="${TMPDIR}/sway-screenlock.png"
 DISPLAY_TEXT=true
 PIXELATE=false
-SWAYLOCK_EXTRA_PARAMS="--ignore empty-password --show-failed-attempts --color 131613"
+SWAYLOCK_EXTRA_PARAMS="--daemonize --ignore empty-password --show-failed-attempts --color 131613"
 
 POSITIONAL=()
 while [[ $# -gt 0 ]]
