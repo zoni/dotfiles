@@ -355,8 +355,8 @@ bindsym --locked XF86MonBrightnessUp exec light -A 5
 bindsym --locked XF86MonBrightnessDown exec light -U 5
 
 # Media player controls
-bindsym --locked XF86AudioPlay exec playerctl play
-bindsym --locked XF86AudioPause exec playerctl pause
+bindsym --locked XF86AudioPlay exec playerctl play-pause
+bindsym --locked XF86AudioPause exec playerctl play-pause
 bindsym --locked XF86AudioNext exec playerctl next
 bindsym --locked XF86AudioPrev exec playerctl previous
 
