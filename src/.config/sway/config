@@ -54,7 +54,7 @@ mode "run" {
 bindsym $mod+space mode "run"
 
 bindsym $mod+q kill
-bindsym $mod+BackSpace exec lock-screen
+bindsym $mod+BackSpace exec lock-screen --force
 bindsym --locked $mod+Mod1+BackSpace exec bash -c "exec dex $HOME/.local/share/applications/suspend.desktop"
 bindsym $mod+slash exec rofi -show window
 bindsym $mod+Return exec alacritty

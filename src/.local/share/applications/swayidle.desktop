@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=swayidle
+GenericName=sway idle daemon launcher
+Exec=/bin/sh -c "source $HOME/.config/sway/swayidle"
+Terminal=false
+Type=Application
+Categories=
+X-GNOME-Autostart-Phase=Initialization
+X-KDE-autostart-phase=1

@@ -12,6 +12,7 @@ OUTPUT_IMAGE="${TMPDIR}/sway-screenlock.png"
 DISPLAY_TEXT=true
 PIXELATE=false
 SWAYLOCK_EXTRA_PARAMS="--daemonize --ignore empty-password --show-failed-attempts --color 131613"
+FORCE=false
 
 POSITIONAL=()
 while [[ $# -gt 0 ]]
@@ -27,6 +28,10 @@ do
     PIXELATE=true
     shift
     ;;
+  -f|--force)
+    FORCE=true
+    shift
+    ;;
   *)
     POSITIONAL+=("$1") # save it in an array for later
     shift
@@ -34,6 +39,10 @@ do
   esac
 done
 set -- "${POSITIONAL[@]}" # restore positional parameters
+
+if [ -e "$TMPDIR/.inhibit-lockscreen" ] && [ "$FORCE" != true ]; then
+    exit 0
+fi
 
 #Get dimensions of the lock image:
 LOCK_IMAGE_INFO=$(identify $LOCK)
