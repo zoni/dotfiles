@@ -6,6 +6,7 @@ exec swayidle -w \
     timeout 290 'test -e "$TMPDIR/.inhibit-lockscreen" || notify-send --urgency critical --expire-time 10000 --icon /usr/share/icons/gnome-colors-common/scalable/status/dialog-warning.svg "Session idle" "Screen will lock soon due to inactivity"' \
     timeout 300 'lock-screen' \
     timeout 600 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"' \
+        resume 'swaymsg "output * dpms on"' \
+    lock 'lock-screen --force' \
     before-sleep 'lock-screen --force' \
     after-resume 'rm -f "$TMPDIR/.inhibit-lockscreen"'
