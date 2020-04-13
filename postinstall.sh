@@ -5,6 +5,12 @@ set -x
 
 HOST=$(hostname)
 
+# A lot of remote hosts ship outdated terminfo databases which don't know about alacritty.
+#
+# The TERM environment variable is special to SSH and cannot be adjusted with
+# SetEnv in ssh_config so set a different TERM value before calling ssh.
+echo 'alias ssh="env TERM=xterm-256color ssh"' >> $HOME/.zsh/50-aliases.zsh
+
 git config --global diff.tool meld
 git config --global merge.tool meld
 git config --global merge.conflictstyle diff3
