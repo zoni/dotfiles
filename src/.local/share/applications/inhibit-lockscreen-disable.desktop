@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Uninhibit lockscreen
+GenericName=Disable inhibiting of lock-screen
+Exec=/bin/sh -c 'rm -f "$TMPDIR/.inhibit-lockscreen" && notify-send --expire-time 3000 "Lockscreen inhibiting disabled"'
+Terminal=false
+Type=Application
