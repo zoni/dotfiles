@@ -58,7 +58,7 @@ bindsym $mod+BackSpace exec lock-screen --force
 bindsym --locked $mod+Mod1+BackSpace exec bash -c "exec dex $HOME/.local/share/applications/suspend.desktop"
 bindsym $mod+slash exec rofi -show window
 bindsym $mod+Return exec alacritty
-bindsym $mod+grave exec toggle-alacritty-dropdown
+bindsym $mod+grave exec alacritty-dropdown --toggle
 
 # change focus
 bindsym $mod+h focus left
@@ -390,7 +390,7 @@ assign [class="Thunderbird"] $tag2
 assign [app_id="thunderbird"] $tag2
 assign [class="Slack"] $tag4
 
-for_window [app_id="Alacritty-dropdown"] floating enable, resize set height 100ppt, resize set width 100ppt, mark "dropdown-terminal", sticky enable
+for_window [app_id="Alacritty-dropdown"] floating enable, move position center, resize set height 100ppt, resize set width 100ppt, mark "dropdown-terminal", sticky enable
 for_window [app_id="guake"] floating enable, resize set height 100ppt, resize set width 100ppt, fullscreen
 for_window [app_id="pavucontrol"] floating enable, resize set height 70ppt, resize set width 70 ppt, move position center
 for_window [class="Wine"] floating enable

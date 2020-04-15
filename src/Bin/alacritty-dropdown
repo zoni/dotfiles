@@ -1,0 +1,52 @@
+#!/bin/sh
+
+APP_ID=Alacritty-dropdown
+STATEFILE=$TMPDIR/alacritty-dropdown.visible
+
+FORCE_SHOW=false
+FORCE_HIDE=false
+DELAY=false
+DELAY_TIME=0.5
+
+while [ $# -gt 0 ]
+do
+  key="$1"
+
+  case $key in
+  --show)
+    FORCE_SHOW=true
+    shift
+    ;;
+  --hide)
+    FORCE_HIDE=true
+    shift
+    ;;
+  -t|--toggle)
+    # Noop
+    shift
+    ;;
+  --delay)
+    DELAY=true
+    shift
+    ;;
+  *)
+	echo "Unknown argument: $key"
+	exit 1
+    ;;
+  esac
+done
+
+pgrep -u $UID -f "Alacritty-dropdown" || alacritty --class "$APP_ID" --command tmuxsession default
+
+if [ "$DELAY" = true ]; then
+    # Delay can be used to mitigate timing races when toggling during output switches
+    sleep $DELAY_TIME
+fi
+
+if [ "$FORCE_HIDE" = true ] || [ -e "$STATEFILE" ]; then
+	swaymsg '[con_mark="dropdown-terminal"] move absolute position -10000 -10000, focus tiling'
+	rm -f "$STATEFILE"
+else
+	swaymsg '[con_mark="dropdown-terminal"] focus, move position center, resize set height 100ppt, resize set width 100ppt'
+	touch "$STATEFILE"
+fi
