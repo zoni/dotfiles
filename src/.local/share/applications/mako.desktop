@@ -1,11 +1,10 @@
 [Desktop Entry]
 Version=1.0
 Name=Mako desktop notification daemon
-Exec=mako
+Exec=/bin/sh -c "pkill -u $UID mako; exec mako"
 Terminal=false
 Type=Application
 Categories=
 GenericName=
 X-GNOME-Autostart-Phase=Initialization
 X-KDE-autostart-phase=1
-Hidden=true

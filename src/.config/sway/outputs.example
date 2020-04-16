@@ -14,5 +14,5 @@ output $external_display {
 }
 
 # https://github.com/swaywm/sway/wiki#clamshell-mode
-bindswitch --reload lid:on output $laptop_display disable, exec alacritty-dropdown --hide --delay
-bindswitch --reload lid:off output $laptop_display enable, exec alacritty-dropdown --hide --delay
+bindswitch --reload lid:on output $laptop_display disable, exec alacritty-dropdown --hide --delay, exec dex ~/.local/share/applications/mako.desktop
+bindswitch --reload lid:off output $laptop_display enable, exec alacritty-dropdown --hide --delay, exec dex ~/.local/share/applications/mako.desktop
