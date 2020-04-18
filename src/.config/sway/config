@@ -115,7 +115,7 @@ bindsym $mod+1 workspace "$tag1"
 bindsym $mod+2 workspace $tag2
 bindsym $mod+3 workspace $tag3
 bindsym $mod+4 workspace $tag4
-bindsym $mod+5 workspace $tag5
+bindsym $mod+5 workspace number 5
 bindsym $mod+6 workspace number 6
 bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
@@ -145,7 +145,7 @@ bindsym $mod+Mod1+1 move container to workspace number "$tag1"
 bindsym $mod+Mod1+2 move container to workspace number $tag2
 bindsym $mod+Mod1+3 move container to workspace number $tag3
 bindsym $mod+Mod1+4 move container to workspace number $tag4
-bindsym $mod+Mod1+5 move container to workspace number $tag5
+bindsym $mod+Mod1+5 move container to workspace number 5
 bindsym $mod+Mod1+6 move container to workspace number 6
 bindsym $mod+Mod1+7 move container to workspace number 7
 bindsym $mod+Mod1+8 move container to workspace number 8
@@ -172,7 +172,7 @@ mode "workspace" {
     bindsym 2 workspace $tag2
     bindsym 3 workspace $tag3
     bindsym 4 workspace $tag4
-    bindsym 5 workspace $tag5
+    bindsym 5 workspace number 5
     bindsym 6 workspace number 6
     bindsym 7 workspace number 7
     bindsym 8 workspace number 8
@@ -215,7 +215,7 @@ mode "window" {
     bindsym 2 workspace $tag2
     bindsym 3 workspace $tag3
     bindsym 4 workspace $tag4
-    bindsym 5 workspace $tag5
+    bindsym 5 workspace number 5
     bindsym 6 workspace number 6
     bindsym 7 workspace number 7
     bindsym 8 workspace number 8
@@ -273,7 +273,7 @@ mode "move-window" {
     bindsym 2 move container to workspace number $tag2; workspace $tag2
     bindsym 3 move container to workspace number $tag3; workspace $tag3
     bindsym 4 move container to workspace number $tag4; workspace $tag4
-    bindsym 5 move container to workspace number $tag5; workspace $tag5
+    bindsym 5 move container to workspace number 5; workspace number 5
     bindsym 6 move container to workspace number 6; workspace number 6
     bindsym 7 move container to workspace number 7; workspace number 7
     bindsym 8 move container to workspace number 8; workspace number 8
