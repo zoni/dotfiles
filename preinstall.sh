@@ -12,3 +12,9 @@ mkdir -p \
 	$HOME/.config/sway \
 	$HOME/.config/systemd/user \
 	$HOME/.vscode
+
+if [ -e $HOME/.config/sway ]; then
+	sha256sum $HOME/.config/sway/{config,inputs,outputs} > $TMPDIR/sway.sha256sum || true
+	sha256sum $HOME/.config/sway/swayidle > $TMPDIR/swayidle.sha256sum || true
+fi
+test -e $HOME/.config/mako/config && sha256sum $HOME/.config/mako/config > $TMPDIR/mako.sha256sum
