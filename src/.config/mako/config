@@ -7,3 +7,7 @@ width=350
 [app-name="pulseaudio-ctl"]
 format=<b>%b</b>
 group-by=app-name
+
+[app-name="light"]
+format=<b>%s</b>\n\n%b
+group-by=app-name

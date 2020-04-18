@@ -351,8 +351,8 @@ bindsym --locked XF86AudioLowerVolume exec pulseaudio-ctl down 5
 bindsym --locked XF86AudioMute exec pulseaudio-ctl mute
 
 # Sreen brightness controls
-bindsym --locked XF86MonBrightnessUp exec 'light -A 5 && notify-send "Brightness" "Display brightness at $(light | cut -d . -f 1)%"'
-bindsym --locked XF86MonBrightnessDown exec 'light -U 5 && notify-send "Brightness" "Display brightness at $(light | cut -d . -f 1)%"'
+bindsym --locked XF86MonBrightnessUp exec 'light -A 5 && notify-send --app-name light --expire-time 750 "Brightness" "Display brightness at $(light | cut -d . -f 1)%"'
+bindsym --locked XF86MonBrightnessDown exec 'light -U 5 && notify-send --app-name light --expire-time 750 "Brightness" "Display brightness at $(light | cut -d . -f 1)%"'
 
 # Media player controls
 bindsym --locked XF86AudioPlay exec playerctl play-pause
