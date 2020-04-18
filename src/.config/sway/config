@@ -374,7 +374,7 @@ set $tag1 1: Chat
 set $tag2 2: Mail
 set $tag3 3: Web
 set $tag4 4: Slack
-set $tag5 5: Code
+set $tag5 5
 set $tag6 6
 set $tag7 7
 set $tag8 8
