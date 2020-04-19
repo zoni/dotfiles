@@ -2,6 +2,6 @@
 Encoding=UTF-8
 Version=1.0
 Name=Todoist
-Exec=firefox --new-window https://todoist.com/app
+Exec=todoist
 Terminal=false
 Type=Application
