@@ -3,8 +3,9 @@ dracula.apply(c)
 
 config.bind('<Ctrl-f>', 'spawn --detach firefox {url} ;; spawn --detach todoist-toggle --hide ;; close')
 config.bind('<Ctrl-f>', 'spawn --detach firefox {url} ;; spawn --detach todoist-toggle --hide ;; close', mode="passthrough")
-config.bind('<H>', 'spawn todoist-toggle --hide')
-config.bind('<Shift-h>', 'spawn todoist-toggle --hide', mode="passthrough")
+config.bind('<Ctrl-h>', 'spawn todoist-toggle --hide')
+config.bind('<Ctrl-h>', 'spawn todoist-toggle --hide', mode="passthrough")
+config.bind('<Ctrl-h>', 'spawn todoist-toggle --hide', mode="insert")
 config.bind('d', 'tab-close')
 
 config.set('content.javascript.can_open_tabs_automatically', True)
