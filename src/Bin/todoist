@@ -2,7 +2,7 @@
 
 STATEFILE=$TMPDIR/todoist.visible
 
-qutebrowser --basedir $HOME/.cache/qutebrowser/todoist --qt-arg name todoist --config $HOME/.config/qutebrowser/todoist.py ':enter-mode passthrough' https://todoist.com/app &
+qutebrowser --basedir $HOME/.cache/qutebrowser/todoist --override-restore --qt-arg name todoist --config $HOME/.config/qutebrowser/todoist.py ':enter-mode passthrough' https://todoist.com/app &
 touch "$STATEFILE"
 wait
 rm -f "$STATEFILE"

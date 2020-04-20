@@ -36,7 +36,6 @@ do
   esac
 done
 
-export TODOIST_RESTART_ON_CLOSE=1
 pgrep -u $UID -f 'qutebrowser.*/todoist.com/' || ( todoist& disown)
 
 if [ "$DELAY" = true ]; then

@@ -43,7 +43,7 @@ mode "run" {
     bindsym m exec alacritty --command mutt.sh; mode "default"
     bindsym n exec dex /usr/share/applications/networkmanager_dmenu.desktop; mode "default"
     bindsym p exec rofi-pass; mode "default"
-    bindsym t exec todoist-toggle; mode "default"
+    bindsym t exec todoist-toggle --show; mode "default"
     bindsym v exec pavucontrol; mode "default"
     bindsym shift+z exec zeegaree; mode "default"
     bindsym slash exec rofi -show window; mode "default"
