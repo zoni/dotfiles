@@ -361,7 +361,8 @@ bindsym --locked XF86AudioNext exec playerctl next
 bindsym --locked XF86AudioPrev exec playerctl previous
 
 # Keyboard layout controls
-bindsym $mod+Insert exec toggle-dead-keys
+# Note: without --release this would trigger twice.
+bindsym --release $mod+Insert exec toggle-dead-keys
 
 # Screenshots
 bindsym Print exec flameshot gui

@@ -1,7 +1,9 @@
 # vim: filetype=conf foldmethod=marker et
 
 input type:keyboard {
-    xkb_options caps:escape
+    xkb_layout us
+    xkb_variant euro
+    xkb_options caps:escape_shifted_capslock
     repeat_delay 250
     repeat_rate 25
 }

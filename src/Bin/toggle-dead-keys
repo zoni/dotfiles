@@ -1,7 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 
 notify-send "Dead keys enabled"
-setxkbmap us -variant intl
-sleep 5
-setxkbmap us
+
+if [[ $DESKTOP_SESSION =~ ^sway ]]; then
+	swaymsg 'input type:keyboard xkb_variant intl'
+	sleep 5
+	swaymsg 'input type:keyboard xkb_variant euro'
+else
+	setxkbmap us -variant intl
+	sleep 5
+	setxkbmap us
+fi
+
 notify-send "Dead keys disabled"
