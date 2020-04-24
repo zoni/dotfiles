@@ -8,3 +8,6 @@ install -d /run/user/${UID}/tmp && export TMPDIR=/run/user/${UID}/tmp || true
 export XDG_CURRENT_DESKTOP=sway
 export $(gnome-keyring-daemon --start --components=ssh,gpg,pkc11,secrets)
 export MOZ_ENABLE_WAYLAND=1
+
+# https://github.com/swaywm/sway/wiki#issues-with-java-applications
+export _JAVA_AWT_WM_NONREPARENTING=1
