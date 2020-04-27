@@ -53,6 +53,14 @@ function mix-release-version() {
 	git push origin v$1
 }
 
+function remark-lint() {
+	if [ "$1" = "--pull" ]; then
+		docker pull quay.io/zoni/remark-lint
+		shift
+	fi
+	docker run --rm -it -v "$(pwd):/project:ro" quay.io/zoni/remark-lint /project --frail "$@"
+}
+
 case $(uname -s) in
 	Linux)
 		alias ls="ls --color=auto"
