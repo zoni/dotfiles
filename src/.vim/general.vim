@@ -21,6 +21,7 @@ set updatetime=250      " Write swapfile after this many milliseconds.
 set timeoutlen=1500     " Timeout for key sequences. Default is 1000ms.
 set noshowmode          " needed for echodoc plugin
 set signcolumn=yes      " Always draw the signcolumn to avoid text shifting
+set linebreak           " Break on word boundaries, don't wrap in the middle of a word
 
 " Locations of backups/views/etc
 set backupdir=$HOME/.vimbackup/
