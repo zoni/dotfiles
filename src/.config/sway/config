@@ -42,6 +42,7 @@ mode "run" {
     bindsym k exec knowledgebase browse; mode "default"
     bindsym m exec alacritty --command mutt.sh; mode "default"
     bindsym n exec dex /usr/share/applications/networkmanager_dmenu.desktop; mode "default"
+    bindsym o exec obsidian; mode "default"
     bindsym p exec rofi-pass; mode "default"
     bindsym t exec todoist-toggle --show; mode "default"
     bindsym v exec pavucontrol; mode "default"

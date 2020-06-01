@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=obsidian
+Comment=Knowledge base software
+Exec=obsidian
+Icon=obsidian
+Type=Application
+StartupNotify=false
+MimeType=text/plain;
+Keywords=knowledgebase;
