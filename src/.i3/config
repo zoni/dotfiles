@@ -378,7 +378,7 @@ set $tag1 "1: Chat"
 set $tag2 "2: Mail"
 set $tag3 "3: Web"
 set $tag4 "4: Slack"
-set $tag5 "5: Code"
+set $tag5 "5: Knowledgebase"
 set $tag6 "6"
 set $tag7 "7"
 set $tag8 "8"
@@ -391,6 +391,7 @@ set $tag0 "0"
 
 for_window [class="Zeegaree.py"] floating enable
 assign [class="Thunderbird"] $tag2
+assign [class="obsidian"] $tag5
 for_window [class="Wine"] floating enable
 for_window [class="Guake"] floating enable, resize set height 100ppt, resize set width 100ppt
 for_window [class="zoom" instance="^$"] floating enable
