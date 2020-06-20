@@ -13,7 +13,7 @@ fi
 if type knowledgebase > /dev/null; then
 	function knowledgebase() {
 		if [ "$#" -lt 1 ]; then
-			cd "$HOME/Workspace/knowledgebase"
+			cd "$HOME/Knowledgebase"
 			git status --short
 		else
 			# Determine the real knowledgebase binary path to avoid endless
@@ -26,15 +26,11 @@ if type knowledgebase > /dev/null; then
 		fi
 	}
 	alias kb=knowledgebase
-	alias kbb="knowledgebase browse"
-	alias kbbj="knowledgebase browse journal"
 	alias kbc="knowledgebase commit"
 	alias kbd="knowledgebase diff"
-	alias kbe="knowledgebase edit"
 	alias kbj="knowledgebase journal"
 	alias kbn="knowledgebase new"
-	alias kbs="knowledgebase status"
-	alias kbu="knowledgebase sync"
+	alias kbs="knowledgebase sync"
 fi
 
 function onchange() {
