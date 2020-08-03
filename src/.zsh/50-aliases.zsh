@@ -5,6 +5,18 @@ function treeless() {
 }
 alias tl="treeless"
 
+if type exa > /dev/null; then
+	alias l="exa"
+	alias la="exa -a"
+	alias ll="exa -l"
+	alias lla="exa -la"
+else
+	alias l="ls -h"
+	alias la="ls -hA"
+	alias ll="ls -hl"
+	alias lla="ls -hlA"
+fi
+
 if type nvim > /dev/null; then
 	alias vim="nvim"
 	alias view="nvim -R"
@@ -65,11 +77,6 @@ case $(uname -s) in
 		alias ls="ls -G -I"
 		;;
 esac
-alias l="ls -h"
-alias la="ls -hA"
-alias ll="ls -hl"
-alias lla="ls -hlA"
-alias lal="ls -hlA"
 
 alias p="pushd"
 alias P="popd"
