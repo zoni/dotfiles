@@ -13,6 +13,7 @@ mkdir -p \
 	$HOME/.config/systemd/user \
 	$HOME/.vscode
 
+test -e $HOME/.i3/config && sha256sum $HOME/.i3/config > $TMPDIR/i3.sha256sum
 if [ -e $HOME/.config/sway ]; then
 	sha256sum $HOME/.config/sway/{config,inputs,outputs} > $TMPDIR/sway.sha256sum || true
 	sha256sum $HOME/.config/sway/swayidle > $TMPDIR/swayidle.sha256sum || true

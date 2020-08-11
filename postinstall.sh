@@ -52,6 +52,7 @@ test -e "$HOME/.config/sway/outputs" || cp "$(dirname $BASH_SOURCE)/src/.config/
 sha256sum --check --status $TMPDIR/mako.sha256sum || dex $HOME/.local/share/applications/mako.desktop
 sha256sum --check --status $TMPDIR/sway.sha256sum || ( swaymsg reload ; sleep 1; alacritty-dropdown --hide; todoist-toggle --hide )
 sha256sum --check --status $TMPDIR/swayidle.sha256sum || dex $HOME/.local/share/applications/swayidle.desktop
+sha256sum --check --status $TMPDIR/i3.sha256sum || i3-msg reload
 
 systemctl --user disable knowledgebase.service || true
 systemctl --user disable tiddlywiki.service || true

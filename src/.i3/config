@@ -39,7 +39,7 @@ mode "run" {
     bindsym e exec --no-startup-id rofimoji; mode "default"
     bindsym f exec --no-startup-id nautilus --new-window; mode "default"
     bindsym k exec --no-startup-id knowledgebase browse; mode "default"
-    bindsym m exec --no-startup-id i3-sensible-terminal -x mutt.sh; mode "default"
+    bindsym m exec --no-startup-id alacritty -x mutt.sh; mode "default"
     bindsym n exec --no-startup-id dex /usr/share/applications/networkmanager_dmenu.desktop; mode "default"
     bindsym o exec --no-startup-id obsidian; mode "default"
     bindsym p exec --no-startup-id rofi-pass; mode "default"
@@ -57,7 +57,7 @@ bindsym $mod+q kill
 bindsym $mod+BackSpace exec gnome-screensaver-command --lock
 bindsym $mod+Mod1+BackSpace exec --no-startup-id bash -c "exec dex $HOME/.local/share/applications/suspend.desktop"
 bindsym $mod+slash exec --no-startup-id rofi -show window
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 bindsym $mod+grave exec --no-startup-id guake-toggle
 
 # change focus
@@ -395,6 +395,7 @@ assign [class="obsidian"] $tag5
 for_window [class="Wine"] floating enable
 for_window [class="Guake"] floating enable, resize set height 100ppt, resize set width 100ppt
 for_window [class="zoom" instance="^$"] floating enable
+for_window [title="Todoist - qutebrowser"] floating enable, resize set height 80ppt, resize set width 60ppt, mark "todoist", sticky enable, move position center
 
 # }}}
 
