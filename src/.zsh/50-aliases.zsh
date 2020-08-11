@@ -6,10 +6,10 @@ function treeless() {
 alias tl="treeless"
 
 if type exa > /dev/null; then
-	alias l="exa"
-	alias la="exa -a"
-	alias ll="exa -l"
-	alias lla="exa -la"
+	alias l="exa -g"
+	alias la="exa -ag"
+	alias ll="exa -lg"
+	alias lla="exa -lag"
 else
 	alias l="ls -h"
 	alias la="ls -hA"
