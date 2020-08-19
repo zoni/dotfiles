@@ -1,5 +1,9 @@
-if [ -e /usr/share/fzf/key-bindings.zsh ]; then
-	source /usr/share/fzf/key-bindings.zsh
+if [ -e /usr/share/fzf ]; then
+	if [ -e /usr/share/fzf/key-bindings.zsh ]; then
+		source /usr/share/fzf/key-bindings.zsh  # Arch Linux
+	elif [ -e /usr/share/fzf/shell/key-bindings.zsh ]; then
+		source /usr/share/fzf/shell/key-bindings.zsh  # Fedora
+	fi
 
 	if type fd > /dev/null; then
 		export FZF_DEFAULT_COMMAND="fd --hidden --exclude .git"
