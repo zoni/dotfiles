@@ -19,6 +19,14 @@ fi
 
 install -d /run/user/${UID}/tmp && export TMPDIR=/run/user/${UID}/tmp || true
 
+# Workaround for Fedora where even with /bin/zsh being set as shell in
+# /etc/passwd, bash is still being used.
+export SHELL=/bin/zsh
+
+# Similarly, on Fedora new shell sessions start in / if we don't change the
+# working directory here.
+cd $HOME
+
 . $HOME/.zsh/05-path.zsh
 . $HOME/.zsh/50-env.zsh
 
