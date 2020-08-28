@@ -82,8 +82,8 @@ alias p="pushd"
 alias P="popd"
 alias d='dirs -v | head -10'
 
-alias diff="git diff --color=auto --no-ext-diff --no-index"
 alias dotfiles.sh="dotfiles.sh --dotfiles-dir ~/.dotfiles"
+alias gdiff="git diff --color=auto --no-ext-diff --no-index"
 alias gpg="gpg2 --keyid-format long"
 alias histgrep="history 0 | grep"
 alias kc="kubectl"
@@ -91,6 +91,8 @@ alias notify-on-complete='notify-send --urgency=normal --icon ${${?/0/terminal}/
 alias print-color-table='for i in {0..255} ; do printf "\x1b[38;5;${i}mcolor${i}\n" ; done | column'
 alias psgrep="ps aux | grep"
 alias stream2chromecast="stream2chromecast -port 32872"
+alias tf="terraform"
+alias tg="terragrunt"
 alias tmux="tmux -2"
 alias ts="tmuxsession"
 alias unison="unison -ui text"
