@@ -9,5 +9,9 @@ if [[ "$PATH" != *"/var/lib/snapd/snap/bin"* ]]; then
 	export PATH="$PATH:/var/lib/snapd/snap/bin"
 fi
 
+if [[ -e /home/linuxbrew/.linuxbrew/bin ]]; then
+	export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+fi
+
 # Extra completions
 fpath=(~/.zsh/completions $fpath)
