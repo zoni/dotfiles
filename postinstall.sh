@@ -59,3 +59,7 @@ sha256sum --check --status $TMPDIR/i3.sha256sum || i3-msg reload
 systemctl --user disable knowledgebase.service || true
 systemctl --user disable tiddlywiki.service || true
 systemctl --user daemon-reload
+
+if curl --silent --fail --output /dev/null https://github.com/; then
+	cargo install --git ssh://git@github.com/zoni/knowledgebase-cli --locked
+fi
