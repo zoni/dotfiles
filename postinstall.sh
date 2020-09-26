@@ -65,3 +65,14 @@ if curl --silent --fail --output /dev/null https://github.com/; then
 	systemctl --user enable knowledgebase-watch.service || true
 	systemctl --user restart knowledgebase-watch.service || true
 fi
+
+if [ ! -e $HOME/Bin/obsidian ]; then
+	OBSIDIAN_APPIMAGE=$(curl --silent --location https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest | jq -r '.assets[].browser_download_url | select(. | endswith(".AppImage"))')
+	curl --location $OBSIDIAN_APPIMAGE > $HOME/Bin/obsidian-appimage.bin
+	chmod +x $HOME/Bin/obsidian-appimage.bin
+	rm -rf $HOME/Bin/Obsidian.AppImage
+	(cd $HOME/Bin && $HOME/Bin/obsidian-appimage.bin --appimage-extract)
+	mv $HOME/Bin/squashfs-root $HOME/Bin/Obsidian.AppImage
+	rm $HOME/Bin/obsidian-appimage.bin
+	ln -sf $HOME/Bin/Obsidian.AppImage/obsidian $HOME/Bin/obsidian
+fi
