@@ -41,7 +41,7 @@ mode "run" {
     bindsym k exec --no-startup-id knowledgebase browse; mode "default"
     bindsym m exec --no-startup-id alacritty -x mutt.sh; mode "default"
     bindsym n exec --no-startup-id dex /usr/share/applications/networkmanager_dmenu.desktop; mode "default"
-    bindsym o exec --no-startup-id bash -c "if pgrep --uid $UID --exact obsidian; then knowledgebase open; else exec obsidian; fi"; mode "default"
+    bindsym o exec --no-startup-id "bash -c \\"if pgrep --uid $UID --exact obsidian; then knowledgebase open; else exec obsidian; fi\\""; mode "default"
     bindsym p exec --no-startup-id rofi-pass; mode "default"
     bindsym t exec --no-startup-id dex ~/.local/share/applications/todoist.desktop; mode "default"
     bindsym v exec --no-startup-id pavucontrol; mode "default"
