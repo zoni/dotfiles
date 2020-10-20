@@ -5,6 +5,10 @@
 export PATH="$HOME/Bin:$PATH:/usr/local/go/bin/:/usr/share/virtualenvwrapper:$HOME/.cargo/bin:$HOME/Workspace/go/bin"
 export GOPATH="$HOME/Workspace/go"
 
+if [[ -e "$HOME/.asdf/shims" ]]; then
+	export PATH="$HOME/.asdf/shims:$PATH"
+fi
+
 if [[ "$PATH" != *"/var/lib/snapd/snap/bin"* ]]; then
 	export PATH="$PATH:/var/lib/snapd/snap/bin"
 fi
