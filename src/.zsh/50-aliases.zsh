@@ -90,6 +90,7 @@ alias kc="kubectl"
 alias notify-on-complete='notify-send --urgency=normal --icon ${${?/0/terminal}//<->*/error} "Command finished${${?/0/}//<->*/ with error}" ${history[$HISTCMD]%[;&|]*}'
 alias print-color-table='for i in {0..255} ; do printf "\x1b[38;5;${i}mcolor${i}\n" ; done | column'
 alias psgrep="ps aux | grep"
+alias rg="rg --follow"
 alias stream2chromecast="stream2chromecast -port 32872"
 alias tf="terraform"
 alias tg="terragrunt"
