@@ -88,3 +88,8 @@ call plug#end()
 source ~/.vim/theme.vim
 
 source /usr/share/vim/vimfiles/plugin/fzf.vim
+
+" Must be called after plug#end
+call deoplete#custom#option({
+    \ 'auto_complete_delay': 250,
+    \ })

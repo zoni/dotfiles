@@ -104,7 +104,7 @@ let g:SuperTabDefaultCompletionType = "context"
 " }}}
 
 " {{{ Deoplete
-let g:deoplete#auto_complete_delay = 500
+" More options in .vimrc due to plugin loading
 let g:deoplete#enable_at_startup = 1
 " }}}
 
