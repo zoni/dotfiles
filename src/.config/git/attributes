@@ -1,0 +1,16 @@
+# See https://git-scm.com/docs/gitattributes#_diff for the list of built-in diff patterns
+
+*.css diff=css
+*.ex diff=elixir
+*.exs diff=elixir
+*.go diff=golang
+*.html diff=html
+*.md diff=markdown
+*.perl diff=perl
+*.php diff=php
+*.pl diff=perl
+*.pm diff=perl
+*.py diff=python
+*.rake diff=ruby
+*.rb diff=ruby
+*.rs diff=rust
