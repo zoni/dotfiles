@@ -30,8 +30,8 @@ do
     shift
     ;;
   *)
-	echo "Unknown argument: $key"
-	exit 1
+    echo "Unknown argument: $key"
+    exit 1
     ;;
   esac
 done
@@ -44,9 +44,14 @@ if [ "$DELAY" = true ]; then
 fi
 
 if [ "$FORCE_HIDE" = true ] || [ -e "$STATEFILE" ]; then
-	swaymsg '[con_mark="todoist"] move absolute position -10000 -10000, focus tiling'
-	rm -f "$STATEFILE"
+  if [ "$XDG_CURRENT_DESKTOP" = "i3" ]; then
+    swaymsg '[con_mark="todoist"] move absolute position 1919 1079, focus tiling'
+    swaymsg '[con_mark="todoist"] move absolute position 2559 1079'
+  else
+    swaymsg '[con_mark="todoist"] move absolute position -10000 -10000, focus tiling'
+  fi
+    rm -f "$STATEFILE"
 else
-	swaymsg '[con_mark="todoist"] focus, move position center, resize set height 80ppt, resize set width 60ppt'
-	touch "$STATEFILE"
+    swaymsg '[con_mark="todoist"] focus, move position center, resize set height 80ppt, resize set width 60ppt'
+    touch "$STATEFILE"
 fi
