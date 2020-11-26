@@ -37,6 +37,9 @@
 [diff]
 	algorithm = patience
 	tool = vimdiff
+[diff "json"]
+	# Instead of `jq .`, one could also use `python -m json.tool`
+	textconv = jq .
 [push]
 	default = upstream
 	recurseSubmodules = check
