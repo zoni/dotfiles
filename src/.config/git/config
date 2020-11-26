@@ -35,6 +35,7 @@
 	keepbackup = false
 	defaultToUpstream = true
 [diff]
+	algorithm = patience
 	tool = vimdiff
 [push]
 	default = upstream
