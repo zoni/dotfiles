@@ -46,7 +46,7 @@ if type knowledgebase > /dev/null; then
 fi
 
 function onchange() {
-	while true; do inotifywait -qq -r . -e modify -e create -e moved_to -e delete --exclude '/\.git/'; eval "$@"; done
+	while true; do inotifywait -qq -r . -e modify -e create -e moved_to -e delete --exclude '/(\.git|target/rls)/'; eval "$@"; done
 }
 
 function mix-release-version() {
