@@ -31,7 +31,7 @@ let g:LanguageClient_serverCommands = {
     \ 'go': ['gopls'],
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'python': ['pyls'],
-    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+    \ 'rust': ['rust-analyzer'],
     \ 'yaml': ['yaml-language-server', '--stdio'],
     \ }
 
