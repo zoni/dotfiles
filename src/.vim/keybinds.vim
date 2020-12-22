@@ -118,8 +118,8 @@ nnoremap [c :GitGutterPrevHunk<CR>
 nnoremap ]c :GitGutterNextHunk<CR>
 
 if has('nvim')
-	nnoremap <leader>rs :term tig status<CR>
-	nnoremap <leader>rt :term tig<CR>
+	nnoremap <leader>rs :tabnew<CR>:term tig status<CR>
+	nnoremap <leader>rt :tabnew<CR>:term tig<CR>
 else
 	nnoremap <leader>rs :silent !tig status<CR>:redraw!<CR>
 	nnoremap <leader>rt :silent !tig<CR>:redraw!<CR>
