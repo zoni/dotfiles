@@ -28,6 +28,8 @@
 	recurseSubmodules = on-demand
 	# A value of 0 will give some reasonable default. If unset, it defaults to 1.
 	parallel = 0
+[init]
+	defaultBranch = main
 [interactive]
     singleKey = true
 [merge]
