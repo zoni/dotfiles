@@ -61,7 +61,7 @@ systemctl --user disable tiddlywiki.service || true
 systemctl --user daemon-reload
 
 if curl --silent --fail --output /dev/null https://github.com/; then
-	cargo install --git ssh://git@github.com/zoni/knowledgebase-cli --locked
+	cargo install --git ssh://git@github.com/zoni/knowledgebase-cli --branch main --locked
 	systemctl --user enable knowledgebase-watch.service || true
 	systemctl --user restart knowledgebase-watch.service || true
 fi
