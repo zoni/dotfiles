@@ -4,6 +4,7 @@ else
 	umask 066
 fi
 
+export BROWSER="firefox"
 if type nvim > /dev/null; then
 	export EDITOR="nvim"
 else
