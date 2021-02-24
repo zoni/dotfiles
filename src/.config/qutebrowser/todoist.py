@@ -1,6 +1,8 @@
 import dracula
 dracula.apply(c)
 
+config.load_autoconfig()
+
 config.bind('<Ctrl-f>', 'spawn --detach firefox {url} ;; spawn --detach todoist-toggle --hide ;; close')
 config.bind('<Ctrl-f>', 'spawn --detach firefox {url} ;; spawn --detach todoist-toggle --hide ;; close', mode="passthrough")
 config.bind('<Ctrl-h>', 'spawn todoist-toggle --hide')
