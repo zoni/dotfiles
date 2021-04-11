@@ -64,6 +64,8 @@ if curl --silent --fail --output /dev/null https://github.com/; then
 	cargo install --git ssh://git@github.com/zoni/knowledgebase-cli --branch main --locked
 	systemctl --user enable knowledgebase-watch.service || true
 	systemctl --user restart knowledgebase-watch.service || true
+
+	cargo install obsidian-export
 fi
 
 if [ ! -e $HOME/Bin/obsidian ]; then
