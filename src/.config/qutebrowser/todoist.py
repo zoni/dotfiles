@@ -11,7 +11,7 @@ config.bind('<Ctrl-h>', 'spawn todoist-toggle --hide', mode="insert")
 config.bind('d', 'tab-close')
 
 config.set('content.javascript.can_open_tabs_automatically', True)
-config.set('content.notifications', True)
+config.set('content.notifications.enabled', True)
 config.set('input.insert_mode.auto_leave', False)
 config.set('input.insert_mode.leave_on_load', False)
 config.set('tabs.mode_on_change', "persist")
