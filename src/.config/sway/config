@@ -372,7 +372,8 @@ bindsym --locked XF86AudioPrev exec playerctl previous
 bindsym --release $mod+Insert exec toggle-dead-keys
 
 # Screenshots
-bindsym Print exec flameshot gui
+bindsym Print exec 'grim - | swappy -f -'
+bindsym Shift+Print exec 'grim -g "$(slurp)" - | swappy -f -'
 
 # }}}
 
