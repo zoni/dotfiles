@@ -60,12 +60,13 @@ mode "run" {
 }
 bindsym $mod+space mode "run"
 
-bindsym $mod+q kill
 bindsym $mod+BackSpace exec lock-screen --force
-bindsym --locked $mod+Mod1+BackSpace exec bash -c "exec dex $HOME/.local/share/applications/suspend.desktop"
-bindsym $mod+slash exec rofi -show window
 bindsym $mod+Return exec alacritty
 bindsym $mod+grave exec alacritty-dropdown --toggle
+bindsym $mod+q kill
+bindsym $mod+semicolon exec ulauncher-toggle
+bindsym $mod+slash exec rofi -show window
+bindsym --locked $mod+Mod1+BackSpace exec bash -c "exec dex $HOME/.local/share/applications/suspend.desktop"
 
 # change focus
 bindsym $mod+h focus left
@@ -405,6 +406,7 @@ for_window [app_id="firefox" title="Firefox - Sharing Indicator"] floating enabl
 for_window [app_id="guake"] floating enable, resize set height 100ppt, resize set width 100ppt, fullscreen
 for_window [app_id="org.qutebrowser.qutebrowser" title="Todoist"] floating enable, move position center, resize set height 80ppt, resize set width 60ppt, mark "todoist", sticky enable
 for_window [app_id="pavucontrol"] floating enable, resize set height 70ppt, resize set width 70 ppt, move position center
+for_window [app_id="ulauncher"] floating enable, border none, move position center, move up 200px, resize set width 40ppt
 for_window [class="Wine"] floating enable
 for_window [class="Zeegaree.py"] floating enable
 for_window [class="^zoom$" instance="^zoom$" title="^zoom$"] floating enable, resize set height 200px, resize set width 500px

@@ -1,0 +1,52 @@
+{
+    "f2271252-6808-4fd4-a6ec-9cb00b923963": {
+        "id": "f2271252-6808-4fd4-a6ec-9cb00b923963",
+        "name": "Google Search",
+        "keyword": "g",
+        "cmd": "https://google.com/search?q=%s",
+        "icon": "/usr/share/ulauncher/media/google-search-icon.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1620374419.9555008
+    },
+    "3d850cb5-ed2b-4107-a99b-854fe9d0d9e5": {
+        "id": "3d850cb5-ed2b-4107-a99b-854fe9d0d9e5",
+        "name": "Stack Overflow",
+        "keyword": "so",
+        "cmd": "http://stackoverflow.com/search?q=%s",
+        "icon": "/usr/share/ulauncher/media/stackoverflow-icon.svg",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1620374419.9555876
+    },
+    "d680ae5a-40ae-4a99-b9fb-b43cf0f06732": {
+        "id": "d680ae5a-40ae-4a99-b9fb-b43cf0f06732",
+        "name": "Wikipedia",
+        "keyword": "wiki",
+        "cmd": "https://en.wikipedia.org/wiki/%s",
+        "icon": "/usr/share/ulauncher/media/wikipedia-icon.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1620374419.9556668
+    },
+    "7614bede-599e-4f45-aa4f-a0833b565007": {
+        "id": "7614bede-599e-4f45-aa4f-a0833b565007",
+        "name": "Goodreads",
+        "keyword": "gr",
+        "cmd": "https://www.goodreads.com/search?q=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1620376301.7156641
+    },
+    "164bc294-8816-43aa-b97f-5f944c906822": {
+        "id": "164bc294-8816-43aa-b97f-5f944c906822",
+        "name": "StartPage",
+        "keyword": "sp",
+        "cmd": "https://www.startpage.com/do/dsearch?query=%s&cat=web&pl=opensearch&language=english",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1620376360.9119508
+    }
+}
