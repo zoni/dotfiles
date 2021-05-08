@@ -53,12 +53,13 @@ mode "run" {
 }
 bindsym $mod+space mode "run"
 
-bindsym $mod+q kill
 bindsym $mod+BackSpace exec gnome-screensaver-command --lock
 bindsym $mod+Mod1+BackSpace exec --no-startup-id bash -c "exec dex $HOME/.local/share/applications/suspend.desktop"
-bindsym $mod+slash exec --no-startup-id rofi -show window
 bindsym $mod+Return exec alacritty
 bindsym $mod+grave exec --no-startup-id guake-toggle
+bindsym $mod+q kill
+bindsym $mod+semicolon exec ulauncher-toggle
+bindsym $mod+slash exec --no-startup-id rofi -show window
 
 # change focus
 bindsym $mod+h focus left
@@ -389,11 +390,12 @@ set $tag0 "0"
 
 # {{{ Window rules
 
-for_window [class="Zeegaree.py"] floating enable
 assign [class="Thunderbird"] $tag2
 assign [class="obsidian"] $tag5
-for_window [class="Wine"] floating enable
 for_window [class="Guake"] floating enable, resize set height 100ppt, resize set width 100ppt
+for_window [class="Ulauncher"] floating enable
+for_window [class="Wine"] floating enable
+for_window [class="Zeegaree.py"] floating enable
 for_window [class="zoom" instance="^$"] floating enable
 for_window [title="Todoist - qutebrowser"] floating enable, resize set height 80ppt, resize set width 60ppt, mark "todoist", sticky enable, move position center
 
