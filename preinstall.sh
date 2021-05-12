@@ -5,12 +5,13 @@ set -x
 
 mkdir -p \
 	$HOME/.i3 \
-	$HOME/.vimperator \
-	$HOME/.local/share/applications \
 	$HOME/.config/autostart \
 	$HOME/.config/environment.d \
 	$HOME/.config/sway \
 	$HOME/.config/systemd/user \
+	$HOME/.config/ulauncher \
+	$HOME/.local/share/applications \
+	$HOME/.vimperator \
 	$HOME/.vscode
 
 # From here on, we don't care about non-zero exit codes because
