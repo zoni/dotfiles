@@ -32,6 +32,7 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'python': ['pyls'],
     \ 'rust': ['rust-analyzer'],
+    \ 'typescript': ['typescript-language-server', '--stdio'],
     \ 'yaml': ['yaml-language-server', '--stdio'],
     \ }
 
