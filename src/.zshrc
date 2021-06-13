@@ -19,11 +19,12 @@ if ! zgenom saved; then
 	zgenom ohmyzsh plugins/rsync
 	zgenom ohmyzsh plugins/vagrant
 
+	zgenom load 3v1n0/zsh-bash-completions-fallback
+	zgenom load LucasLarson/gunstage
 	zgenom load Tarrasch/zsh-autoenv
 	zgenom load zsh-vi-more/vi-increment
 	zgenom load zsh-vi-more/vi-motions
 	zgenom load zsh-vi-more/vi-quote
-	zgenom load LucasLarson/gunstage
 
 	zgenom compile .zshrc
 	zgenom compile ~/.zsh
