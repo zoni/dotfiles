@@ -7,6 +7,9 @@ HOST=$(hostname)
 
 systemctl --user daemon-reload
 
+# This will make zgenom do its thing
+/usr/bin/env zsh -i -c ''
+
 ln -snf $HOME/.vim/ $HOME/.config/nvim
 ln -snf $HOME/.vimrc $HOME/.config/nvim/init.vim
 

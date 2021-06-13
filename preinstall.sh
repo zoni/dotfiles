@@ -22,6 +22,9 @@ mkdir -p \
 	$HOME/.{vim,vimswap,vimbackup} \
 	$HOME/Bin
 
+test -e "${HOME}/.zgenom" || git clone https://github.com/jandamm/zgenom.git "${HOME}/.zgenom"
+/usr/bin/env zsh -i -c "zgenom reset" || true
+
 # From here on, we don't care about non-zero exit codes because
 # not all of these files may exist, but that's fine and will only
 # cause harmless errors later on.
