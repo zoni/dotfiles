@@ -5,6 +5,8 @@ set -x
 
 HOST=$(hostname)
 
+systemctl --user daemon-reload
+
 ln -snf $HOME/.vim/ $HOME/.config/nvim
 ln -snf $HOME/.vimrc $HOME/.config/nvim/init.vim
 
@@ -69,8 +71,6 @@ sha256sum --check --status $TMPDIR/swayidle.sha256sum || dex $HOME/.local/share/
 sha256sum --check --status $TMPDIR/i3.sha256sum || i3-msg reload
 
 systemctl --user disable knowledgebase.service || true
-systemctl --user disable tiddlywiki.service || true
-systemctl --user daemon-reload
 
 if curl --silent --fail --output /dev/null https://github.com/; then
 	cargo install --git ssh://git@github.com/zoni/knowledgebase-cli --branch main --locked
