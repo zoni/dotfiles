@@ -3,6 +3,7 @@
 [user]
 	name = Nick Groenen
 	email = nick@groenen.me
+	signingkey = 4F0AD019928AE098
 [color]
 	ui = auto
 [color "branch"]
@@ -20,6 +21,7 @@
 	untracked = cyan
 [commit]
 	verbose = true
+	gpgsign = true
 [clean]
 	requireForce = false
 [core]
@@ -33,12 +35,13 @@
 [interactive]
     singleKey = true
 [merge]
-	tool = vimdiff
+	tool = meld
 	keepbackup = false
 	defaultToUpstream = true
+	conflictstyle = diff3
 [diff]
 	algorithm = patience
-	tool = vimdiff
+	tool = meld
 [diff "json"]
 	# Instead of `jq .`, one could also use `python -m json.tool`
 	textconv = jq .
