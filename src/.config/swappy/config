@@ -1,0 +1,7 @@
+[Default]
+save_dir=$HOME/Pictures/
+save_filename_format=Screenshot-%Y%m%d-%H%M%S.png
+show_panel=true
+line_size=3
+text_size=18
+text_font=DejaVu Sans Book

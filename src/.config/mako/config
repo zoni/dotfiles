@@ -1,0 +1,13 @@
+default-timeout=5000
+font=Ubuntu Regular 11
+format=<b>%s</b>\n\n%b
+max-visible=-1
+width=350
+
+[app-name="pulseaudio-ctl"]
+format=<b>%b</b>
+group-by=app-name
+
+[app-name="light"]
+format=<b>%s</b>\n\n%b
+group-by=app-name

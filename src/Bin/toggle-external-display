@@ -1,0 +1,28 @@
+#!/bin/sh
+
+set -e
+
+PRIMARY_DISPLAY=$(xrandr | awk '/ connected / { print $1 ; exit }')
+SECONDARY_DISPLAY=$(xrandr | tac | awk '/ connected / { print $1 ; exit }')
+
+if [ "$1" != "" ]; then
+	CHOICE="$1"
+else
+	CHOICE=$(printf "off\nabove\nbelow\nright-of\nleft-of\nsame-as\nonly" | rofi -dmenu -p "External display mode: ")
+fi
+
+if [ "$CHOICE" == "off" ]; then
+	xrandr --output "${PRIMARY_DISPLAY}" --auto --primary
+	xrandr --output "${SECONDARY_DISPLAY}" --off
+elif [ "$CHOICE" == "only" ]; then
+	xrandr --output "${SECONDARY_DISPLAY}" --auto --primary
+	xrandr --output "${PRIMARY_DISPLAY}" --off
+else
+	xrandr --output "${SECONDARY_DISPLAY}" --auto --"${CHOICE}" "${PRIMARY_DISPLAY}"
+fi
+
+if [ -e $HOME/.fehbg ]; then
+       source $HOME/.fehbg
+fi
+sleep 2
+systemctl --user restart dunst.service

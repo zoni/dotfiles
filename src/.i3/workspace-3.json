@@ -1,0 +1,29 @@
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "stacked",
+    "percent": null,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 853,
+               "width": 1436,
+               "x": 0,
+               "y": 0
+            },
+            "name": "firefox",
+            "percent": 0.5,
+            "swallows": [
+               {
+                  "class": "^Firefox$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

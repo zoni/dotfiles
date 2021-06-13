@@ -1,0 +1,166 @@
+[global_config]
+  dbus = False
+  enabled_plugins = ActivityWatch, APTURLHandler
+[keybindings]
+  broadcast_all = None
+  broadcast_group = None
+  broadcast_off = None
+  close_term = None
+  close_window = None
+  copy = <Primary><Shift>c
+  cycle_next = None
+  cycle_prev = None
+  edit_window_title = None
+  full_screen = None
+  go_down = None
+  go_left = None
+  go_next = None
+  go_prev = None
+  go_right = None
+  go_up = None
+  group_all = None
+  group_all_toggle = None
+  group_tab = None
+  group_tab_toggle = None
+  help = None
+  hide_window = None
+  insert_number = None
+  insert_padded = None
+  layout_launcher = None
+  line_down = None
+  move_tab_left = None
+  move_tab_right = None
+  new_tab = None
+  new_terminator = None
+  new_window = <Primary><Shift>n
+  next_tab = None
+  prev_tab = None
+  reset = None
+  reset_clear = None
+  resize_down = None
+  resize_left = None
+  resize_right = None
+  resize_up = None
+  rotate_ccw = None
+  rotate_cw = None
+  scaled_zoom = None
+  search = None
+  split_horiz = None
+  split_vert = None
+  toggle_scrollbar = None
+  toggle_zoom = None
+  ungroup_all = None
+  ungroup_tab = None
+  zoom_in = <Primary>equal
+  zoom_normal = <Primary>0
+  zoom_out = <Primary>minus
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.77
+    background_type = transparent
+    cursor_color = "#ffffff"
+    font = Ubuntu Mono derivative Powerline 12
+    foreground_color = "#ffffff"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    scrollback_lines = 5000
+    show_titlebar = False
+    use_system_font = False
+  [[Beamer]]
+    background_color = "#ffffff"
+    cursor_color = "#aaaaaa"
+    font = Ubuntu Mono derivative Powerline 14
+    foreground_color = "#000000"
+    scrollback_lines = 5000
+    show_titlebar = False
+    use_system_font = False
+  [[solarized-dark]]
+    background_color = "#002b36"
+    cursor_color = "#eee8d5"
+    font = Ubuntu Mono derivative Powerline 12
+    foreground_color = "#eee8d5"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#586e75:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    scrollback_lines = 5000
+    show_titlebar = False
+    use_system_font = False
+  [[solarized-light]]
+    background_color = "#eee8d5"
+    cursor_color = "#002b36"
+    font = Ubuntu Mono derivative Powerline 12
+    foreground_color = "#002b36"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    scrollback_lines = 5000
+    show_titlebar = False
+    use_system_font = False
+  [[espresso]]
+    background_color = "#323232"
+    cursor_color = "#ffffff"
+    font = Ubuntu Mono derivative Powerline 12
+    foreground_color = "#ffffff"
+    palette = "#353535:#d25252:#a5c261:#ffc66d:#6c99bb:#d197d9:#bed6ff:#eeeeec:#535353:#f02323:#c2e075:#e1e48b:#8ab7d9:#efb5f7:#dcf4ff:#ffffff"
+    scrollback_lines = 5000
+    show_titlebar = False
+    use_system_font = False
+  [[IdleToes]]
+    background_color = "#323232"
+    cursor_color = "#ffffff"
+    font = Ubuntu Mono derivative Powerline 12
+    foreground_color = "#ffffff"
+    palette = "#353535:#d25252:#a5c261:#ffc66d:#6c99bb:#d197d9:#bed6ff:#eeeeec:#535353:#f02323:#c2e075:#e1e48b:#8ab7d9:#efb5f7:#dcf4ff:#ffffff"
+    scrollback_lines = 5000
+    show_titlebar = False
+    use_system_font = False
+  [[LiquidCarbon]]
+    font = Ubuntu Mono derivative Powerline 12
+    scrollback_lines = 5000
+    show_titlebar = False
+    use_system_font = False
+    palette = "#000000:#ff3030:#559a70:#ccac00:#0099cc:#cc69c8:#7ac4cc:#bccccc:#000000:#ff3030:#559a70:#ccac00:#0099cc:#cc69c8:#7ac4cc:#bccccc"
+    foreground_color = "#afc2c2"
+    background_color = "#303030"
+    cursor_color = "#afc2c2"
+  [[Wombat]]
+    font = Ubuntu Mono derivative Powerline 12
+    scrollback_lines = 5000
+    show_titlebar = False
+    use_system_font = False
+    palette = "#000000:#ff615a:#b1e969:#ebd99c:#5da9f6:#e86aff:#82fff7:#dedacf:#313131:#f58c80:#ddf88f:#eee5b2:#a5c7ff:#ddaaff:#b7fff9:#ffffff"
+    foreground_color = "#dedacf"
+    background_color = "#171717"
+    cursor_color = "#dedacf"
+  [[Hybrid]]
+    font = Ubuntu Mono derivative Powerline 12
+    scrollback_lines = 5000
+    show_titlebar = False
+    use_system_font = False
+    palette = "#282a2e:#a54242:#8c9440:#de935f:#5f819d:#85678f:#5e8d87:#707880:#373b41:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#c5c8c6"
+    foreground_color = "#c5c8c6"
+    background_color = "#1d1f21"
+    cursor_color = "#c5c8c6"
+  [[zenburn]]
+    font = Ubuntu Mono derivative Powerline 12
+    scrollback_lines = 5000
+    show_titlebar = False
+    use_system_font = False
+    palette = "#3f3f3f:#cc9393:#7f9f7f:#e3ceab:#dfaf8f:#cc9393:#8cd0d3:#dcdccc:#3f3f3f:#cc9393:#7f9f7f:#e3ceab:#dfaf8f:#cc9393:#8cd0d3:#dcdccc"
+    background_color = "#3f3f3f"
+    cursor_color = "#dcdcdc"
+    foreground_color = "#dcdcdc"
+  [[Tango]]
+    background_darkness = 0.77
+    background_type = transparent
+    cursor_color = "#ffffff"
+    font = Ubuntu Mono derivative Powerline 12
+    foreground_color = "#ffffff"
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    scrollback_lines = 5000
+    show_titlebar = False
+    use_system_font = False

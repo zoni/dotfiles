@@ -1,0 +1,20 @@
+set from="nick@groenen.me"
+set realname="Nick Groenen"
+# When replying use same From: for new message as To: 
+# in original message if To is in alternates
+alternates "nick@groenen.me"
+# Set default account on all folders
+folder-hook     .               'set record="^"'
+folder-hook     .               'set realname="Nick Groenen"'
+folder-hook     .               'set from="nick@groenen.me"'
+folder-hook     .               'set signature="~/.signature"'
+folder-hook     .               'set pgp_autosign'
+
+
+set folder="imaps://nick:__PASSWORD__@mail.groenen.me"
+set mask="!^\\.[^.]"
+mailboxes !
+set postponed="+Drafts"
+set spoolfile="+INBOX"
+set trash="+Trash"
+set smtp_url = "smtp://nick:__PASSWORD__@mail.groenen.me:587"

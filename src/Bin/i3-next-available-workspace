@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Taken from https://github.com/DaveDavenport/RandomScripts/blob/master/i3_empty_workspace.sh
+
+MAX_DESKTOPS=20
+WORKSPACES=$(seq -s '\n' 1 1 ${MAX_DESKTOPS})
+
+NEXT_AVAILABLE_WORKSPACE=$( (i3-msg -t get_workspaces | tr ',' '\n' | grep num | awk -F:  '{print int($2)}' ; \
+            echo -e ${WORKSPACES} ) | sort -n | uniq -u | head -n 1)
+
+echo ${NEXT_AVAILABLE_WORKSPACE}

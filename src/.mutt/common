@@ -1,0 +1,120 @@
+# See http://www.mutt.org/doc/manual/#variables for all available options.
+reset all
+unhook *
+
+set quit = yes      # Quit without confirmation
+set delete = yes    # Delete (expunge) without confirmation
+set move = no       # Never move messages off the server
+set sleep_time = 0  # Make folder switching faster
+set recall = no     # Don't ask to recall messages by default
+set beep = yes      # Beep on errors
+set beep_new = yes  # Beep on new messages
+
+set folder_format = "%C %t%N %F %-8.8u %-8.8g %8s %d %f"
+set index_format = "%4C %Z %d  %-23.23n %M %s"
+set date_format = "%Y-%m-%d  %H:%M:%S"
+set arrow_cursor = no
+
+# Open last email on entering folder, then jump to first unread (if present)
+folder-hook . 'exec next-unread'
+folder-hook . 'exec last-entry'
+
+# Sort by theads, with thread which last received a message coming first
+set sort = threads 
+set sort_aux = last-date-sent
+
+unset hidden_host
+unset hide_limited
+set hide_missing
+unset hide_top_limited
+set hide_top_missing
+
+unset collapse_unread
+#set uncollapse_new  # Not yet supported by mutt in Ubuntu 16.10
+set uncollapse_jump
+folder-hook . 'push <collapse-all>'
+
+# Header display/sort order
+ignore *
+unignore  Date To From Cc Subject X-Mailer Organization User-Agent X-Spam-Status Return-Path
+hdr_order Date From Organization To Cc Subject X-Spam-Status X-Mailer User-Agent Return-Path
+
+set reflow_text
+set reflow_wrap = 78
+set wrap = 78
+set smart_wrap
+unset markers
+
+auto_view text/html
+alternative_order text/plain text/html
+# Don't jump to the next message when reaching bottom of current
+# one in pager
+set pager_stop
+# Add Mail-Followup-To header
+set followup_to
+# Don't hide message subject in threads
+unset hide_thread_subject
+
+# Display messages as scrollable list instead of separate pages
+set menu_scroll
+
+# activate TLS if available on the server
+set ssl_starttls
+# always use TLS when connecting to a server
+set ssl_force_tls
+
+unset abort_nosubject
+unset abort_unmodified
+set edit_headers = yes  # Allow editing headers during composition
+
+set include = yes      # Quote message when replying
+set text_flowed = yes  # Enable format=flowed (https://joeclark.org/ffaq.html)
+
+set fast_reply         # Compose reply without prompting
+set forward_format="Fwd: %s"
+set mime_forward = ask-yes
+
+set sidebar_width=25
+unset sidebar_visible
+set sidebar_divider_char = '|'
+# color of folders with new mail 
+#color sidebar_new yellow default
+set sidebar_short_path
+set sidebar_delim_chars = '/.'
+set sidebar_folder_indent
+set sidebar_indent_string = '  '
+set sidebar_next_new_wrap
+set sidebar_sort_method = 'unsorted'
+
+set wrap_search
+unset wait_key
+
+# Check for new mail in open mailbox (mbox/maildir only)
+set check_new
+set mail_check=30
+# Execute mail_check after this many seconds of keyboard inactivity
+set timeout=30
+
+set mail_check_stats
+set mail_check_stats_interval = 600
+
+# Don't mark messages as old
+unset mark_old
+unset mail_check_recent
+set sig_dashes
+
+set header_cache=$HOME/.muttcache/
+set message_cachedir=$HOME/.muttcache/
+
+set query_command = "abook --mutt-query '%s'"
+
+# Don't save outgoing attachments
+#unset fcc_attach
+unset confirmappend
+
+# IMAP settings
+# Aggressive keepalives to prevent imap connection being closed
+# by crappy NAT routers
+set imap_keepalive = 900
+set imap_list_subscribed
+set imap_check_subscribed

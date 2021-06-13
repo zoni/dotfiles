@@ -1,0 +1,16 @@
+# vim: filetype=conf foldmethod=marker et
+
+input type:keyboard {
+    xkb_layout us
+    xkb_variant euro
+    xkb_options caps:escape_shifted_capslock
+    repeat_delay 250
+    repeat_rate 25
+}
+
+input "1739:31251:SYNA2393:00_06CB:7A13_Touchpad" {
+    tap enabled
+    dwt enabled
+}
+
+seat "*" hide_cursor 10000

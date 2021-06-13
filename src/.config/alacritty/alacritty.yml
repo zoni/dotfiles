@@ -1,0 +1,78 @@
+# See /usr/share/doc/alacritty/example/alacritty.yml for all available settings.
+
+background_opacity: 0.8
+
+window:
+  # Allow terminal applications to change Alacritty's window title.
+  dynamic_title: true
+
+draw_bold_text_with_bright_colors: false
+
+font:
+  size: 12
+  normal:
+    family: Ubuntu Mono derivative Powerline
+    style: Regular
+  #bold:
+  #family: Droid Sans Mono Slashed for Powerline
+  #italic:
+  #family: Droid Sans Mono Slashed for Powerline
+
+key_bindings:
+  - { key: N, mods: Control|Shift, action: SpawnNewInstance }
+
+schemes:
+  ayu-dark: &ayu_dark
+    primary:
+      background: "#0A0E14"
+      foreground: "#B3B1AD"
+    normal:
+      black: "#01060E"
+      red: "#EA6C73"
+      green: "#91B362"
+      yellow: "#F9AF4F"
+      blue: "#53BDFA"
+      magenta: "#FAE994"
+      cyan: "#90E1C6"
+      white: "#C7C7C7"
+    bright:
+      black: "#686868"
+      red: "#F07178"
+      green: "#C2D94C"
+      yellow: "#FFB454"
+      blue: "#59C2FF"
+      magenta: "#FFEE99"
+      cyan: "#95E6CB"
+      white: "#FFFFFF"
+
+  one-dark: &one_dark
+    primary:
+      #background: "#282c34"
+      background: "#000000"
+      #foreground: "#abb2bf"
+      foreground: "#ffffff"
+    normal:
+      # NOTE: Use '#131613' for the `black` color if you'd like to see
+      # black text on the background.
+      black: "#282c34"
+      red: "#e06c75"
+      green: "#98c379"
+      yellow: "#d19a66"
+      blue: "#61afef"
+      magenta: "#c678dd"
+      cyan: "#56b6c2"
+      white: "#abb2bf"
+    bright:
+      black: "#5c6370"
+      red: "#e06c75"
+      green: "#98c379"
+      yellow: "#d19a66"
+      blue: "#61afef"
+      magenta: "#c678dd"
+      cyan: "#56b6c2"
+      white: "#ffffff"
+
+scrolling:
+  history: 10000
+
+colors: *one_dark

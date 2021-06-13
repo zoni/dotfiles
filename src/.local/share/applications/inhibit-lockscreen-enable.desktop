@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Inhibit lockscreen
+GenericName=Enable inhibiting of lock-screen
+Exec=/bin/sh -c 'touch "$TMPDIR/.inhibit-lockscreen" && notify-send --expire-time 3000 "Lockscreen inhibiting enabled"'
+Terminal=false
+Type=Application

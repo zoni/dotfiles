@@ -1,0 +1,9 @@
+[Unit]
+Description=Knowledgebase watch
+
+[Service]
+ExecStart=%h/.cargo/bin/knowledgebase watch --debounce 250
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

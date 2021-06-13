@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Suspend
+GenericName=Suspend to RAM
+Exec=/bin/sh -c "gnome-screensaver-command --lock; systemctl suspend --ignore-inhibitors"
+Terminal=false
+Type=Application
+StartupNotify=false

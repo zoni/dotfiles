@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Reboot
+GenericName=Reboot computer
+Exec=systemctl reboot --ignore-inhibitors
+Terminal=false
+Type=Application
+StartupNotify=false

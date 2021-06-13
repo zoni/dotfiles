@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Vim Wiki
+Exec=terminator -e "vim +VimwikiIndex"
+Terminal=false
+Type=Application

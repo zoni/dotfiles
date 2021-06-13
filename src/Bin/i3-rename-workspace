@@ -1,0 +1,16 @@
+#!/bin/zsh
+
+CURRENT_WORKSPACE=$(i3-msg -t get_workspaces | jq '.[] | select(.focused) | .num')
+NEW_NAME=$(i3-msg -t get_tree | jq 'recurse(.nodes[]) | .window_properties.class' | tr '[:upper:]' '[:lower:]' | grep -vE '^"?(i3bar|null)"?$' | sort | uniq | awk '{ print substr($0, 2, length($0)-2) }' | rofi -dmenu -p "Rename workspace to: ")
+if [[ $? -ne 0 ]]; then
+	exit 1
+fi
+
+if ! [[ $NEW_NAME =~ ^[0-9]+: ]]; then
+	NEW_NAME="${CURRENT_WORKSPACE}: ${NEW_NAME}"
+fi
+
+RESPONSE=$(i3-msg "rename workspace to ${(qqq)NEW_NAME}" 2>&1 >/dev/null)
+if [[ "${RESPONSE}" =~ ^ERROR:.* ]]; then
+	rofi -e "${RESPONSE}"
+fi

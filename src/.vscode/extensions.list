@@ -1,0 +1,26 @@
+# Colorschemes
+azemoh.one-monokai
+
+# Editor plugins
+GitHub.vscode-pull-request-github
+eamodio.gitlens
+samverschueren.final-newline
+testthedocs.vale
+timonwong.shellcheck
+vscodevim.vim
+
+# Language support
+elixir-lsp.elixir-ls
+mauve.terraform
+ms-azuretools.vscode-docker
+ms-python.python
+ms-vscode.Go
+redhat.vscode-yaml
+rust-lang.rust
+samuelcolvin.jinjahtml
+
+# Markdown plugins
+bierner.markdown-checkbox
+bierner.markdown-emoji
+bierner.markdown-footnotes
+bierner.markdown-mermaid

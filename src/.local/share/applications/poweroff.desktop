@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Poweroff
+GenericName=Shut down computer
+Exec=systemctl poweroff --ignore-inhibitors
+Terminal=false
+Type=Application
+StartupNotify=false

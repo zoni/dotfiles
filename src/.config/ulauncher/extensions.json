@@ -1,0 +1,114 @@
+{
+    "com.github.zoni.ulauncher-sway": {
+        "id": "com.github.zoni.ulauncher-sway",
+        "url": "https://github.com/zoni/ulauncher-sway",
+        "updated_at": "2021-05-07T11:08:26.941081",
+        "last_commit": "fb22d8dfd918b099bf0285c0c42c25601353081e",
+        "last_commit_time": "2021-05-07T09:02:20"
+    },
+    "com.github.zoni.ulauncher-obsidian": {
+        "id": "com.github.zoni.ulauncher-obsidian",
+        "url": "https://github.com/zoni/ulauncher-obsidian",
+        "updated_at": "2021-05-07T11:17:01.530174",
+        "last_commit": "cdb83e58b7a53b6802a522b656c91dd98ece5f81",
+        "last_commit_time": "2021-05-07T09:15:56"
+    },
+    "com.github.zoni.ulauncher-emoji": {
+        "id": "com.github.zoni.ulauncher-emoji",
+        "url": "https://github.com/zoni/ulauncher-emoji",
+        "updated_at": "2021-05-07T11:25:55.937932",
+        "last_commit": "607b60f1fdeafd80e32097dbe524179d15974065",
+        "last_commit_time": "2021-05-07T09:25:28"
+    },
+    "com.github.zoni.ulauncher-unicode": {
+        "id": "com.github.zoni.ulauncher-unicode",
+        "url": "https://github.com/zoni/ulauncher-unicode",
+        "updated_at": "2021-05-07T11:29:02.898313",
+        "last_commit": "c7ffc022cac39131a92d4dff5108a50b09404e53",
+        "last_commit_time": "2021-05-07T09:28:42"
+    },
+    "com.github.zoni.ulauncher-devdocs": {
+        "id": "com.github.zoni.ulauncher-devdocs",
+        "url": "https://github.com/zoni/ulauncher-devdocs",
+        "updated_at": "2021-05-07T11:33:53.090043",
+        "last_commit": "b1f0235e7615e9cbdac4f4c809205bfac55a7b15",
+        "last_commit_time": "2021-05-07T09:33:29"
+    },
+    "com.github.zoni.ulauncher-meet": {
+        "id": "com.github.zoni.ulauncher-meet",
+        "url": "https://github.com/zoni/ulauncher-meet",
+        "updated_at": "2021-05-07T11:48:04.970349",
+        "last_commit": "1b76627c69dfc539645acd27e30c9b8fd8fe08ae",
+        "last_commit_time": "2021-05-07T09:47:51"
+    },
+    "com.github.zoni.ulauncher-nm": {
+        "id": "com.github.zoni.ulauncher-nm",
+        "url": "https://github.com/zoni/ulauncher-nm",
+        "updated_at": "2021-05-07T11:59:42.443144",
+        "last_commit": "34a612f4349005ac3de3b30af542d69f78023361",
+        "last_commit_time": "2021-05-07T09:59:22"
+    },
+    "com.github.zoni.ulauncher-statuspages": {
+        "id": "com.github.zoni.ulauncher-statuspages",
+        "url": "https://github.com/zoni/ulauncher-statuspages",
+        "updated_at": "2021-05-07T12:26:20.129063",
+        "last_commit": "cfafdb1aa2b5ab2f84c8fe03b08ab2dae077c99a",
+        "last_commit_time": "2021-05-07T10:26:05"
+    },
+    "com.github.zoni.ultz": {
+        "id": "com.github.zoni.ultz",
+        "url": "https://github.com/zoni/ultz",
+        "updated_at": "2021-05-07T12:32:25.227622",
+        "last_commit": "3b24e1f108028619a088502e7145aceab40537ac",
+        "last_commit_time": "2021-05-07T10:31:55"
+    },
+    "com.github.zoni.ulauncher-timestamp": {
+        "id": "com.github.zoni.ulauncher-timestamp",
+        "url": "https://github.com/zoni/ulauncher-timestamp",
+        "updated_at": "2021-05-07T12:35:13.739529",
+        "last_commit": "e9bef0471f2b2ff42c7a2ee1b667027e64ac2d06",
+        "last_commit_time": "2021-05-07T10:34:59"
+    },
+    "com.github.zoni.ulauncher-conversion": {
+        "id": "com.github.zoni.ulauncher-conversion",
+        "url": "https://github.com/zoni/ulauncher-conversion",
+        "updated_at": "2021-05-07T12:38:05.780629",
+        "last_commit": "f7fc6029c76878ef8768741a807b7495843f7a71",
+        "last_commit_time": "2021-05-07T10:36:09"
+    },
+    "com.github.zoni.ulauncher-hex": {
+        "id": "com.github.zoni.ulauncher-hex",
+        "url": "https://github.com/zoni/ulauncher-hex",
+        "updated_at": "2021-05-07T12:41:16.935248",
+        "last_commit": "3fd2464f1f819d5a283649b20c11b2493cf8a1be",
+        "last_commit_time": "2021-05-07T10:41:07"
+    },
+    "com.github.zoni.ulauncher-pulsecontrol": {
+        "id": "com.github.zoni.ulauncher-pulsecontrol",
+        "url": "https://github.com/zoni/ulauncher-pulsecontrol",
+        "updated_at": "2021-05-07T12:43:35.028596",
+        "last_commit": "6fe5d03fcf84ea7766a9a6a8fb678609d28c6d3c",
+        "last_commit_time": "2021-05-07T10:43:23"
+    },
+    "com.github.zoni.ulauncher-pinboard-search": {
+        "id": "com.github.zoni.ulauncher-pinboard-search",
+        "url": "https://github.com/zoni/ulauncher-pinboard-search",
+        "updated_at": "2021-05-07T12:49:30.646308",
+        "last_commit": "61e54d28ef823cfa78cbed0c5071e221180ceeb8",
+        "last_commit_time": "2021-05-07T10:49:17"
+    },
+    "com.github.zoni.ulauncher-gnome-calculator": {
+        "id": "com.github.zoni.ulauncher-gnome-calculator",
+        "url": "https://github.com/zoni/ulauncher-gnome-calculator",
+        "updated_at": "2021-05-07T12:55:49.932751",
+        "last_commit": "474337346d0580601232967ecb8ecced96342b4a",
+        "last_commit_time": "2021-05-07T10:55:32"
+    },
+    "com.github.zoni.ulauncher-snippets": {
+        "id": "com.github.zoni.ulauncher-snippets",
+        "url": "https://github.com/zoni/ulauncher-snippets",
+        "updated_at": "2021-05-08T13:51:25.446542",
+        "last_commit": "03557219ac570b72d8423909b496dc5cc1a055c2",
+        "last_commit_time": "2021-05-08T11:51:02"
+    }
+}

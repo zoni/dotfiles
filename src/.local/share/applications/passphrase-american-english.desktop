@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Generate passphrase (american-english wordlist)
+Exec=passphrase --interactive --clipboard --lowercase --wordfile /usr/share/dict/american-english
+Terminal=false
+Type=Application
