@@ -28,10 +28,6 @@ done
 # call result at the time of dotfiles install.
 echo 'export PATH="$PATH:'"$(ruby -e 'puts Gem.user_dir')"'/bin"' >> $HOME/.zsh/05-path.zsh
 
-if [[ $USER == "work" ]]; then
-	git config --global user.signingkey E1B292AF00FB1524D5B7292E93EC881C83165FCE
-fi
-
 if [[ $USER == "zoni" ]]; then
 	EMAIL_PASSWORD="$(pass show Email/nick@groenen.me | head -n 1)"
 	sed -i -e "s/__PASSWORD__/${EMAIL_PASSWORD}/g" $HOME/.mutt/account
