@@ -28,12 +28,6 @@ done
 # call result at the time of dotfiles install.
 echo 'export PATH="$PATH:'"$(ruby -e 'puts Gem.user_dir')"'/bin"' >> $HOME/.zsh/05-path.zsh
 
-# A lot of remote hosts ship outdated terminfo databases which don't know about alacritty.
-#
-# The TERM environment variable is special to SSH and cannot be adjusted with
-# SetEnv in ssh_config so set a different TERM value before calling ssh.
-echo 'alias ssh="env TERM=xterm-256color ssh"' >> $HOME/.zsh/50-aliases.zsh
-
 if [[ $USER == "work" ]]; then
 	git config --global user.signingkey E1B292AF00FB1524D5B7292E93EC881C83165FCE
 fi
