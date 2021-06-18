@@ -2,6 +2,8 @@ if [ -e /etc/profile.d/autojump.zsh ]; then
 	source /etc/profile.d/autojump.zsh
 fi
 
+FORGIT_NO_ALIASES=1
+
 source "${HOME}/.zgenom/zgenom.zsh"
 if ! zgenom saved; then
 	# This plugin interferes with history-substring-search if not loaded first
@@ -22,6 +24,7 @@ if ! zgenom saved; then
 	zgenom load 3v1n0/zsh-bash-completions-fallback
 	zgenom load LucasLarson/gunstage
 	zgenom load Tarrasch/zsh-autoenv
+	zgenom load wfxr/forgit
 	zgenom load zsh-vi-more/vi-increment
 	zgenom load zsh-vi-more/vi-motions
 	zgenom load zsh-vi-more/vi-quote
