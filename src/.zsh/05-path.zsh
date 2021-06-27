@@ -2,7 +2,7 @@
 # Do this before oh-my-zsh starts so that plugins all find the
 # correct executables.
 
-export PATH="$HOME/Bin:$PATH:/usr/local/go/bin/:/usr/share/virtualenvwrapper:$HOME/.cargo/bin:$HOME/Workspace/go/bin"
+export PATH="$HOME/Bin:$PATH:/usr/local/go/bin/:/usr/share/virtualenvwrapper:$HOME/.cargo/bin:$HOME/Workspace/go/bin:$HOME/.mix/escripts"
 export GOPATH="$HOME/Workspace/go"
 
 if [[ -e "$HOME/.asdf/shims" ]]; then
