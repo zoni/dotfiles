@@ -26,6 +26,7 @@
 	requireForce = false
 [core]
 	excludesfile = ~/.gitignore
+	pager = diffr --colors refine-added:none:background:0x33,0x99,0x33 --colors added:none:background:0x33,0x55,0x33 --colors refine-removed:none:background:0x99,0x33,0x33 --colors removed:none:background:0x55,0x33,0x33 | less -R
 [fetch]
 	recurseSubmodules = on-demand
 	# A value of 0 will give some reasonable default. If unset, it defaults to 1.
@@ -33,6 +34,7 @@
 [init]
 	defaultBranch = main
 [interactive]
+	diffFilter = diffr --colors refine-added:none:background:0x33,0x99,0x33 --colors added:none:background:0x33,0x55,0x33 --colors refine-removed:none:background:0x99,0x33,0x33 --colors removed:none:background:0x55,0x33,0x33
     singleKey = true
 [merge]
 	tool = meld
