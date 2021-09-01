@@ -5,16 +5,13 @@ azemoh.one-monokai
 GitHub.vscode-pull-request-github
 eamodio.gitlens
 samverschueren.final-newline
-testthedocs.vale
 timonwong.shellcheck
 vscodevim.vim
 
 # Language support
 elixir-lsp.elixir-ls
-mauve.terraform
 ms-azuretools.vscode-docker
 ms-python.python
-ms-vscode.Go
 redhat.vscode-yaml
 rust-lang.rust
 samuelcolvin.jinjahtml
@@ -24,3 +21,8 @@ bierner.markdown-checkbox
 bierner.markdown-emoji
 bierner.markdown-footnotes
 bierner.markdown-mermaid
+
+# Previously installed but no longer available:
+#mauve.terraform
+#ms-vscode.Go
+#testthedocs.vale
