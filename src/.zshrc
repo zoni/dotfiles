@@ -30,8 +30,8 @@ if ! zgenom saved; then
 	zgenom load zsh-vi-more/vi-quote
 
 	zgenom compile .zshrc
-	zgenom compile ~/.zsh
-	zgenom compile $ZDOTDIR
+	zgenom compile .zsh
+	[ ! -z $ZDOTDIR ] && zgenom compile $ZDOTDIR
 
 	if [ -d /usr/share/virtualenvwrapper/ -o -e /usr/bin/virtualenvwrapper.sh ]; then
 		zgenom ohmyzsh plugins/virtualenvwrapper
@@ -43,5 +43,5 @@ fi
 # Source all the .zsh files in $HOME/.zsh/
 # Allows for conf.d style configuration of zsh
 for file in $HOME/.zsh/*.zsh; do
-	source $file
+	source "$file"
 done
