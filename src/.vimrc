@@ -30,6 +30,7 @@ Plug 'fratajczak/one-monokai-vim'
 Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
 Plug 'jamessan/vim-gnupg'
+Plug 'jeetsukumaran/vim-pythonsense', { 'for': 'python' }
 Plug 'jlanzarotta/bufexplorer'
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
 Plug 'jreybert/vimagit'
