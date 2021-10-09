@@ -39,6 +39,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'kshenoy/vim-signature'
 Plug 'lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'  " note: lazy-loading this doesn't work with vim-airline
+Plug 'meatballs/vim-xonsh'
 Plug 'mhinz/vim-mix-format',
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'ntpeters/vim-better-whitespace'
