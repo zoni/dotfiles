@@ -30,7 +30,7 @@ let g:LanguageClient_serverCommands = {
     \ 'elixir': ['elixir-ls'],
     \ 'go': ['gopls'],
     \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'python': ['pyls'],
+    \ 'python': ['pyright-langserver', '--stdio'],
     \ 'rust': ['rust-analyzer'],
     \ 'typescript': ['typescript-language-server', '--stdio'],
     \ 'yaml': ['yaml-language-server', '--stdio'],
