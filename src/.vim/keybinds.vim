@@ -101,17 +101,17 @@ nnoremap <leader>fd :set foldmethod=diff<CR>
 " {{{ Git
 nnoremap <expr> <leader>rg ":Ggrep! " . input("Git grep: ") . "<CR>:copen<CR>"
 nnoremap <leader>rL :FzfBCommits!<CR>
-nnoremap <leader>rP :Gpush<Space>
-nnoremap <leader>rS :Gstatus<CR>
-nnoremap <leader>rb :Gblame<CR>
-nnoremap <leader>rc :Gcommit<Space>
+nnoremap <leader>rP :Git push<Space>
+nnoremap <leader>rS :Git<CR>
+nnoremap <leader>rb :Git blame<CR>
+nnoremap <leader>rc :Git commit<Space>
 nnoremap <leader>rd :Gdiff<CR>
-nnoremap <leader>rf :Gfetch<CR>
+nnoremap <leader>rf :Git fetch<CR>
 nnoremap <leader>rhs :GitGutterStageHunk<CR>
 nnoremap <leader>rhu :GitGutterUndoHunk<CR>
 nnoremap <leader>rl :FzfCommits!<CR>
 nnoremap <leader>rm :MagitOnly<CR>
-nnoremap <leader>rp :Gpull<Space>
+nnoremap <leader>rp :Git pull<Space>
 nnoremap <leader>rr :Git<Space>
 nnoremap <leader>rw :Gwrite<CR>
 nnoremap [c :GitGutterPrevHunk<CR>
