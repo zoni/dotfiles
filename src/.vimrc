@@ -16,10 +16,10 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'aklt/plantuml-syntax'
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'make release' }
 Plug 'ayu-theme/ayu-vim'
 Plug 'ciaranm/securemodelines'
 Plug 'dense-analysis/ale'
+Plug 'deoplete-plugins/deoplete-lsp'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dkarter/bullets.vim'
 Plug 'dyng/ctrlsf.vim'
@@ -42,6 +42,7 @@ Plug 'majutsushi/tagbar'  " note: lazy-loading this doesn't work with vim-airlin
 Plug 'meatballs/vim-xonsh'
 Plug 'mhinz/vim-mix-format',
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'neovim/nvim-lspconfig'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pelodelfuego/vim-swoop',
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
@@ -88,6 +89,7 @@ source ~/.vim/keybinds.vim
 call plug#end()
 
 source ~/.vim/theme.vim
+source ~/.vim/lspconfig.vim
 
 source /usr/share/vim/vimfiles/plugin/fzf.vim
 

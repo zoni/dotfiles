@@ -29,47 +29,6 @@ let g:gundo_return_on_revert = 0
 nmap <silent> <leader>u :GundoToggle<CR>
 " }}}
 
-" {{{ LanguageClient
-let g:LanguageClient_serverCommands = {
-    \ 'elixir': ['elixir-ls'],
-    \ 'go': ['gopls'],
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'python': ['pyright-langserver', '--stdio'],
-    \ 'rust': ['rust-analyzer'],
-    \ 'typescript': ['typescript-language-server', '--stdio'],
-    \ 'yaml': ['yaml-language-server', '--stdio'],
-    \ }
-
-let g:LanguageClient_hoverPreview = "Always"
-let g:LanguageClient_useVirtualText = "No"
-
-function! LanguageClient_YAML_SetSchemaSettings()
-	if &ft=="yaml"
-		let yaml_schema_settings = json_decode('
-		\{
-		\    "yaml": {
-		\        "completion": true,
-		\        "hover": true,
-		\        "validate": true,
-		\        "format": {
-		\            "enable": true
-		\        }
-		\    },
-		\    "http": {
-		\        "proxyStrictSSL": true
-		\    }
-		\}')
-		LanguageClient#Notify('workspace/didChangeConfiguration', {'settings': yaml_schema_settings})
-	endif
-endfunction
-
-augroup LanguageClientAU
-    au!
-    au BufWritePre *.ex,*.exs,*.go,*.py,*.rs,*.yml,*.yaml execute "silent :call LanguageClient#textDocument_formatting_sync()"
-    "au User LanguageClientStarted call LanguageClient_YAML_SetSchemaSettings()
-augroup END
-" }}}
-
 " {{{ Python
 if has('python3')
     let g:pymode_python = 'python3'

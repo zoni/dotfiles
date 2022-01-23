@@ -80,13 +80,6 @@ nnoremap <silent> <leader>T :TagbarToggle<CR>
 " Show the YankRing
 nnoremap <silent> <leader>yr :YRShow<CR>
 nnoremap - :Explore<CR>
-
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-nnoremap <silent> <Leader>ma :call LanguageClient#textDocument_codeAction()<CR>
-nnoremap <silent> <Leader>mr :call LanguageClient#textDocument_rename()<CR>
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> gs :call LanguageClient#textDocument_documentSymbol()<CR>
 " }}}
 
 " {{{ Folding
