@@ -1,10 +1,9 @@
 # See /usr/share/doc/alacritty/example/alacritty.yml for all available settings.
 
-background_opacity: 0.8
-
 window:
   # Allow terminal applications to change Alacritty's window title.
   dynamic_title: true
+  opacity: 0.8
 
 draw_bold_text_with_bright_colors: false
 
