@@ -23,6 +23,7 @@ Plug 'deoplete-plugins/deoplete-lsp'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dkarter/bullets.vim'
 Plug 'dyng/ctrlsf.vim'
+Plug 'earthly/earthly.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'ervandew/supertab'
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildVimMarkdownComposer'), 'for': 'markdown' }
