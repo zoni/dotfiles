@@ -92,7 +92,11 @@ call plug#end()
 source ~/.vim/theme.vim
 source ~/.vim/lspconfig.vim
 
-source /usr/share/vim/vimfiles/plugin/fzf.vim
+if filereadable("/usr/share/vim/vimfiles/plugin/fzf.vim")
+  source /usr/share/vim/vimfiles/plugin/fzf.vim
+elseif filereadable("/usr/local/opt/fzf/plugin/fzf.vim")
+  source /usr/local/opt/fzf/plugin/fzf.vim
+endif
 
 " Must be called after plug#end
 call deoplete#custom#option({

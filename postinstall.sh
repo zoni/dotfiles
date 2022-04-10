@@ -5,7 +5,7 @@ set -x
 
 HOST=$(hostname)
 
-systemctl --user daemon-reload
+systemctl --user daemon-reload || true
 
 # This will make zgenom do its thing
 /usr/bin/env zsh -i -c ''
@@ -48,22 +48,24 @@ if type code >/dev/null; then
 	ln --force --symbolic ../../../.vscode/settings.json "$HOME/.config/Code - OSS/User/settings.json"
 fi
 
-gsettings set org.gnome.desktop.interface cursor-theme "Adwaita"
-gsettings set org.gnome.desktop.interface font-name "DejaVu Sans Book 11"
-gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
-gsettings set org.gnome.desktop.interface icon-theme "gnome-brave"
+if [[ "$OSTYPE" != "darwin"* ]]; then
+    gsettings set org.gnome.desktop.interface cursor-theme "Adwaita"
+    gsettings set org.gnome.desktop.interface font-name "DejaVu Sans Book 11"
+    gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
+    gsettings set org.gnome.desktop.interface icon-theme "gnome-brave"
 
-test -e "$HOME/.config/sway/inputs" || cp "$(dirname $BASH_SOURCE)/src/.config/sway/inputs.example" "$HOME/.config/sway/inputs"
-test -e "$HOME/.config/sway/outputs" || cp "$(dirname $BASH_SOURCE)/src/.config/sway/outputs.example" "$HOME/.config/sway/outputs"
-test -e "$HOME/.config/sway/current-wallpaper" || ln -sf /usr/share/backgrounds/default.png "$HOME/.config/sway/current-wallpaper"
-test -e "$HOME/.i3/current-wallpaper" || ln -sf /usr/share/backgrounds/default.png "$HOME/.i3/current-wallpaper" && feh --bg-scale  "$HOME/.i3/current-wallpaper"
+    test -e "$HOME/.config/sway/inputs" || cp "$(dirname $BASH_SOURCE)/src/.config/sway/inputs.example" "$HOME/.config/sway/inputs"
+    test -e "$HOME/.config/sway/outputs" || cp "$(dirname $BASH_SOURCE)/src/.config/sway/outputs.example" "$HOME/.config/sway/outputs"
+    test -e "$HOME/.config/sway/current-wallpaper" || ln -sf /usr/share/backgrounds/default.png "$HOME/.config/sway/current-wallpaper"
+    test -e "$HOME/.i3/current-wallpaper" || ln -sf /usr/share/backgrounds/default.png "$HOME/.i3/current-wallpaper" && feh --bg-scale  "$HOME/.i3/current-wallpaper"
 
-sha256sum --check --status $TMPDIR/mako.sha256sum || dex $HOME/.local/share/applications/mako.desktop
-sha256sum --check --status $TMPDIR/sway.sha256sum || ( swaymsg reload ; sleep 1; alacritty-dropdown --hide; todoist-toggle --hide )
-sha256sum --check --status $TMPDIR/swayidle.sha256sum || dex $HOME/.local/share/applications/swayidle.desktop
-sha256sum --check --status $TMPDIR/i3.sha256sum || i3-msg reload
+    sha256sum --check --status $TMPDIR/mako.sha256sum || dex $HOME/.local/share/applications/mako.desktop
+    sha256sum --check --status $TMPDIR/sway.sha256sum || ( swaymsg reload ; sleep 1; alacritty-dropdown --hide; todoist-toggle --hide )
+    sha256sum --check --status $TMPDIR/swayidle.sha256sum || dex $HOME/.local/share/applications/swayidle.desktop
+    sha256sum --check --status $TMPDIR/i3.sha256sum || i3-msg reload
 
-systemctl --user disable knowledgebase.service || true
+    systemctl --user disable knowledgebase.service || true
+fi
 
 if curl --silent --fail --output /dev/null https://github.com/; then
 	cargo install --git ssh://git@github.com/zoni/knowledgebase-cli --branch main --locked
@@ -73,7 +75,7 @@ if curl --silent --fail --output /dev/null https://github.com/; then
 	cargo install obsidian-export
 fi
 
-if [ ! -e $HOME/Bin/obsidian ]; then
+if [[ ! -e $HOME/Bin/obsidian && "$OSTYPE" != "darwin"* ]]; then
 	OBSIDIAN_APPIMAGE=$(curl --silent --location https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest | jq -r '.assets[].browser_download_url | select(. | endswith(".AppImage"))')
 	curl --location $OBSIDIAN_APPIMAGE > $HOME/Bin/obsidian-appimage.bin
 	chmod +x $HOME/Bin/obsidian-appimage.bin

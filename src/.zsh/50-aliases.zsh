@@ -30,7 +30,13 @@ if type knowledgebase > /dev/null; then
 		#
 		# Calling /bin/which avoids shell built-ins otherwise we'd still get
 		# the function alias here.
-		/bin/which knowledgebase
+		if [[ -e /bin/which ]]; then
+			# Linux
+			/bin/which knowledgebase
+		else
+			# Mac OSX
+			/usr/bin/which knowledgebase
+		fi
 	}
 	function knowledgebase_sitemap_select() {
 		URL="$($(knowledgebase_binary) sitemap "$@" | rofi -dmenu -no-custom -i)"
@@ -127,7 +133,7 @@ alias d='dirs -v | head -10'
 
 alias dotfiles.sh="dotfiles.sh --dotfiles-dir ~/.dotfiles"
 alias gdiff="git diff --color=auto --no-ext-diff --no-index"
-alias gpg="gpg2 --keyid-format long"
+alias gpg="gpg --keyid-format long"
 alias histgrep="history 0 | grep"
 alias kc="kubectl"
 alias notify-on-complete='notify-send --urgency=normal --icon ${${?/0/terminal}//<->*/error} "Command finished${${?/0/}//<->*/ with error}" ${history[$HISTCMD]%[;&|]*}'
