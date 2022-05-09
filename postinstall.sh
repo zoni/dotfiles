@@ -85,3 +85,9 @@ if [[ ! -e $HOME/Bin/obsidian && "$OSTYPE" != "darwin"* ]]; then
 	rm $HOME/Bin/obsidian-appimage.bin
 	ln -sf $HOME/Bin/Obsidian.AppImage/obsidian $HOME/Bin/obsidian
 fi
+
+if [[ -e $HOME/Knowledgebase/.scripts/pyproject.toml ]]; then
+	if type poetry >/dev/null; then
+		(cd $HOME/Knowledgebase/.scripts/ && poetry install)
+	fi
+fi
