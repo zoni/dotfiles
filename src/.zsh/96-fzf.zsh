@@ -1,8 +1,10 @@
-if [ -e /usr/share/fzf ]; then
+if [ -e /usr/share/fzf -o -e /usr/local/opt/fzf/ ]; then
 	if [ -e /usr/share/fzf/key-bindings.zsh ]; then
 		source /usr/share/fzf/key-bindings.zsh  # Arch Linux
 	elif [ -e /usr/share/fzf/shell/key-bindings.zsh ]; then
 		source /usr/share/fzf/shell/key-bindings.zsh  # Fedora
+	elif [ -e /usr/local/opt/fzf/shell/key-bindings.zsh ]; then
+		source /usr/local/opt/fzf/shell/key-bindings.zsh  # Mac OS
 	fi
 
 	if type fd > /dev/null; then
