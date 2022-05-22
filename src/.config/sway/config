@@ -51,7 +51,6 @@ mode "run" {
     bindsym o exec bash -c "if pgrep --uid $UID --exact obsidian; then knowledgebase open; else exec obsidian; fi"; mode "default"
     bindsym shift+o exec zsh -i -c "knowledgebase sitemap-select"; mode "default"
     bindsym p exec rofi-pass; mode "default"
-    bindsym t exec todoist-toggle --show; mode "default"
     bindsym v exec pavucontrol; mode "default"
     bindsym shift+z exec zeegaree; mode "default"
     bindsym slash exec rofi -show window; mode "default"
@@ -405,7 +404,6 @@ assign [class="obsidian"] $tag5
 for_window [app_id="Alacritty-dropdown"] floating enable, move position center, resize set height 100ppt, resize set width 100ppt, mark "dropdown-terminal", sticky enable
 for_window [app_id="firefox" title="Firefox - Sharing Indicator"] floating enable
 for_window [app_id="guake"] floating enable, resize set height 100ppt, resize set width 100ppt, fullscreen
-for_window [app_id="org.qutebrowser.qutebrowser" title="Todoist"] floating enable, move position center, resize set height 80ppt, resize set width 60ppt, mark "todoist", sticky enable
 for_window [app_id="pavucontrol"] floating enable, resize set height 70ppt, resize set width 70 ppt, move position center
 for_window [app_id="ulauncher"] floating enable, border none, move position center, move up 200px, resize set width 40ppt
 for_window [class="1Password" window_role="browser-window"] floating enable

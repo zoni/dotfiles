@@ -44,7 +44,6 @@ mode "run" {
     bindsym o exec --no-startup-id "bash -c \\"if pgrep --uid $UID --exact obsidian; then knowledgebase open; else exec obsidian; fi\\""; mode "default"
     bindsym shift+o exec --no-startup-id "zsh -i -c \\"knowledgebase sitemap-select\\""; mode "default"
     bindsym p exec --no-startup-id rofi-pass; mode "default"
-    bindsym t exec --no-startup-id todoist-toggle --show; mode "default"
     bindsym v exec --no-startup-id pavucontrol; mode "default"
     bindsym shift+z exec --no-startup-id zeegaree; mode "default"
     bindsym slash exec --no-startup-id rofi -show window; mode "default"
@@ -398,7 +397,6 @@ for_window [class="Ulauncher"] floating enable
 for_window [class="Wine"] floating enable
 for_window [class="Zeegaree.py"] floating enable
 for_window [class="zoom" instance="^$"] floating enable
-for_window [title="Todoist - qutebrowser"] floating enable, resize set height 80ppt, resize set width 60ppt, mark "todoist", sticky enable, move position center
 
 # }}}
 
