@@ -127,6 +127,18 @@ case $(uname -s) in
 		;;
 esac
 
+if type rich > /dev/null; then
+	alias mdcat="rich --markdown --max-width 88"
+	function mdless {
+		rich --markdown --max-width 88 --force-terminal "$@" | less --RAW-CONTROL-CHARS
+	}
+
+	alias rstcat="rich --rst --max-width 88"
+	function rstless {
+		rich --rst --max-width 88 --force-terminal "$@" | less --RAW-CONTROL-CHARS
+	}
+fi
+
 alias p="pushd"
 alias P="popd"
 alias d='dirs -v | head -10'
