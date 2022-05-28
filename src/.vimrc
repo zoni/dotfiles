@@ -49,6 +49,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'pelodelfuego/vim-swoop',
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'posva/vim-vue', { 'for': 'vue' }
+Plug 'quarto-dev/quarto-vim'
 Plug 'rakr/vim-one'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'reedes/vim-pencil'
@@ -73,6 +74,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-scripts/SearchComplete'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
