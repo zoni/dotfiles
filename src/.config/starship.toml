@@ -1,0 +1,61 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = "$time$username$directory$all$line_break$character"
+
+[character]
+success_symbol = "➜ "
+error_symbol = "➜ "
+vicmd_symbol = "➜ "
+vimcmd_replace_one_symbol = "➜ "
+vimcmd_replace_symbol = "➜ "
+vimcmd_visual_symbol = "➜ "
+
+[directory]
+truncate_to_repo = false
+truncation_symbol = "…/"
+truncation_length = 4
+format = "[$path]($style)[$read_only]($read_only_style) "
+style = "blue"
+
+[elixir]
+detect_files = ["mix.exs"]
+detect_extensions = ["ex", "exs"]
+
+[golang]
+symbol = " "
+
+[git_branch]
+style = "purple"
+
+[git_status]
+stashed = ""
+format = '(\[[$all_status$ahead_behind]($style)\] )'
+style = "purple"
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[status]
+format = '\[[↵ $status]($style)\]'
+style = "red"
+disabled = false
+
+[time]
+disabled = false
+format = '\[[$time\]]($style) '
+style = ""
+
+[username]
+show_always = true
+format = '[$user]($style) in '
+style_user = "green"
+style_root = "red"

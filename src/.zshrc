@@ -6,20 +6,9 @@ FORGIT_NO_ALIASES=1
 
 source "${HOME}/.zgenom/zgenom.zsh"
 if ! zgenom saved; then
-	# This plugin interferes with history-substring-search if not loaded first
+	# zsh-syntax-highlighting must be installed before zsh-history-substring-search
 	zgenom load zsh-users/zsh-syntax-highlighting
-
-	zgenom ohmyzsh
-	zgenom ohmyzsh plugins/bundler
-	zgenom ohmyzsh plugins/command-not-found
-	zgenom ohmyzsh plugins/gem
-	zgenom ohmyzsh plugins/git-extras
-	zgenom ohmyzsh plugins/github
-	zgenom ohmyzsh plugins/history-substring-search
-	zgenom ohmyzsh plugins/pip
-	zgenom ohmyzsh plugins/python
-	zgenom ohmyzsh plugins/rsync
-	zgenom ohmyzsh plugins/vagrant
+	zgenom load zsh-users/zsh-history-substring-search
 
 	zgenom load 3v1n0/zsh-bash-completions-fallback
 	zgenom load LucasLarson/gunstage
@@ -33,12 +22,10 @@ if ! zgenom saved; then
 	zgenom compile .zsh
 	[ ! -z $ZDOTDIR ] && zgenom compile $ZDOTDIR
 
-	if [ -d /usr/share/virtualenvwrapper/ -o -e /usr/bin/virtualenvwrapper.sh ]; then
-		zgenom ohmyzsh plugins/virtualenvwrapper
-	fi
-
 	zgenom save
 fi
+
+eval "$(starship init zsh)"
 
 # Source all the .zsh files in $HOME/.zsh/
 # Allows for conf.d style configuration of zsh
