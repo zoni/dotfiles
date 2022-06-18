@@ -142,6 +142,7 @@ fi
 alias p="pushd"
 alias P="popd"
 alias d='dirs -v | head -10'
+for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 alias dotfiles.sh="dotfiles.sh --dotfiles-dir ~/.dotfiles"
 alias gdiff="git diff --color=auto --no-ext-diff --no-index"

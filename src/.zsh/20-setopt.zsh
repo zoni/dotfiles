@@ -1,3 +1,7 @@
+# See also zshoptions(1)
+
+# {{{ Changing Directories
+
 # If a command is issued that can't be executed as a normal command,
 # and the command is the name of a directory, perform the cd command
 # to that directory.
@@ -6,14 +10,15 @@ setopt auto_cd
 # Make cd push the old directory onto the directory stack.
 setopt auto_pushd
 
-# If the argument to a cd command (or an implied cd with the AUTO_CD
-# option set) is not a directory, and does not begin with a slash,
-# try to expand the expression as if it were preceded by a `~' (see
-# *note Filename Expansion::).
-setopt cdable_vars
-
 # Do not print the directory stack after pushd or popd.
 setopt pushd_silent
+
+# Don't push multiple copies of the same directory onto the directory stack.
+setopt pushd_ignore_dups
+
+# }}}
+
+# {{{ Completion, expansion and globbing
 
 # When the current word has a glob pattern, do not insert all the words resulting  from
 # the  expansion  but  generate  matches  as for completion and cycle through them like
@@ -30,6 +35,14 @@ unsetopt glob_dots
 # Regular Expressions from the PCRE library, if available.  If not set, regular expres‐
 # sions will use the extended regexp syntax provided by the system libraries.
 setopt rematch_pcre
+
+# }}}
+
+# {{{ History
+
+# Save each command's beginning timestamp (in seconds since the epoch) and the
+# duration (in seconds) to the history file.
+setopt extended_history
 
 # Don't add commands to history file when preceded by spaces
 setopt hist_ignore_space
@@ -67,9 +80,80 @@ setopt inc_append_history
 # the file after it gets re-written).
 unsetopt share_history
 
+# }}}
+
+# {{{ Input/output
+
 # Try to correct mistyped commands, but not other arguments
 unsetopt correct_all
 setopt correct
 
-# Don't push multiple copies of the same directory onto the directory stack.
-setopt pushd_ignore_dups
+# Allow comments even in interactive shells.
+setopt interactive_comments
+
+# Do not query the user before executing `rm *' or `rm path/*'.
+setopt rm_star_silent
+
+# }}}
+
+# {{{ Job control
+
+# With this option set, stopped jobs that are removed from the job table with
+# the disown builtin command are automatically sent a CONT signal to make them
+# running.
+setopt auto_continue
+
+# Report  the  status of background and suspended jobs before exiting a shell
+# with job control; a second attempt to exit the shell will succeed.
+setopt check_jobs
+
+# Check for both running and suspended jobs when CHECK_JOBS is enabled. When
+# this option  is  disabled, zsh checks only for suspended jobs, which matches
+# the default behavior of bash.
+setopt check_running_jobs
+
+# Send the HUP signal to running jobs when the shell exits.
+setopt hup
+
+# Print job notifications in the long format by default.
+setopt long_list_jobs
+
+# }}}
+
+# {{{ Shell Emulation
+
+# Make the echo builtin compatible with the BSD echo(0) command. This disables
+# backslashed escape sequences in echo strings unless the -e option is
+# specified.
+setopt bsd_echo
+
+# }}}
+
+# {{{ Zsh Line Editor (ZLE)
+
+# Don't beep on error in ZLE.
+unsetopt beep
+
+# }}}
+
+# {{{ Completions
+#
+# See also https://thevaluable.dev/zsh-completion-guide-examples/
+
+# Make completion matches case-insensitive
+#zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# Make completion matches case-insensitive and match on partial words
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# Enable a menu for completions
+zstyle ':completion:*' menu yes select
+
+# Make menu completion of files use the same colors as ls (set via $LS_COLORS)
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+# Group completions by source
+zstyle ':completion:*:*:*:*:descriptions' format '%F{blue}-- %d --%f'
+zstyle ':completion:*' group-name ''
+
+# }}}
