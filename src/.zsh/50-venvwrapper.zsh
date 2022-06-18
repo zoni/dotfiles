@@ -15,8 +15,6 @@ function {
             return
         fi
     done
-    print "[oh-my-zsh] virtualenvwrapper plugin: Cannot find virtualenvwrapper.sh.\n"\
-          "Please install with \`pip install virtualenvwrapper\`" >&2
     return 1
 }
 
