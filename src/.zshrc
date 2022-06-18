@@ -9,10 +9,6 @@ SAVEHIST=10000
 
 source "${HOME}/.zgenom/zgenom.zsh"
 if ! zgenom saved; then
-	# zsh-syntax-highlighting must be installed before zsh-history-substring-search
-	zgenom load zsh-users/zsh-syntax-highlighting
-	zgenom load zsh-users/zsh-history-substring-search
-
 	zgenom load 3v1n0/zsh-bash-completions-fallback
 	zgenom load LucasLarson/gunstage
 	zgenom load Tarrasch/zsh-autoenv
@@ -35,3 +31,9 @@ eval "$(starship init zsh)"
 for file in $HOME/.zsh/*.zsh; do
 	source "$file"
 done
+
+# zsh-syntax-highlighting must be run before zsh-history-substring-search.
+# Furthermore, it must be loaded last, as explained on
+# https://github.com/zsh-users/zsh-syntax-highlighting#why-must-zsh-syntax-highlightingzsh-be-sourced-at-the-end-of-the-zshrc-file
+zgenom load zsh-users/zsh-syntax-highlighting
+zgenom load zsh-users/zsh-history-substring-search
