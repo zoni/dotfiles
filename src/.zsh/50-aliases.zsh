@@ -125,6 +125,9 @@ case $(uname -s) in
 	FreeBSD)
 		alias ls="ls -G -I"
 		;;
+	Darwin)
+		alias ls="ls -G"
+		;;
 esac
 
 if type rich > /dev/null; then
