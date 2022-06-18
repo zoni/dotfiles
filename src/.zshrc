@@ -3,6 +3,9 @@ if [ -e /etc/profile.d/autojump.zsh ]; then
 fi
 
 FORGIT_NO_ALIASES=1
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=10000
 
 source "${HOME}/.zgenom/zgenom.zsh"
 if ! zgenom saved; then
