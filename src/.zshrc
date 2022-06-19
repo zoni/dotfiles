@@ -15,6 +15,7 @@ if ! zgenom saved; then
 	zgenom load LucasLarson/gunstage
 	zgenom load Tarrasch/zsh-autoenv
 	zgenom load wfxr/forgit
+	zgenom load zsh-users/zsh-completions
 	zgenom load zsh-vi-more/vi-increment
 	zgenom load zsh-vi-more/vi-motions
 	zgenom load zsh-vi-more/vi-quote
