@@ -31,6 +31,11 @@ case $(uname -s) in
 		;;
 esac
 
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
 alias p="pushd"
 alias P="popd"
 alias d='dirs -v | head -10'
