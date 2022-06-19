@@ -142,6 +142,24 @@ if type rich > /dev/null; then
 	}
 fi
 
+# Taken from https://github.com/addyosmani/dotfiles/blob/5625d596153aaf16d0089dd8d2a352024a8c90fa/.functions#L1-L17
+function calc() {
+        local result=""
+        result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')"
+        #                       └─ default (when `--mathlib` is used) is 20
+        #
+        if [[ "$result" == *.* ]]; then
+                # improve the output for decimal numbers
+                printf "$result" |
+                sed -e 's/^\./0./'        `# add "0" for cases like ".5"` \
+                    -e 's/^-\./-0./'      `# add "0" for cases like "-.5"`\
+                    -e 's/0*$//;s/\.$//'   # remove trailing zeros
+        else
+                printf "$result"
+        fi
+        printf "\n"
+}
+
 alias p="pushd"
 alias P="popd"
 alias d='dirs -v | head -10'
