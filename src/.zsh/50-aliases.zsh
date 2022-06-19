@@ -1,3 +1,36 @@
+alias -g C="| wc"
+alias -g CB="| wc -c"
+alias -g CC="2>&1 | wc"
+alias -g CCB="2>&1 | wc -c"
+alias -g CCL="2>&1 | wc -l"
+alias -g CCW="2>&1 | wc -w"
+alias -g CL="| wc -l"
+alias -g CW="| wc -w"
+alias -g G='| rg'
+alias -g GG='2>&1 | rg'
+alias -g H='| head'
+alias -g HH='2>&1 | head'
+alias -g J="| jq ."
+alias -g JL="| jq --color-output . | less --RAW-CONTROL-CHARS"
+alias -g L="| less --RAW-CONTROL-CHARS"
+alias -g LL="2>&1 | less --RAW-CONTROL-CHARS"
+alias -g NE="2> /dev/null"
+alias -g NO="> /dev/null 2>&1"
+alias -g S="| sort"
+alias -g SN="| sort -n"
+alias -g SNR="| sort -r -n"
+alias -g SR="| sort -r"
+alias -g SS="2>&1 | sort"
+alias -g SSN="2>&1 | sort -n"
+alias -g SSNR="2>&1 | sort -n -r"
+alias -g SSR="2>&1 | sort -r"
+alias -g T='| tail'
+alias -g TT='2>&1 | tail'
+alias -g X="| xargs"
+alias -g XX="2>&1 | xargs"
+
+alias -s py=python
+
 alias tree="tree -C -L 2"
 alias t="tree"
 alias tl="treeless"
