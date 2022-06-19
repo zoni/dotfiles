@@ -9,6 +9,8 @@ SAVEHIST=10000
 
 source "${HOME}/.zgenom/zgenom.zsh"
 if ! zgenom saved; then
+	cat ~/.zsh/*.zsh > ~/.zshrc.include
+
 	zgenom load 3v1n0/zsh-bash-completions-fallback
 	zgenom load LucasLarson/gunstage
 	zgenom load Tarrasch/zsh-autoenv
@@ -17,20 +19,15 @@ if ! zgenom saved; then
 	zgenom load zsh-vi-more/vi-motions
 	zgenom load zsh-vi-more/vi-quote
 
-	zgenom compile .zshrc
-	zgenom compile .zsh
+	zgenom compile ~/.zshrc
+	zgenom compile ~/.zshrc.include
 	[ ! -z $ZDOTDIR ] && zgenom compile $ZDOTDIR
 
 	zgenom save
 fi
 
 eval "$(starship init zsh)"
-
-# Source all the .zsh files in $HOME/.zsh/
-# Allows for conf.d style configuration of zsh
-for file in $HOME/.zsh/*.zsh; do
-	source "$file"
-done
+source ~/.zshrc.include
 
 # zsh-syntax-highlighting must be run before zsh-history-substring-search.
 # Furthermore, it must be loaded last, as explained on
