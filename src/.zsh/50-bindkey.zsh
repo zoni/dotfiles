@@ -14,6 +14,8 @@ bindkey '\e.' insert-last-word
 bindkey '\eu' undo
 bindkey -M vicmd '\eu' undo
 
+zle -N history-substring-search-up
+zle -N history-substring-search-down
 # The next two keys are the up and down arrow keys respectively
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
