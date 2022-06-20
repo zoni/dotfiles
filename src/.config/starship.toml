@@ -2,6 +2,12 @@
 
 format = "$time$username$directory$all$line_break$character"
 
+[aws]
+disabled = true
+
+[azure]
+disabled = true
+
 [character]
 success_symbol = "➜ "
 error_symbol = "➜ "
@@ -20,6 +26,9 @@ style = "blue"
 [elixir]
 detect_files = ["mix.exs"]
 detect_extensions = ["ex", "exs"]
+
+[gcloud]
+disabled = true
 
 [golang]
 symbol = " "
