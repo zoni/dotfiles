@@ -7,6 +7,19 @@ HOST=$(hostname)
 
 systemctl --user daemon-reload || true
 
+# Remove broken symlinks
+for file in "$HOME"/.zsh/*; do
+	test -e "$file" || rm -f "$file"
+done
+
+# Avoid shelling out to ruby on each shell startup by substituting the ruby
+# call result at the time of dotfiles install.
+echo 'export PATH="$PATH:'"$(ruby -e 'puts Gem.user_dir')"'/bin"' >> $HOME/.zsh/05-path.zsh
+
+for file in $HOME/.zsh/*.zsh; do
+	printf '\n# -- %s --\n\n' $file >> $HOME/.zshrc
+	cat $file >> $HOME/.zshrc
+done
 # This will make zgenom do its thing
 /usr/bin/env zsh -i -c ''
 
@@ -18,15 +31,6 @@ if type nvim > /dev/null; then
 else
 	vim +PlugInstall +qall
 fi
-
-for file in "$HOME"/.zsh/*; do
-	# Remove broken symlinks
-	test -e "$file" || rm -f "$file"
-done
-
-# Avoid shelling out to ruby on each shell startup by substituting the ruby
-# call result at the time of dotfiles install.
-echo 'export PATH="$PATH:'"$(ruby -e 'puts Gem.user_dir')"'/bin"' >> $HOME/.zsh/05-path.zsh
 
 if [[ $USER == "zoni" ]]; then
 	EMAIL_PASSWORD="$(pass show Email/nick@groenen.me | head -n 1)"
