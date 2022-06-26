@@ -20,9 +20,7 @@ if [ $# -eq 0 ]; then
 fi
 
 # Otherwise, start a new, named session or attach to it if already there
-if tmux has-session -t $1 >/dev/null 2>&1; then
-	exec $TMUX new-session -t $1 \; set-option destroy-unattached
-else
-	tmux -2 new-session -d -s $1
-	exec $TMUX new-session -t $1 \; set-option destroy-unattached
+if ! $TMUX has-session -t "$1" >/dev/null 2>&1; then
+	$TMUX new-session -d -s "$1"
 fi
+exec $TMUX new-session -t "$1" \; set-option destroy-unattached
