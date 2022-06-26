@@ -107,6 +107,7 @@ fi
 # The TERM environment variable is special to SSH and cannot be adjusted with
 # SetEnv in ssh_config so set a different TERM value before calling ssh.
 alias ssh="env TERM=xterm-256color ssh"
+alias sshts="env TERM=xterm-256color sshts"
 
 if type hub > /dev/null; then
 	alias git="hub"

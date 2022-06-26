@@ -1,0 +1,39 @@
+#!/bin/sh
+
+set -eu
+
+if [ $# -ne 2 ]; then
+	echo 'Usage: sshts [sessionname] [host]'
+	exit 1
+fi
+
+TMUX_SOCKET_NAME=${SSHTS_TMUX_SOCKET_NAME:-$USER}
+TMUX_SESSION_NAME=$1
+SSH_EXTRA_ARGS=${SSHTS_SSH_EXTRA_ARGS:-}
+SCP_EXTRA_ARGS=${SSHTS_SCP_EXTRA_ARGS:-}
+
+# https://unix.stackexchange.com/a/417188
+case ${2##*[]]} in
+  (*:*)
+      HOST=${2%:*}
+      PORT=${2##*:}
+      SSH="ssh -p $PORT $SSH_EXTRA_ARGS"
+      SCP="scp -P $PORT $SCP_EXTRA_ARGS"
+      ;;
+  (*)
+      HOST=$2
+      PORT=22
+      SSH="ssh $SSH_EXTRA_ARGS"
+      SCP="scp $SCP_EXTRA_ARGS"
+      ;;
+esac
+
+TMUX="$SSH -t $HOST tmux -L $TMUX_SOCKET_NAME -2"
+
+if ! $TMUX has-session -t "$TMUX_SESSION_NAME" >/dev/null 2>&1; then
+    tempfile="$($SSH "$HOST" mktemp --tmpdir .tmux.XXXXXXXXXX.conf)"
+    $SCP ~/.tmux.conf "$HOST:$tempfile" >/dev/null
+    $TMUX -f "$tempfile" new-session -d -s "$TMUX_SESSION_NAME"
+    $SSH "$HOST" rm "$tempfile"
+fi
+exec $TMUX new-session -t "$TMUX_SESSION_NAME" "\; set-option destroy-unattached"
