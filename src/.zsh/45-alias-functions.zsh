@@ -55,3 +55,24 @@ function calc() {
         fi
         printf "\n"
 }
+
+# Load a tmuxp profile, prompting selection with fzf if no profile name is
+# provided.
+function tsp() {
+	local profile=""
+	case $# in
+		0)
+			profile="$(tmuxp ls | fzf)"
+			;;
+		1)
+			profile="$1"
+			;;
+		*)
+			echo 'Usage: tsp [sessionname]'
+			return 1
+			;;
+	esac
+	if [[ "$profile" != "" ]]; then
+		tmuxp load --yes "$profile"
+	fi
+}
