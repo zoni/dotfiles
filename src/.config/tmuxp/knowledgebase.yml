@@ -1,0 +1,19 @@
+session_name: knowledgebase
+windows:
+  - window_name: knowledgebase
+    start_directory: ~/Knowledgebase
+    focus: 'true'
+    panes:
+      - blank
+  - window_name: scripts
+    start_directory: ~/Knowledgebase/.scripts
+    panes:
+      - blank
+  - start_directory: ~/Knowledgebase/.publish
+    window_name: publish
+    panes:
+      - blank
+  - start_directory: ~/Workspace/zoni/knowledgebase-cli
+    window_name: knowledgebase-cli
+    panes:
+      - blank

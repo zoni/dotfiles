@@ -1,0 +1,9 @@
+session_name: dotfiles
+windows:
+  - window_name: dotfiles
+    start_directory: ~/.dotfiles
+    focus: 'true'
+    panes:
+      - blank
+      - shell_command: blank
+        start_directory: ~/.dotfiles/public/src
