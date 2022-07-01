@@ -9,6 +9,7 @@ mkdir -p \
 	$HOME/.config/environment.d \
 	$HOME/.config/sway \
 	$HOME/.config/systemd/user \
+	$HOME/.config/tmuxp \
 	$HOME/.config/ulauncher \
 	$HOME/.gnupg \
 	$HOME/.i3 \
