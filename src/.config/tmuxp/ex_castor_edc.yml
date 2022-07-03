@@ -1,0 +1,10 @@
+session_name: ex_castor_edc
+start_directory: ~/Workspace/castoredc/ex_castor_edc
+windows:
+  - window_name: code
+    layout: even-horizontal
+    focus: true
+    panes:
+      - shell_cmd: blank
+        focus: true
+      - fswatch lib test --event Created --event Updated --event Renamed | mix test --listen-on-stdin --stale
