@@ -3,8 +3,14 @@ windows:
   - window_name: dotfiles
     layout: main-vertical
     start_directory: ~/.dotfiles
-    focus: 'true'
+    focus: true
     panes:
       - blank
       - shell_command: blank
         start_directory: ~/.dotfiles/public/src
+        focus: true
+  - window_name: desktop-automation
+    layout: even-horizontal
+    start_directory: ~/Workspace/zoni/desktop-automation
+    panes:
+      - blank
