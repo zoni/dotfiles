@@ -80,7 +80,7 @@ if curl --silent --fail --output /dev/null https://github.com/; then
 fi
 
 if [[ ! -e $HOME/Bin/obsidian && "$OSTYPE" != "darwin"* ]]; then
-	OBSIDIAN_APPIMAGE=$(curl --silent --location https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest | jq -r '.assets[].browser_download_url | select(. | endswith(".AppImage"))')
+	OBSIDIAN_APPIMAGE=$(curl --silent --location https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest | jq -r '.assets[].browser_download_url | select(. | endswith(".AppImage"))' | grep -v arm64)
 	curl --location $OBSIDIAN_APPIMAGE > $HOME/Bin/obsidian-appimage.bin
 	chmod +x $HOME/Bin/obsidian-appimage.bin
 	rm -rf $HOME/Bin/Obsidian.AppImage
