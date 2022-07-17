@@ -61,7 +61,7 @@ if [[ "$OSTYPE" != "darwin"* ]]; then
     test -e "$HOME/.config/sway/inputs" || cp "$(dirname $BASH_SOURCE)/src/.config/sway/inputs.example" "$HOME/.config/sway/inputs"
     test -e "$HOME/.config/sway/outputs" || cp "$(dirname $BASH_SOURCE)/src/.config/sway/outputs.example" "$HOME/.config/sway/outputs"
     test -e "$HOME/.config/sway/current-wallpaper" || ln -sf /usr/share/backgrounds/default.png "$HOME/.config/sway/current-wallpaper"
-    test -e "$HOME/.i3/current-wallpaper" || ln -sf /usr/share/backgrounds/default.png "$HOME/.i3/current-wallpaper" && feh --bg-scale  "$HOME/.i3/current-wallpaper"
+    test -e "$HOME/.i3/current-wallpaper" || ln -sf /usr/share/backgrounds/default.png "$HOME/.i3/current-wallpaper" && feh --bg-scale  "$HOME/.i3/current-wallpaper" || true
 
     sha256sum --check --status $TMPDIR/mako.sha256sum || dex $HOME/.local/share/applications/mako.desktop
     sha256sum --check --status $TMPDIR/sway.sha256sum || ( swaymsg reload ; sleep 1; alacritty-dropdown --hide; )
