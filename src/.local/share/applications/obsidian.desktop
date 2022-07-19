@@ -5,5 +5,5 @@ Exec=obsidian
 Icon=obsidian
 Type=Application
 StartupNotify=false
-MimeType=text/plain;
 Keywords=knowledgebase;
+MimeType=x-scheme-handler/obsidian;text/plain;
