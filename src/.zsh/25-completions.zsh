@@ -15,3 +15,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # Group completions by source
 zstyle ':completion:*:*:*:*:descriptions' format '%F{blue}-- %d --%f'
 zstyle ':completion:*' group-name ''
+
+# Configure the `ps` invocation used to complete process lists (for example to
+# complete the kill command)
+zstyle ':completion:*:*:*:*:processes' command "ps x -o pid,user,comm,cmd"
