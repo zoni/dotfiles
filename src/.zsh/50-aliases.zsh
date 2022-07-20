@@ -92,6 +92,7 @@ alias unison="unison -ui text"
 alias xclip="xclip -selection clipboard"
 
 if ((ARCHLINUX)); then
+	alias yay="env LESS='cSRX' yay"
 	alias yayr="yay --repo"
 	alias yaya="yay --aur"
 fi
