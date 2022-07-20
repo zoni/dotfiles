@@ -416,6 +416,6 @@ for_window [class="^zoom$" instance="^zoom$" title="^zoom$"] floating enable, re
 # {{{ Startup apps
 
 # https://github.com/jceb/dex
-exec bash -c "sleep 2 && exec dex $HOME/.config/autostart/*.desktop"
+exec bash -c "sleep 2 && exec dex $HOME/.config/autostart/*.desktop /etc/xdg/autostart/lxpolkit.desktop"
 
 # }}}
