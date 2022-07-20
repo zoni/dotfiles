@@ -97,6 +97,10 @@ if ((ARCHLINUX)); then
 	alias yaya="yay --aur"
 fi
 
+if type fwupdmgr > /dev/null; then
+	alias update-system-firmware="fwupdmgr get-updates && fwupdmgr upgrade"
+fi
+
 if [[ $XDG_CURRENT_DESKTOP == "i3" ]]; then
 	# This is required for gnome-control-center to work properly under i3.
 	# Without this, no data is populated.
