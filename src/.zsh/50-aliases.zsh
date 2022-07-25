@@ -91,7 +91,7 @@ alias ts="tmuxsession"
 alias unison="unison -ui text"
 alias xclip="xclip -selection clipboard"
 
-if ((ARCHLINUX)); then
+if type yay > /dev/null; then
 	alias yay="env LESS='cSRX' yay"
 	alias yayr="yay --repo"
 	alias yaya="yay --aur"
