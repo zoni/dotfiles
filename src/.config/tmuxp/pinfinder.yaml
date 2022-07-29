@@ -1,0 +1,14 @@
+session_name: pinfinder
+start_directory: ~/Workspace/zoni/pinfinder
+windows:
+  - window_name: code
+    focus: 'true'
+    layout: even-horizontal
+    panes:
+    - focus: 'true'
+      shell_command: zsh
+
+  - window_name: phx.server
+    panes:
+    - focus: 'true'
+      shell_command: mix phx.server
