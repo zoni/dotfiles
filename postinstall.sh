@@ -58,6 +58,8 @@ if [[ "$OSTYPE" != "darwin"* ]]; then
     gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
     gsettings set org.gnome.desktop.interface icon-theme "gnome-brave"
 
+    dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
+
     test -e "$HOME/.config/sway/inputs" || cp "$(dirname $BASH_SOURCE)/src/.config/sway/inputs.example" "$HOME/.config/sway/inputs"
     test -e "$HOME/.config/sway/outputs" || cp "$(dirname $BASH_SOURCE)/src/.config/sway/outputs.example" "$HOME/.config/sway/outputs"
     test -e "$HOME/.config/sway/current-wallpaper" || ln -sf /usr/share/backgrounds/default.png "$HOME/.config/sway/current-wallpaper"
