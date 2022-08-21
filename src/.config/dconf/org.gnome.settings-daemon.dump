@@ -1,0 +1,16 @@
+[plugins/color]
+night-light-enabled=true
+
+[plugins/media-keys]
+email=@as []
+home=@as []
+rotate-video-lock-static=@as []
+screensaver=['<Super>Backspace']
+terminal=@as []
+www=@as []
+
+[plugins/power]
+power-button-action='suspend'
+sleep-inactive-ac-type='nothing'
+sleep-inactive-battery-timeout=1800
+sleep-inactive-battery-type='suspend'

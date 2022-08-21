@@ -1,0 +1,24 @@
+[/]
+disable-user-extensions=false
+
+[extensions/appindicator]
+tray-pos='right'
+
+[extensions/auto-move-windows]
+application-list=@as []
+
+[extensions/pop-shell]
+active-hint=true
+fullscreen-launcher=true
+gap-inner=uint32 3
+gap-outer=uint32 3
+hint-color-rgba='rgb(103,131,162)'
+tile-by-default=true
+
+[keybindings]
+open-application-menu=@as []
+toggle-message-tray=['<Super>v']
+toggle-overview=@as []
+
+[world-clocks]
+locations=@av []

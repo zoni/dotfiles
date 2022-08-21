@@ -6,6 +6,7 @@ set -x
 mkdir -p \
 	$HOME/.config \
 	$HOME/.config/autostart \
+	$HOME/.config/dconf \
 	$HOME/.config/environment.d \
 	$HOME/.config/sway \
 	$HOME/.config/systemd/user \

@@ -5,6 +5,12 @@ set -x
 
 HOST=$(hostname)
 
+gnome-extension-enable() {
+	if gnome-extensions list | grep "$1"; then
+		gnome-extensions enable "$(gnome-extensions list | grep "$1")"
+	fi
+}
+
 systemctl --user daemon-reload || true
 
 # Remove broken symlinks
@@ -53,24 +59,30 @@ if type code >/dev/null; then
 fi
 
 if [[ "$OSTYPE" != "darwin"* ]]; then
-    gsettings set org.gnome.desktop.interface cursor-theme "Adwaita"
-    gsettings set org.gnome.desktop.interface font-name "DejaVu Sans Book 11"
-    gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
-    gsettings set org.gnome.desktop.interface icon-theme "gnome-brave"
+	import-dconf-dumps
+    systemctl --user disable knowledgebase.service || true
+fi
 
-    dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
+if [[ "$DESKTOP_SESSION" == "gnome" ]]; then
+	gnome-extension-enable pop-shell@system76.com
+	gnome-extension-enable auto-move-windows@gnome-shell-extensions.gcampax.github.com
+	gnome-extension-enable appindicatorsupport@rgcjonas.gmail.com
+fi
 
+if [[ "$DESKTOP_SESSION" == "i3" ]]; then
+    test -e "$HOME/.i3/current-wallpaper" || ln -sf /usr/share/backgrounds/default.png "$HOME/.i3/current-wallpaper" && feh --bg-scale  "$HOME/.i3/current-wallpaper" || true
+    sha256sum --check --status $TMPDIR/i3.sha256sum || i3-msg reload
+
+fi
+
+if [[ "$DESKTOP_SESSION" == "sway-shell" ]]; then
     test -e "$HOME/.config/sway/inputs" || cp "$(dirname $BASH_SOURCE)/src/.config/sway/inputs.example" "$HOME/.config/sway/inputs"
     test -e "$HOME/.config/sway/outputs" || cp "$(dirname $BASH_SOURCE)/src/.config/sway/outputs.example" "$HOME/.config/sway/outputs"
     test -e "$HOME/.config/sway/current-wallpaper" || ln -sf /usr/share/backgrounds/default.png "$HOME/.config/sway/current-wallpaper"
-    test -e "$HOME/.i3/current-wallpaper" || ln -sf /usr/share/backgrounds/default.png "$HOME/.i3/current-wallpaper" && feh --bg-scale  "$HOME/.i3/current-wallpaper" || true
 
     sha256sum --check --status $TMPDIR/mako.sha256sum || dex $HOME/.local/share/applications/mako.desktop
     sha256sum --check --status $TMPDIR/sway.sha256sum || ( swaymsg reload ; sleep 1; alacritty-dropdown --hide; )
     sha256sum --check --status $TMPDIR/swayidle.sha256sum || dex $HOME/.local/share/applications/swayidle.desktop
-    sha256sum --check --status $TMPDIR/i3.sha256sum || i3-msg reload
-
-    systemctl --user disable knowledgebase.service || true
 fi
 
 if curl --silent --fail --output /dev/null https://github.com/; then

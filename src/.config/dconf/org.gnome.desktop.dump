@@ -1,0 +1,156 @@
+[input-sources]
+sources=[('xkb', 'us')]
+xkb-options=['caps:escape']
+
+[interface]
+clock-format='24h'
+clock-show-date=true
+clock-show-seconds=true
+clock-show-weekday=false
+color-scheme='default'
+cursor-blink=true
+cursor-blink-time=1200
+cursor-blink-timeout=10
+cursor-size=24
+cursor-theme='Adwaita'
+document-font-name='DejaVu Sans Book 11'
+enable-animations=true
+enable-hot-corners=true
+font-antialiasing='grayscale'
+font-hinting='slight'
+font-name='DejaVu Sans Book 11'
+font-rgba-order='rgb'
+gtk-enable-primary-paste=true
+gtk-theme='Adwaita'
+icon-theme='gnome-brave'
+locate-pointer=false
+monospace-font-name='Ubuntu Mono 11'
+show-battery-percentage=true
+
+[notifications]
+show-in-lock-screen=false
+
+[peripherals/touchpad]
+natural-scroll=false
+tap-to-click=true
+two-finger-scrolling-enabled=true
+
+[privacy]
+old-files-age=uint32 30
+recent-files-max-age=-1
+remove-old-temp-files=true
+remove-old-trash-files=true
+
+[screensaver]
+lock-delay=uint32 0
+
+[session]
+idle-delay=uint32 300
+
+[wm/keybindings]
+activate-window-menu=['<Alt>space']
+always-on-top=@as []
+begin-move=['<Alt>F7']
+begin-resize=['<Alt>F8']
+close=['<Super>q']
+cycle-group=@as []
+cycle-group-backward=@as []
+cycle-panels=@as []
+cycle-panels-backward=@as []
+cycle-windows=@as []
+cycle-windows-backward=@as []
+lower=@as []
+maximize=@as []
+maximize-horizontally=@as []
+maximize-vertically=@as []
+minimize=['<Super>comma']
+move-to-center=@as []
+move-to-corner-ne=@as []
+move-to-corner-nw=@as []
+move-to-corner-se=@as []
+move-to-corner-sw=@as []
+move-to-monitor-down=@as []
+move-to-monitor-left=@as []
+move-to-monitor-right=@as []
+move-to-monitor-up=@as []
+move-to-side-e=@as []
+move-to-side-n=@as []
+move-to-side-s=@as []
+move-to-side-w=@as []
+move-to-workspace-1=@as []
+move-to-workspace-10=@as []
+move-to-workspace-11=@as []
+move-to-workspace-12=@as []
+move-to-workspace-2=@as []
+move-to-workspace-3=@as []
+move-to-workspace-4=@as []
+move-to-workspace-5=@as []
+move-to-workspace-6=@as []
+move-to-workspace-7=@as []
+move-to-workspace-8=@as []
+move-to-workspace-9=@as []
+move-to-workspace-down=@as []
+move-to-workspace-last=@as []
+move-to-workspace-left=@as []
+move-to-workspace-right=@as []
+move-to-workspace-up=@as []
+panel-main-menu=@as []
+panel-run-dialog=['<Alt>F2']
+raise=@as []
+raise-or-lower=@as []
+set-spew-mark=@as []
+show-desktop=@as []
+switch-applications=['<Super>Tab']
+switch-applications-backward=['<Shift><Super>Tab']
+switch-group=['<Super>Above_Tab']
+switch-group-backward=['<Shift><Super>Above_Tab']
+switch-input-source=@as []
+switch-input-source-backward=@as []
+switch-panels=@as []
+switch-panels-backward=@as []
+switch-to-workspace-1=@as []
+switch-to-workspace-10=@as []
+switch-to-workspace-11=@as []
+switch-to-workspace-12=@as []
+switch-to-workspace-2=@as []
+switch-to-workspace-3=@as []
+switch-to-workspace-4=@as []
+switch-to-workspace-5=@as []
+switch-to-workspace-6=@as []
+switch-to-workspace-7=@as []
+switch-to-workspace-8=@as []
+switch-to-workspace-9=@as []
+switch-to-workspace-down=@as []
+switch-to-workspace-last=@as []
+switch-to-workspace-left=@as []
+switch-to-workspace-right=@as []
+switch-to-workspace-up=@as []
+switch-windows=@as []
+switch-windows-backward=@as []
+toggle-above=@as []
+toggle-fullscreen=@as []
+toggle-maximized=['<Super>m']
+toggle-on-all-workspaces=@as []
+toggle-shaded=@as []
+unmaximize=@as []
+
+[wm/preferences]
+action-double-click-titlebar='toggle-maximize'
+action-middle-click-titlebar='none'
+action-right-click-titlebar='menu'
+audible-bell=false
+auto-raise=false
+auto-raise-delay=500
+button-layout='appmenu:close'
+disable-workarounds=false
+focus-mode='click'
+focus-new-windows='smart'
+mouse-button-modifier='<Super>'
+raise-on-click=true
+resize-with-right-button=true
+theme='Adwaita'
+titlebar-font='Cantarell Bold 11'
+titlebar-uses-system-font=true
+visual-bell=true
+visual-bell-type='fullscreen-flash'
+workspace-names=@as []

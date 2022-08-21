@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -euo pipefail
+set -x
+
+cd "$HOME/.config/dconf/"
+for file in *.dump; do
+	dconf load "/$(echo "$file" | sed -e 's/\.dump//' -e 's:\.:/:g')/" < "$file"
+done
