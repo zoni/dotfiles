@@ -60,9 +60,12 @@ if [[ "$OSTYPE" != "darwin"* ]]; then
 fi
 
 if [[ "$DESKTOP_SESSION" == "gnome" ]]; then
-	gnome-extension-enable pop-shell@system76.com
-	gnome-extension-enable auto-move-windows@gnome-shell-extensions.gcampax.github.com
+	gnome-extension-enable GPaste@gnome-shell-extensions.gnome.org
 	gnome-extension-enable appindicatorsupport@rgcjonas.gmail.com
+	gnome-extension-enable auto-move-windows@gnome-shell-extensions.gcampax.github.com
+	gnome-extension-enable caffeine@patapon.info
+	gnome-extension-enable pop-shell@system76.com
+	gnome-extension-enable sound-output-device-chooser@kgshank.net
 fi
 
 if [[ "$DESKTOP_SESSION" == "i3" ]]; then
