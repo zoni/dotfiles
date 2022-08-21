@@ -2,12 +2,23 @@
 night-light-enabled=true
 
 [plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
 email=@as []
 home=@as []
 rotate-video-lock-static=@as []
 screensaver=['<Super>Backspace']
 terminal=@as []
 www=@as []
+
+[plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>semicolon'
+command='ulauncher-toggle'
+name='Ulauncher'
+
+[plugins/media-keys/custom-keybindings/custom1]
+binding='<Super>apostrophe'
+command='alacritty'
+name='Alacritty'
 
 [plugins/power]
 power-button-action='suspend'
