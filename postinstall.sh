@@ -56,7 +56,8 @@ fi
 
 if [[ "$OSTYPE" != "darwin"* ]]; then
 	import-dconf-dumps
-    systemctl --user disable knowledgebase.service || true
+	systemctl --user disable knowledgebase.service || true
+	xdg-desktop-menu forceupdate
 fi
 
 if [[ "$DESKTOP_SESSION" == "gnome" ]]; then
@@ -71,7 +72,6 @@ fi
 if [[ "$DESKTOP_SESSION" == "i3" ]]; then
     test -e "$HOME/.i3/current-wallpaper" || ln -sf /usr/share/backgrounds/default.png "$HOME/.i3/current-wallpaper" && feh --bg-scale  "$HOME/.i3/current-wallpaper" || true
     sha256sum --check --status $TMPDIR/i3.sha256sum || i3-msg reload
-
 fi
 
 if [[ "$DESKTOP_SESSION" == "sway-shell" ]]; then
