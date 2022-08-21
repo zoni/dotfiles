@@ -6,9 +6,9 @@ set -x
 HOST=$(hostname)
 
 gnome-extension-enable() {
-	if gnome-extensions list | grep "$1"; then
-		gnome-extensions enable "$(gnome-extensions list | grep "$1")"
-	fi
+    if gnome-extensions list | grep "$1"; then
+        gnome-extensions enable "$(gnome-extensions list | grep "$1")"
+    fi
 }
 
 systemctl --user daemon-reload || true
@@ -18,9 +18,9 @@ systemctl --user daemon-reload || true
 echo 'export PATH="$PATH:'"$(ruby -e 'puts Gem.user_dir')"'/bin"' >> $HOME/.zsh/05-path.zsh
 
 for file in "$HOME"/.zsh/*.zsh; do
-	test -e "$file" || rm -f "$file"  # Remove broken symlinks
-	printf '\n# -- %s --\n\n' "$file" >> "$HOME/.zshrc"
-	cat "$file" >> "$HOME/.zshrc"
+    test -e "$file" || rm -f "$file"  # Remove broken symlinks
+    printf '\n# -- %s --\n\n' "$file" >> "$HOME/.zshrc"
+    cat "$file" >> "$HOME/.zshrc"
 done
 # This will make zgenom do its thing
 /usr/bin/env zsh -i -c ''
@@ -29,44 +29,44 @@ ln -snf $HOME/.vim/ $HOME/.config/nvim
 ln -snf $HOME/.vimrc $HOME/.config/nvim/init.vim
 
 if type nvim > /dev/null; then
-	nvim +PlugInstall +qall
+    nvim +PlugInstall +qall
 else
-	vim +PlugInstall +qall
+    vim +PlugInstall +qall
 fi
 
 if [[ $USER == "zoni" ]]; then
-	EMAIL_PASSWORD="$(pass show Email/nick@groenen.me | head -n 1)"
-	sed -i -e "s/__PASSWORD__/${EMAIL_PASSWORD}/g" $HOME/.mutt/account
+    EMAIL_PASSWORD="$(pass show Email/nick@groenen.me | head -n 1)"
+    sed -i -e "s/__PASSWORD__/${EMAIL_PASSWORD}/g" $HOME/.mutt/account
 fi
 
 if [[ $USER != "root" ]]; then
-	echo 'source ~/.vifm/vifmrc.x' >> $HOME/.vifm/vifmrc
+    echo 'source ~/.vifm/vifmrc.x' >> $HOME/.vifm/vifmrc
 fi
 
 if [ -e $HOME/.config/udev-notify/config.$HOST.toml ]; then
-	cat $HOME/.config/udev-notify/config.$HOST.toml  >> $HOME/.config/udev-notify/config.toml
+    cat $HOME/.config/udev-notify/config.$HOST.toml  >> $HOME/.config/udev-notify/config.toml
 fi
 
 if type code >/dev/null; then
-	# Install VS Code extensions listed in extensions.list that are missing from `code --list-extensions`
-	comm -13 <(code --list-extensions|sort) <(grep -v -E '^#' $(dirname $BASH_SOURCE)/src/.vscode/extensions.list | sort) | xargs --no-run-if-empty --max-lines=1 -- code --install-extension
+    # Install VS Code extensions listed in extensions.list that are missing from `code --list-extensions`
+    comm -13 <(code --list-extensions|sort) <(grep -v -E '^#' $(dirname $BASH_SOURCE)/src/.vscode/extensions.list | sort) | xargs --no-run-if-empty --max-lines=1 -- code --install-extension
 
-	ln --force --symbolic ../../../.vscode/settings.json "$HOME/.config/Code - OSS/User/settings.json"
+    ln --force --symbolic ../../../.vscode/settings.json "$HOME/.config/Code - OSS/User/settings.json"
 fi
 
 if [[ "$OSTYPE" != "darwin"* ]]; then
-	import-dconf-dumps
-	systemctl --user disable knowledgebase.service || true
-	xdg-desktop-menu forceupdate
+    import-dconf-dumps
+    systemctl --user disable knowledgebase.service || true
+    xdg-desktop-menu forceupdate
 fi
 
 if [[ "$DESKTOP_SESSION" == "gnome" ]]; then
-	gnome-extension-enable GPaste@gnome-shell-extensions.gnome.org
-	gnome-extension-enable appindicatorsupport@rgcjonas.gmail.com
-	gnome-extension-enable auto-move-windows@gnome-shell-extensions.gcampax.github.com
-	gnome-extension-enable caffeine@patapon.info
-	gnome-extension-enable pop-shell@system76.com
-	gnome-extension-enable sound-output-device-chooser@kgshank.net
+    gnome-extension-enable GPaste@gnome-shell-extensions.gnome.org
+    gnome-extension-enable appindicatorsupport@rgcjonas.gmail.com
+    gnome-extension-enable auto-move-windows@gnome-shell-extensions.gcampax.github.com
+    gnome-extension-enable caffeine@patapon.info
+    gnome-extension-enable pop-shell@system76.com
+    gnome-extension-enable sound-output-device-chooser@kgshank.net
 fi
 
 if [[ "$DESKTOP_SESSION" == "i3" ]]; then
@@ -85,30 +85,30 @@ if [[ "$DESKTOP_SESSION" == "sway-shell" ]]; then
 fi
 
 if curl --silent --fail --output /dev/null https://github.com/; then
-	cargo install --git ssh://git@github.com/zoni/knowledgebase-cli --branch main --locked
-	systemctl --user enable knowledgebase-watch.service || true
-	systemctl --user restart knowledgebase-watch.service || true
+    cargo install --git ssh://git@github.com/zoni/knowledgebase-cli --branch main --locked
+    systemctl --user enable knowledgebase-watch.service || true
+    systemctl --user restart knowledgebase-watch.service || true
 
-	cargo install obsidian-export
+    cargo install obsidian-export
 fi
 
 if [[ ! -e $HOME/Bin/obsidian && "$OSTYPE" != "darwin"* ]]; then
-	OBSIDIAN_APPIMAGE=$(curl --silent --location https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest | jq -r '.assets[].browser_download_url | select(. | endswith(".AppImage"))' | grep -v arm64)
-	curl --location $OBSIDIAN_APPIMAGE > $HOME/Bin/obsidian-appimage.bin
-	chmod +x $HOME/Bin/obsidian-appimage.bin
-	rm -rf $HOME/Bin/Obsidian.AppImage
-	(cd $HOME/Bin && $HOME/Bin/obsidian-appimage.bin --appimage-extract)
-	mv $HOME/Bin/squashfs-root $HOME/Bin/Obsidian.AppImage
-	rm $HOME/Bin/obsidian-appimage.bin
-	ln -sf $HOME/Bin/Obsidian.AppImage/obsidian $HOME/Bin/obsidian
-	sed \
-		-e "s:^Exec=.*:Exec=$HOME/Bin/obsidian %U:" \
-		-e "s:^Icon=.*:Icon=$HOME/Bin/Obsidian.AppImage/obsidian.png:" \
-		"$HOME/Bin/Obsidian.AppImage/obsidian.desktop" > "$HOME/.local/share/applications/obsidian.desktop"
+    OBSIDIAN_APPIMAGE=$(curl --silent --location https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest | jq -r '.assets[].browser_download_url | select(. | endswith(".AppImage"))' | grep -v arm64)
+    curl --location $OBSIDIAN_APPIMAGE > $HOME/Bin/obsidian-appimage.bin
+    chmod +x $HOME/Bin/obsidian-appimage.bin
+    rm -rf $HOME/Bin/Obsidian.AppImage
+    (cd $HOME/Bin && $HOME/Bin/obsidian-appimage.bin --appimage-extract)
+    mv $HOME/Bin/squashfs-root $HOME/Bin/Obsidian.AppImage
+    rm $HOME/Bin/obsidian-appimage.bin
+    ln -sf $HOME/Bin/Obsidian.AppImage/obsidian $HOME/Bin/obsidian
+    sed \
+        -e "s:^Exec=.*:Exec=$HOME/Bin/obsidian %U:" \
+        -e "s:^Icon=.*:Icon=$HOME/Bin/Obsidian.AppImage/obsidian.png:" \
+        "$HOME/Bin/Obsidian.AppImage/obsidian.desktop" > "$HOME/.local/share/applications/obsidian.desktop"
 fi
 
 if [[ -e $HOME/Knowledgebase/.scripts/pyproject.toml ]]; then
-	if type poetry >/dev/null; then
-		(cd $HOME/Knowledgebase/.scripts/ && poetry install)
-	fi
+    if type poetry >/dev/null; then
+        (cd $HOME/Knowledgebase/.scripts/ && poetry install)
+    fi
 fi
