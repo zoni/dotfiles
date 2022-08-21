@@ -3,7 +3,7 @@
 set -euo pipefail
 set -x
 
-cd "$HOME/.dotfiles/public/.config/dconf/"
+cd "$HOME/.dotfiles/public/src/.config/dconf/"
 for file in *.dump; do
 	dconf dump "/$(echo "$file" | sed -e 's/\.dump//' -e 's:\.:/:g')/" > "$file"
 done

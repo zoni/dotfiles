@@ -1,8 +1,10 @@
 [/]
+abbreviate-tab-names=false
 compat-delete='delete-sequence'
 default-shell='/usr/local/bin/tmuxsession'
 display-n=0
 display-tab-names=0
+gtk-theme-name='Adwaita'
 gtk-use-system-default-theme=true
 hide-tabs-if-one-tab=true
 history-size=1000
@@ -18,6 +20,7 @@ save-tabs-when-changed=true
 schema-version='3.9.1.dev0'
 scroll-keystroke=true
 start-at-login=true
+start-fullscreen=true
 use-default-font=true
 use-popup=true
 use-scrollbar=true
@@ -27,4 +30,5 @@ window-height=100
 window-losefocus=false
 window-refocus=false
 window-tabbar=true
+window-vertical-displacement=0
 window-width=100

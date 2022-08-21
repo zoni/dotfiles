@@ -1,3 +1,6 @@
+[calendar]
+show-weekdate=true
+
 [input-sources]
 sources=[('xkb', 'us')]
 xkb-options=['caps:escape']
