@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=obsidian
-Comment=Knowledge base software
-Exec=obsidian
-Icon=obsidian
-Type=Application
-StartupNotify=false
-Keywords=knowledgebase;
-MimeType=x-scheme-handler/obsidian;text/plain;

@@ -13,18 +13,14 @@ gnome-extension-enable() {
 
 systemctl --user daemon-reload || true
 
-# Remove broken symlinks
-for file in "$HOME"/.zsh/*; do
-	test -e "$file" || rm -f "$file"
-done
-
 # Avoid shelling out to ruby on each shell startup by substituting the ruby
 # call result at the time of dotfiles install.
 echo 'export PATH="$PATH:'"$(ruby -e 'puts Gem.user_dir')"'/bin"' >> $HOME/.zsh/05-path.zsh
 
-for file in $HOME/.zsh/*.zsh; do
-	printf '\n# -- %s --\n\n' $file >> $HOME/.zshrc
-	cat $file >> $HOME/.zshrc
+for file in "$HOME"/.zsh/*.zsh; do
+	test -e "$file" || rm -f "$file"  # Remove broken symlinks
+	printf '\n# -- %s --\n\n' "$file" >> "$HOME/.zshrc"
+	cat "$file" >> "$HOME/.zshrc"
 done
 # This will make zgenom do its thing
 /usr/bin/env zsh -i -c ''
@@ -102,6 +98,10 @@ if [[ ! -e $HOME/Bin/obsidian && "$OSTYPE" != "darwin"* ]]; then
 	mv $HOME/Bin/squashfs-root $HOME/Bin/Obsidian.AppImage
 	rm $HOME/Bin/obsidian-appimage.bin
 	ln -sf $HOME/Bin/Obsidian.AppImage/obsidian $HOME/Bin/obsidian
+	sed \
+		-e "s:^Exec=.*:Exec=$HOME/Bin/obsidian %U:" \
+		-e "s:^Icon=.*:Icon=$HOME/Bin/Obsidian.AppImage/obsidian.png:" \
+		"$HOME/Bin/Obsidian.AppImage/obsidian.desktop" > "$HOME/.local/share/applications/obsidian.desktop"
 fi
 
 if [[ -e $HOME/Knowledgebase/.scripts/pyproject.toml ]]; then
