@@ -57,7 +57,6 @@ fi
 if [[ "$OSTYPE" != "darwin"* ]]; then
     import-dconf-dumps
     systemctl --user disable knowledgebase.service || true
-    xdg-desktop-menu forceupdate
 fi
 
 if [[ "$DESKTOP_SESSION" == "gnome" ]]; then
@@ -111,4 +110,8 @@ if [[ -e $HOME/Knowledgebase/.scripts/pyproject.toml ]]; then
     if type poetry >/dev/null; then
         (cd $HOME/Knowledgebase/.scripts/ && poetry install)
     fi
+fi
+
+if [[ "$OSTYPE" != "darwin"* ]]; then
+    xdg-desktop-menu forceupdate
 fi
