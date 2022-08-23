@@ -2,6 +2,10 @@
   "float": [
     {
       "class": "ulauncher"
+    },
+    {
+      "class": "firefox",
+      "title": "Firefox — Sharing Indicator"
     }
   ],
   "skiptaskbarhidden": [],
