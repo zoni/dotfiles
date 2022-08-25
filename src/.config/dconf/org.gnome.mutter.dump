@@ -1,4 +1,6 @@
 [/]
+attach-modal-dialogs=true
+center-new-windows=true
 edge-tiling=false
 workspaces-only-on-primary=true
 
