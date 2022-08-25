@@ -2,7 +2,7 @@
 night-light-enabled=true
 
 [plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
 email=@as []
 home=@as []
 rotate-video-lock-static=@as []
@@ -19,6 +19,11 @@ name='Ulauncher'
 binding='<Super>apostrophe'
 command='alacritty'
 name='Alacritty'
+
+[plugins/media-keys/custom-keybindings/custom2]
+binding='<Super>backslash'
+command='guake-toggle'
+name='Toggle Guake'
 
 [plugins/power]
 power-button-action='suspend'
