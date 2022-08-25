@@ -2,7 +2,7 @@
 night-light-enabled=true
 
 [plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/']
 email=@as []
 home=@as []
 rotate-video-lock-static=@as []
@@ -29,6 +29,11 @@ name='Toggle Guake'
 binding='<Super>t'
 command='alacritty --command zsh -i -c tsp'
 name='Load tmux profile'
+
+[plugins/media-keys/custom-keybindings/custom4]
+binding='<Super>p'
+name='1Password'
+command='1password'
 
 [plugins/power]
 power-button-action='suspend'
