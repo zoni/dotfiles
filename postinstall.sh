@@ -5,9 +5,10 @@ set -x
 
 HOST=$(hostname)
 
-gnome-extension-enable() {
-    if gnome-extensions list | grep "$1"; then
-        gnome-extensions enable "$(gnome-extensions list | grep "$1")"
+# usage: gnome-extension [enable|disable] <extension>
+gnome-extension() {
+    if gnome-extensions list | grep "$2"; then
+        gnome-extensions "$1" "$(gnome-extensions list | grep "$2")"
     fi
 }
 
@@ -60,12 +61,14 @@ if [[ "$OSTYPE" != "darwin"* ]]; then
 fi
 
 if [[ "$DESKTOP_SESSION" == "gnome" ]]; then
-    gnome-extension-enable GPaste@gnome-shell-extensions.gnome.org
-    gnome-extension-enable appindicatorsupport@rgcjonas.gmail.com
-    gnome-extension-enable auto-move-windows@gnome-shell-extensions.gcampax.github.com
-    gnome-extension-enable caffeine@patapon.info
-    gnome-extension-enable pop-shell@system76.com
-    gnome-extension-enable sound-output-device-chooser@kgshank.net
+    gnome-extension enable GPaste@gnome-shell-extensions.gnome.org
+    gnome-extension enable appindicatorsupport@rgcjonas.gmail.com
+    gnome-extension enable caffeine@patapon.info
+    gnome-extension enable pop-shell@system76.com
+    gnome-extension enable sound-output-device-chooser@kgshank.net
+
+    # Buggy, messes with dynamic workspace creation
+    gnome-extension disable auto-move-windows@gnome-shell-extensions.gcampax.github.com
 fi
 
 if [[ "$DESKTOP_SESSION" == "i3" ]]; then
