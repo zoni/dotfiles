@@ -3,15 +3,34 @@
 set -e
 set -x
 
+# Assign the directory in which this script is located to $SOURCEDIR
+# https://stackoverflow.com/a/246128
+SOURCE=${BASH_SOURCE[0]}
+while [ -L "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+  SOURCE=$(readlink "$SOURCE")
+  [[ $SOURCE != /* ]] && SOURCE=$DIR/$SOURCE # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+SOURCEDIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+
+# Make sure all directories from src/.config/ are created before
+# dotfiles.sh touches them (otherwise they become symlinks to patched-src
+test -e "$HOME/.config" || mkdir "$HOME/.config"
+for file in "$SOURCEDIR"/src/.config/*; do
+	if [[ ! -d "$file" ]]; then
+		continue
+	fi
+
+	target="$HOME/.config/$(basename "$file")"
+	if [[ -L "$target" ]]; then
+		# Linked target, probably to patched-src. Delete it so we
+		# can recreate it as a directory instead.
+		rm "$target"
+	fi
+	test -e "$target" || mkdir "$target"
+done
+
 mkdir -p \
-	$HOME/.config \
-	$HOME/.config/autostart \
-	$HOME/.config/dconf \
-	$HOME/.config/environment.d \
-	$HOME/.config/sway \
-	$HOME/.config/systemd/user \
-	$HOME/.config/tmuxp \
-	$HOME/.config/ulauncher \
 	$HOME/.gnupg \
 	$HOME/.i3 \
 	$HOME/.local/share \
