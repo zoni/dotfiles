@@ -17,8 +17,8 @@ name='Ulauncher'
 
 [plugins/media-keys/custom-keybindings/custom1]
 binding='<Super>apostrophe'
-command='alacritty'
-name='Alacritty'
+command='wezterm-gui'
+name='Wezterm'
 
 [plugins/media-keys/custom-keybindings/custom2]
 binding='<Super>backslash'
@@ -27,7 +27,7 @@ name='Toggle Guake'
 
 [plugins/media-keys/custom-keybindings/custom3]
 binding='<Super>t'
-command='alacritty --command zsh -i -c tsp'
+command='wezterm-gui start zsh -i -c tsp'
 name='Load tmux profile'
 
 [plugins/media-keys/custom-keybindings/custom4]
