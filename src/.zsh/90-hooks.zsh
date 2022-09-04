@@ -1,6 +1,7 @@
-# These hooks will trigger a notification with notify-send when a command
-# runs for more than $THRESHOLD seconds. Part of the magic for this relies
-# on $SECONDS, which is described in the zsh manual as follows:
+# These hooks will set the window title using OSC sequences as well as trigger
+# a notification with notify-send when a command runs for more than $THRESHOLD
+# seconds. Part of the magic for this relies on $SECONDS, which is described in
+# the zsh manual as follows:
 #
 # SECONDS
 #     The number of seconds since shell invocation. If this parameter is
@@ -11,9 +12,15 @@
 LONG_COMMAND_NOTIFY_THRESHOLD=30
 
 preexec() {
+	local title=$(print -P "${1[(w)1]} - %5~")
+	printf "\033]0;$title\007"
+
 	SECONDS=0
 }
 precmd() {
+	local title=$(print -P "%5~")
+	printf "\033]0;$title\007"
+
 	local statuscode=$?
 
 	# Bail out if not an X session or connected via SSH
