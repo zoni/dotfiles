@@ -48,6 +48,15 @@ if [ -e $HOME/.config/udev-notify/config.$HOST.toml ]; then
     cat $HOME/.config/udev-notify/config.$HOST.toml  >> $HOME/.config/udev-notify/config.toml
 fi
 
+if [[ -e /var/lib/flatpak/app/org.wezfurlong.wezterm/ ]]; then
+	ln --force --symbolic "$HOME/.config/wezterm/" "$HOME/.var/app/org.wezfurlong.wezterm/config/"
+	for file in /var/lib/flatpak/app/org.wezfurlong.wezterm/current/active/files/bin/*; do
+		ln --force --symbolic "$file" "$HOME"/.local/bin/"$(basename "$file")"
+	done
+fi
+tic -x -o "$HOME/.terminfo" "$HOME/.config/wezterm/wezterm.terminfo"
+
+
 if type code >/dev/null; then
     # Install VS Code extensions listed in extensions.list that are missing from `code --list-extensions`
     comm -13 <(code --list-extensions|sort) <(grep -v -E '^#' $(dirname $BASH_SOURCE)/src/.vscode/extensions.list | sort) | xargs --no-run-if-empty --max-lines=1 -- code --install-extension
