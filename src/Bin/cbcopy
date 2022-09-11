@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	exec pbcopy "$@"
+fi
+
+SESSION_TYPE=$(loginctl show-session --value -p Type "$(loginctl show-user -p Display --value "$(whoami)")")
+
+case $SESSION_TYPE in
+	wayland)
+		exec wl-copy "$@"
+		;;
+	*)
+		exec xclip -selection clipboard "$@"
+		;;
+esac
