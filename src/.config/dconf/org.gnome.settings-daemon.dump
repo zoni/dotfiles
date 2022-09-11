@@ -40,7 +40,7 @@ name='1Password'
 
 [plugins/media-keys/custom-keybindings/custom5]
 binding='<Alt><Super>o'
-command='~/Bin/obsidian'
+command='~/Bin/obsidian-fzf-or-launch'
 name='Obsidian'
 
 [plugins/media-keys/custom-keybindings/custom6]

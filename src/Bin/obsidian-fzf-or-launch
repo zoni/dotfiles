@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if pgrep --uid $UID --exact obsidian; then
+	exec wezterm start --always-new-process zsh -i -c "knowledgebase open"
+else
+	exec obsidian;
+fi
