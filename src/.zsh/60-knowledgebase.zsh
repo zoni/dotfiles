@@ -15,15 +15,10 @@ if type knowledgebase > /dev/null; then
 		fi
 	}
 	function knowledgebase_sitemap_select() {
-		URL="$($(knowledgebase_binary) sitemap "$@" | rofi -dmenu -no-custom -i)"
+		URL="$($(knowledgebase_binary) sitemap "$@" | fzf)"
 		if [[ $? -ne 0 ]]; then; return; fi
-
-		if [[ -v WAYLAND_DISPLAY ]]; then
-			printf "$URL" | wl-copy
-		else
-			printf "$URL" | xclip -selection clipboard
-		fi
-		notify-send "URL copied to clipboard" "$URL"
+		printf "$URL" | cbcopy
+		notify-send --transient "URL copied to clipboard" "$URL"
 	}
 	function knowledgebase() {
 		if [ "$#" -lt 1 ]; then

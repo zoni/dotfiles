@@ -3,7 +3,7 @@ night-light-enabled=true
 night-light-temperature=uint32 3700
 
 [plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/']
 email=['<Alt><Super>e']
 home=['<Alt><Super>f']
 rotate-video-lock-static=@as []
@@ -47,6 +47,11 @@ name='Obsidian'
 binding='<Alt><Super>z'
 command='zeal'
 name='Zeal'
+
+[plugins/media-keys/custom-keybindings/custom7]
+binding='<Shift><Alt><Super>o'
+command='wezterm start --always-new-process zsh -i -c "knowledgebase sitemap-select"'
+name='Obsidian sitemap-select'
 
 [plugins/power]
 power-button-action='suspend'
