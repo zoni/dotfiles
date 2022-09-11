@@ -1,14 +1,17 @@
 [plugins/color]
 night-light-enabled=true
+night-light-temperature=uint32 3700
 
 [plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/']
-email=@as []
-home=@as []
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/']
+email=['<Alt><Super>e']
+home=['<Alt><Super>f']
 rotate-video-lock-static=@as []
+screenreader=@as []
 screensaver=['<Super>Backspace']
+search=['<Alt><Super>s']
 terminal=@as []
-www=@as []
+www=['<Alt><Super>b']
 
 [plugins/media-keys/custom-keybindings/custom0]
 binding='<Super>semicolon'
@@ -26,14 +29,24 @@ command='guake-toggle'
 name='Toggle Guake'
 
 [plugins/media-keys/custom-keybindings/custom3]
-binding='<Super>t'
+binding='<Alt><Super>t'
 command='wezterm-gui start zsh -i -c tsp'
 name='Load tmux profile'
 
 [plugins/media-keys/custom-keybindings/custom4]
-binding='<Super>p'
-name='1Password'
+binding='<Alt><Super>p'
 command='1password'
+name='1Password'
+
+[plugins/media-keys/custom-keybindings/custom5]
+binding='<Alt><Super>o'
+command='~/Bin/obsidian'
+name='Obsidian'
+
+[plugins/media-keys/custom-keybindings/custom6]
+binding='<Alt><Super>z'
+command='zeal'
+name='Zeal'
 
 [plugins/power]
 power-button-action='suspend'

@@ -3,7 +3,7 @@ show-weekdate=true
 
 [input-sources]
 sources=[('xkb', 'us')]
-xkb-options=['caps:escape']
+xkb-options=['caps:escape', 'lv3:ralt_switch', 'compose:ralt']
 
 [interface]
 clock-format='24h'

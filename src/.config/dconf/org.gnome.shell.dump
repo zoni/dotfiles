@@ -6,3 +6,10 @@ focus-active-notification=@as []
 open-application-menu=@as []
 toggle-message-tray=['<Super>v']
 toggle-overview=@as []
+
+[weather]
+automatic-location=true
+locations=[<(uint32 2, <('Amsterdam', 'EHAM', true, [(0.91280719879303418, 0.083194033496160544)], [(0.91367986341903151, 0.085812027374152042)])>)>]
+
+[world-clocks]
+locations=[<(uint32 2, <('Cleveland', 'KBKL', true, [(0.72475767592128648, -1.4253910094957791)], [(0.72430282566492421, -1.4258538708134081)])>)>]
