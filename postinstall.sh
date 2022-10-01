@@ -126,4 +126,5 @@ fi
 
 if [[ "$OSTYPE" != "darwin"* ]]; then
     xdg-desktop-menu forceupdate
+    ln -sf keyringrc.linux.cfg "$HOME/.config/python_keyring/keyringrc.cfg"
 fi
