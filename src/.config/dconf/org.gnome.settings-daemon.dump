@@ -30,7 +30,7 @@ name='Toggle Guake'
 
 [plugins/media-keys/custom-keybindings/custom3]
 binding='<Alt><Super>t'
-command='wezterm-gui start zsh -i -c tsp'
+command='wezterm start zsh -i -c tsp'
 name='Load tmux profile'
 
 [plugins/media-keys/custom-keybindings/custom4]
@@ -40,7 +40,7 @@ name='1Password'
 
 [plugins/media-keys/custom-keybindings/custom5]
 binding='<Alt><Super>o'
-command='~/Bin/obsidian-fzf-or-launch'
+command='obsidian-fzf-or-launch'
 name='Obsidian'
 
 [plugins/media-keys/custom-keybindings/custom6]
@@ -50,7 +50,7 @@ name='Zeal'
 
 [plugins/media-keys/custom-keybindings/custom7]
 binding='<Shift><Alt><Super>o'
-command='wezterm start --always-new-process zsh -i -c "knowledgebase sitemap-select"'
+command='wezterm start zsh -i -c "knowledgebase sitemap-select"'
 name='Obsidian sitemap-select'
 
 [plugins/power]
