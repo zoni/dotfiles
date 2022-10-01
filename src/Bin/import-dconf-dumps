@@ -5,5 +5,10 @@ set -x
 
 cd "$HOME/.config/dconf/"
 for file in *.dump; do
-	dconf load "/$(echo "$file" | sed -e 's/\.dump//' -e 's:\.:/:g')/" < "$file"
+    if test -e "$file"; then
+        dconf load "/$(echo "$file" | sed -e 's/\.dump//' -e 's:\.:/:g')/" < "$file"
+    else
+        # Remove broken symlinks
+        rm -f "$file"
+    fi
 done
