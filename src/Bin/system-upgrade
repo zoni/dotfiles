@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+set -eu
+
+test -e /etc/os-release && os_release='/etc/os-release' || os_release='/usr/lib/os-release'
+. "${os_release}"
+
+SHOULD_TOGGLE_MDATP=0
+
+function atexit {
+	set +e
+	if [ $SHOULD_TOGGLE_MDATP -eq 1 ]; then
+		systemctl start mdatp.service
+	fi
+}
+
+function pre_upgrade {
+	if systemctl is-enabled mdatp.service > /dev/null 2>&1; then
+		SHOULD_TOGGLE_MDATP=1
+		systemctl stop mdatp.service
+	fi
+}
+
+function upgrade_arch {
+	sudo -u "$SUDO_USER" yay
+}
+
+function upgrade_fedora {
+	dnf upgrade
+	sudo -u "$SUDO_USER" /home/linuxbrew/.linuxbrew/bin/brew upgrade
+	sudo -u "$SUDO_USER" flatpak update
+}
+
+trap atexit EXIT
+pre_upgrade
+
+case "${ID}" in
+	arch)
+		upgrade_arch
+		;;
+	fedora)
+		upgrade_fedora
+		;;
+	*)
+		echo "Unsupported distro $ID" >&2
+	;;
+
+esac
