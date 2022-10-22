@@ -28,7 +28,6 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'ervandew/supertab'
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildVimMarkdownComposer'), 'for': 'markdown' }
 Plug 'fratajczak/one-monokai-vim'
-Plug 'github/copilot.vim'
 Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
 Plug 'jamessan/vim-gnupg'
