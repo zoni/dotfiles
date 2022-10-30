@@ -1,3 +1,5 @@
+autoload -U zmv
+
 alias -g C="| wc"
 alias -g CB="| wc -c"
 alias -g CC="2>&1 | wc"
