@@ -10,6 +10,7 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 zstyle ':completion:*' menu yes select
 
 # Make menu completion of files use the same colors as ls (set via $LS_COLORS)
+autoload zsh/complist
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # Group completions by source
