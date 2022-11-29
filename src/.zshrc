@@ -2,7 +2,7 @@ if [ -e /etc/profile.d/autojump.zsh ]; then
 	source /etc/profile.d/autojump.zsh
 fi
 
-FORGIT_NO_ALIASES=1
+export FORGIT_NO_ALIASES=1
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=50000
 SAVEHIST=10000
