@@ -39,7 +39,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'kshenoy/vim-signature'
 Plug 'lokaltog/vim-easymotion'
-Plug 'majutsushi/tagbar'  " note: lazy-loading this doesn't work with vim-airline
 Plug 'meatballs/vim-xonsh'
 Plug 'mhinz/vim-mix-format',
 Plug 'michaeljsmith/vim-indent-object'
@@ -60,6 +59,7 @@ Plug 'rstacruz/vim-closer'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
+Plug 'simrat39/symbols-outline.nvim'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'slashmili/alchemist.vim'
 Plug 'terryma/vim-expand-region'
@@ -86,11 +86,11 @@ source ~/.vim/formatting.vim
 source ~/.vim/quirks.vim
 source ~/.vim/gui.vim
 source ~/.vim/syntax.vim
-source ~/.vim/plugins.vim
 source ~/.vim/keybinds.vim
 
 call plug#end()
 
+source ~/.vim/plugins.vim
 source ~/.vim/theme.vim
 source ~/.vim/lspconfig.vim
 

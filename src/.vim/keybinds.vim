@@ -74,9 +74,8 @@ nnoremap <leader>bw :w<CR>
 " }}}
 
 " {{{ Plugin toggles
-" Toggle taglist
-nnoremap <silent> <leader>to :TagbarOpen fjc<CR>
-nnoremap <silent> <leader>T :TagbarToggle<CR>
+nnoremap <silent> <leader>to :SymbolsOutlineOpen<CR>
+nnoremap <silent> <leader>tc :SymbolsOutlineClose<CR>
 " Show the YankRing
 nnoremap <silent> <leader>yr :YRShow<CR>
 nnoremap - :Explore<CR>
