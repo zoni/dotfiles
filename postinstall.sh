@@ -35,15 +35,6 @@ else
     vim +PlugInstall +qall
 fi
 
-if [[ $USER == "zoni" ]]; then
-    EMAIL_PASSWORD="$(pass show Email/nick@groenen.me | head -n 1)"
-    sed -i -e "s/__PASSWORD__/${EMAIL_PASSWORD}/g" $HOME/.mutt/account
-fi
-
-if [[ $USER != "root" ]]; then
-    echo 'source ~/.vifm/vifmrc.x' >> $HOME/.vifm/vifmrc
-fi
-
 if [ -e $HOME/.config/udev-notify/config.$HOST.toml ]; then
     cat $HOME/.config/udev-notify/config.$HOST.toml  >> $HOME/.config/udev-notify/config.toml
 fi
@@ -102,6 +93,18 @@ if curl --silent --fail --output /dev/null https://github.com/; then
 
     cargo install obsidian-export
 fi
+
+if [[ $USER == "zoni" ]]; then
+    EMAIL_PASSWORD="$(pass show Email/nick@groenen.me | head -n 1)"
+    sed -i -e "s/__PASSWORD__/${EMAIL_PASSWORD}/g" $HOME/.mutt/account
+elif [[ $USER == "work" ]]; then
+    gsettings set org.gnome.desktop.session idle-delay 300
+fi
+
+if [[ $USER != "root" ]]; then
+    echo 'source ~/.vifm/vifmrc.x' >> $HOME/.vifm/vifmrc
+fi
+
 
 if [[ ! -e $HOME/Bin/obsidian && "$OSTYPE" != "darwin"* ]]; then
     OBSIDIAN_APPIMAGE=$(curl --silent --location https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest | jq -r '.assets[].browser_download_url | select(. | endswith(".AppImage"))' | grep -v arm64)
