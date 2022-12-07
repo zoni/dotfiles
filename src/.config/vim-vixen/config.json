@@ -211,5 +211,8 @@
     "smoothscroll": false,
     "complete": "sbh"
   },
-  "blacklist": []
+  "blacklist": [
+    "mail.google.com",
+    "read.readwise.io"
+  ]
 }
