@@ -92,6 +92,8 @@ if curl --silent --fail --output /dev/null https://github.com/; then
     systemctl --user restart knowledgebase-watch.service || true
 
     cargo install obsidian-export
+
+    cargo install --git ssh://git@github.com/zoni/lycheeweb --branch main --locked
 fi
 
 if [[ $USER == "zoni" ]]; then
