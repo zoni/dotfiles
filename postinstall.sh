@@ -108,19 +108,19 @@ if [[ $USER != "root" ]]; then
 fi
 
 
-if [[ ! -e $HOME/Bin/obsidian && "$OSTYPE" != "darwin"* ]]; then
+if [[ ! -e $HOME/.local/bin/obsidian && "$OSTYPE" != "darwin"* ]]; then
     OBSIDIAN_APPIMAGE=$(curl --silent --location https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest | jq -r '.assets[].browser_download_url | select(. | endswith(".AppImage"))' | grep -v arm64)
-    curl --location $OBSIDIAN_APPIMAGE > $HOME/Bin/obsidian-appimage.bin
-    chmod +x $HOME/Bin/obsidian-appimage.bin
-    rm -rf $HOME/Bin/Obsidian.AppImage
-    (cd $HOME/Bin && $HOME/Bin/obsidian-appimage.bin --appimage-extract)
-    mv $HOME/Bin/squashfs-root $HOME/Bin/Obsidian.AppImage
-    rm $HOME/Bin/obsidian-appimage.bin
-    ln -sf $HOME/Bin/Obsidian.AppImage/obsidian $HOME/Bin/obsidian
+    curl --location $OBSIDIAN_APPIMAGE > $HOME/.local/bin/obsidian-appimage.bin
+    chmod +x $HOME/.local/bin/obsidian-appimage.bin
+    rm -rf $HOME/.local/bin/Obsidian.AppImage
+    (cd $HOME/.local/bin && $HOME/.local/bin/obsidian-appimage.bin --appimage-extract)
+    mv $HOME/.local/bin/squashfs-root $HOME/.local/bin/Obsidian.AppImage
+    rm $HOME/.local/bin/obsidian-appimage.bin
+    ln -sf $HOME/.local/bin/Obsidian.AppImage/obsidian $HOME/.local/bin/obsidian
     sed \
-        -e "s:^Exec=.*:Exec=$HOME/Bin/obsidian %U:" \
-        -e "s:^Icon=.*:Icon=$HOME/Bin/Obsidian.AppImage/obsidian.png:" \
-        "$HOME/Bin/Obsidian.AppImage/obsidian.desktop" > "$HOME/.local/share/applications/obsidian.desktop"
+        -e "s:^Exec=.*:Exec=$HOME/.local/bin/obsidian %U:" \
+        -e "s:^Icon=.*:Icon=$HOME/.local/bin/Obsidian.AppImage/obsidian.png:" \
+        "$HOME/.local/bin/Obsidian.AppImage/obsidian.desktop" > "$HOME/.local/share/applications/obsidian.desktop"
 fi
 
 if [[ -e $HOME/Knowledgebase/.scripts/pyproject.toml ]]; then

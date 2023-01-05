@@ -3,5 +3,5 @@
 if pgrep --uid $UID --exact obsidian; then
 	exec wezterm start --always-new-process zsh -i -c "knowledgebase open"
 else
-	exec ~/Bin/obsidian
+	exec ~/.local/bin/obsidian
 fi
