@@ -132,4 +132,6 @@ fi
 if [[ "$OSTYPE" != "darwin"* ]]; then
     xdg-desktop-menu forceupdate
     ln -sf keyringrc.linux.cfg "$HOME/.config/python_keyring/keyringrc.cfg"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    PIP_REQUIRE_VENV=0 pip3 install --user pynvim
 fi
