@@ -135,3 +135,7 @@ if [[ "$OSTYPE" != "darwin"* ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     PIP_REQUIRE_VENV=0 pip3 install --user pynvim
 fi
+
+if type gh >/dev/null 2>&1; then
+    gh extension list | grep --fixed-strings --silent dlvhdr/gh-dash || gh extension install dlvhdr/gh-dash
+fi
