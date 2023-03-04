@@ -139,3 +139,7 @@ fi
 if type gh >/dev/null 2>&1; then
     gh extension list | grep --fixed-strings --silent dlvhdr/gh-dash || gh extension install dlvhdr/gh-dash
 fi
+
+pipx install 'maturin[patchelf]'
+
+printf "\nDone ✔\n"
