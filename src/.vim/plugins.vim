@@ -8,6 +8,10 @@ let g:ale_fix_on_save = 1
 let g:ale_markdown_remark_lint_executable = 'docker'
 let g:ale_markdown_remark_lint_options = 'run --rm -i -v "$(pwd):/project:ro" quay.io/zoni/remark-lint'
 let g:ale_markdown_remark_lint_use_global = 1
+
+" Only use type checkers and ruff for Python projects.
+" (Ruff covers the majority of what other linters can do combined).
+let g:ale_linters = {'python': ['ruff', 'mypy', 'pyright']}
 " }}}
 
 " {{{ echodoc
