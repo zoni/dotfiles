@@ -20,6 +20,12 @@ SYSTEM_APPLICATION_DIRECTORIES = [
     "/var/lib/snapd/desktop/applications/",
 ]
 
+ENABLE_FEATURES = [
+    "UseOzonePlatform",
+    "WaylandWindowDecorations",
+    "WebRTCPipeWireCapturer",
+]
+
 
 def main():
     for app in PATCH_APPLICATIONS:
@@ -80,8 +86,9 @@ def patch_application_desktop_file(path: Path) -> None:
 
     if "-ozone-platform=wayland" not in args:
         args = f"{args} --ozone-platform=wayland"
-    if "UseOzonePlatform" not in args:
-        args = f"{args} --enable-features=UseOzonePlatform,WaylandWindowDecorations"
+    for feature in ENABLE_FEATURES:
+        if feature not in args:
+            args = f"{args} --enable-features={feature}"
 
     entry.set("Exec", f"{cmd} {args}")
     entry.write()
