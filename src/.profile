@@ -27,6 +27,9 @@ export SHELL=/bin/zsh
 # working directory here.
 cd $HOME
 
+# Force Firefox to use Wayland for better performance (no Xwayland) and HiDPI support.
+export MOZ_ENABLE_WAYLAND=1
+
 . $HOME/.zsh/05-path.zsh
 . $HOME/.zsh/50-env.zsh
 
