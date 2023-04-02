@@ -1,0 +1,91 @@
+#!/usr/bin/env python3
+
+import shutil
+from pathlib import Path
+
+from xdg.DesktopEntry import DesktopEntry
+
+PATCH_APPLICATIONS = [
+    "1password",
+    "discord",
+    "mattermost-desktop",
+    "mattermost-desktop_mattermost-desktop",  # Snap variant
+    "obsidian",
+    "slack",
+    "teams",
+]
+
+SYSTEM_APPLICATION_DIRECTORIES = [
+    "/usr/share/applications/",
+    "/var/lib/snapd/desktop/applications/",
+]
+
+
+def main():
+    for app in PATCH_APPLICATIONS:
+        patch_application(app)
+
+
+def patch_application(app: str) -> None:
+    """
+    Patch an application's .deskstop entry.
+
+    If needed, this will attempt to find a corresponding .desktop file in the
+    system-wide application directories in order to install a patched version
+    in the local home directory.
+    """
+    basename = Path(f"{app}.desktop")
+    p = Path.home() / ".local/share/applications" / basename
+
+    for directory in SYSTEM_APPLICATION_DIRECTORIES:
+        found = copy_desktop_file_from_fallback_location(
+            src=directory / basename,
+            dest=p,
+        )
+        if found:
+            break
+
+    # If the application file still doesn't exist after the above steps,
+    # then it's likely not installed and safe to skip.
+    if p.exists():
+        patch_application_desktop_file(p)
+
+
+def copy_desktop_file_from_fallback_location(src: Path, dest: Path) -> bool:
+    if dest.exists():
+        return True
+    try:
+        shutil.copy(src, dest)
+        return True
+    except FileNotFoundError:
+        return False
+
+
+def patch_application_desktop_file(path: Path) -> None:
+    """
+    Patch the .desktop entry at the given path.
+    """
+    entry = DesktopEntry()
+    entry.parse(path)
+
+    exec = entry.getExec()
+    assert isinstance(
+        exec, str
+    ), f"Expected exec entry to be a single string, got: {exec!r}"
+
+    try:
+        cmd, args = exec.split(" ", maxsplit=1)
+    except ValueError:
+        cmd, args = (exec, "")
+
+    if "-ozone-platform=wayland" not in args:
+        args = f"{args} --ozone-platform=wayland"
+    if "UseOzonePlatform" not in args:
+        args = f"{args} --enable-features=UseOzonePlatform,WaylandWindowDecorations"
+
+    entry.set("Exec", f"{cmd} {args}")
+    entry.write()
+
+
+if __name__ == "__main__":
+    main()

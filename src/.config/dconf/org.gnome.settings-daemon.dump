@@ -35,7 +35,7 @@ name='Load tmux profile'
 
 [plugins/media-keys/custom-keybindings/custom4]
 binding='<Alt><Super>p'
-command='1password'
+command='dex .local/share/applications/1password.desktop'
 name='1Password'
 
 [plugins/media-keys/custom-keybindings/custom5]

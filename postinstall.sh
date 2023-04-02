@@ -26,6 +26,8 @@ done
 # This will make zgenom do its thing
 /usr/bin/env zsh -i -c ''
 
+patch-electron-desktop-files
+
 ln -snf $HOME/.vim/ $HOME/.config/nvim
 ln -snf $HOME/.vimrc $HOME/.config/nvim/init.vim
 

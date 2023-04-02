@@ -33,7 +33,11 @@ show-battery-percentage=true
 [notifications]
 show-in-lock-screen=false
 
+[peripherals/mouse]
+natural-scroll=false
+
 [peripherals/touchpad]
+edge-scrolling-enabled=false
 natural-scroll=false
 tap-to-click=true
 two-finger-scrolling-enabled=true
