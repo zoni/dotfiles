@@ -1,6 +1,4 @@
-if [ -e /etc/profile.d/autojump.zsh ]; then
-	source /etc/profile.d/autojump.zsh
-fi
+eval "$(jump shell)"
 
 export FORGIT_NO_ALIASES=1
 HISTFILE="$HOME/.zsh_history"
