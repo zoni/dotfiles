@@ -12,6 +12,8 @@ PATCH_APPLICATIONS = [
     "mattermost-desktop_mattermost-desktop",  # Snap variant
     "obsidian",
     "slack",
+    "spotify",
+    "spotify_spotify",  # Snap variant
     "teams",
 ]
 
