@@ -1,7 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Version=1.0
-Name=Disable Caps Lock
-Exec=setxkbmap -option caps:escape
-Terminal=false
-Type=Application
