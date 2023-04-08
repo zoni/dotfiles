@@ -61,6 +61,7 @@ toggle-tiling=['<Super>y']
 [keybindings]
 focus-active-notification=@as []
 open-application-menu=@as []
+toggle-application-view=@as []
 toggle-message-tray=['<Super>v']
 toggle-overview=@as []
 
