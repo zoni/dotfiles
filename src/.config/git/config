@@ -60,22 +60,23 @@
 	enabled = true
 	autoupdate = true
 [alias]
-	# Compact log, with lots of pretty colors
-	compactlog = log --graph --pretty=format:'%C(yellow)%h%Creset %C(yellow)%d%Creset %s %C(bold blue)(%an, %cr)%Creset' --abbrev-commit --date=relative
-	# Show commits in upstream that aren't yet merged in your local branch
-	behind = "!sh -c 'tig ..@{u}'"
+	# Authors, sorted by amount of commits
+	authors = "!sh -c 'git log --all --format=\"%cN <%cE>\" | sort | uniq -c | sort -rn'"
 	# And the opposite, commits in local branch that aren't yet push upstream
 	ahead = "!sh -c 'tig @{u}..'"
-	# Nuke branches (local and remote)
-	nuke = !git-nuke
+	# Show commits in upstream that aren't yet merged in your local branch
+	behind = "!sh -c 'tig ..@{u}'"
+	# Compact log, with lots of pretty colors
+	compactlog = log --graph --pretty=format:'%C(yellow)%h%Creset %C(yellow)%d%Creset %s %C(bold blue)(%an, %cr)%Creset' --abbrev-commit --date=relative
 	# See what new commits have been created by the last command. Mainly useful
 	# to see commits pulled in by a git pull.
 	new = "!sh -c 'tig $1@{1}..$1@{0} \"$@\"'"
-	# Show authors matching the supplied substring
-	whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+	# Nuke branches (local and remote)
+	nuke = !git-nuke
+	# Print the top-level ("root") directory of the repository (or submodule, when cwd is within a submodule).
+	root = rev-parse --show-toplevel
 	# Print the tracking branch that is configured for the current branch, or an
 	# empty line if no tracking branch is set.
 	tracking = "!sh -c 'git for-each-ref --format=\"%(upstream:short)\" $(git symbolic-ref -q HEAD)'"
-	# Authors, sorted by amount of commits
-	authors = "!sh -c 'git log --all --format=\"%cN <%cE>\" | sort | uniq -c | sort -rn'"
-	root = rev-parse --show-toplevel
+	# Show authors matching the supplied substring
+	whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
