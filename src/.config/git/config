@@ -78,3 +78,4 @@
 	tracking = "!sh -c 'git for-each-ref --format=\"%(upstream:short)\" $(git symbolic-ref -q HEAD)'"
 	# Authors, sorted by amount of commits
 	authors = "!sh -c 'git log --all --format=\"%cN <%cE>\" | sort | uniq -c | sort -rn'"
+	root = rev-parse --show-toplevel
