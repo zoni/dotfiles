@@ -36,7 +36,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>mD', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   buf_set_keymap('n', '<leader>ma', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', '<leader>me', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-  buf_set_keymap('n', '<leader>mf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  buf_set_keymap('n', '<leader>mf', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
   buf_set_keymap('n', '<leader>mr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', '<leader>mwa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<leader>mwl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
@@ -82,6 +82,6 @@ EOF
 
 augroup LanguageClientAU
     au!
-    au BufWritePre *.ex,*.exs,*.go,*.py,*.rs,*.yml,*.yaml lua vim.lsp.buf.formatting_sync(nil, 1000)
+    au BufWritePre *.ex,*.exs,*.go,*.py,*.rs,*.yml,*.yaml lua vim.lsp.buf.format()
     au BufWritePre *.go lua go_organize_imports()
 augroup END
