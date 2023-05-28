@@ -316,7 +316,8 @@
     "files.insertFinalNewline": true,
     "go.testOnSave": true,
     "vim.operatorPendingModeKeyBindings": [],
-    "terminal.integrated.fontFamily": "Ubuntu Mono derivative Powerline",
+    "terminal.integrated.fontFamily": "Ubuntu Mono derivative Powerline, Noto Color Emoji, Symbols Nerd Font Mono, Symbola",
     "terminal.integrated.fontSize": 16,
+    "redhat.telemetry.enabled": false,
     // "vim.debug.loggingLevelForConsole": "debug"
 }
