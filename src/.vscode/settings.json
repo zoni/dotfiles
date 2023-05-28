@@ -12,48 +12,121 @@
     "vim.normalModeKeyBindingsNonRecursive": [
         // Window management
         {
-            "before": ["<leader>", "w", "h"],
-            "after": ["<C-w>", "h"]
+            "before": [
+                "<leader>",
+                "w",
+                "h"
+            ],
+            "after": [
+                "<C-w>",
+                "h"
+            ]
         },
         {
-            "before": ["<leader>", "w", "j"],
-            "after": ["<C-w>", "j"]
+            "before": [
+                "<leader>",
+                "w",
+                "j"
+            ],
+            "after": [
+                "<C-w>",
+                "j"
+            ]
         },
         {
-            "before": ["<leader>", "w", "k"],
-            "after": ["<C-w>", "k"]
+            "before": [
+                "<leader>",
+                "w",
+                "k"
+            ],
+            "after": [
+                "<C-w>",
+                "k"
+            ]
         },
         {
-            "before": ["<leader>", "w", "l"],
-            "after": ["<C-w>", "l"]
+            "before": [
+                "<leader>",
+                "w",
+                "l"
+            ],
+            "after": [
+                "<C-w>",
+                "l"
+            ]
         },
         {
-            "before": ["<leader>", "w", "s"],
-            "after": ["<C-w>", "s"]
+            "before": [
+                "<leader>",
+                "w",
+                "s"
+            ],
+            "after": [
+                "<C-w>",
+                "s"
+            ]
         },
         {
-            "before": ["<leader>", "w", "v"],
-            "after": ["<C-w>", "v"]
+            "before": [
+                "<leader>",
+                "w",
+                "v"
+            ],
+            "after": [
+                "<C-w>",
+                "v"
+            ]
         },
         {
-            "before": ["<leader>", "w", "="],
-            "after": ["<C-w>", "="]
+            "before": [
+                "<leader>",
+                "w",
+                "="
+            ],
+            "after": [
+                "<C-w>",
+                "="
+            ]
         },
         {
-            "before": ["<leader>", "w", "q"],
-            "after": ["<C-w>", "q"]
+            "before": [
+                "<leader>",
+                "w",
+                "q"
+            ],
+            "after": [
+                "<C-w>",
+                "q"
+            ]
         },
         {
-            "before": ["<leader>", "w", "c"],
-            "after": ["<C-w>", "c"]
+            "before": [
+                "<leader>",
+                "w",
+                "c"
+            ],
+            "after": [
+                "<C-w>",
+                "c"
+            ]
         },
         {
-            "before": ["<leader>", "w", "o"],
-            "after": ["<C-w>", "o"]
+            "before": [
+                "<leader>",
+                "w",
+                "o"
+            ],
+            "after": [
+                "<C-w>",
+                "o"
+            ]
         },
         // Other
         {
-            "before": ["Z", "Z"],
+            "before": [
+                "Z",
+                "Z"
+            ],
             "commands": [
                 ":wq"
             ]
@@ -62,57 +135,133 @@
     "vim.normalModeKeyBindings": [
         // Git commands
         {
-            "before": ["<leader>", "r", "w"],
-            "commands": ["workbench.action.files.save", "git.stage"],
+            "before": [
+                "<leader>",
+                "r",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.files.save",
+                "git.stage"
+            ],
         },
         {
-            "before": ["<leader>", "r", "c"],
-            "commands": ["workbench.action.files.save", "git.commit"],
+            "before": [
+                "<leader>",
+                "r",
+                "c"
+            ],
+            "commands": [
+                "workbench.action.files.save",
+                "git.commit"
+            ],
         },
         {
-            "before": ["<leader>", "r", "h"],
-            "commands": ["gitlens.showQuickFileHistory"],
+            "before": [
+                "<leader>",
+                "r",
+                "h"
+            ],
+            "commands": [
+                "gitlens.showQuickFileHistory"
+            ],
         },
         {
-            "before": ["<leader>", "r", "H"],
-            "commands": ["gitlens.showQuickRepoHistory"],
+            "before": [
+                "<leader>",
+                "r",
+                "H"
+            ],
+            "commands": [
+                "gitlens.showQuickRepoHistory"
+            ],
         },
         {
-            "before": ["<leader>", "r", "s"],
-            "commands": ["gitlens.showQuickRepoStatus"],
+            "before": [
+                "<leader>",
+                "r",
+                "s"
+            ],
+            "commands": [
+                "gitlens.showQuickRepoStatus"
+            ],
         },
         {
-            "before": ["<leader>", "r", "b"],
-            "commands": ["git.checkout"],
+            "before": [
+                "<leader>",
+                "r",
+                "b"
+            ],
+            "commands": [
+                "git.checkout"
+            ],
         },
         {
-            "before": ["<leader>", "r", "p"],
-            "commands": ["git.pullRebase"],
+            "before": [
+                "<leader>",
+                "r",
+                "p"
+            ],
+            "commands": [
+                "git.pullRebase"
+            ],
         },
         {
-            "before": ["<leader>", "r", "P"],
-            "commands": ["git.push"],
+            "before": [
+                "<leader>",
+                "r",
+                "P"
+            ],
+            "commands": [
+                "git.push"
+            ],
         },
         {
-            "before": ["<leader>", "r", "m"],
-            "commands": ["git.merge"],
+            "before": [
+                "<leader>",
+                "r",
+                "m"
+            ],
+            "commands": [
+                "git.merge"
+            ],
         },
         {
-            "before": ["<leader>", "r", "d"],
-            "commands": ["git.openChange"],
+            "before": [
+                "<leader>",
+                "r",
+                "d"
+            ],
+            "commands": [
+                "git.openChange"
+            ],
         },
         // Other
         {
-            "before": ["<C-n>"],
-            "commands": ["workbench.action.nextEditor"]
+            "before": [
+                "<C-n>"
+            ],
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
         },
         {
-            "before": ["<C-b>"],
-            "commands": ["workbench.action.previousEditor"]
+            "before": [
+                "<C-p>"
+            ],
+            "commands": [
+                "workbench.action.previousEditor"
+            ]
         },
         {
-            "before": ["<leader>", "m", "p"],
-            "commands": ["markdown.showPreviewToSide"],
+            "before": [
+                "<leader>",
+                "m",
+                "p"
+            ],
+            "commands": [
+                "markdown.showPreviewToSide"
+            ],
             "when": "editorLangId == 'markdown'"
         },
     ],
@@ -123,7 +272,7 @@
     "gitlens.views.lineHistory.enabled": false,
     "workbench.startupEditor": "newUntitledFile",
     "window.openFilesInNewWindow": "default",
-    "terminal.external.linuxExec": "i3-sensible-terminal",
+    "terminal.external.linuxExec": "wezterm-gui",
     "terminal.integrated.cursorBlinking": true,
     "explorer.compactFolders": false,
     "git.autofetch": true,
@@ -165,5 +314,9 @@
     "editor.formatOnSave": true,
     // https://marketplace.visualstudio.com/items?itemName=samverschueren.final-newline#user-content-usage
     "files.insertFinalNewline": true,
+    "go.testOnSave": true,
+    "vim.operatorPendingModeKeyBindings": [],
+    "terminal.integrated.fontFamily": "Ubuntu Mono derivative Powerline",
+    "terminal.integrated.fontSize": 16,
     // "vim.debug.loggingLevelForConsole": "debug"
 }

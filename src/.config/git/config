@@ -48,6 +48,8 @@
 [diff "json"]
 	# Instead of `jq .`, one could also use `python -m json.tool`
 	textconv = jq .
+[diff "hjson"]
+	textconv = hjson -j
 [diff "ansible-vault"]
 	textconv = ansible-vault view
 [push]
