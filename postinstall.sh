@@ -51,11 +51,20 @@ tic -x -o "$HOME/.terminfo" "$HOME/.config/wezterm/wezterm.terminfo"
 
 
 if type code >/dev/null; then
+    # Symlink "Code - OSS" -> "Code"
+    if [ -d "$HOME/.config/Code - OSS" ]; then
+        if [ -d "$HOME/.config/Code" ]; then
+            rm -rf "$HOME/.config/Code"
+        fi
+        mv "$HOME/.config/Code - OSS" "$HOME/.config/Code"
+        ln -sf "Code" "$HOME/.config/Code - OSS"
+    fi
+
     # Install VS Code extensions listed in extensions.list that are missing from `code --list-extensions`
     comm -13 <(code --list-extensions|sort) <(grep -v -E '^#' $(dirname $BASH_SOURCE)/src/.vscode/extensions.list | sort) | xargs --no-run-if-empty --max-lines=1 -- code --install-extension
 
-    ln --force --symbolic ../../../.vscode/settings.json "$HOME/.config/Code - OSS/User/settings.json"
-    ln --force --symbolic ../../../.vscode/keybindings.json "$HOME/.config/Code - OSS/User/keybindings.json"
+    ln --force --symbolic ../../../.vscode/settings.json "$HOME/.config/Code/User/settings.json"
+    ln --force --symbolic ../../../.vscode/keybindings.json "$HOME/.config/Code/User/keybindings.json"
 fi
 
 if [[ "$OSTYPE" != "darwin"* ]]; then
