@@ -52,7 +52,7 @@ tic -x -o "$HOME/.terminfo" "$HOME/.config/wezterm/wezterm.terminfo"
 
 if type code >/dev/null; then
     # Symlink "Code - OSS" -> "Code"
-    if [ -d "$HOME/.config/Code - OSS" ]; then
+    if [[ -d "$HOME/.config/Code - OSS" && ! -L "$HOME/.config/Code - OSS" ]]; then
         if [ -d "$HOME/.config/Code" ]; then
             rm -rf "$HOME/.config/Code"
         fi
