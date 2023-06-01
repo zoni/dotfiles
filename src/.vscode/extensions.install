@@ -10,11 +10,11 @@ timonwong.shellcheck
 vscodevim.vim
 
 # Language support
-elixir-lsp.elixir-ls
+JakeBecker.elixir-ls
 ms-azuretools.vscode-docker
 ms-python.python
 redhat.vscode-yaml
-rust-lang.rust
+rust-lang.rust-analyzer
 samuelcolvin.jinjahtml
 
 # Markdown plugins

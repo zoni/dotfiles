@@ -60,8 +60,10 @@ if type code >/dev/null; then
         ln -sf "Code" "$HOME/.config/Code - OSS"
     fi
 
-    # Install VS Code extensions listed in extensions.list that are missing from `code --list-extensions`
-    comm -13 <(code --list-extensions|sort) <(grep -v -E '^#' $(dirname $BASH_SOURCE)/src/.vscode/extensions.list | sort) | xargs --no-run-if-empty --max-lines=1 -- code --install-extension
+    # Install VS Code extensions listed in extensions.install that are missing from `code --list-extensions`
+    comm -13 <(code --list-extensions|sort) <(grep -v -E '^#' $(dirname $BASH_SOURCE)/src/.vscode/extensions.install | sort) | xargs --no-run-if-empty --max-lines=1 -- code --install-extension
+    # Remove VS Code extensions listed in extensions.remove that are listed in `code --list-extensions`
+    comm -12 <(code --list-extensions|sort) <(grep -v -E '^#' $(dirname $BASH_SOURCE)/src/.vscode/extensions.remove | sort) | xargs --no-run-if-empty --max-lines=1 -- code --uninstall-extension
 
     ln --force --symbolic ../../../.vscode/settings.json "$HOME/.config/Code/User/settings.json"
     ln --force --symbolic ../../../.vscode/keybindings.json "$HOME/.config/Code/User/keybindings.json"
