@@ -22,6 +22,9 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
+bindkey '\t' menu-select "$terminfo[kcbt]" expand-or-complete
+bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
+
 # Make menu completions more vi-like.
 # hklj naviation:
 bindkey -M menuselect 'h' vi-backward-char

@@ -10,6 +10,7 @@ if ! zgenom saved; then
 	zgenom load 3v1n0/zsh-bash-completions-fallback
 	zgenom load LucasLarson/gunstage
 	zgenom load Tarrasch/zsh-autoenv
+	zgenom load marlonrichert/zsh-autocomplete
 	zgenom load wfxr/forgit
 	zgenom load zsh-users/zsh-completions
 	zgenom load zsh-vi-more/vi-increment
