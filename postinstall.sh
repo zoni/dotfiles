@@ -151,7 +151,10 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 if type gh >/dev/null 2>&1; then
-    gh extension list | grep --fixed-strings --silent dlvhdr/gh-dash || gh extension install dlvhdr/gh-dash
+    # Extension install fails when not logged in.
+    if gh auth status >/dev/null 2>&1; then
+        gh extension list | grep --fixed-strings --silent dlvhdr/gh-dash || gh extension install dlvhdr/gh-dash
+    fi
 fi
 
 pipx install 'maturin[patchelf]'
