@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+### ---- Update the variables below when updating supported ansible/mitogen/extra package versions ----
+
+# Mitogen frequently lags behind in support for ansible versions, so the
+# ansible and mitogen version here are closely tied together.
+ANSIBLE_PACKAGE_SPEC="ansible==6.7.0"
+MITOGEN_PACKAGE_SPEC="git+https://github.com/mitogen-hq/mitogen.git@a47b9f3631ba3c37bf0410c6a4960c3eec152454#egg=mitogen"
+EXTRA_PACKAGES_TO_INSTALL=(ansible-lint keyring jmespath pynvim dnspython)
+
+### ---- No edits should generally be needed beyond this point ----
+
+set -euo pipefail
+
+if ! type pipx > /dev/null 2>&1; then
+    printf "Error: pipx executable not found ❌\n\nSee https://pypa.github.io/pipx/installation/ for installation instructions\n" >&2
+    exit 1
+fi
+
+PIPX_VENVS_DIR=$(pipx environment --value PIPX_LOCAL_VENVS)
+
+# Instead of trying to deal with package upgrades or additions in existing
+# installations, simply wipe everything and recreate from scratch when this
+# script is run.
+if [ -e "$PIPX_VENVS_DIR/ansible" ]; then
+    # Implementation note: Mac OS doesn't support long-form flags here like on GNU coreutils.
+    rm -rf "$PIPX_VENVS_DIR/ansible"
+fi
+
+set -x
+
+pipx install "$ANSIBLE_PACKAGE_SPEC" --include-deps
+pipx inject ansible "${EXTRA_PACKAGES_TO_INSTALL[@]}"
+pipx inject ansible "$MITOGEN_PACKAGE_SPEC"
+
+set +x
+
+printf "\n\nAll components have successfully been installed. ✅\nTo enable usage of mitogen with ansible, ensure the following environment variables are set in your environment:\n\n"
+printf '    export ANSIBLE_STRATEGY="mitogen_linear"\n'
+printf '    export ANSIBLE_STRATEGY_PLUGINS="%s"\n' "${PIPX_VENVS_DIR}"/ansible/lib/python*/site-packages/ansible_mitogen/plugins/strategy/
