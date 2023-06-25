@@ -28,3 +28,5 @@ zstyle ':completion:*:*:*:*:processes' command "ps x -o pid,user,comm,cmd"
 zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
 zstyle ':autocomplete:*' add-space \
     executables reserved-words
+
+zstyle ':autocomplete:*' delay 0.35  # seconds (float)
