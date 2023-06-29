@@ -23,12 +23,14 @@ function pre_upgrade {
 
 function upgrade_arch {
 	sudo -u "$SUDO_USER" yay
+	snap refresh
 }
 
 function upgrade_fedora {
 	dnf upgrade
 	sudo -u "$SUDO_USER" /home/linuxbrew/.linuxbrew/bin/brew upgrade
 	sudo -u "$SUDO_USER" flatpak update
+	snap refresh
 }
 
 trap atexit EXIT
