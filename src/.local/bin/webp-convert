@@ -1,0 +1,31 @@
+#!/bin/bash
+# Adapted from https://github.com/elsonwx/webp2gif
+# usage: webp-convert input1.webp input2.webp input3.webp ...
+
+set -xu
+
+for file in "$@"; do
+    source_dir=$(dirname "$file")
+    temp_dir=$(mktemp -d)
+    webpfile=$(realpath "$file")
+
+    frames_num=$(webpinfo "$webpfile" | grep Format | wc -l)
+    for i in $(seq 1 "$frames_num"); do
+        i=$(printf "%03d" "$i")
+        webpmux -get frame "$i" "$webpfile" -o "$temp_dir/$i.webp"
+        dwebp "$temp_dir/$i.webp" -o "$temp_dir/$i.png"
+    done;
+
+    convert -delay 0 -loop 0 "$temp_dir"/*.png "$temp_dir"/animation.gif
+    if [ -e "$temp_dir"/animation.gif ]; then
+        basename=$(basename "${webpfile}")
+        mv "$temp_dir"/animation.gif "$source_dir/${basename%.webp}.gif"
+        trash "$webpfile"
+    else
+        basename=$(basename "${webpfile}")
+        convert "$webpfile" "$source_dir/${basename%.webp}.jpeg"
+        trash "$webpfile"
+    fi
+
+    rm -rf "$temp_dir"
+done;
