@@ -24,7 +24,12 @@ config.font = wezterm.font_with_fallback({
 
 config.window_background_opacity = 0.8
 config.color_scheme = "OneDark"
+config.colors = {
+    scrollbar_thumb = '#333333',
+}
 
+config.enable_scroll_bar = true
+config.min_scroll_bar_height = "1.5cell"
 config.scrollback_lines = 20000
 
 return config
