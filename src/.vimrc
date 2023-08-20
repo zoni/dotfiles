@@ -27,6 +27,7 @@ Plug 'earthly/earthly.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'ervandew/supertab'
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildVimMarkdownComposer'), 'for': 'markdown' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fratajczak/one-monokai-vim'
 Plug 'github/copilot.vim'
 Plug 'godlygeek/tabular'
