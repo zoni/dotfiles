@@ -49,7 +49,7 @@ remove-old-temp-files=true
 remove-old-trash-files=true
 
 [screensaver]
-lock-delay=uint32 0
+lock-delay=uint32 30
 
 [session]
 idle-delay=uint32 900
