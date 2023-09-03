@@ -84,5 +84,5 @@ augroup LanguageClientAU
     au!
     au BufWritePre *.ex,*.exs,*.go,*.py,*.rs,*.yml,*.yaml lua vim.lsp.buf.format()
     au BufWritePre *.go lua go_organize_imports()
-    au BufWritePost *.go GoTest
+    au BufWritePost *.go GoTest!
 augroup END
