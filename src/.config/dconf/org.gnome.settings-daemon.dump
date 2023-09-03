@@ -3,7 +3,7 @@ night-light-enabled=true
 night-light-temperature=uint32 3700
 
 [plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/']
 email=['<Alt><Super>e']
 home=['<Alt><Super>f']
 rotate-video-lock-static=@as []
@@ -11,7 +11,7 @@ screenreader=@as []
 screensaver=['<Super>Backspace']
 search=['<Alt><Super>s']
 terminal=@as []
-www=['<Alt><Super>b']
+www=['<Alt><Super>w']
 
 [plugins/media-keys/custom-keybindings/custom0]
 binding='<Super>semicolon'
@@ -57,6 +57,11 @@ name='Obsidian sitemap-select'
 binding='<Super>a'
 command='pavucontrol'
 name='PulseAudio Volume Control'
+
+[plugins/media-keys/custom-keybindings/custom9]
+binding='<Alt><Super>b'
+command='wezterm start --class pingrep-fzf zsh -i -c "pingrep fzf"'
+name='Pingrep'
 
 [plugins/power]
 power-button-action='suspend'
