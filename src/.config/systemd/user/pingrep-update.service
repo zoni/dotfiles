@@ -1,0 +1,19 @@
+[Unit]
+Description=Update pingrep bookmark cache
+
+[Service]
+Type=oneshot
+ExecStart=%h/Workspace/go/bin/pingrep update --verbose
+Restart=on-failure
+RestartSec=245s
+
+# From systemd 254 onwards, one can do this:
+#
+# # Restart after 5 seconds on failure
+# RestartSec=5s
+# # Delay subsequent failures in 10 steps
+# RestartSteps=10
+# # Up to a maximum of 20 minutes in between attempts
+# RestartMaxDelaySec=20m
+# # Disable any limits on the number of restarts
+# StartLimitIntervalSec=0

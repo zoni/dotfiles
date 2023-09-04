@@ -13,7 +13,8 @@ gnome-extension() {
 }
 
 systemctl --user daemon-reload || true
-systemctl --user enable --now syncthing
+systemctl --user enable --now syncthing.service
+systemctl --user enable --now pingrep-update.timer
 
 # Avoid shelling out to ruby on each shell startup by substituting the ruby
 # call result at the time of dotfiles install.
