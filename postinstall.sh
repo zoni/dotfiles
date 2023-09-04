@@ -114,7 +114,7 @@ if [[ $USER == "zoni" ]]; then
     EMAIL_PASSWORD="$(pass show Email/nick@groenen.me | head -n 1)"
     sed -i -e "s/__PASSWORD__/${EMAIL_PASSWORD}/g" $HOME/.mutt/account
 elif [[ $USER == "work" ]]; then
-    gsettings set org.gnome.desktop.session idle-delay 300 || true
+    gsettings set org.gnome.desktop.session idle-delay 270 || true
 fi
 
 if [[ $USER != "root" ]]; then
