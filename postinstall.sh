@@ -160,6 +160,6 @@ if type gh >/dev/null 2>&1; then
 fi
 
 pipx install 'maturin[patchelf]'
-GOPRIVATE=github.com/zoni/pingrep go install github.com/zoni/pingrep@latest
+go install github.com/zoni/pingrep@latest
 
 printf "\nDone ✔\n"
