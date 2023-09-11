@@ -10,6 +10,7 @@ PATCH_APPLICATIONS = [
     "code",
     "code-oss",
     "discord",
+    "com.discordapp.Discord", # Flatpak variant
     "mattermost-desktop",
     "mattermost-desktop_mattermost-desktop",  # Snap variant
     "obsidian",
@@ -22,6 +23,7 @@ PATCH_APPLICATIONS = [
 SYSTEM_APPLICATION_DIRECTORIES = [
     "/usr/share/applications/",
     "/var/lib/snapd/desktop/applications/",
+    "/var/lib/flatpak/exports/share/applications/",
 ]
 
 ENABLE_FEATURES = [
