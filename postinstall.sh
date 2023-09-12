@@ -29,6 +29,7 @@ done
 /usr/bin/env zsh -i -c ''
 
 patch-electron-desktop-files
+flatpak override --user --socket=wayland com.discordapp.Discord || true
 
 ln -snf $HOME/.vim/ $HOME/.config/nvim
 ln -snf $HOME/.vimrc $HOME/.config/nvim/init.vim
