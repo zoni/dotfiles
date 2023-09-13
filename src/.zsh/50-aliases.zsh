@@ -37,7 +37,12 @@ alias tree="tree -C -L 2"
 alias t="tree"
 alias tl="treeless"
 
-if type exa > /dev/null; then
+if type eza > /dev/null; then
+	alias l="eza -g"
+	alias la="eza -ag"
+	alias ll="eza -lg"
+	alias lla="eza -lag"
+elif type exa > /dev/null; then
 	alias l="exa -g"
 	alias la="exa -ag"
 	alias ll="exa -lg"
