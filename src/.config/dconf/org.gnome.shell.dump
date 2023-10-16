@@ -64,6 +64,7 @@ open-application-menu=@as []
 toggle-application-view=@as []
 toggle-message-tray=['<Super>v']
 toggle-overview=@as []
+toggle-quick-settings=@as []
 
 [weather]
 automatic-location=true
