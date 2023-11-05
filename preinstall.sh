@@ -31,6 +31,7 @@ for file in "$SOURCEDIR"/src/.config/*; do
 done
 
 mkdir -p \
+	"$HOME"/.cargo \
 	"$HOME"/.config/nushell \
 	"$HOME"/.gnupg \
 	"$HOME"/.i3 \
