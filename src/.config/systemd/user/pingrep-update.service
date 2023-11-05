@@ -3,7 +3,7 @@ Description=Update pingrep bookmark cache
 
 [Service]
 Type=oneshot
-ExecStart=%h/Workspace/go/bin/pingrep update --verbose
+ExecStart=%h/.cargo/bin/pingrep update --verbose
 Restart=on-failure
 RestartSec=245s
 

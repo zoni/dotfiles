@@ -60,7 +60,7 @@ name='PulseAudio Volume Control'
 
 [plugins/media-keys/custom-keybindings/custom9]
 binding='<Alt><Super>b'
-command='wezterm start --class pingrep-fzf zsh -i -c "pingrep fzf ; sleep 0.3"'
+command='wezterm start --class pingrep-fzf zsh -i -c "pingrep fzf"'
 name='Pingrep'
 
 [plugins/power]

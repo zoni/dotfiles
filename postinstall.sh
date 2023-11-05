@@ -14,7 +14,6 @@ gnome-extension() {
 
 systemctl --user daemon-reload || true
 systemctl --user enable --now syncthing.service
-systemctl --user enable --now pingrep-update.timer
 
 # Avoid shelling out to ruby on each shell startup by substituting the ruby
 # call result at the time of dotfiles install.
@@ -104,13 +103,20 @@ if [[ "$DESKTOP_SESSION" == "sway-shell" ]]; then
 fi
 
 if curl --silent --fail --output /dev/null https://github.com/; then
-    cargo install --git ssh://git@github.com/zoni/knowledgebase-cli --branch main --locked
+    cargo install --git https://github.com/zoni/knowledgebase-cli.git --branch main --locked
     systemctl --user enable knowledgebase-watch.service || true
     systemctl --user restart knowledgebase-watch.service || true
 
     cargo install obsidian-export
 
-    cargo install --git ssh://git@github.com/zoni/lycheeweb --branch main --locked
+    if [[ -e "$HOME/Workspace/go/bin/pingrep" ]]; then
+        rm "$HOME/Workspace/go/bin/pingrep"
+        rm "$HOME/.local/share/pingrep/bookmarks.json"
+    fi
+    cargo binstall -y pingrep
+    systemctl --user enable --now pingrep-update.timer
+
+    cargo install --git https://github.com/zoni/lycheeweb.git --branch main --locked
 fi
 
 if [[ $USER == "zoni" ]]; then
@@ -161,6 +167,5 @@ if type gh >/dev/null 2>&1; then
 fi
 
 pipx install 'maturin[patchelf]'
-go install github.com/zoni/pingrep@latest
 
 printf "\nDone ✔\n"

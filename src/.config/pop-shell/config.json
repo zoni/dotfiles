@@ -6,9 +6,6 @@
     {
       "class": "firefox",
       "title": "Firefox — Sharing Indicator"
-    },
-    {
-      "class": "pingrep-fzf"
     }
   ],
   "skiptaskbarhidden": [],
