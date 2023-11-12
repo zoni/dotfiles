@@ -1,0 +1,32 @@
+---
+matches:
+  - trigger: "//llm"
+    replace: "{{form.output}}"
+    vars:
+      - name: prompt
+        type: choice
+        params:
+          values:
+            - label: "Respond with a rejection message"
+              id: >
+                You are writing rejection messages on behalf of the user, Nick.
+                Nick will give you the message they received, your job is to respond with a kind but firm and to the point rejection message (without thanking the person) stating the user is not interested.
+                Your response should include the name of the sender if they provided it, and the message should be written as if Nick wrote it himself
+            - label: "Identify possible fallacies"
+              id: >
+                I want you to act as a fallacy finder.
+                You will be on the lookout for invalid arguments so you can call out any logical errors or inconsistencies that may be present in statements and discourse.
+                Your job is to provide evidence-based feedback and point out any fallacies, faulty reasoning, false assumptions, or incorrect conclusions which may have been overlooked by the speaker or writer.
+      - name: output
+        type: shell
+        params:
+          cmd: "cbpaste | llm query --no-stream --system '{{ prompt }}'"
+      - name: form
+        type: form
+        params:
+          layout: |
+            [[output]]
+          fields:
+            output:
+              multiline: true
+              default: "{{ output }}"

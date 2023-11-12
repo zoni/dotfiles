@@ -3,6 +3,9 @@
 # https://espanso.org/docs/
 
 global_vars:
+  - name: "clipboard"
+    type: "clipboard"
+
   - name: date_format
     type: choice
     params:
