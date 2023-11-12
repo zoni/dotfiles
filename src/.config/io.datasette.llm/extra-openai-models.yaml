@@ -1,0 +1,29 @@
+- model_id: azure-gpt35-16k
+  # model_name should match the deployment name of the model on Azure OpenAI
+  model_name: castor-35-turbo-16k
+  api_base: https://cas-shs-uks-plg.openai.azure.com/
+  api_key_name: cas-shs-uks-plg
+  api_version: 2023-05-15
+  api_type: azure
+  # api_engine should match the deployment name of the model on Azure OpenAI
+  api_engine: castor-35-turbo-16k
+
+- model_id: azure-gpt35
+  # model_name should match the Deployment name of the model on Azure OpenAI
+  model_name: castor-gpt-35-turbo
+  api_base: https://cas-shs-uks-plg.openai.azure.com/
+  api_key_name: cas-shs-uks-plg
+  api_version: 2023-05-15
+  api_type: azure
+  # api_engine should match the deployment name of the model on Azure OpenAI
+  api_engine: castor-gpt-35-turbo
+
+- model_id: azure-gpt4
+  # model_name should match the Deployment name of the model on Azure OpenAI
+  model_name: castor-gpt-4
+  api_base: https://cas-shs-uks-plg.openai.azure.com/
+  api_key_name: cas-shs-uks-plg
+  api_version: 2023-05-15
+  api_type: azure
+  # api_engine should match the deployment name of the model on Azure OpenAI
+  api_engine: castor-gpt-4

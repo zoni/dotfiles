@@ -173,5 +173,6 @@ if type gh >/dev/null 2>&1; then
 fi
 
 pipx install 'maturin[patchelf]'
+pipx install llm
 
 printf "\nDone ✔\n"
