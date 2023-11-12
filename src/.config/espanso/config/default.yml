@@ -1,0 +1,19 @@
+---
+#https://espanso.org/docs/configuration/options/#options-reference
+
+# Customize the key used to disable and enable espanso (when double tapped)
+# Available options: CTRL, SHIFT, ALT, CMD, OFF
+toggle_key: ALT
+
+# By default, espanso uses the "Auto" backend which should work well in most
+# cases, but you may want to try the "Clipboard" or "Inject" backend in case of
+# issues.
+#backend: Auto
+backend: Inject
+
+# Because injecting long texts char-by-char is a slow operation, espanso automatically
+# uses the clipboard if the text is longer than 'clipboard_threshold' characters.
+# clipboard_threshold: 100
+
+auto_restart: true
+search_shortcut: "OFF"

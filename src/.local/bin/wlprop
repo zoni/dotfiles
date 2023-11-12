@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if ! WINDOWLIST=$(gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows --method org.gnome.Shell.Extensions.Windows.List); then
+	printf "\n%s\n\n%s\n" \
+		"Error: Could not get window list" \
+		"Is the Window Calls extension (https://extensions.gnome.org/extension/4724/window-calls/) installed?" \
+		>&2
+	exit 1
+fi
+
+printf %s "$WINDOWLIST" | cut -c 3- | rev | cut -c4- | rev  | jq .

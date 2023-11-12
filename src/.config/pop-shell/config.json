@@ -4,6 +4,9 @@
       "class": "ulauncher"
     },
     {
+      "class": "espanso"
+    },
+    {
       "class": "firefox",
       "title": "Firefox — Sharing Indicator"
     }

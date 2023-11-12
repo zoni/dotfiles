@@ -1,0 +1,9 @@
+---
+matches:
+  - trigger: "//fortune"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "fortune"

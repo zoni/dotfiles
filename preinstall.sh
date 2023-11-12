@@ -33,6 +33,7 @@ done
 mkdir -p \
 	"$HOME"/.cargo \
 	"$HOME"/.config/nushell \
+	"$HOME"/.config/espanso/{config,match} \
 	"$HOME"/.gnupg \
 	"$HOME"/.i3 \
 	"$HOME"/.local/bin \

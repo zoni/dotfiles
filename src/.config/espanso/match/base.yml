@@ -1,0 +1,29 @@
+---
+# espanso match file
+# https://espanso.org/docs/
+
+global_vars:
+  - name: date_format
+    type: choice
+    params:
+      values:
+        - label: "YYYY-MM-DD"
+          id: "%Y-%m-%d"
+        - label: "YYYY-MM-DD HH:MM"
+          id: "%Y-%m-%d %H:%M"
+        - label: "DD-Month-YEAR"
+          id: "%-d-%b-%Y"
+        - label: "ISO 8601 / RFC 3339"
+          id: "%+"
+        - label: "Unix timestamp"
+          id: "%s"
+
+  - name: date
+    type: date
+    params:
+      format: "{{date_format}}"
+
+  - name: time
+    type: date
+    params:
+      format: "%H:%M:%S"

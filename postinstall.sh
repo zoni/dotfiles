@@ -15,6 +15,12 @@ gnome-extension() {
 systemctl --user daemon-reload || true
 systemctl --user enable --now syncthing.service
 
+if systemctl --user is-enabled espanso.service; then
+    systemctl --user restart espanso.service
+else
+    systemctl --user enable --now espanso.service
+fi
+
 # Avoid shelling out to ruby on each shell startup by substituting the ruby
 # call result at the time of dotfiles install.
 echo 'export PATH="$PATH:'"$(ruby -e 'puts Gem.user_dir')"'/bin"' >> $HOME/.zsh/05-path.zsh

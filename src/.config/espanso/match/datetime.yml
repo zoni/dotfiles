@@ -1,0 +1,9 @@
+---
+matches:
+  - trigger: "//date"
+    replace: "{{date}}"
+    label: "Insert the current date"
+
+  - trigger: "//time"
+    replace: "{{time}}"
+    label: "Insert the current time"
