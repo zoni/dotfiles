@@ -2,6 +2,7 @@
 matches:
   - trigger: "//fortune"
     replace: "{{output}}"
+    label: "Insert fortune output"
     vars:
       - name: output
         type: shell

@@ -2,6 +2,7 @@
 matches:
   - trigger: "//llm"
     replace: "{{form2.output}}"
+    label: "Insert LLM response based on clipboard contents"
     vars:
       - name: prompt
         type: choice
