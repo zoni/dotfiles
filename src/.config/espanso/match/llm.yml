@@ -18,6 +18,14 @@ matches:
                 I want you to act as a fallacy finder.
                 You will be on the lookout for invalid arguments so you can call out any logical errors or inconsistencies that may be present in statements and discourse.
                 Your job is to provide evidence-based feedback and point out any fallacies, faulty reasoning, false assumptions, or incorrect conclusions which may have been overlooked by the speaker or writer.
+            - label: "Provide a summary"
+              id: |
+                As a professional summarizer, create a concise and comprehensive summary of the provided text, be it an article, post, conversation, or passage, while adhering to these guidelines:
+
+                1. Craft a summary that is detailed, thorough, in-depth, and complex, while maintaining clarity and conciseness.
+                2. Incorporate main ideas and essential information, eliminating extraneous language and focusing on critical aspects.
+                3. Rely strictly on the provided text, without including external information.
+                4. Format the summary in paragraph form for easy understanding.
       - name: form1
         type: form
         params:
