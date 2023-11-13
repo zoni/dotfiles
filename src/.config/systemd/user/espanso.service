@@ -2,7 +2,7 @@
 Description=espanso
 
 [Service]
-ExecStart=/home/zoni/.local/bin/espanso launcher
+ExecStart=%h/.local/bin/espanso launcher
 Restart=on-failure
 RestartSec=10
 
