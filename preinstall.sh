@@ -30,8 +30,13 @@ for file in "$SOURCEDIR"/src/.config/*; do
 	test -e "$target" || mkdir "$target"
 done
 
-mkdir -p \
+# Note that directories under .config are automatically created, it is only
+# deeper nested directory levels that need to be explicitly added here.
+for dir in \
 	"$HOME"/.cargo \
+	"$HOME"/.config/espanso/config \
+	"$HOME"/.config/espanso/match \
+	"$HOME"/.config/systemd/user \
 	"$HOME"/.gnupg \
 	"$HOME"/.i3 \
 	"$HOME"/.local/bin \
@@ -42,7 +47,15 @@ mkdir -p \
 	"$HOME"/.vimperator \
 	"$HOME"/.vscode \
 	"$HOME"/.zsh \
-	"$HOME"/.{vim,vimswap,vimbackup}
+	"$HOME"/.{vim,vimswap,vimbackup} \
+; do
+	if [[ -L "$dir" ]]; then
+		# Linked target, probably to patched-src. Delete it so we
+		# can recreate it as a directory instead.
+		rm "$dir"
+	fi
+	mkdir -p "$dir"
+done
 
 test -e "${HOME}/.zgenom" || git clone https://github.com/jandamm/zgenom.git "${HOME}/.zgenom"
 /usr/bin/env zsh -i -c "zgenom reset" || true
