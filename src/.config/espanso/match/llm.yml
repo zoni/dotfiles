@@ -38,7 +38,7 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: "cbpaste | llm query --no-stream --system '{{ form1.prompt }}'"
+          cmd: cbpaste | llm query --no-stream --system "$ESPANSO_FORM1_PROMPT"
       - name: form2
         type: form
         params:
