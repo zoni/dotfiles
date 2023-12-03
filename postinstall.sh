@@ -113,7 +113,7 @@ if curl --silent --fail --output /dev/null https://github.com/; then
     systemctl --user enable knowledgebase-watch.service || true
     systemctl --user restart knowledgebase-watch.service || true
 
-    cargo install obsidian-export
+    cargo binstall -y obsidian-export
 
     if [[ -e "$HOME/Workspace/go/bin/pingrep" ]]; then
         rm "$HOME/Workspace/go/bin/pingrep"
