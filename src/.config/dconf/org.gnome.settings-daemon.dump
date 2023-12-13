@@ -14,7 +14,7 @@ terminal=@as []
 www=['<Alt><Super>w']
 
 [plugins/media-keys/custom-keybindings/custom0]
-binding='<Super>semicolon'
+binding='<Super>space'
 command='ulauncher-toggle'
 name='Ulauncher'
 
@@ -24,7 +24,7 @@ command='wezterm-gui'
 name='Wezterm'
 
 [plugins/media-keys/custom-keybindings/custom10]
-binding='<Super>space'
+binding='<Super>e'
 command='espanso cmd search'
 name='Espanso'
 
