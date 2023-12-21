@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=TickTick
+Exec=/usr/bin/flatpak run --socket=wayland --branch=stable --arch=x86_64 --command=ticktick --file-forwarding com.ticktick.TickTick --ozone-platform=wayland --enable-features=UseOzonePlatform --enable-features=WaylandWindowDecorations --enable-features=WebRTCPipeWireCapturer @@u %U @@
+Terminal=false
+Type=Application
+Icon=com.ticktick.TickTick
+StartupWMClass=TickTick
+Comment=TickTick is a powerful to-do & task management app with seamless cloud synchronization across all your devices. Whether you need to schedule an agenda, make memos, share shopping lists, collaborate in a team, or even develop a new habit, TickTick is always here to help you get stuff done and keep life on track.
+Categories=Office;
+X-Flatpak-Tags=proprietary;
+X-Flatpak=com.ticktick.TickTick
+
