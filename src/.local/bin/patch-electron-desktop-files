@@ -9,8 +9,9 @@ PATCH_APPLICATIONS = [
     "1password",
     "code",
     "code-oss",
+    "com.ticktick.TickTick",
     "discord",
-    "com.discordapp.Discord", # Flatpak variant
+    "com.discordapp.Discord",  # Flatpak variant
     "mattermost-desktop",
     "mattermost-desktop_mattermost-desktop",  # Snap variant
     "obsidian",
