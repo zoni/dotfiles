@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Name=Connect bluetooth input devices
+Exec=connect-bluetooth-input-devices
+Terminal=false
+Type=Application
+Icon=bluetooth

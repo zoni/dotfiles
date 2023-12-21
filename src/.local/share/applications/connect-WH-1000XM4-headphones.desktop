@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Name=Connect WH-1000XM4 headphones
+Exec=bluetoothctl connect AC:80:0A:98:9B:A1
+Terminal=false
+Type=Application
+Icon=audio-headphones
