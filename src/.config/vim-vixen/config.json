@@ -214,6 +214,7 @@
   "blacklist": [
     "mail.google.com",
     "meet.google.com",
-    "read.readwise.io"
+    "read.readwise.io",
+    "app.fastmail.com"
   ]
 }
