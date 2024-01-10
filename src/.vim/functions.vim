@@ -33,7 +33,7 @@ def SetBreakpoint():
     nLine = int( vim.eval( 'line(".")'))
 
     strLine = vim.current.line
-    strWhite = re.search( '^(\s*)', strLine).group(1)
+    strWhite = re.search( '^(\\s*)', strLine).group(1)
 
     vim.current.buffer.append(
        "%(space)spdb.set_trace() %(mark)s Breakpoint %(mark)s" %
@@ -92,7 +92,7 @@ def SetBreakpoint():
     nLine = int( vim.eval( 'line(".")'))
 
     strLine = vim.current.line
-    strWhite = re.search( '^(\s*)', strLine).group(1)
+    strWhite = re.search( '^(\\s*)', strLine).group(1)
 
     vim.current.buffer.append(
        "%(space)spdb.set_trace() %(mark)s Breakpoint %(mark)s" %
