@@ -154,7 +154,7 @@ fi
 
 if [[ -e $HOME/Knowledgebase/.scripts/pyproject.toml ]]; then
     if type poetry >/dev/null; then
-        (cd $HOME/Knowledgebase/.scripts/ && poetry install)
+        (cd "$HOME/Knowledgebase/.scripts/" && poetry install --no-root)
     fi
 fi
 
