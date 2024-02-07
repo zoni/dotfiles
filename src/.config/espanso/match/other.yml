@@ -8,3 +8,11 @@ matches:
         type: shell
         params:
           cmd: "fortune"
+
+  - trigger: "//request-meeting-agenda"
+    replace: >
+      I'd be happy to join this meeting, but could you please provide an agenda
+      or describe the desired outcome? What's the purpose of getting together
+      and why is this preferable over an asynchronous medium where people can
+      contribute when it best fits their own schedule?
+    label: "Request meeting agenda"
