@@ -12,6 +12,7 @@ endfunction
 
 call plug#begin('~/.vim-plugs')
 
+Plug 'NoahTheDuke/vim-just'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
 Plug 'airblade/vim-gitgutter'
