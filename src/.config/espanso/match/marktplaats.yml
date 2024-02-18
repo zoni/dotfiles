@@ -1,0 +1,7 @@
+---
+matches:
+  - trigger: "//marktplaats"
+    replace: >
+      Bedankt voor het aanbod, je bent niet de eerste hierin.
+      Ik wil je vriendelijk verzoeken om een bieding te plaatsen en niet enkel een bericht te sturen zodat dit voor iedereen zichtbaar is en andere bieders een eerlijke kans krijgen hun eigen bod eventueel te verhogen.
+    label: "Marktplaats: verzoek publiekelijk bod te doen"
