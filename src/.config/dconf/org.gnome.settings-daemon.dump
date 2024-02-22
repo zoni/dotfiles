@@ -6,6 +6,7 @@ night-light-temperature=uint32 3700
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/']
 email=['<Alt><Super>e']
 home=['<Alt><Super>f']
+mic-mute=['<Super>a']
 rotate-video-lock-static=@as []
 screenreader=@as []
 screensaver=['<Super>Backspace']
@@ -59,7 +60,7 @@ command='wezterm start zsh -i -c "knowledgebase sitemap-select"'
 name='Obsidian sitemap-select'
 
 [plugins/media-keys/custom-keybindings/custom8]
-binding='<Super>a'
+binding='<Shift><Super>a'
 command='pavucontrol'
 name='PulseAudio Volume Control'
 
