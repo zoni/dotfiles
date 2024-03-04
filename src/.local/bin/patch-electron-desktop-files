@@ -17,6 +17,7 @@ PATCH_APPLICATIONS = [
     "obsidian",
     "slack",
     "slack_slack",  # Snap variant
+    "com.slack.Slack",  # Flatpak variant
     "spotify",
     "spotify_spotify",  # Snap variant
     "teams",

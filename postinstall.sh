@@ -35,6 +35,7 @@ done
 
 patch-electron-desktop-files
 flatpak override --user --socket=wayland com.discordapp.Discord || true
+flatpak override --user --socket=wayland com.slack.Slack || true
 
 ln -snf $HOME/.vim/ $HOME/.config/nvim
 ln -snf $HOME/.vimrc $HOME/.config/nvim/init.vim
