@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec json5 "$@" | jq .
