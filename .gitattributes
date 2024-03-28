@@ -1,1 +1,1 @@
-src/.vscode/*.json diff=hjson
+src/.vscode/*.json diff=json5
