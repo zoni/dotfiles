@@ -30,6 +30,10 @@ for file in "$HOME"/.zsh/*.zsh; do
     printf '\n# -- %s --\n\n' "$file" >> "$HOME/.zshrc"
     cat "$file" >> "$HOME/.zshrc"
 done
+if type mise >/dev/null; then
+    mise trust "$HOME/.config/mise/config.toml"
+    mise activate zsh >> "$HOME/.zshrc"
+fi
 # This will make zgenom do its thing
 /usr/bin/env zsh -i -c ''
 
