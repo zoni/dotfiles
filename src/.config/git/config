@@ -27,7 +27,7 @@
 	requireForce = false
 [core]
 	excludesfile = ~/.config/git/ignore
-	pager = diffr --colors refine-added:none:background:0x33,0x99,0x33 --colors added:none:background:0x33,0x55,0x33 --colors refine-removed:none:background:0x99,0x33,0x33 --colors removed:none:background:0x55,0x33,0x33 | less -RF
+	pager = diffr --colors refine-added:none:background:0x33,0x99,0x33 --colors added:none:background:0x33,0x55,0x33 --colors refine-removed:none:background:0x99,0x33,0x33 --colors removed:none:background:0x55,0x33,0x33
 [credential]
 	# https://github.com/hickford/git-credential-oauth#configuration
 	helper = cache --timeout 7200  # two hours
