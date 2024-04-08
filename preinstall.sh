@@ -65,6 +65,10 @@ if [[ -e "$HOME/Bin" ]]; then
 	rmdir "$HOME/Bin"
 fi
 
+if [[ -e "$HOME/.asdf" ]]; then
+	rm -rf "$HOME/.asdf"
+fi
+
 # From here on, we don't care about non-zero exit codes because
 # not all of these files may exist, but that's fine and will only
 # cause harmless errors later on.
