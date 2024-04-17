@@ -114,9 +114,14 @@ if [[ "$DESKTOP_SESSION" == "sway-shell" ]]; then
 fi
 
 if curl --silent --fail --output /dev/null https://github.com/; then
-    cargo install --git https://github.com/zoni/knowledgebase-cli.git --branch main --locked
-    systemctl --user enable knowledgebase-watch.service || true
-    systemctl --user restart knowledgebase-watch.service || true
+    if [[ "$OSTYPE" != "darwin"* ]]; then
+        gh release --repo zoni/knowledgebase-cli download --pattern knowledgebase-cli-x86_64-unknown-linux-gnu.tar.xz --output - | tar --extract --xz --directory "$HOME/.cargo/bin/"
+        mv "$HOME/.cargo/bin/knowledgebase-cli-x86_64-unknown-linux-gnu/knowledgebase" "$HOME/.cargo/bin/knowledgebase"
+        rm -rf "$HOME/.cargo/bin/knowledgebase-cli-x86_64-unknown-linux-gnu/"
+
+        systemctl --user enable knowledgebase-watch.service || true
+        systemctl --user restart knowledgebase-watch.service || true
+    fi
 
     cargo binstall -y obsidian-export
 
