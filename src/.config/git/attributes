@@ -5,7 +5,7 @@
 *.exs diff=elixir
 *.go diff=golang
 *.html diff=html
-*.json diff=json5
+*.json diff=json
 *.json5 diff=json5
 *.md diff=markdown
 *.perl diff=perl
