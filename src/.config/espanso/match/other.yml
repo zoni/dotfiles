@@ -16,3 +16,9 @@ matches:
       and why is this preferable over an asynchronous medium where people can
       contribute when it best fits their own schedule?
     label: "Request meeting agenda"
+
+  - trigger: "//not-interested"
+    replace: >
+      I don't wish to sound rude, however I'm really not interested.
+      Please don't contact me about this further.
+    label: "Not interested, leave me alone"
