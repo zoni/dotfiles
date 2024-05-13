@@ -24,6 +24,7 @@ function pre_upgrade {
 function upgrade_arch {
 	sudo -u "$SUDO_USER" yay
 	snap refresh
+	sudo -u "$SUDO_USER" rustup update
 }
 
 function upgrade_fedora {
@@ -31,6 +32,7 @@ function upgrade_fedora {
 	sudo -u "$SUDO_USER" /home/linuxbrew/.linuxbrew/bin/brew upgrade
 	sudo -u "$SUDO_USER" flatpak update
 	snap refresh
+	sudo -u "$SUDO_USER" rustup update
 }
 
 trap atexit EXIT
