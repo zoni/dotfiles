@@ -1,5 +1,7 @@
-if [ -e /usr/share/fzf -o -e /usr/local/opt/fzf/ ]; then
-	if [ -e /usr/share/fzf/key-bindings.zsh ]; then
+if [ -e /usr/share/fzf -o -e /usr/local/opt/fzf/ -o -e /home/linuxbrew/.linuxbrew/opt/fzf/ ]; then
+	if [ -e /home/linuxbrew/.linuxbrew/opt/fzf/shell/key-bindings.zsh ]; then
+		source /home/linuxbrew/.linuxbrew/opt/fzf/shell/key-bindings.zsh  # Linuxbrew
+	elif [ -e /usr/share/fzf/key-bindings.zsh ]; then
 		source /usr/share/fzf/key-bindings.zsh  # Arch Linux
 	elif [ -e /usr/share/fzf/shell/key-bindings.zsh ]; then
 		source /usr/share/fzf/shell/key-bindings.zsh  # Fedora

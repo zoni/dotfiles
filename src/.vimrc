@@ -99,6 +99,8 @@ source ~/.vim/lspconfig.vim
 
 if filereadable("/usr/share/vim/vimfiles/plugin/fzf.vim")
   source /usr/share/vim/vimfiles/plugin/fzf.vim
+elseif filereadable("/home/linuxbrew/.linuxbrew/opt/fzf/plugin/fzf.vim")
+  source /home/linuxbrew/.linuxbrew/opt/fzf/plugin/fzf.vim
 elseif filereadable("/usr/local/opt/fzf/plugin/fzf.vim")
   source /usr/local/opt/fzf/plugin/fzf.vim
 endif
