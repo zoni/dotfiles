@@ -1,7 +1,6 @@
 # Enable vi mode
 bindkey -v
-# Make switch between modes faster
-export KEYTIMEOUT=1
+export KEYTIMEOUT=30
 
 # The "Completion listing extensions" is needed for some of the later key
 # bindings
