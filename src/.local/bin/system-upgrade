@@ -32,7 +32,7 @@ function upgrade_fedora {
 	sudo -u "$SUDO_USER" /home/linuxbrew/.linuxbrew/bin/brew upgrade
 	sudo -u "$SUDO_USER" flatpak update
 	snap refresh
-	sudo -u "$SUDO_USER" rustup update
+	sudo -u "$SUDO_USER" "/home/$SUDO_USER/.cargo/bin/rustup" update
 }
 
 trap atexit EXIT
