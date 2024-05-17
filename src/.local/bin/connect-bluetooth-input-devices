@@ -1,13 +1,19 @@
 #!/bin/bash
 
-bluetoothctl scan on &
-trap "kill %1" EXIT
-
 TOUCHPAD=64:5A:ED:EF:06:C1
 DADS_KEYBOARD=40:E6:4B:8F:F3:91
 
+DEVICES="$TOUCHPAD $DADS_KEYBOARD"
+
+for device in $DEVICES; do
+	bluetoothctl remove "$device"
+done
+
+bluetoothctl --timeout 60 scan on &
+trap "kill %1" EXIT
+
 for _i in {1..10}; do
-	for device in $TOUCHPAD $DADS_KEYBOARD; do
+	for device in $DEVICES; do
 		if ! bluetoothctl info "$device" | grep --fixed-strings --silent 'Connected: yes'; then
 			bluetoothctl trust "$device"
 			bluetoothctl pair "$device"
