@@ -15,6 +15,7 @@ PATCH_APPLICATIONS = [
     "mattermost-desktop",
     "mattermost-desktop_mattermost-desktop",  # Snap variant
     "obsidian",
+    "postman",
     "slack",
     "slack_slack",  # Snap variant
     "com.slack.Slack",  # Flatpak variant
