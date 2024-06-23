@@ -6,7 +6,7 @@
 # ansible and mitogen version here are closely tied together.
 ANSIBLE_PACKAGE_SPEC="ansible==9.1.0"
 ANSIBLE_CORE_PACKAGE_SPEC="ansible-core==2.13.13"
-MITOGEN_PACKAGE_SPEC="git+https://github.com/mitogen-hq/mitogen.git@798032b979bf5cabf50d3665f113f67cb5b33152#egg=mitogen"
+MITOGEN_PACKAGE_SPEC="git+https://github.com/mitogen-hq/mitogen.git@3f7a0f74a5d4102fd4d6560a6e12fa445eb1aff3#egg=mitogen"
 EXTRA_PACKAGES_TO_INSTALL=(ansible-lint dnspython keyring jmespath pynvim)
 
 ### ---- No edits should generally be needed beyond this point ----
@@ -36,6 +36,14 @@ pipx inject ansible "${EXTRA_PACKAGES_TO_INSTALL[@]}"
 pipx inject ansible "$MITOGEN_PACKAGE_SPEC"
 
 set +x
+
+# Create symlink to ansible-lint in the `ansible` pipx venv as it does not get
+# created by the `pipx inject ansible ansible-lint` command automatically.
+ANSIBLE_LINT_SYMLINK_PATH="$HOME/.local/bin/ansible-lint"
+ANSIBLE_LINT_TARGET_PATH="$PIPX_VENVS_DIR/ansible/bin/ansible-lint"
+if [ ! -L "$ANSIBLE_LINT_SYMLINK_PATH" ] && [ ! -e "$ANSIBLE_LINT_SYMLINK_PATH" ]; then
+  ln -s "$ANSIBLE_LINT_TARGET_PATH" "$ANSIBLE_LINT_SYMLINK_PATH"
+fi
 
 printf "\n\nAll components have successfully been installed. ✅\nTo enable usage of mitogen with ansible, ensure the following environment variables are set in your environment (when using direnv as recommended, add these lines to the .envrc file):\n\n"
 printf '    export ANSIBLE_STRATEGY="mitogen_linear"\n'
