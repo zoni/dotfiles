@@ -46,6 +46,8 @@
 	keepbackup = false
 	defaultToUpstream = true
 	conflictstyle = diff3
+[mergetool "meld"]
+	useAutoMerge = true
 [diff]
 	algorithm = patience
 	tool = meld
