@@ -31,7 +31,6 @@ for file in "$HOME"/.zsh/*.zsh; do
     cat "$file" >> "$HOME/.zshrc"
 done
 if type mise >/dev/null; then
-    mise trust "$HOME/.config/mise/config.toml"
     mise activate zsh >> "$HOME/.zshrc"
 fi
 # This will make zgenom do its thing
