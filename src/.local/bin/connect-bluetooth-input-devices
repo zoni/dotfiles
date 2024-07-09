@@ -6,7 +6,9 @@ DADS_KEYBOARD=40:E6:4B:8F:F3:91
 DEVICES="$TOUCHPAD $DADS_KEYBOARD"
 
 for device in $DEVICES; do
-	bluetoothctl remove "$device"
+	if ! bluetoothctl info "$device" | grep --fixed-strings --silent 'Connected: yes'; then
+		bluetoothctl remove "$device"
+	fi
 done
 
 bluetoothctl --timeout 60 scan on &
