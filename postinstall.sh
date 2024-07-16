@@ -37,8 +37,9 @@ fi
 /usr/bin/env zsh -i -c ''
 
 patch-electron-desktop-files
-flatpak override --user --socket=wayland com.discordapp.Discord || true
-flatpak override --user --socket=wayland com.slack.Slack || true
+for app in com.discordapp.Discord com.slack.Slack com.getpostman.Postman; do
+    flatpak override --user --socket=wayland $app || true
+done
 
 ln -snf $HOME/.vim/ $HOME/.config/nvim
 ln -snf $HOME/.vimrc $HOME/.config/nvim/init.vim
@@ -180,6 +181,9 @@ if type gh >/dev/null 2>&1; then
         gh extension list | grep --fixed-strings --silent dlvhdr/gh-dash || gh extension install dlvhdr/gh-dash
     fi
 fi
+
+# https://github.com/postmanlabs/postman-app-support/issues/12330#issuecomment-1730688619
+postman-issue-12330-workaround
 
 pipx install 'maturin[patchelf]'
 pipx install llm==0.12

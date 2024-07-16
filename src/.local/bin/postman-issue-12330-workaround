@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# https://github.com/postmanlabs/postman-app-support/issues/12330#issuecomment-1730688619
+
+set -euo pipefail
+
+
+if [ ! -e "$HOME/.var/app/com.getpostman.Postman/config/Postman/proxy" ]; then
+	exit 0
+fi
+
+cd "$HOME/.var/app/com.getpostman.Postman/config/Postman/proxy"
+
+if [ -e postman-proxy-ca.key ] || [ -e postman-proxy-ca.crt ]; then
+	exit 0
+fi
+
+openssl req \
+	-subj '/C=US/CN=Postman Proxy' \
+	-new \
+	-newkey rsa:2048 \
+	-sha256 \
+	-days 1365 \
+	-nodes \
+	-x509 \
+	-keyout postman-proxy-ca.key \
+	-out postman-proxy-ca.crt
