@@ -12,7 +12,15 @@ local servers = {
     -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim
     gopls = {},
     pyright = {},
-    rust_analyzer = {},
+    rust_analyzer = {
+        settings = {
+            ["rust-analyzer"] = {
+                rustfmt = {
+                    extraArgs = { "+nightly" },
+                },
+            },
+        },
+    },
     terraformls = {},
     tsserver = {},
     yamlls = {},
