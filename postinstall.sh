@@ -133,6 +133,7 @@ if curl --silent --fail --output /dev/null https://github.com/; then
     systemctl --user enable --now pingrep-update.timer
 
     cargo install --git https://github.com/zoni/lycheeweb.git --branch main --locked
+    cargo binstall -y --git https://github.com/gabm/satty satty
 fi
 
 if [[ $USER == "zoni" ]]; then
