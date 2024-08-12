@@ -24,8 +24,7 @@ function pre_upgrade {
 function upgrade_arch {
 	sudo -u "$SUDO_USER" yay
 	snap refresh
-	sudo -u "$SUDO_USER" --login zsh -i -c "rustup update"
-	sudo -u "$SUDO_USER" --login zsh -i -c "cargo sweep -r -i /home/$SUDO_USER/"
+	update_rust
 }
 
 function upgrade_fedora {
@@ -33,7 +32,12 @@ function upgrade_fedora {
 	sudo -u "$SUDO_USER" /home/linuxbrew/.linuxbrew/bin/brew upgrade
 	sudo -u "$SUDO_USER" flatpak update
 	snap refresh
+	update_rust
+}
+
+function update_rust {
 	sudo -u "$SUDO_USER" --login zsh -i -c "rustup update"
+	sudo -u "$SUDO_USER" --login zsh -i -c "rustup toolchain list | awk '!/(stable|nightly)-/ { print \$1 }' | xargs --no-run-if-empty rustup toolchain remove"
 	sudo -u "$SUDO_USER" --login zsh -i -c "cargo sweep -r -i /home/$SUDO_USER/"
 }
 
