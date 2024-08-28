@@ -1,1 +1,2 @@
+src/.config/zed/*.json diff=json5
 src/.vscode/*.json diff=json5
