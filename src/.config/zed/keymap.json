@@ -38,7 +38,7 @@
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-`": "workspace::ToggleBottomDock",
+      "ctrl-`": "workspace::ToggleRightDock",
       "ctrl-shift-n": "workspace::NewTerminal"
     }
   },

@@ -36,7 +36,9 @@
     }
   },
   "terminal": {
-    "default_height": 5000,
+    "dock": "right",
+    "default_width": 1024,
+    "default_height": 500,
     "line_height": "standard"
   },
   "lsp": {
