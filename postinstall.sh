@@ -32,6 +32,7 @@ for file in "$HOME"/.zsh/*.zsh; do
 done
 if type mise >/dev/null; then
     mise activate zsh >> "$HOME/.zshrc"
+    mise trust "$HOME/.config/mise/config.toml"
 fi
 # This will make zgenom do its thing
 /usr/bin/env zsh -i -c ''
