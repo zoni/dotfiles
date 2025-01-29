@@ -165,8 +165,8 @@ if [[ ! -e $HOME/.local/bin/obsidian && "$OSTYPE" != "darwin"* ]]; then
 fi
 
 if [[ -e $HOME/Knowledgebase/.scripts/pyproject.toml ]]; then
-    if type poetry >/dev/null; then
-        (cd "$HOME/Knowledgebase/.scripts/" && poetry install --no-root)
+    if type uv >/dev/null; then
+        (cd "$HOME/Knowledgebase/.scripts/" && uv sync)
     fi
 fi
 
