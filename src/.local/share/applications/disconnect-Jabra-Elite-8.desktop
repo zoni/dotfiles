@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Name=Disconnect Jabra Elite 8 Active earbuds
+Exec=bluetoothctl disconnect 6C:FB:ED:0A:4F:DE
+Terminal=false
+Type=Application
+Icon=audio-headphones
