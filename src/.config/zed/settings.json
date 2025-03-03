@@ -47,6 +47,11 @@
   },
   "lsp": {
     "pyright": {
+      "binary": {
+        // Fix/workaround for https://github.com/zed-industries/zed/issues/24565#issuecomment-2691815533
+        "path": "pyright-langserver",
+        "arguments": ["--stdio"]
+      },
       "settings": {
         "python.analysis": {
           "diagnosticMode": "workspace",
