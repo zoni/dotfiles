@@ -30,6 +30,7 @@
       "space w s": "pane::SplitDown",
       "space w v": "pane::SplitRight",
       "space w c": "pane::CloseActiveItem",
+      "space w a": "pane::CloseAllItems",
       "space s f": "file_finder::Toggle",
       "space s /": "pane::DeploySearch",
       "space ?": "assistant::ToggleFocus"
