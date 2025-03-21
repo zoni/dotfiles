@@ -17,6 +17,8 @@
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
+      // Navigation and window management
+      "-": "project_panel::ToggleFocus",
       "ctrl-n": "pane::ActivateNextItem",
       "ctrl-p": "pane::ActivatePreviousItem",
       "space w h": "workspace::ActivatePaneLeft",
@@ -33,7 +35,15 @@
       "space w a": "pane::CloseAllItems",
       "space s f": "file_finder::Toggle",
       "space s /": "pane::DeploySearch",
-      "space ?": "assistant::ToggleFocus"
+      "space ?": "assistant::ToggleFocus",
+
+      // Git
+      "space r b": "git::Blame",
+      "space r c": "git::Commit",
+      "space r e": "editor::ExpandAllDiffHunks",
+      "space r s": "git_panel::ToggleFocus",
+      "space r d": "git::Diff",
+      "space r h s": "git::ToggleStaged"
     }
   },
   {
