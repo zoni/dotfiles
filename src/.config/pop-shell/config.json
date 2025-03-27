@@ -9,9 +9,12 @@
     {
       "class": "firefox",
       "title": "Firefox — Sharing Indicator"
+    },
+    {
+      "class": "chromium-browser",
+      "title": "Google Meet"
     }
   ],
   "skiptaskbarhidden": [],
-  "log_on_focus": false,
-  "default_pointer_position": "TOP_LEFT"
+  "log_on_focus": false
 }
