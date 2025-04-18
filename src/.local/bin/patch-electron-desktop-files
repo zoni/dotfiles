@@ -17,6 +17,7 @@ PATCH_APPLICATIONS = [
     "obsidian",
     "postman",
     "com.getpostman.Postman",  # Flatpak variant
+    "signal-desktop",
     "slack",
     "slack_slack",  # Snap variant
     "com.slack.Slack",  # Flatpak variant
