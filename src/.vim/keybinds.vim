@@ -125,9 +125,6 @@ cmap w!! w !sudo tee % >/dev/null
 " Un-highlight search matches on Ctrl+h
 nmap <silent> <C-h> <Esc>:noh<CR>
 
-" Toggle paste/nopaste
-set pastetoggle=<F12>
-
 " Open URL under cursor.
 " Sleep + extra CR's ensures we don't (in most cases) see command output
 " drawing over the screen as the browser is spawned.
