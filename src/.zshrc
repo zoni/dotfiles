@@ -1,4 +1,4 @@
-eval "$(jump shell)"
+eval "$(jump shell zsh)"
 
 export FORGIT_NO_ALIASES=1
 HISTFILE="$HOME/.zsh_history"
