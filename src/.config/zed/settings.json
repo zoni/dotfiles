@@ -70,7 +70,7 @@
   },
   "languages": {
     "Python": {
-      "language_servers": ["pyright", "ruff", "..."],
+      "language_servers": ["basedpyright", "ruff", "..."],
       "format_on_save": "on",
       "formatter": [
         {
