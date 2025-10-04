@@ -13,5 +13,9 @@ if [[ -e /home/linuxbrew/.linuxbrew/bin ]]; then
 	export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 fi
 
+if [[ -e "${KREW_ROOT:-$HOME/.krew}/bin" ]]; then
+	export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+fi
+
 # Extra completions
 fpath=(~/.zsh/completions $fpath)
