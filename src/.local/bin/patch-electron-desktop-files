@@ -16,6 +16,7 @@ PATCH_APPLICATIONS = [
     "mattermost-desktop",
     "mattermost-desktop_mattermost-desktop",  # Snap variant
     "obsidian",
+    "pgadmin4",
     "postman",
     "com.getpostman.Postman",  # Flatpak variant
     "signal-desktop",
