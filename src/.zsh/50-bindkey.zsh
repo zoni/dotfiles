@@ -16,8 +16,9 @@ bindkey -M vicmd '\eu' undo
 zle -N history-substring-search-up
 zle -N history-substring-search-down
 # The next two keys are the up and down arrow keys respectively
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+# Only bind if terminfo values are available (not available in all environments, e.g. Atuin's embedded terminal)
+[[ -n "$terminfo[kcuu1]" ]] && bindkey "$terminfo[kcuu1]" history-substring-search-up
+[[ -n "$terminfo[kcud1]" ]] && bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
@@ -26,8 +27,14 @@ bindkey -M viins '^r' atuin-search-viins
 bindkey -M vicmd '^r' atuin-search-vicmd
 bindkey -M vicmd '/' atuin-up-search-vicmd
 
-bindkey '\t' menu-select "$terminfo[kcbt]" expand-or-complete
-bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
+# Only bind if terminfo[kcbt] (back-tab) is available
+if [[ -n "$terminfo[kcbt]" ]]; then
+	bindkey '\t' menu-select "$terminfo[kcbt]" expand-or-complete
+	bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
+else
+	bindkey '\t' menu-select
+	bindkey -M menuselect '\t' menu-complete
+fi
 
 # Make menu completions more vi-like.
 # hklj naviation:
