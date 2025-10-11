@@ -1,0 +1,10 @@
+[Unit]
+Description=atuin sync daemon
+
+[Service]
+ExecStart=/usr/bin/atuin daemon
+Restart=on-failure
+RestartSec=60
+
+[Install]
+WantedBy=default.target

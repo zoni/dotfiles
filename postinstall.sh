@@ -14,6 +14,7 @@ gnome-extension() {
 
 systemctl --user daemon-reload || true
 systemctl --user enable --now syncthing.service
+systemctl --user enable --now atuin-daemon.service
 
 if systemctl --user is-enabled espanso.service; then
     systemctl --user restart espanso.service
@@ -190,8 +191,5 @@ fi
 
 # https://github.com/postmanlabs/postman-app-support/issues/12330#issuecomment-1730688619
 postman-issue-12330-workaround
-
-pipx install 'maturin[patchelf]'
-pipx install llm==0.12
 
 printf "\nDone ✔\n"

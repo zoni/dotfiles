@@ -21,6 +21,11 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
+bindkey -M emacs '^r' atuin-search
+bindkey -M viins '^r' atuin-search-viins
+bindkey -M vicmd '^r' atuin-search-vicmd
+bindkey -M vicmd '/' atuin-up-search-vicmd
+
 bindkey '\t' menu-select "$terminfo[kcbt]" expand-or-complete
 bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
 

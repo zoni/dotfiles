@@ -1,9 +1,11 @@
+export ATUIN_NOBIND=true
+eval "$(atuin init zsh)"
 eval "$(jump shell zsh)"
 
 export FORGIT_NO_ALIASES=1
 HISTFILE="$HOME/.zsh_history"
-HISTSIZE=50000
-SAVEHIST=10000
+HISTSIZE=250
+SAVEHIST=250
 
 source "${HOME}/.zgenom/zgenom.zsh"
 if ! zgenom saved; then
