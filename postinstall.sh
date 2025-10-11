@@ -64,26 +64,6 @@ if [[ -e /var/lib/flatpak/app/org.wezfurlong.wezterm/ ]]; then
 fi
 tic -x -o "$HOME/.terminfo" "$HOME/.config/wezterm/wezterm.terminfo"
 
-
-if type code >/dev/null; then
-    # Symlink "Code - OSS" -> "Code"
-    if [[ -d "$HOME/.config/Code - OSS" && ! -L "$HOME/.config/Code - OSS" ]]; then
-        if [ -d "$HOME/.config/Code" ]; then
-            rm -rf "$HOME/.config/Code"
-        fi
-        mv "$HOME/.config/Code - OSS" "$HOME/.config/Code"
-        ln -sf "Code" "$HOME/.config/Code - OSS"
-    fi
-
-    # Install VS Code extensions listed in extensions.install that are missing from `code --list-extensions`
-    comm -13 <(code --list-extensions|sort) <(grep -v -E '^#' $(dirname $BASH_SOURCE)/src/.vscode/extensions.install | sort) | xargs --no-run-if-empty --max-lines=1 -- code --install-extension
-    # Remove VS Code extensions listed in extensions.remove that are listed in `code --list-extensions`
-    comm -12 <(code --list-extensions|sort) <(grep -v -E '^#' $(dirname $BASH_SOURCE)/src/.vscode/extensions.remove | sort) | xargs --no-run-if-empty --max-lines=1 -- code --uninstall-extension
-
-    ln --force --symbolic ../../../.vscode/settings.json "$HOME/.config/Code/User/settings.json"
-    ln --force --symbolic ../../../.vscode/keybindings.json "$HOME/.config/Code/User/keybindings.json"
-fi
-
 if [[ "$OSTYPE" != "darwin"* ]]; then
     import-dconf-dumps
     systemctl --user disable knowledgebase.service || true
