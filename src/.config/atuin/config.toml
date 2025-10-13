@@ -23,6 +23,7 @@ show_tabs = true
 style = "compact"
 sync_address = "https://atuin.nlx.one"
 sync_frequency = "0"  # 0 = immediate
+update_check = false
 workspaces = true
 
 [stats]
