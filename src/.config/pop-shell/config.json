@@ -13,6 +13,10 @@
     {
       "class": "chromium-browser",
       "title": "Google Meet"
+    },
+    {
+      "class": "atuin-desktop",
+      "title": "atuin-desktop"
     }
   ],
   "skiptaskbarhidden": [],
