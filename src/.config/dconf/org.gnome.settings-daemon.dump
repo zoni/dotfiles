@@ -1,9 +1,15 @@
+[global-shortcuts]
+applications=['org.chromium.Chromium']
+
+[global-shortcuts/org.chromium.Chromium]
+shortcuts=[('7EE4FA71507A39C4EE5CEBA3759F7462-Ctrl+Shift+Space', {'description': <'Electron shortcut Ctrl+Shift+Space'>})]
+
 [plugins/color]
 night-light-enabled=true
 night-light-temperature=uint32 3700
 
 [plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom11/']
 email=['<Alt><Super>e']
 home=['<Alt><Super>f']
 mic-mute=['<Super>a']
@@ -28,6 +34,11 @@ name='Wezterm'
 binding='<Super>e'
 command='espanso cmd search'
 name='Espanso'
+
+[plugins/media-keys/custom-keybindings/custom11]
+binding='<Alt><Super>g'
+command='wezterm start --class github-repo-browser zsh -i -c "github-repo-browser && sleep 0.5"'
+name='Browse GitHub repos'
 
 [plugins/media-keys/custom-keybindings/custom2]
 binding='<Super>backslash'

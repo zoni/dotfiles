@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+function repo_list {
+	gh repo list "$1" --json owner,name,isArchived --template '{{ range . }}{{ if not .isArchived }}{{ .owner.login }}/{{ .name }}{{ "\n" }}{{ end}}{{ end }}' --limit 1000
+}
+
+(repo_list castoredc & repo_list zoni &) | fzf \
+	--bind "enter:become(xdg-open https://github.com/{})" \
+	--bind "ctrl-o:execute(xdg-open https://github.com/{})" \
+	--bind "ctrl-i:execute(xdg-open https://github.com/{}/issues)" \
+	--bind "ctrl-p:execute(xdg-open https://github.com/{}/pulls)" \
+	--bind "ctrl-s:execute(xdg-open https://github.com/{}/settings)"
+
