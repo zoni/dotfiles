@@ -4,12 +4,24 @@
 
 set -xu
 
+function check_command() {
+    if ! command -v "$1" >/dev/null 2>&1; then
+        echo "Missing required command '$1'"
+        exit 1
+    fi
+}
+check_command webpinfo
+check_command webpmux
+check_command dwebp
+check_command convert
+check_command trash
+
 for file in "$@"; do
     source_dir=$(dirname "$file")
     temp_dir=$(mktemp -d)
     webpfile=$(realpath "$file")
 
-    frames_num=$(webpinfo "$webpfile" | grep Format | wc -l)
+    frames_num=$(webpinfo "$webpfile" | grep --count Format)
     for i in $(seq 1 "$frames_num"); do
         i=$(printf "%03d" "$i")
         webpmux -get frame "$i" "$webpfile" -o "$temp_dir/$i.webp"
@@ -19,12 +31,10 @@ for file in "$@"; do
     convert -delay 0 -loop 0 "$temp_dir"/*.png "$temp_dir"/animation.gif
     if [ -e "$temp_dir"/animation.gif ]; then
         basename=$(basename "${webpfile}")
-        mv "$temp_dir"/animation.gif "$source_dir/${basename%.webp}.gif"
-        trash "$webpfile"
+        mv "$temp_dir"/animation.gif "$source_dir/${basename%.webp}.gif" && trash "$webpfile"
     else
         basename=$(basename "${webpfile}")
-        convert "$webpfile" "$source_dir/${basename%.webp}.jpeg"
-        trash "$webpfile"
+        convert "$webpfile" "$source_dir/${basename%.webp}.jpeg" && trash "$webpfile"
     fi
 
     rm -rf "$temp_dir"
