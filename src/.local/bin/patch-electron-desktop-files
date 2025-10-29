@@ -13,6 +13,7 @@ PATCH_APPLICATIONS = [
     "com.ticktick.TickTick",
     "discord",
     "com.discordapp.Discord",  # Flatpak variant
+    "com.fastmail.Fastmail",
     "mattermost-desktop",
     "mattermost-desktop_mattermost-desktop",  # Snap variant
     "obsidian",
