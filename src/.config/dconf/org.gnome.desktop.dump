@@ -47,6 +47,7 @@ old-files-age=uint32 30
 recent-files-max-age=-1
 remove-old-temp-files=true
 remove-old-trash-files=true
+report-technical-problems=true
 
 [screensaver]
 lock-delay=uint32 30
