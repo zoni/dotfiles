@@ -2,6 +2,6 @@
 Encoding=UTF-8
 Version=1.0
 Name=Dotfiles PULL
-Exec=wezterm-gui start /bin/sh -c ~/.dotfiles/pull.sh
+Exec=alacritty --command /bin/sh -c ~/.dotfiles/pull.sh
 Terminal=false
 Type=Application

@@ -27,8 +27,8 @@ name='Ulauncher'
 
 [plugins/media-keys/custom-keybindings/custom1]
 binding='<Super>apostrophe'
-command='wezterm-gui'
-name='Wezterm'
+command='alacritty'
+name='Alacritty'
 
 [plugins/media-keys/custom-keybindings/custom10]
 binding='<Super>e'
@@ -37,7 +37,7 @@ name='Espanso'
 
 [plugins/media-keys/custom-keybindings/custom11]
 binding='<Alt><Super>g'
-command='wezterm start --class github-repo-browser zsh -i -c "github-repo-browser && sleep 0.5"'
+command='alacritty --class github-repo-browser --command zsh -i -c "github-repo-browser && sleep 0.5"'
 name='Browse GitHub repos'
 
 [plugins/media-keys/custom-keybindings/custom2]
@@ -47,7 +47,7 @@ name='Toggle Guake'
 
 [plugins/media-keys/custom-keybindings/custom3]
 binding='<Alt><Super>t'
-command='wezterm start zsh -i -c tsp'
+command='alacritty --command zsh -i -c tsp'
 name='Load tmux profile'
 
 [plugins/media-keys/custom-keybindings/custom4]
@@ -67,7 +67,7 @@ name='Zeal'
 
 [plugins/media-keys/custom-keybindings/custom7]
 binding='<Shift><Alt><Super>o'
-command='wezterm start zsh -i -c "knowledgebase sitemap-select"'
+command='alacritty --command zsh -i -c "knowledgebase sitemap-select"'
 name='Obsidian sitemap-select'
 
 [plugins/media-keys/custom-keybindings/custom8]
@@ -77,7 +77,7 @@ name='PulseAudio Volume Control'
 
 [plugins/media-keys/custom-keybindings/custom9]
 binding='<Alt><Super>b'
-command='wezterm start --class pingrep-fzf zsh -i -c "pingrep fzf"'
+command='alacritty --class pingrep-fzf --command zsh -i -c "pingrep fzf"'
 name='Pingrep'
 
 [plugins/power]

@@ -282,7 +282,7 @@
     "gitlens.views.lineHistory.enabled": false,
     "workbench.startupEditor": "newUntitledFile",
     "window.openFilesInNewWindow": "default",
-    "terminal.external.linuxExec": "wezterm-gui",
+    "terminal.external.linuxExec": "alacritty",
     "terminal.integrated.cursorBlinking": true,
     "explorer.compactFolders": false,
     "git.autofetch": true,

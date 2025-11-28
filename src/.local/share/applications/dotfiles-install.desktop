@@ -2,6 +2,6 @@
 Encoding=UTF-8
 Version=1.0
 Name=Dotfiles INSTALL
-Exec=wezterm-gui start /bin/sh -c ~/.dotfiles/install.sh
+Exec=alacritty --command /bin/sh -c ~/.dotfiles/install.sh
 Terminal=false
 Type=Application
