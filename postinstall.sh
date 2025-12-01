@@ -157,9 +157,9 @@ if type gh >/dev/null 2>&1; then
     fi
 fi
 
-if ! type nix >/dev/null 2>&1; then
-    curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
-fi
+#if ! type nix >/dev/null 2>&1; then
+#    curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+#fi
 
 # https://github.com/postmanlabs/postman-app-support/issues/12330#issuecomment-1730688619
 postman-issue-12330-workaround
