@@ -1,9 +1,10 @@
 #!/bin/bash
 
 TOUCHPAD=64:5A:ED:EF:06:C1
+TOUCHPAD_2=10:94:BB:AB:95:83
 DADS_KEYBOARD=40:E6:4B:8F:F3:91
 
-DEVICES="$TOUCHPAD $DADS_KEYBOARD"
+DEVICES="$TOUCHPAD $TOUCHPAD_2 $DADS_KEYBOARD"
 
 for device in $DEVICES; do
 	if ! bluetoothctl info "$device" | grep --fixed-strings --silent 'Connected: yes'; then
