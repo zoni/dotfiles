@@ -26,12 +26,18 @@ fi
 # call result at the time of dotfiles install.
 echo 'export PATH="$PATH:'"$(ruby -e 'puts Gem.user_dir')"'/bin"' >> $HOME/.zsh/05-path.zsh
 
-if type kubectl >/dev/null; then
-    kubectl completion zsh >> "$HOME/.zsh/70-kubectl.zsh"
+for cmd in kubectl k9s; do
+    if type $cmd >/dev/null; then
+        $cmd completion zsh >> "$HOME/.zsh/70-completion-$cmd.zsh"
+    fi
+done
+
+if type gh >/dev/null; then
+    gh completion -s zsh >> "$HOME/.zsh/70-completion-gh.zsh"
 fi
 
 if type mise >/dev/null; then
-    mise activate zsh >> "$HOME/.zsh/95-mise.zsh"
+    mise activate zsh >> "$HOME/.zsh/95-completion-mise.zsh"
     mise trust "$HOME/.config/mise/config.toml"
 fi
 
