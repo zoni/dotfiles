@@ -26,15 +26,20 @@ fi
 # call result at the time of dotfiles install.
 echo 'export PATH="$PATH:'"$(ruby -e 'puts Gem.user_dir')"'/bin"' >> $HOME/.zsh/05-path.zsh
 
+if type kubectl >/dev/null; then
+    kubectl completion zsh >> "$HOME/.zsh/70-kubectl.zsh"
+fi
+
+if type mise >/dev/null; then
+    mise activate zsh >> "$HOME/.zsh/95-mise.zsh"
+    mise trust "$HOME/.config/mise/config.toml"
+fi
+
 for file in "$HOME"/.zsh/*.zsh; do
     test -e "$file" || rm -f "$file"  # Remove broken symlinks
     printf '\n# -- %s --\n\n' "$file" >> "$HOME/.zshrc"
     cat "$file" >> "$HOME/.zshrc"
 done
-if type mise >/dev/null; then
-    mise activate zsh >> "$HOME/.zshrc"
-    mise trust "$HOME/.config/mise/config.toml"
-fi
 # This will make zgenom do its thing
 /usr/bin/env zsh -i -c ''
 
