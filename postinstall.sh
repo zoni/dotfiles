@@ -77,21 +77,6 @@ if [[ "$DESKTOP_SESSION" == "gnome" ]]; then
     gnome-extension disable auto-move-windows@gnome-shell-extensions.gcampax.github.com
 fi
 
-if [[ "$DESKTOP_SESSION" == "i3" ]]; then
-    test -e "$HOME/.i3/current-wallpaper" || ln -sf /usr/share/backgrounds/default.png "$HOME/.i3/current-wallpaper" && feh --bg-scale  "$HOME/.i3/current-wallpaper" || true
-    sha256sum --check --status $TMPDIR/i3.sha256sum || i3-msg reload
-fi
-
-if [[ "$DESKTOP_SESSION" == "sway-shell" ]]; then
-    test -e "$HOME/.config/sway/inputs" || cp "$(dirname $BASH_SOURCE)/src/.config/sway/inputs.example" "$HOME/.config/sway/inputs"
-    test -e "$HOME/.config/sway/outputs" || cp "$(dirname $BASH_SOURCE)/src/.config/sway/outputs.example" "$HOME/.config/sway/outputs"
-    test -e "$HOME/.config/sway/current-wallpaper" || ln -sf /usr/share/backgrounds/default.png "$HOME/.config/sway/current-wallpaper"
-
-    sha256sum --check --status $TMPDIR/mako.sha256sum || dex $HOME/.local/share/applications/mako.desktop
-    sha256sum --check --status $TMPDIR/sway.sha256sum || ( swaymsg reload ; sleep 1; alacritty-dropdown --hide; )
-    sha256sum --check --status $TMPDIR/swayidle.sha256sum || dex $HOME/.local/share/applications/swayidle.desktop
-fi
-
 if curl --silent --fail --output /dev/null https://github.com/; then
     if [[ "$OSTYPE" != "darwin"* ]]; then
         gh release --repo zoni/knowledgebase-cli download --pattern knowledgebase-cli-x86_64-unknown-linux-gnu.tar.xz --output - | tar --extract --xz --directory "$HOME/.cargo/bin/"
