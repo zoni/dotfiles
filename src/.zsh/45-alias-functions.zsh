@@ -62,7 +62,7 @@ function tsp() {
 	local profile=""
 	case $# in
 		0)
-			profile="$(tmuxp ls | fzf)"
+			profile="$(tmuxp ls --json | jq -r '.workspaces[].name' | fzf)"
 			;;
 		1)
 			profile="$1"
