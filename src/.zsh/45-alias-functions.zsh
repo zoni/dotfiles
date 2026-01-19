@@ -62,7 +62,15 @@ function tsp() {
 	local profile=""
 	case $# in
 		0)
-			profile="$(tmuxp ls --json | jq -r '.workspaces[].name' | fzf)"
+			profiles="$(tmuxp ls --json 2>/dev/null)"
+			if [[ $? -ne 0 ]]; then
+				# Backwards compatibility for older tmuxp versions that don't
+				# have the --json flag yet.
+				profiles="$(tmuxp ls)"
+			else
+				profiles="$(printf "$profiles" | jq -r '.workspaces[].name')"
+			fi
+			profile="$(printf "$profiles" | fzf)"
 			;;
 		1)
 			profile="$1"
