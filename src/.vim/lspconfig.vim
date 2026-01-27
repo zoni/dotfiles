@@ -1,4 +1,40 @@
 lua << EOF
+-- Setup nvim-cmp for autocompletion
+local cmp = require('cmp')
+
+cmp.setup({
+  completion = {
+    autocomplete = { require('cmp.types').cmp.TriggerEvent.TextChanged },
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+  }),
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'path' },
+  }, {
+    { name = 'buffer' },
+  })
+})
+
 -- Language server configurations
 local servers = {
     ansiblels = {
@@ -55,11 +91,14 @@ local on_attach = function(client, bufnr)
 end
 
 -- Enable each language server
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 for lsp, config in pairs(servers) do
   -- Available strategies for extend: "error": raise an error, "keep": use value
   -- from the leftmost map, "force": use value from the rightmost map
   local final_config = vim.tbl_extend('error', config, {
     on_attach = on_attach,
+    capabilities = capabilities,
     flags = {
       debounce_text_changes = 150,
     }

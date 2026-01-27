@@ -75,11 +75,6 @@ augroup END
 let g:SuperTabDefaultCompletionType = "context"
 " }}}
 
-" {{{ Deoplete
-" More options in .vimrc due to plugin loading
-let g:deoplete#enable_at_startup = 1
-" }}}
-
 " {{{ vim-swoop
 let g:swoopUseDefaultKeyMap = 0
 " }}}

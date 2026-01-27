@@ -13,14 +13,16 @@ endfunction
 call plug#begin('~/.vim-plugs')
 
 Plug 'NoahTheDuke/vim-just'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
 Plug 'airblade/vim-gitgutter'
 Plug 'aklt/plantuml-syntax'
 Plug 'ayu-theme/ayu-vim'
 Plug 'ciaranm/securemodelines'
 Plug 'dense-analysis/ale'
-Plug 'deoplete-plugins/deoplete-lsp'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dkarter/bullets.vim'
 Plug 'dyng/ctrlsf.vim'
@@ -104,8 +106,3 @@ elseif filereadable("/home/linuxbrew/.linuxbrew/opt/fzf/plugin/fzf.vim")
 elseif filereadable("/usr/local/opt/fzf/plugin/fzf.vim")
   source /usr/local/opt/fzf/plugin/fzf.vim
 endif
-
-" Must be called after plug#end
-call deoplete#custom#option({
-    \ 'auto_complete_delay': 250,
-    \ })
