@@ -1,6 +1,5 @@
 lua << EOF
-local nvim_lsp = require('lspconfig')
-
+-- Language server configurations
 local servers = {
     ansiblels = {
         --filetypes = { "yaml.ansible" },
@@ -26,16 +25,13 @@ local servers = {
     yamlls = {},
 }
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
+-- Configure keybindings when language server attaches to buffer
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
-  -- Enable completion triggered by <c-x><c-o>
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  -- Mappings.
   local opts = { noremap=true, silent=true }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -58,8 +54,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 end
 
--- Call setup on each of the defined servers, extending their config with
--- the keybindings defined above.
+-- Enable each language server
 for lsp, config in pairs(servers) do
   -- Available strategies for extend: "error": raise an error, "keep": use value
   -- from the leftmost map, "force": use value from the rightmost map
@@ -69,7 +64,9 @@ for lsp, config in pairs(servers) do
       debounce_text_changes = 150,
     }
   })
-  nvim_lsp[lsp].setup(final_config)
+
+  vim.lsp.config[lsp] = final_config
+  vim.lsp.enable(lsp)
 end
 
 -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#imports
