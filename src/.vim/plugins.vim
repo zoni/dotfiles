@@ -13,9 +13,10 @@ let g:ale_markdown_remark_lint_use_global = 1
 " multiple files.
 let g:ale_go_golangci_lint_package = 1
 
-" Only use type checkers and ruff for Python projects.
-" (Ruff covers the majority of what other linters can do combined).
-let g:ale_linters = {'python': ['ruff', 'mypy', 'pyright']}
+" Limit ALE to Ruff in Python projects.
+" Ruff already covers the majority of what other linters can do combined,
+" while type checkers (pyright) are handled by nvim-lspconfig
+let g:ale_linters = {'python': ['ruff', 'mypy']}
 " }}}
 
 " {{{ echodoc
