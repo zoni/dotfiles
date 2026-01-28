@@ -35,6 +35,25 @@ cmp.setup({
   })
 })
 
+-- Setup cmdline completion for search (/, ?)
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+-- Setup cmdline completion for commands (:)
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  }),
+  matching = { disallow_symbol_nonprefix_matching = false }
+})
+
 -- Language server configurations
 local servers = {
     ansiblels = {
