@@ -162,8 +162,8 @@ postman-issue-12330-workaround
 
 
 if type claude > /dev/null; then
-    claude mcp get kubernetes-mcp-server > /dev/null 2>&1 || claude mcp add-json kubernetes-mcp-server '{"command":"npx","args":["-y","kubernetes-mcp-server@latest"]}' -s user
-    claude mcp get github > /dev/null 2>&1 || claude mcp add-json github "{\"type\":\"http\",\"url\":\"https://api.githubcopilot.com/mcp\",\"headers\":{\"Authorization\":\"Bearer $(gh auth token)\"}}" -s user
+    claude mcp get kubernetes-mcp-server > /dev/null 2>&1 || claude mcp add-json kubernetes-mcp-server '{"command":"npx","args":["-y","kubernetes-mcp-server@latest"]}' --scope user
+    claude mcp get github > /dev/null 2>&1 || claude mcp add github --transport http https://api.githubcopilot.com/mcp/ --header "Authorization: Bearer $(gh auth token)" --scope user
 
     claude mcp list
 fi
