@@ -162,6 +162,7 @@ postman-issue-12330-workaround
 
 
 if type claude > /dev/null; then
+    json5 "$HOME/.claude/settings.json5" > "$HOME/.claude/settings.json"
     claude mcp get kubernetes-mcp-server > /dev/null 2>&1 || claude mcp add-json kubernetes-mcp-server '{"command":"npx","args":["-y","kubernetes-mcp-server@latest"]}' --scope user
     claude mcp get github > /dev/null 2>&1 || claude mcp add github --transport http https://api.githubcopilot.com/mcp/ --header "Authorization: Bearer $(gh auth token)" --scope user
 

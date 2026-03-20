@@ -3,6 +3,7 @@
     "pyright-lsp@claude-plugins-official": true
   },
   "env": {
+    // https://github.com/anthropics/claude-code/issues/15619
     "ENABLE_LSP_TOOL": "1"
-  }
+  },
 }
