@@ -12,9 +12,12 @@ gnome-extension() {
     fi
 }
 
+tailscale configure systray --enable-startup=systemd
+
 systemctl --user daemon-reload || true
 systemctl --user enable --now syncthing.service
 systemctl --user enable --now atuin-daemon.service
+systemctl --user enable --now tailscale-systray
 
 if systemctl --user is-enabled espanso.service; then
     systemctl --user restart espanso.service
