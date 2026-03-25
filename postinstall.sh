@@ -169,6 +169,10 @@ if type claude > /dev/null; then
     claude mcp get kubernetes-mcp-server > /dev/null 2>&1 || claude mcp add-json kubernetes-mcp-server '{"command":"npx","args":["-y","kubernetes-mcp-server@latest"]}' --scope user
     claude mcp get github > /dev/null 2>&1 || claude mcp add github --transport http https://api.githubcopilot.com/mcp/ --header "Authorization: Bearer $(gh auth token)" --scope user
 
+    if [[ $USER == "work" ]]; then
+        claude mcp get datadog > /dev/null 2>&1 || claude mcp add --transport http datadog https://mcp.datadoghq.eu/api/unstable/mcp-server/mcp --scope user
+    fi
+
     claude mcp list
 fi
 
