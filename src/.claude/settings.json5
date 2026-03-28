@@ -1,10 +1,144 @@
 {
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "enabledPlugins": {
     "pyright-lsp@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true,
   },
   "env": {
     // https://github.com/anthropics/claude-code/issues/15619
-    "ENABLE_LSP_TOOL": "1"
+    "ENABLE_LSP_TOOL": "1",
+    "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR": "1",
+  },
+  "permissions": {
+    "allow": [
+      // General purpose tools
+      "Bash(echo:*)",
+      "Bash(fd:*)",
+      "Bash(find:*)",
+      "Bash(git log:*)",
+      "Bash(grep:*)",
+      "Bash(head:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Bash(printf:*)",
+      "Bash(rg:*)",
+      "Bash(tail:*)",
+      "Bash(tree:*)",
+      "Bash(xxd:*)",
+      // Git commands
+      "Bash(git blame:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git status:*)",
+      // DevOps
+      "Bash(crane digest:*)",
+      "Bash(helm show:*)",
+      "Bash(kubectl kustomize:*)",
+      // Golang
+      "Bash(go build:*)",
+      "Bash(go fmt:*)",
+      "Bash(go fmt:*)",
+      "Bash(go list:*)",
+      "Bash(gofmt:*)",
+      "Bash(golangci-lint:*)",
+      "Bash(ko build --local:*)",
+      "Bash(ko version)",
+      // Python
+      "Bash(ruff:*)",
+      "Bash(pyright:*)",
+      "Bash(basedpyright:*)",
+      "Bash(uv run ruff:*)",
+      "Bash(uv run pyright:*)",
+      "Bash(uv run basedpyright:*)",
+      "Bash(uv run pytest:*)",
+      // Generic linters
+      "Bash(pre-commit run:*)",
+      // GitHub MCP
+      "mcp__github__get_tag",
+      "mcp__github__issue_read",
+      "mcp__github__get_pull_request",
+      "mcp__github__get_pull_request_diff",
+      "mcp__github__get_file_contents",
+      // Kubernetes MCP
+      "mcp__kubernetes-mcp-server__events_list",
+      "mcp__kubernetes-mcp-server__namespaces_list",
+      "mcp__kubernetes-mcp-server__pods_get",
+      "mcp__kubernetes-mcp-server__pods_list_in_namespace",
+      "mcp__kubernetes-mcp-server__pods_log",
+      "mcp__kubernetes-mcp-server__resources_get",
+      "mcp__kubernetes-mcp-server__resources_list",
+    ],
+    "deny": [
+    ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "failIfUnavailable": true,
+    "autoAllowBashIfSandboxed": false,
+    // This still allows commands listed in excludedCommands
+    "allowUnsandboxedCommands": false,
+    "excludedCommands": [
+      "git:*",
+      "docker:*",
+      "podman:*",
+    ],
+    "filesystem": {
+      "denyWrite": [
+        "/",
+      ],
+      "denyRead": [
+        "/proc",
+        "/sys",
+        "/dev",
+        "~/",
+      ],
+      "allowRead": [
+        "~/.claude/",
+      ],
+      "allowWrite": [
+        // Make sure entries listed here aren't duplicated with those in
+        // allowRead, as that appears to take precedence and leave them
+        // read-only.
+        "/tmp/",
+        "~/.cache/",
+        "~/Workspace/go",
+      ],
+    },
+    "network": {
+      "allowAllUnixSockets": false,
+      "allowUnixSockets": [
+        "~/.ssh/master/*",
+        "/run/user/*/gcr/ssh",
+      ],
+      "allowedDomains": [
+        "api.github.com",
+        "github.com",
+        // Registries and artifact repositories
+        "artifacthub.io",
+        "gcr.io",
+        "quay.io",
+        "docker.io",
+        "storage.googleapis.com",
+        // Go
+        "proxy.golang.org",
+        "sum.golang.org",
+        // Python
+        "pypi.org",
+        "files.pythonhosted.org",
+        // Rust
+        "crates.io",
+        "index.crates.io",
+        "static.crates.io",
+        // JS/TS
+        "npmjs.org",
+      ],
+    },
+    "seccomp": {
+      "bpfPath": "/usr/lib/claude-code-seccomp/unix-block.bpf",
+      "applyPath": "/usr/lib/claude-code-seccomp/apply-seccomp"
+    }
   },
 }

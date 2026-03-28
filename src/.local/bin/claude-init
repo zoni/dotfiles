@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+
+import json
+from pathlib import Path
+
+
+def read_config(path: Path) -> dict:
+    try:
+        return json.loads(path.read_text())
+    except FileNotFoundError:
+        return {}
+
+
+def default_sandbox_config() -> dict:
+    return {
+        "filesystem": {
+            "allowRead": ["."],
+            "allowWrite": ["."],
+        }
+    }
+
+
+def main():
+    config_path = Path(".claude/settings.local.json")
+    config_path.parent.mkdir(parents=True, exist_ok=True)
+
+    config = read_config(config_path)
+    if "sandbox" not in config:
+        config["sandbox"] = default_sandbox_config()
+
+    config_path.write_text(json.dumps(config, indent=4))
+
+
+if __name__ == "__main__":
+    main()
