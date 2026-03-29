@@ -57,11 +57,12 @@
       // Generic linters
       "Bash(pre-commit run:*)",
       // GitHub MCP
-      "mcp__github__get_tag",
-      "mcp__github__issue_read",
+      "mcp__github__get_file_contents",
       "mcp__github__get_pull_request",
       "mcp__github__get_pull_request_diff",
-      "mcp__github__get_file_contents",
+      "mcp__github__get_tag",
+      "mcp__github__issue_read",
+      "mcp__github__list_pull_requests",
       // Kubernetes MCP
       "mcp__kubernetes-mcp-server__events_list",
       "mcp__kubernetes-mcp-server__namespaces_list",
