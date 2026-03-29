@@ -42,6 +42,7 @@
       "Bash(go fmt:*)",
       "Bash(go fmt:*)",
       "Bash(go list:*)",
+      "Bash(go test:*)",
       "Bash(gofmt:*)",
       "Bash(golangci-lint:*)",
       "Bash(ko build --local:*)",
