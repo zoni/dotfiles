@@ -68,6 +68,7 @@
       "mcp__kubernetes-mcp-server__events_list",
       "mcp__kubernetes-mcp-server__namespaces_list",
       "mcp__kubernetes-mcp-server__pods_get",
+      "mcp__kubernetes-mcp-server__pods_list",
       "mcp__kubernetes-mcp-server__pods_list_in_namespace",
       "mcp__kubernetes-mcp-server__pods_log",
       "mcp__kubernetes-mcp-server__resources_get",
