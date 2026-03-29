@@ -75,7 +75,7 @@
     ]
   },
   "sandbox": {
-    "enabled": true,
+    "enabled": false,
     "failIfUnavailable": true,
     "autoAllowBashIfSandboxed": false,
     // This still allows commands listed in excludedCommands
