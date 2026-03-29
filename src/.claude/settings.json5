@@ -39,6 +39,7 @@
       "Bash(kubectl kustomize:*)",
       // Golang
       "Bash(go build:*)",
+      "Bash(go doc:*)",
       "Bash(go fmt:*)",
       "Bash(go fmt:*)",
       "Bash(go list:*)",
