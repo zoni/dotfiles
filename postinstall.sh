@@ -171,7 +171,8 @@ if type claude > /dev/null; then
     claude mcp get github > /dev/null 2>&1 || claude mcp add github --transport http https://api.githubcopilot.com/mcp/ --header "Authorization: Bearer $(gh auth token)" --scope user
 
     if [[ $USER == "work" ]]; then
-        claude mcp get datadog > /dev/null 2>&1 || claude mcp add --transport http datadog https://mcp.datadoghq.eu/api/unstable/mcp-server/mcp --scope user
+        claude mcp get datadog > /dev/null 2>&1 || claude mcp add datadog --transport http https://mcp.datadoghq.eu/api/unstable/mcp-server/mcp --scope user
+        claude mcp get atlassian > /dev/null 2>&1 || claude mcp add atlassian --transport http https://mcp.atlassian.com/v1/mcp --scope user
     fi
 
     claude mcp list
