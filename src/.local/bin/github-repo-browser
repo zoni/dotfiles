@@ -1,13 +1,44 @@
 #!/usr/bin/env bash
 
+CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/github-repo-browser"
+CACHE_FILE="$CACHE_DIR/repos"
+CACHE_MAX_AGE=300  # 5 minutes
+
+mkdir -p "$CACHE_DIR"
+rm -f "$CACHE_DIR"/.repos.*
+
+FZF_SOCKET="${XDG_RUNTIME_DIR:-/tmp}/github-repo-browser.$$.sock"
+trap 'rm -f "$FZF_SOCKET"' EXIT
+
 function repo_list {
 	gh repo list "$1" --json owner,name,isArchived --template '{{ range . }}{{ if not .isArchived }}{{ .owner.login }}/{{ .name }}{{ "\n" }}{{ end}}{{ end }}' --limit 1000
 }
 
-(repo_list castoredc & repo_list zoni &) | fzf \
+function is_cache_fresh {
+	[[ -f "$CACHE_FILE" ]] || return 1
+	(( $(date +%s) - $(stat -c %Y "$CACHE_FILE") < CACHE_MAX_AGE ))
+}
+
+function refresh_cache {
+	local tmpfile
+	tmpfile=$(mktemp "$CACHE_DIR/.repos.XXXXXX")
+	(repo_list castoredc & repo_list zoni & wait) > "$tmpfile"
+	[[ -s "$tmpfile" ]] && mv "$tmpfile" "$CACHE_FILE" || rm -f "$tmpfile"
+}
+
+if [[ ! -f "$CACHE_FILE" ]]; then
+	refresh_cache
+fi
+
+if ! is_cache_fresh; then
+	(refresh_cache && curl -s --unix-socket "$FZF_SOCKET" -X POST http://localhost -d "reload(cat $CACHE_FILE)") &
+fi
+
+fzf \
+	--listen "$FZF_SOCKET" \
 	--bind "enter:become(xdg-open https://github.com/{})" \
 	--bind "ctrl-o:execute(xdg-open https://github.com/{})" \
 	--bind "ctrl-i:execute(xdg-open https://github.com/{}/issues)" \
 	--bind "ctrl-p:execute(xdg-open https://github.com/{}/pulls)" \
-	--bind "ctrl-s:execute(xdg-open https://github.com/{}/settings)"
-
+	--bind "ctrl-s:execute(xdg-open https://github.com/{}/settings)" \
+< "$CACHE_FILE"
