@@ -23,6 +23,11 @@ let g:ale_linters = {'python': ['ruff', 'mypy']}
 let g:echodoc_enable_at_startup = 1
 " }}}
 
+" {{{ vim-go
+" Disable vim-go's gopls integration; nvim-lspconfig manages gopls instead
+let g:go_gopls_enabled = 0
+" }}}
+
 " {{{ Fzf
 let g:fzf_command_prefix = 'Fzf'
 " }}}
