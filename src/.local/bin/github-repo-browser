@@ -5,7 +5,7 @@ CACHE_FILE="$CACHE_DIR/repos"
 CACHE_MAX_AGE=300  # 5 minutes
 
 mkdir -p "$CACHE_DIR"
-rm -f "$CACHE_DIR"/.repos.*
+rm -rf "$CACHE_DIR"/.repos.*
 
 FZF_SOCKET="${XDG_RUNTIME_DIR:-/tmp}/github-repo-browser.$$.sock"
 trap 'rm -f "$FZF_SOCKET"' EXIT
@@ -20,10 +20,20 @@ function is_cache_fresh {
 }
 
 function refresh_cache {
-	local tmpfile
-	tmpfile=$(mktemp "$CACHE_DIR/.repos.XXXXXX")
-	(repo_list castoredc & repo_list zoni & wait) > "$tmpfile"
-	[[ -s "$tmpfile" ]] && mv "$tmpfile" "$CACHE_FILE" || rm -f "$tmpfile"
+	local tmpdir
+	local repos
+	tmpdir=$(mktemp -d "$CACHE_DIR/.repos.XXXXXX")
+	trap 'rm -rf "$tmpdir"' EXIT
+
+	repos=$(gh api user/orgs --jq '.[].login')
+	self=$(gh api user --jq '.login')
+
+	for repo in $repos $self; do
+		repo_list "$repo" > "$tmpdir/$repo.list" &
+	done
+	wait
+
+	cat "$tmpdir"/*.list > "$CACHE_FILE"
 }
 
 if [[ ! -f "$CACHE_FILE" ]]; then
