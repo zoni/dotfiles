@@ -45,3 +45,6 @@ export LS_COLORS="rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;
 export AUTOENV_FILE_ENTER=".env.zsh"
 export AUTOENV_FILE_LEAVE=".env_leave.zsh"
 export AUTOENV_LOOK_UPWARDS=1
+
+# Disable emojis in minikube
+export MINIKUBE_IN_STYLE=0
