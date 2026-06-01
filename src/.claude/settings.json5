@@ -12,6 +12,19 @@
     "ENABLE_LSP_TOOL": "1",
     "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR": "1",
   },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/enforce-uv.sh",
+          }
+        ]
+      }
+    ]
+  },
   "permissions": {
     "allow": [
       // General purpose tools
