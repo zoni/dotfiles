@@ -87,6 +87,14 @@
       "mcp__kubernetes-mcp-server__pods_log",
       "mcp__kubernetes-mcp-server__resources_get",
       "mcp__kubernetes-mcp-server__resources_list",
+      // Atlassian MCP
+      "mcp__atlassian__getAccessibleAtlassianResources",
+      "mcp__atlassian__getJiraIssue",
+      // Datadog MCP
+      "mcp__datadog__query_timeseries",
+      "mcp__datadog__search_datadog_logs",
+      "mcp__datadog__get_datadog_trace",
+      "mcp__datadog__search_datadog_spans",
     ],
     "deny": [
     ]
