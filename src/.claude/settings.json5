@@ -90,11 +90,14 @@
       // Atlassian MCP
       "mcp__atlassian__getAccessibleAtlassianResources",
       "mcp__atlassian__getJiraIssue",
+      "mcp__atlassian__getJiraProjectIssueTypesMetadata",
       // Datadog MCP
       "mcp__datadog__query_timeseries",
       "mcp__datadog__search_datadog_logs",
       "mcp__datadog__get_datadog_trace",
       "mcp__datadog__search_datadog_spans",
+      // Claude.ai Slack MCP
+      "mcp__claude_ai_Slack__slack_read_thread",
     ],
     "deny": [
     ]
