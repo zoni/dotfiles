@@ -163,6 +163,8 @@ fi
 # https://github.com/postmanlabs/postman-app-support/issues/12330#issuecomment-1730688619
 postman-issue-12330-workaround
 
+# Signal defaults to plaintext due to bugs with encrypted stores, but I don't mind dealing with corruption if it happens.
+flatpak override --user --env=SIGNAL_PASSWORD_STORE=gnome-libsecret org.signal.Signal
 
 if type claude > /dev/null; then
     json5 --as-json "$HOME/.claude/settings.json5" > "$HOME/.claude/settings.json" 2>/dev/null || json5 "$HOME/.claude/settings.json5" > "$HOME/.claude/settings.json"
