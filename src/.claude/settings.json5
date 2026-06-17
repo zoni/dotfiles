@@ -78,6 +78,7 @@
       "mcp__github__get_tag",
       "mcp__github__issue_read",
       "mcp__github__list_pull_requests",
+      "mcp__github__pull_request_read",
       // Kubernetes MCP
       "mcp__kubernetes-mcp-server__events_list",
       "mcp__kubernetes-mcp-server__namespaces_list",
