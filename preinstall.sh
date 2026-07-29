@@ -34,6 +34,7 @@ done
 # deeper nested directory levels that need to be explicitly added here.
 for dir in \
 	"$HOME"/.cargo \
+	"$HOME"/.claude/skills \
 	"$HOME"/.config/espanso/config \
 	"$HOME"/.config/espanso/match \
 	"$HOME"/.config/systemd/user \

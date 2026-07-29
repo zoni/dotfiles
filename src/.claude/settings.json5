@@ -71,6 +71,9 @@
       "Bash(uv run pytest:*)",
       // Generic linters
       "Bash(pre-commit run:*)",
+      // Artifact design and explain skills
+      "Bash(explain-diff-render *)",
+      "Skill(artifact-design)",
       // GitHub MCP
       "mcp__github__get_file_contents",
       "mcp__github__get_pull_request",
