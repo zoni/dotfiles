@@ -93,6 +93,7 @@
       "mcp__kubernetes-mcp-server__resources_list",
       // Atlassian MCP
       "mcp__atlassian__getAccessibleAtlassianResources",
+      "mcp__atlassian__getConfluencePage",
       "mcp__atlassian__getJiraIssue",
       "mcp__atlassian__getJiraProjectIssueTypesMetadata",
       // Datadog MCP
