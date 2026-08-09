@@ -7,8 +7,16 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "edit_predictions": {
+    "provider": "copilot"
+  },
+  "project_panel": {
+    "dock": "left"
+  },
   "agent": {
-    "always_allow_tool_actions": true,
+    "tool_permissions": {
+      "default": "allow"
+    },
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-3.5-sonnet"
@@ -24,9 +32,6 @@
     "mode": "system",
     "light": "One Dark",
     "dark": "One Dark"
-  },
-  "features": {
-    "edit_prediction_provider": "copilot"
   },
   "buffer_font_family": "Ubuntu Mono",
   "buffer_font_size": 16,
@@ -74,10 +79,10 @@
       "format_on_save": "on",
       "formatter": [
         {
-          "code_actions": {
-            "source.organizeImports.ruff": true,
-            "source.fixAll.ruff": true
-          }
+          "code_action": "source.organizeImports.ruff"
+        },
+        {
+          "code_action": "source.fixAll.ruff"
         },
         {
           "language_server": {
