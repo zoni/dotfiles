@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Tasks.org
+Exec=tasks-org-linux-x86_64.AppImage
+Terminal=false
+Type=Application
+Icon=task-due-symbolic
+Comment=Tasks.org To-Do tasks manager
+Categories=Office;
