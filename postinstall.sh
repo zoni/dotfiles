@@ -175,6 +175,7 @@ if type claude > /dev/null; then
 
     if [[ $USER == "work" ]]; then
         claude mcp get atlassian > /dev/null 2>&1 || claude mcp add atlassian --transport http https://mcp.atlassian.com/v1/mcp --scope user
+        claude mcp get spyglass > /dev/null 2>&1 || claude mcp add spyglass --scope user -- tsh mcp connect spyglass
     fi
 
     claude mcp list
