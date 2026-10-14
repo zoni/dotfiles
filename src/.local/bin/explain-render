@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
 """
-explain-diff-render — render a structured explain-diff spec into the self-contained HTML
-page format used by the `explain-diff-html` skill (see ~/.claude/skills/
-explain-diff-html/SKILL.md, recipe from
+explain-render — render a structured explanation spec into the self-contained HTML
+page format used by the `explain-html` and `explain-diff-html` skills (see
+~/.claude/skills/explain-html/SKILL.md, recipe adapted from
 https://gist.github.com/geoffreylitt/a29df1b5f9865506e8952488eac3d524).
 
 Why this exists: the CSS, quiz JavaScript, and page scaffolding are identical
-across every invocation of the explain-diff skill — only the content (prose,
-diagrams, quiz questions) actually changes per diff. Regenerating the full
+across every invocation of the explain skills — only the content (prose,
+diagrams, quiz questions) actually changes per explanation. Regenerating the full
 ~250 lines of boilerplate CSS/JS by hand every time wastes tokens. This script
 takes a small JSON spec with just the content and renders the final page.
 
 Usage:
-    explain-diff-render spec.json [-o output.html]
+    explain-render spec.json [-o output.html]
 
-If -o is omitted, writes to <dir-of-spec>/YYYY-MM-DD-<slug>.html (matching the
-skill's filename convention), where <slug> comes from the spec's "slug" field.
+If -o is omitted, writes to /tmp/YYYY-MM-DD-explanation-<slug>.html, where
+<slug> comes from the spec's "slug" field (or is derived from the title).
 
 Spec format (JSON):
 {
@@ -54,7 +54,7 @@ The "html" fields are raw HTML — write real markup (headings, <pre> blocks,
 tables, ".diagram"/".callout" divs per the skill's CSS classes below), not
 markdown. This keeps the script a pure template renderer; all the writing
 judgment (what to explain, which diagrams to draw) still belongs to the LLM
-following the explain-diff-html recipe, same as before — this just removes
+following the explain-html recipe, same as before — this just removes
 the repetitive part.
 """
 import argparse
