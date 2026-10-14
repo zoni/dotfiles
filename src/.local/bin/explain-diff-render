@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 explain-diff-render — render a structured explain-diff spec into the self-contained HTML
-page format used by the `explain-diff-html` command (see ~/.claude/commands/
-explain-diff-html.md, recipe from
+page format used by the `explain-diff-html` skill (see ~/.claude/skills/
+explain-diff-html/SKILL.md, recipe from
 https://gist.github.com/geoffreylitt/a29df1b5f9865506e8952488eac3d524).
 
 Why this exists: the CSS, quiz JavaScript, and page scaffolding are identical
@@ -31,8 +31,10 @@ Spec format (JSON):
     {
       "question": "Why did the first retry attempt fire immediately instead of waiting?",
       "options": [
-        {"text": "The jitter calculation returned a negative delay.", "correct": false},
-        {"text": "The base delay was multiplied after the first attempt, not before it.", "correct": true}
+        {"text": "The jitter calculation could return a negative delay.", "correct": false,
+         "explanation": "Jitter is clamped to [0, base], so the delay can't go negative."},
+        {"text": "The base delay was multiplied after the first attempt.", "correct": true,
+         "explanation": "Right: attempt 0 used base * 0, so it fired immediately."}
       ]
     }
   ]
@@ -41,6 +43,12 @@ Spec format (JSON):
 Option order within each quiz question is randomized by the renderer at render time —
 list them in whatever order reads naturally when writing the spec; don't try to
 manually vary position to "seem random", the script already guarantees it.
+
+Each option may carry an "explanation" (raw HTML), shown when the reader picks
+that option. Without one, a generic "Correct"/"Not quite" message is shown.
+
+The renderer prints a warning to stderr when a question's correct option is
+noticeably longer than its distractors, since length gives the answer away.
 
 The "html" fields are raw HTML — write real markup (headings, <pre> blocks,
 tables, ".diagram"/".callout" divs per the skill's CSS classes below), not
@@ -103,13 +111,13 @@ document.querySelectorAll('.quiz-q').forEach(q => {
   q.querySelectorAll('.quiz-opt').forEach(opt => {
     opt.addEventListener('click', () => {
       const correct = opt.dataset.correct === 'true';
-      let fb = opt.nextElementSibling;
-      if (!fb || !fb.classList.contains('feedback')) {
-        fb = document.createElement('div');
-        fb.className = 'feedback';
-        opt.insertAdjacentElement('afterend', fb);
+      const fb = opt.nextElementSibling;
+      const prefix = correct ? '\\u2705 Correct. ' : '\\u274c Not quite. ';
+      const explanation = fb.querySelector('.explanation');
+      if (!explanation.innerHTML.trim()) {
+        explanation.textContent = correct ? '' : 'Reread the section above.';
       }
-      fb.textContent = correct ? '\\u2705 Correct.' : '\\u274c Not quite \\u2014 reread the section above.';
+      fb.querySelector('.verdict').textContent = prefix;
       fb.className = 'feedback ' + (correct ? 'correct' : 'incorrect');
       fb.style.display = 'block';
     });
@@ -120,6 +128,26 @@ document.querySelectorAll('.quiz-q').forEach(q => {
 
 def slugify(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+
+
+def visible_len(fragment: str) -> int:
+    return len(html.unescape(re.sub(r"<[^>]+>", "", fragment)).strip())
+
+
+def check_quiz_balance(quiz: list) -> None:
+    """Warn when a correct option's length gives it away."""
+    for n, q in enumerate(quiz, 1):
+        correct = [visible_len(o["text"]) for o in q["options"] if o["correct"]]
+        wrong = [visible_len(o["text"]) for o in q["options"] if not o["correct"]]
+        if not correct or not wrong:
+            continue
+        mean_wrong = sum(wrong) / len(wrong)
+        if max(correct) > max(wrong) and max(correct) > 1.25 * mean_wrong:
+            print(
+                f"warning: quiz question {n}: correct option is {max(correct)} chars, "
+                f"distractors average {mean_wrong:.0f}; the length gives the answer away",
+                file=sys.stderr,
+            )
 
 
 def render(spec: dict) -> str:
@@ -147,7 +175,8 @@ def render(spec: dict) -> str:
             options = list(q["options"])
             random.shuffle(options)
             opts = "\n".join(
-                f'<button class="quiz-opt" data-correct="{"true" if o["correct"] else "false"}">{o["text"]}</button>'
+                f'<button class="quiz-opt" data-correct="{"true" if o["correct"] else "false"}">{o["text"]}</button>\n'
+                f'<div class="feedback"><strong class="verdict"></strong><span class="explanation">{o.get("explanation", "")}</span></div>'
                 for o in options
             )
             blocks.append(
@@ -195,6 +224,7 @@ def main():
     args = ap.parse_args()
 
     spec = json.loads(args.spec.read_text(encoding="utf-8"))
+    check_quiz_balance(spec.get("quiz", []))
     out_html = render(spec)
 
     if args.output:
