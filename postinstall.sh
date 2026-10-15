@@ -174,6 +174,7 @@ if type claude > /dev/null; then
     claude mcp remove github > /dev/null 2>&1; claude mcp add github --transport http https://api.githubcopilot.com/mcp/ --header "Authorization: Bearer $(gh auth token)" --scope user
 
     if [[ $USER == "work" ]]; then
+        claude plugin marketplace list --json | jq -r '.[].name' | grep --fixed-strings --line-regexp --quiet castor-claude-plugins || claude plugin marketplace add https://github.com/castoredc/castor-claude-plugins
         claude mcp get atlassian > /dev/null 2>&1 || claude mcp add atlassian --transport http https://mcp.atlassian.com/v1/mcp --scope user
         claude mcp get spyglass > /dev/null 2>&1 || claude mcp add spyglass --scope user -- tsh mcp connect spyglass
     fi
