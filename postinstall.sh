@@ -179,6 +179,7 @@ if type claude > /dev/null; then
         claude mcp get spyglass > /dev/null 2>&1 || claude mcp add spyglass --scope user -- tsh mcp connect spyglass
     fi
 
+    claude plugin marketplace update
     claude mcp list
 fi
 
