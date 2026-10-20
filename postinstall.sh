@@ -178,6 +178,7 @@ if type claude > /dev/null; then
         claude plugin marketplace list --json | jq -r '.[].name' | grep --fixed-strings --line-regexp --quiet nick-groenen || claude plugin marketplace add https://github.com/castoredc/-nick.groenen
 
         claude plugin install rss-ticket@nick-groenen
+        claude plugin install incident-io@claude-plugins-official
 
         claude mcp get atlassian > /dev/null 2>&1 || claude mcp add atlassian --transport http https://mcp.atlassian.com/v1/mcp --scope user
         claude mcp get spyglass > /dev/null 2>&1 || claude mcp add spyglass --scope user -- tsh mcp connect spyglass
