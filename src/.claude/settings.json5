@@ -196,4 +196,9 @@
       "applyPath": "/usr/lib/claude-code-seccomp/apply-seccomp"
     }
   },
+  "voiceEnabled": true,
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
 }
