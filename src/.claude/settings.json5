@@ -3,6 +3,7 @@
     "commit": "",
     "pr": ""
   },
+  "editorMode": "vim",
   "enabledPlugins": {
     "pyright-lsp@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true,
